@@ -38,7 +38,7 @@ pip install flask
 
 Run the backend :
 ```bash
-flask run --debug
+flask --app main run --debug
 ```
 
 Run the backend tests :
