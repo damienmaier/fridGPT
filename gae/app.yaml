@@ -1,9 +1,11 @@
 runtime: python310
 
+default_expiration: 1s
+
 handlers:
-  - url: /api
+  - url: /api/.*
     script: auto
-  - url: /.*
+  - url: /
     static_dir: static
 
 automatic_scaling:
