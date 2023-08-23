@@ -24,6 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1#frontEndMsg')?.textContent).toContain('Hello from Frontend !');
+    expect(compiled.querySelector('h1#title')?.textContent).toContain('Welcome to FridGPT !');
   });
 });
