@@ -1,10 +1,7 @@
-name: Node.js CI
+name: CI-tests
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   test-frontend:
@@ -23,3 +20,18 @@ jobs:
         cache-dependency-path: frontend/package-lock.json
     - run: npm ci
     - run: npm test
+
+  test-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+    - run: pip install -r requirements.txt
+    - run: python -m unittest
