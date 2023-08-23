@@ -52,7 +52,7 @@ npm install
 Run the frontend server:
 
 ```bash
-ng serve
+npm start
 ```
 
 Navigate to `http://localhost:4200/`.
