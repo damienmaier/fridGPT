@@ -1,0 +1,16 @@
+name: CD-deployment
+
+on:  
+  workflow_dispatch:
+
+jobs:
+  deploy-to-gae:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: 'google-github-actions/auth@v1'
+      with:
+        workload_identity_provider: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+        service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
