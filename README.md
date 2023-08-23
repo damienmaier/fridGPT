@@ -48,10 +48,10 @@ python3 -m unittest
 
 Run the frontend :
 ```bash
-ng serve
+npm start
 ```
 
 Run the frontend tests :
 ```bash
-ng test --browsers ChromeHeadless
+npm test
 ```
