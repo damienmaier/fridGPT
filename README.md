@@ -6,52 +6,71 @@ Follow the instructions below to build and run the project locally.
 
 ### Prerequisites
 
-Install nodejs 20 and npm by running this command as root (this command comes from [here](https://github.com/nodesource/distributions)) :
-```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-apt-get install -y nodejs
-```
-
-Install angular :
-```bash
-sudo npm install -g @angular/cli
-```
-
-Install frontend dependencies :
-```bash
-cd fridGPT/frontend
-npm install
-```
-
-Install Chrome (this is needed for angular tests):
-```bash
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install -y ./google-chrome-stable_current_amd64.deb
-```
-
-Install flask :
-```bash
-pip install flask
-```
+To run this project, you need to have the following installed on your system:
+- nodejs 20 and npm
+- python 3.10 and pip
+- Google Chrome (for Angular tests)
 
 ### Run the project
 
-Run the backend :
+#### Backend
+
+In a terminal, cd to the `backend` folder:
+
+```bash
+cd fridGPT/backend
+```
+
+Optionally, create a virtual environment. Then install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the backend server:
+
 ```bash
 flask --app main run --debug
 ```
 
+The server will automatically reload if you change any of the source files.
+
+#### Frontend
+
+In an other terminal, cd to the `frontend` folder:
+
+```bash
+cd fridGPT/frontend
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Run the frontend server:
+
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/`.
+
+The app will automatically reload if you change any of the source files.
+
+The frontend server automatically proxies all API requests (/api/...) to the backend server.
+
+### Run the tests
+
 Run the backend tests :
+
 ```bash
 python3 -m unittest
 ```
 
-Run the frontend :
-```bash
-npm start
-```
-
 Run the frontend tests :
+
 ```bash
 npm test
 ```
