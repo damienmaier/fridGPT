@@ -33,7 +33,7 @@ Run the backend server:
 flask --app main run --debug
 ```
 
-The server will automatically reload if you change any of the source files.
+The backend server will automatically reload if you change any of the source files.
 
 #### Frontend
 
@@ -55,7 +55,7 @@ Run the frontend server:
 npm start
 ```
 
-Navigate to `http://localhost:4200/`.
+Navigate to [http://localhost:4200/](http://localhost:4200/) to access the app.
 
 The app will automatically reload if you change any of the source files.
 
