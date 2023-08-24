@@ -8,6 +8,9 @@ handlers:
   - url: /
     static_files: static/lp.html
     upload: static/lp.html
+  - url: /app
+    static_files: static/index.html
+    upload: static/index.html
   - url: /
     static_dir: static
 
