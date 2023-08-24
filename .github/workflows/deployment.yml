@@ -29,6 +29,9 @@ jobs:
       working-directory: ./frontend
     - run: mv ./frontend/dist/my-app gae/static
 
+    # move the landing page to gae/static
+    - run: mv landing_page/* gae/static 
+
     # move the python backend to gae
     - run: mv backend/* gae
 
