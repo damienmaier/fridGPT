@@ -18,6 +18,6 @@ describe('DemoPageComponent', () => {
     const fixture   = TestBed.createComponent(DemoPageComponent);
     fixture.detectChanges();
     const compiled  = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1#title')?.textContent).toContain('Welcome to FridGPT4 !');
+    expect(compiled.querySelector('h1#title')?.textContent).toContain('Welcome to FridGPT !');
   });
 });
