@@ -1,0 +1,39 @@
+#coach-row {
+    padding-top:100px;
+}
+
+#loading-row {
+    padding-top:20px;
+}
+
+.rotation-fw {
+    animation-name: spin-fw;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+  
+@keyframes spin-fw {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.rotation-bw {
+    animation-name: spin-bw;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+  
+@keyframes spin-bw {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(-360deg);
+    }
+}
