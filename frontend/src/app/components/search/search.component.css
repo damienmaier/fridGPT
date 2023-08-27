@@ -1,0 +1,44 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.menu-header {
+    background-color: #468B97;
+    height: 40px;
+    padding: 5px;
+}
+
+.input-group {
+    margin-top:20px;
+}
+
+#ingredientsHeader, #ingredientsForm {
+    margin: 10px 0 0 0;
+}
+
+#start-btn {
+    background-color: #EF6262;
+    border: #EF6262 1px solid;
+    border-radius: 5px;
+    position:fixed;
+    bottom: 50px;
+    right: 100px;
+}
+
+#start-btn p {
+    margin-bottom:0;
+}
+
+#search-list {
+    max-height: 100px;
+}
+
+.search-item {
+    background-color: #468B97;
+    border-bottom: 1px solid black;
+    padding:10px;
+    border-radius: 5px;
+}

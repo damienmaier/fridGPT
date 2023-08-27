@@ -1,0 +1,59 @@
+<div id="header">
+    <p class="fs-6 white">Pour commencer, donnons quelques indications aux coachs !</p>
+    <div>
+        <img src="/assets/germaine.png" width="60" alt=""/>
+        <img src="/assets/travis.png"   width="60" alt=""/>
+        <img src="/assets/bernardo.png" width="60" alt=""/>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="menu-header">
+        <h4 class="float-left"> Ingrédients à disposition</h4>
+      </div>
+      <div class="row" id="ingredientsHeader">
+        <div class="col-sm-6">
+          <p class="fs-5 white float-left">Nom</p>
+        </div> 
+        <div class="col-sm">
+          <p class="fs-5 white">Quantité</p>
+        </div>
+        <div class="col-sm">
+          <p class="fs-5 white">Unité</p>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+
+      <ng-container *ngFor="let item of selectedIngredients">
+        <div class="row justify-content-end" id="ingredientsForm">
+          <div class="col-sm-6">
+            <p class="fs-6 white float-left">{{ item.baseIngredient.name }}</p>
+          </div> 
+          <div class="col-sm">
+            <input type="number" [(ngModel)]="item.quantity" class="form-control">
+          </div>
+          <div class="col-sm">
+            <p class="fs-6 white">{{ item.baseIngredient.unit }}</p>
+          </div>
+          <div class="col-sm-1 trash">
+            <i class="bi bi-trash-fill white hand-cursor" (click)="removeIngredientFromList(item.id)"></i>
+          </div>
+        </div>
+      </ng-container>
+      
+      <div class="input-group">
+        <input type="text" (input)="filter()" [(ngModel)]="currentSearch" class="form-control" placeholder="Rechercher">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+      </div>
+      <div id="search-list">
+        <ng-container *ngFor="let item of filteredIngredients">
+          <option class="search-item hand-cursor white" [value]="item" (click)="addIngredientToRecipe(item)">{{ item.name }}</option>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-light" id="start-btn" (click)="startloadingRecipes()">
+    <p class="fs-5"> C'est parti! <i class="bi bi-rocket-takeoff"></i></p>
+  </button>
+</div>
