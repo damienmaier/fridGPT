@@ -40,7 +40,7 @@ export class SearchComponent {
     );
   }
 
-  startloadingRecipes() {
+  startloadingRecipes(): void {
     this.router.navigate(['loading']);
   }
 }

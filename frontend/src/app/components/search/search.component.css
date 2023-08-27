@@ -5,14 +5,10 @@
     justify-content: center;
 }
 
-.menu-header {
+#menu-header {
     background-color: #468B97;
-    height: 40px;
+    height: 45px;
     padding: 5px;
-}
-
-.input-group {
-    margin-top:20px;
 }
 
 #ingredientsHeader, #ingredientsForm {
@@ -23,17 +19,13 @@
     background-color: #EF6262;
     border: #EF6262 1px solid;
     border-radius: 5px;
-    position:fixed;
+    position: fixed;
     bottom: 50px;
     right: 100px;
 }
 
 #start-btn p {
-    margin-bottom:0;
-}
-
-#search-list {
-    max-height: 100px;
+    margin-bottom: 0;
 }
 
 .search-item {
@@ -41,4 +33,12 @@
     border-bottom: 1px solid black;
     padding:10px;
     border-radius: 5px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.input-group {
+    margin-top:20px;
 }

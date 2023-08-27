@@ -1,16 +1,27 @@
-#coach-row {
-    padding-top:100px;
+#loading-row {
+    padding:30px 0 50px 0;
+    height: 22vh;
+    display:flex;
+    flex-direction:row;
+    align-items: flex-start;
 }
 
-#loading-row {
-    padding-top:20px;
+#gear1 {
+    align-self:flex-end;
+}
+
+.rotation-fw, .rotation-bw {
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
 }
 
 .rotation-fw {
     animation-name: spin-fw;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
+}
+
+.rotation-bw {
+    animation-name: spin-bw;
 }
   
 @keyframes spin-fw {
@@ -20,13 +31,6 @@
     to {
         transform:rotate(360deg);
     }
-}
-
-.rotation-bw {
-    animation-name: spin-bw;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
 }
   
 @keyframes spin-bw {
