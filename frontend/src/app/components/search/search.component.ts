@@ -30,6 +30,10 @@ export class SearchComponent {
     this.recipesService.loadIngredients(); // will trigger the list emission from the service
   }
 
+  startloadingRecipes(): void {
+    this.router.navigate(['loading']);
+  }
+
   filter(): void {
     if(this.noData()) { return; }
     if(this.currentSearch === '' ) {
@@ -38,26 +42,22 @@ export class SearchComponent {
       this.filteredIngredients = this.baseIngredients.filter(
         (ingredient: BaseIngredient) => ingredient.name.toLowerCase().startsWith(this.currentSearch.toLowerCase())
       );
+      this.filteredIngredients.sort((e1:BaseIngredient,e2:BaseIngredient) => e1.name< e2.name ? -1 : 1 );
     }
   }
 
   addIngredientToRecipe(baseIngredient: BaseIngredient): void {
-    this.selectedIngredients.push(
-      {id: this.selectedIngredients.length, baseIngredient: baseIngredient, quantity: 1}
-    );
+    this.selectedIngredients.push({ id: this.selectedIngredients.length, baseIngredient: baseIngredient });
+    this.currentSearch        = '';
+    this.filteredIngredients  = [];
   }
 
   removeIngredientFromList(idToRemove: number): void {
     this.selectedIngredients = this.selectedIngredients.filter(
-      (ingredient: Ingredient) => ingredient.id != idToRemove
-    );
-  }
-
-  startloadingRecipes(): void {
-    this.router.navigate(['loading']);
+      (ingredient: Ingredient) => ingredient.id != idToRemove);
   }
 
   noData(): boolean {
-    return !this.baseIngredients || this.baseIngredients.length <= 0;
+    return this.baseIngredients.length <= 0;
   }
 }

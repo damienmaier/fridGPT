@@ -7,8 +7,8 @@ html, .main-bg {
     color:white;
 }
 
-.float-left {
-    float: left;
+.bold {
+    font-weight: bold;
 }
 
 .hand-cursor {

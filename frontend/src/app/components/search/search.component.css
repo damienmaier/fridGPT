@@ -11,21 +11,21 @@
     padding: 5px;
 }
 
-#ingredientsHeader, #ingredientsForm {
+#ingredientsHeader, #ingredientsForm, .form-search {
     margin: 10px 0 0 0;
 }
 
-#start-btn {
-    background-color: #EF6262;
-    border: #EF6262 1px solid;
-    border-radius: 5px;
-    position: fixed;
-    bottom: 50px;
-    right: 100px;
+#search-list, #ingredients-content {
+    max-height: 25vh;
+    overflow-y: auto;
 }
 
-#start-btn p {
+p {
     margin-bottom: 0;
+}
+
+.header-icon {
+    margin:0px 10px 2px 10px;
 }
 
 .search-item {
@@ -35,18 +35,129 @@
     border-radius: 5px;
 }
 
-.margin-right {
-    margin-right: 10px;
-}
-
-.input-group {
-    margin-top:20px;
-}
-
 .progress-bar {
     width: 100%;
+    background-color: #EF6262;
 }
 
 .progress{
     height:10px;
 }
+
+/* ------ search input ------ */
+
+.form {
+    position: relative;
+    height: 60px;
+    overflow-x: hidden;
+}
+
+.form input  {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #1D5B79;
+    outline: none;
+    color: white;
+}
+
+.form-search {
+    padding-top:20px;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left:0%;
+    width: 100%;
+    height:100%;
+    pointer-events: none;
+    border-bottom: 1px solid #468B97;
+}
+
+.form label:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom:-1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #468B97;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.input-label-content {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus + .input-label .input-label-content, 
+.form input:valid + .input-label .input-label-content {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: white;
+}
+
+.form input:focus + .input-label:after,
+.form input:valid + .input-label:after {
+    transform: translateX(0%);
+}
+
+/* ------ search button ------ */
+
+.search-button {
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    transform: translate(-50%, -50%);
+  }
+  
+  .search-button-content {
+    position: relative;
+  }
+  
+  .search-button-text {
+    display: block;
+    width: 110px;
+    line-height: 50px;
+    background: #00425A;
+    text-align: center;
+    border: 3px solid #00425A;
+    transition: all .35s;
+    border-radius: 5px;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+  }
+  
+  .icon img {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    transition: all .35s;
+  }
+  
+ .search-button-text:hover {
+    width: 170px;
+    border: 3px solid #EF6262;
+    background: transparent;
+  }
+  
+  .search-button-text:hover + .icon {
+    border: 3px solid #EF6262;
+    right: -25%;
+    background-color: #468B97;
+  }
