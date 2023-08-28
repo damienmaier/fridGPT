@@ -1,5 +1,8 @@
+import dotenv
 import flask
 from flask import Flask
+
+dotenv.load_dotenv()
 
 
 def create_app():
