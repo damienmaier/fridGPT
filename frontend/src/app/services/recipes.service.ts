@@ -1,6 +1,10 @@
 import { Subject } from "rxjs";
-import { BaseIngredient } from "../models/ingredient";
+import { BaseIngredient, Ingredient } from "../models/ingredient";
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Recipe } from "../models/recipe";
 
+@Injectable()
 export class RecipesService {
     // to remove later when the endpoint is ready
     private fakeIngredients: BaseIngredient[] = [ 
@@ -33,14 +37,29 @@ export class RecipesService {
         { "name": "Chocolat noir" },
         { "name": "Épices" }
     ]
-
     ingredientsSubject: Subject<BaseIngredient[]> = new Subject<BaseIngredient[]>();
+
+    recipe!: Recipe;
+    recipeSubject: Subject<Recipe> = new Subject<Recipe>();
+
+    constructor(private http: HttpClient) {}
 
     loadIngredients(): void {
         // to be modified later when the endpoint is ready
         setTimeout(() => {
             // everybody who's subscribed to the list will be notified
             this.ingredientsSubject.next(this.fakeIngredients.slice());
-        },1000);
+        }, 1000);
+    }
+
+    loadRecipe(selection: Ingredient[]): void {
+        const params = {ingredients: selection.map((e) => e.baseIngredient.name)};
+        this.http.post<Recipe>('/api/recipe', params).subscribe({
+            next: (sentRecipe: Recipe) => {
+              this.recipe = sentRecipe;
+              this.recipeSubject.next(sentRecipe);
+            },
+            error: (e) => console.log(e)
+        });
     }
 }

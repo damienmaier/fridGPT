@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
-import { LoadingComponent } from './components/loading/loading.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 const routes: Routes = [
     { path: '', component: SearchComponent },
-    { path: 'loading', component: LoadingComponent },
+    { path: 'recipe', component: RecipeComponent },
     { path: '**', redirectTo: '' }
   ];
 

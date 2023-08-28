@@ -8,13 +8,15 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { RecipesService } from './services/recipes.service';
 import { LoadingComponent } from './components/loading/loading.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     SearchComponent,
-    LoadingComponent
+    LoadingComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+#header {
+  text-align: center;
+  border-bottom: 4px solid #00425a;
+}
+
+#main {
+  margin-top: 50px;
+}
+
+#recipe {
+  background-color: #24486d;
+  width: 20vw;
+  min-height: 100px;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  border-top: 4px solid #00425a;
+}
