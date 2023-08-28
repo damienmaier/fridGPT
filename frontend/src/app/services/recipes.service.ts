@@ -1,3 +1,4 @@
+import { Subject } from "rxjs";
 import { BaseIngredient } from "../models/ingredient";
 
 export class RecipesService {
@@ -28,7 +29,13 @@ export class RecipesService {
         { "name": "Épices", "unit": "grammes" }
     ]
 
-    getIngredients(): BaseIngredient[] {
-        return this.fakeIngredients; // to be modified later when the endpoint is ready
+    ingredientsSubject: Subject<BaseIngredient[]> = new Subject<BaseIngredient[]>();
+
+    loadIngredients(): void {
+        // to be modified later when the endpoint is ready
+        setTimeout(() => {
+            // everybody who's subscribed to the list will be notified
+            this.ingredientsSubject.next(this.fakeIngredients.slice());
+        },1000);
     }
 }
