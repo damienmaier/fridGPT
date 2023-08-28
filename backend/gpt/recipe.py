@@ -3,7 +3,7 @@ import json
 from gpt.task import GptAssistedTask
 
 
-def recipe_prompt_builder(ingredients: [str]):
+def prompt_builder(ingredients: [str]):
     # todo: modifier le prompt pour que GPT génère une recette à partir des ingrédients
     return [
         {
@@ -23,5 +23,5 @@ def recipe_prompt_builder(ingredients: [str]):
     ]
 
 
-def recipe_post_processor(gpt_response: str):
+def post_processor(gpt_response: str):
     return json.loads(gpt_response)
