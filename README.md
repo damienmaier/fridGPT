@@ -11,6 +11,12 @@ To run this project, you need to have the following installed on your system:
 - python 3.10 and pip
 - Google Chrome (for Angular tests)
 
+### OpenAI API key
+
+You will also need an OpenAI API key.
+
+API keys linked to a free OpenAI account have strong rate restrictions. Thus, you will need to provide an API key associated to a paied account for the application to work correctly.
+
 ### Run the project
 
 #### Backend
@@ -26,6 +32,13 @@ Optionally, create a virtual environment. Then install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+Create a local copy of `.venv_template` named `.venv`
+```bash
+cp .venv_template .venv
+```
+
+**Edit `.venv` to set your OpenAI API key**
 
 Run the backend server:
 
