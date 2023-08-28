@@ -17,6 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     # build angular frontend and move the result to gae/static
     - uses: actions/setup-node@v3
       with:
@@ -34,6 +35,9 @@ jobs:
 
     # move the python backend to gae
     - run: mv backend/* gae
+
+    # put the OpenAI API key inside the GAE configuration file
+    - run: sed -i 's/<OPENAI_API_KEY>/${{ secrets.OPENAI_API_KEY }}/g' gae/app.yaml
 
     # deploy the content of the gae dir to google app engine
     - uses: 'google-github-actions/auth@v1'
