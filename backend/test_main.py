@@ -9,7 +9,6 @@ class ApiEndpointTest(unittest.TestCase):
         self.client = self.app.test_client()
 
 
-@unittest.skip("Not implemented yet")
 class RecipeEndpointTest(ApiEndpointTest):
     JSON_RECIPE_REQUEST = {
         "ingredients": [

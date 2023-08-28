@@ -1,8 +1,7 @@
-import dotenv
 import flask
 from flask import Flask
 
-dotenv.load_dotenv()
+import gpt
 
 
 def create_app():
@@ -17,10 +16,7 @@ def create_app():
         ingredients = flask.request.json['ingredients']
         if not ingredients:
             flask.abort(400)
-        return {
-            'dishDescription': 'This is a dish description',
-            'instructions': 'This is some instruction',
-        }
+        return gpt.find_recipe(ingredients)
 
     return app
 
