@@ -10,3 +10,6 @@ def create_app():
         return flask.jsonify({'greetings': 'Hello from backend !'})
 
     return app
+
+
+app = create_app()
