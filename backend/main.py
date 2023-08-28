@@ -9,4 +9,11 @@ def create_app():
     def hello_world():
         return flask.jsonify({'greetings': 'Hello from backend !'})
 
+    @app.post('/api/recipe')
+    def recipe_endpoint():
+        return {'recipe': 'This is a recipe'}
+
     return app
+
+
+app = create_app()
