@@ -4,6 +4,7 @@ from gpt.task import GptAssistedTask
 
 
 def recipe_prompt_builder(ingredients: [str]):
+    # todo: modifier le prompt pour que GPT génère une recette à partir des ingrédients
     return [
         {
             'role': 'system',
