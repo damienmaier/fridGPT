@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DemoPageComponent } from './demo-page/demo-page.component';
+import { SearchComponent } from './components/search/search.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 const routes: Routes = [
-    { path: '', component: DemoPageComponent },
+    { path: '', component: SearchComponent },
+    { path: 'recipe', component: RecipeComponent },
     { path: '**', redirectTo: '' }
   ];
 
