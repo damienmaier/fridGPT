@@ -11,7 +11,13 @@ def create_app():
 
     @app.post('/api/recipe')
     def recipe_endpoint():
-        return {'recipe': 'This is a recipe'}
+        ingredients = flask.request.json['ingredients']
+        if not ingredients:
+            flask.abort(400)
+        return {
+            'dishDescription': 'This is a dish description',
+            'instructions': 'This is some instruction',
+        }
 
     return app
 
