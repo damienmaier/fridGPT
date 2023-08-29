@@ -15,9 +15,11 @@ To run this project, you need to have the following installed on your system:
 
 You will also need an OpenAI API key.
 
-API keys linked to a free OpenAI account have strong rate restrictions. Thus, you will need to provide an API key associated to a paied account for the application to work correctly.
+API keys linked to a free OpenAI account have strong rate restrictions. Thus, you will need to provide an API key associated to a paid account for the application to work correctly.
 
 ### Run the project
+
+You will need to run both the backend and the frontend, each in a separate terminal.
 
 #### Backend
 
@@ -27,7 +29,9 @@ In a terminal, cd to the `backend` folder:
 cd fridGPT/backend
 ```
 
-Optionally, create a virtual environment. Then install the dependencies:
+Optionally, create a Python virtual environment.
+
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -87,3 +91,4 @@ Run the frontend tests :
 ```bash
 npm test
 ```
+
