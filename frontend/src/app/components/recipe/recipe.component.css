@@ -4,7 +4,7 @@
 }
 
 #header p {
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 
 #col-description {
@@ -20,7 +20,7 @@
   height: 100%;
 }
 
-#dish-img {
+#img-div {
   overflow: hidden;
   min-width: 100%;
   min-height: 70%;
