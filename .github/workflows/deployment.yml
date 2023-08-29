@@ -42,7 +42,7 @@ jobs:
         path: frontend_build
     - run: mkdir -p gae_deployment/static
     - run: mv frontend_build/* gae_deployment/static
-    - run: mv landing_page/* gae_deploymentgae/static
+    - run: mv landing_page/* gae_deployment/static
     - run: mv backend/* gae_deployment
     - run: mv gae/* gae_deployment
     - uses: actions/upload-artifact@v3
