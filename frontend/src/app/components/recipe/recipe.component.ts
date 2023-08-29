@@ -15,7 +15,7 @@ export class RecipeComponent {
 
   ngOnInit() {
     if (!this.recipeService.recipeIsLoading()) {
-      this.router.navigate(['']);
+      this.router.navigate(['app']);
     } else {
       this.loading = true;
       this.recipeService.recipeSubject.subscribe((sentRecipe: Recipe) => {
