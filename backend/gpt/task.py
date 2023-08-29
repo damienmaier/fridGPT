@@ -12,7 +12,13 @@ class GptAssistedTask(abc.ABC):
         gpt_response = openai.ChatCompletion.create(
             model=self.model,
             messages=prompt_messages,
+            temperature = 1,
+            max_tokens=1000,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
         )
+        #print(self.post_process_gpt_response(gpt_response["choices"][0]["message"]["content"]))
         return self.post_process_gpt_response(gpt_response["choices"][0]["message"]["content"])
 
     @abc.abstractmethod
