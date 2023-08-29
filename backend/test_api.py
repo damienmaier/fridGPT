@@ -44,7 +44,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertIsInstance(response.json['instructions'], str)
 
 
-@unittest.skip("not implemented yet")
+# @unittest.skip("not implemented yet")
 class ImageEndpointTest(ApiEndpointTest):
     JSON_IMAGE_REQUEST = {
         "dishDescription": "lasagnes aux légumes"
