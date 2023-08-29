@@ -23,12 +23,12 @@ class RecipeEndpointTest(ApiEndpointTest):
         ]
     }
 
-    JSON_NO_INGREDIENTS_REQUEST = {
+    JSON_RECIPE_REQUEST_EMPTY = {
         "ingredients": []
     }
 
     def test_should_return_400_for_empty_ingredients_list(self):
-        response = self.client.post('/api/recipe', json=self.JSON_NO_INGREDIENTS_REQUEST)
+        response = self.client.post('/api/recipe', json=self.JSON_RECIPE_REQUEST_EMPTY)
         self.assertEqual(response.status_code, 400)
 
     def test_should_return_200_for_correct_request(self):
@@ -44,7 +44,6 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertIsInstance(response.json['instructions'], str)
 
 
-@unittest.skip("not implemented yet")
 class ImageEndpointTest(ApiEndpointTest):
     JSON_IMAGE_REQUEST = {
         "dishDescription": "lasagnes aux légumes"
