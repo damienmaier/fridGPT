@@ -1,4 +1,4 @@
-name: CD-deployment
+name: Continuous Deployment
 
 on:  
   push:
@@ -7,18 +7,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-to-gae:
+  build_angular_frontend:
 
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-
     steps:
     - uses: actions/checkout@v3
-
-    # build angular frontend and move the result to gae/static
     - uses: actions/setup-node@v3
       with:
         node-version: 20.x
@@ -28,23 +22,56 @@ jobs:
       working-directory: ./frontend
     - run: npm run build
       working-directory: ./frontend
-    - run: mv ./frontend/dist/my-app gae/static
+    - uses: actions/upload-artifact@v3
+      with:
+        name: frontend_build
+        path: ./frontend/dist/my-app  
 
-    # move the landing page to gae/static
-    - run: mv landing_page/* gae/static 
+  gather_frontend_backend_landing_page:
 
-    # move the python backend to gae
-    - run: mv backend/* gae
+    needs:
+    - build_angular_frontend
+    
+    runs-on: ubuntu-latest
 
-    # put the OpenAI API key inside the GAE configuration file
-    - run: sed -i 's/<OPENAI_API_KEY>/${{ secrets.OPENAI_API_KEY }}/g' gae/app.yaml
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@v3
+      with:
+        name: frontend_build
+        path: frontend_build
+    - run: mkdir -p gae_deployment/static
+    - run: mv frontend_build/* gae_deployment/static
+    - run: mv landing_page/* gae_deployment/static
+    - run: mv backend/* gae_deployment
+    - run: mv gae/* gae_deployment
+    - uses: actions/upload-artifact@v3
+      with:
+        name: gae_deployment
+        path: gae_deployment
 
-    # deploy the content of the gae dir to google app engine
+  deploy_to_gae:
+
+    needs:
+      - gather_frontend_backend_landing_page
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: gae_deployment
+        path: gae_deployment
+    - run: sed -i 's/<OPENAI_API_KEY>/${{ secrets.OPENAI_API_KEY }}/g' gae_deployment/app.yaml
     - uses: 'google-github-actions/auth@v1'
       with:
         workload_identity_provider: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
         service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
     - uses: 'google-github-actions/deploy-appengine@v1'
       with:
-        working_directory: gae
+        working_directory: gae_deployment
         version: the-only-one
