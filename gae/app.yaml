@@ -6,17 +6,21 @@ handlers:
   # backend
   - url: /api/.*
     script: auto
+    secure: always
   # landing page
   - url: /
     static_files: static/lp.html
     upload: static/lp.html
+    secure: always
   # frontend
   - url: /app.*
     static_files: static/index.html
     upload: static/index.html
+    secure: always
   # static files for frontend and landing page
   - url: /
     static_dir: static
+    secure: always
 
 automatic_scaling:
     max_instances: 1

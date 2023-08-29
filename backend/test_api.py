@@ -2,6 +2,8 @@ import unittest
 
 import requests
 
+import json
+
 import main
 
 
@@ -67,3 +69,15 @@ class ImageEndpointTest(ApiEndpointTest):
         response = self.client.post('/api/image', json=self.JSON_IMAGE_REQUEST)
         image_url = response.json['url']
         self.assertTrue(requests.head(image_url).headers['content-type'].startswith('image/'))
+
+
+class IngredientsEndpointTest(ApiEndpointTest):
+    def test_should_return_200(self):
+        response = self.client.get('/api/ingredients')
+        self.assertEqual(response.status_code, 200)
+    
+    def test_should_return_correct_json_file(self):
+        with open('./data/ingredients_fr.json', 'r', encoding='utf-8') as file:
+            ingredients = json.load(file)
+        response = self.client.get('/api/ingredients')
+        self.assertEqual(response.json, ingredients)
