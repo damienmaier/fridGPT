@@ -4,18 +4,18 @@
 
 <ng-container *ngIf="!loading">
     <div id="header">
-        <p class="fs-4 white">A vous de jouer !</p>
+        <p class="fs-4 white absolute-center">A vous de jouer !</p>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col col-lg-4 col-description">
-                <div class="dish-img">
-                    <img [src]="recipe.imageURL"/>
+            <div class="col col-lg-4 dark-bg" id="col-description">
+                <div id="dish-img">
+                    <img [src]="recipe.image.url"/>
                 </div>
-                <p class="fs-5 white margin-right dish-title">{{ recipe.dishDescription }}</p>
+                <p class="fs-5 white margin-right" id="dish-title">{{ recipe.dishDescription }}</p>
             </div>
             <div class="col">
-                <div class="recipe-instructions">
+                <div id="recipe-instructions" class="dark-bg absolute-center">
                     <p class="white">{{ recipe.instructions }}</p>
                 </div>
             </div>
