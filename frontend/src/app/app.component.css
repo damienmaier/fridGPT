@@ -6,10 +6,23 @@
 }
 
 #footer{
-    position: fixed;
+    position: absolute;
     bottom:0;
     background-color: #202027;
     padding:5px;
+    height:40px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    font-size: .8em;
+}
+
+
+#app-content {
+    position: absolute;
+    top: 80px;
+    bottom: 40px;
+    width: 100%;
 }
 
 p {
