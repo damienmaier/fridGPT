@@ -20,6 +20,7 @@ describe('RecipeComponent', () => {
   beforeEach(() => {
     fixture    = TestBed.createComponent(RecipeComponent);
     component  = fixture.componentInstance;
+    component.recipe = {dishDescription: '', instructions: '', imageURL: ''};
     fixture.detectChanges();
   });
 
