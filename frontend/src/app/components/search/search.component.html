@@ -41,7 +41,7 @@
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
           aria-valuemin="0" aria-valuemax="100"></div>
       </div>
-      <div id="search-list">
+      <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
         <ng-container *ngFor="let item of filteredIngredients">
           <option class="search-item light-blue-bg hand-cursor white" [value]="item" (click)="addIngredientToRecipe(item)">{{
             item.strIngredient }}</option>

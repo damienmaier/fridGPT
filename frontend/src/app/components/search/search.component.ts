@@ -68,4 +68,8 @@ export class SearchComponent {
   noData(): boolean {
     return this.baseIngredients.length <= 0;
   }
+
+  searchListHeight(): string {
+    return (window.screen.height / 2 - this.selectedIngredients.length * 34) +'px';
+  }
 }
