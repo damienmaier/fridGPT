@@ -33,12 +33,12 @@ Optionally, create a virtual environment. Then install the dependencies:
 pip install -r requirements.txt
 ```
 
-Create a local copy of `.venv_template` named `.venv`
+Create a local copy of `.env_template` named `.env`
 ```bash
-cp .venv_template .venv
+cp .env_template .env
 ```
 
-**Edit `.venv` to set your OpenAI API key**
+**Edit `.env` to set your OpenAI API key**
 
 Run the backend server:
 
