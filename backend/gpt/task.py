@@ -1,18 +1,24 @@
-from typing import Callable
+import abc
 
 import openai
 
 
-class GptAssistedTask:
-    def __init__(self, prompt_builder: Callable, post_processor: Callable, model: str = 'gpt-3.5-turbo'):
-        self.prompt_builder = prompt_builder
-        self.post_processor = post_processor
+class GptAssistedTask(abc.ABC):
+    def __init__(self, model: str = 'gpt-3.5-turbo'):
         self.model = model
 
     def __call__(self, *args, **kwargs):
-        prompt_messages = self.prompt_builder(*args, **kwargs)
+        prompt_messages = self.build_gpt_prompt(*args, **kwargs)
         gpt_response = openai.ChatCompletion.create(
             model=self.model,
             messages=prompt_messages,
         )
-        return self.post_processor(gpt_response["choices"][0]["message"]["content"])
+        return self.post_process_gpt_response(gpt_response["choices"][0]["message"]["content"])
+
+    @abc.abstractmethod
+    def build_gpt_prompt(self, *args, **kwargs):
+        pass
+
+    @abc.abstractmethod
+    def post_process_gpt_response(self, gpt_response_content: str):
+        pass
