@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
 
@@ -8,19 +9,19 @@ import { RecipesService } from 'src/app/services/recipes.service';
   styleUrls: ['./recipe.component.css'],
 })
 export class RecipeComponent {
-  constructor(private recipeService: RecipesService) {}
+  constructor(private recipeService: RecipesService, private router: Router) {}
   recipe!: Recipe;
   loading: boolean = false;
 
   ngOnInit() {
-    this.loading = true;
-    this.recipeService.recipeSubject.subscribe((sentRecipe: Recipe) => {
-      
-      setTimeout(() => {
-        // TODO: DELETE THIS TIMEOUT, it's just for testing because it goes too fast for now :v (#suffering from success)
+    if (!this.recipeService.recipeIsLoading()) {
+      this.router.navigate(['']);
+    } else {
+      this.loading = true;
+      this.recipeService.recipeSubject.subscribe((sentRecipe: Recipe) => {
         this.recipe = sentRecipe;
         this.loading = false;
-      }, 2000);
-    });
+      });
+    }
   }
 }

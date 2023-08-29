@@ -2,14 +2,23 @@
     <app-loading></app-loading>
 </ng-container>
 
-<div *ngIf="!loading">
+<ng-container *ngIf="!loading">
     <div id="header">
         <p class="fs-4 white">A vous de jouer !</p>
     </div>
-    <div id="main">
-        <div id="recipe">
-            <p class="fs-6 white">{{ recipe.dishDescription }}</p>
-            <p class="white">{{ recipe.instructions }}</p>    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-lg-4 col-description">
+                <div class="dish-img">
+                    <img [src]="recipe.imageURL"/>
+                </div>
+                <p class="fs-5 white margin-right dish-title">{{ recipe.dishDescription }}</p>
+            </div>
+            <div class="col">
+                <div class="recipe-instructions">
+                    <p class="white">{{ recipe.instructions }}</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</ng-container>

@@ -3,16 +3,46 @@
   border-bottom: 4px solid #00425a;
 }
 
-#main {
-  margin-top: 50px;
+.row {
+  height:76vh;
 }
 
-#recipe {
-  background-color: #24486d;
-  width: 20vw;
-  min-height: 100px;
-  padding: 10px;
-  margin: auto;
+.dish-title {
+  position: relative;
+  top:5%;
+}
+
+.col-description {
+  border-right: 4px solid #00425a;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #24486D;
+  padding:0;
+  overflow:hidden;
+}
+
+.dish-img {
+  height: 60vh;
+  width: 100%;
+}
+
+.col {
+  position: relative;
+}
+
+.recipe-instructions {
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  top:5vh;
+  margin-left: auto; 
+  margin-right: auto; 
   text-align: center;
+  width: 50vw;
+  height:60vh;
+  background-color: #24486D;
   border-top: 4px solid #00425a;
+  padding:10px;
 }

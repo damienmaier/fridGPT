@@ -6,6 +6,7 @@ import { Recipe } from "../models/recipe";
 
 @Injectable()
 export class RecipesService {
+    private currentlyLoadingRecipe: boolean = false;
     // to remove later when the endpoint is ready
     private fakeIngredients: BaseIngredient[] = [ 
         { "name": "Farine" },
@@ -46,20 +47,27 @@ export class RecipesService {
 
     loadIngredients(): void {
         // to be modified later when the endpoint is ready
-        setTimeout(() => {
-            // everybody who's subscribed to the list will be notified
-            this.ingredientsSubject.next(this.fakeIngredients.slice());
-        }, 1000);
+        this.ingredientsSubject.next(this.fakeIngredients.slice());
     }
 
     loadRecipe(selection: Ingredient[]): void {
+        this.currentlyLoadingRecipe = true;
         const params = {ingredients: selection.map((e) => e.baseIngredient.name)};
         this.http.post<Recipe>('/api/recipe', params).subscribe({
             next: (sentRecipe: Recipe) => {
               this.recipe = sentRecipe;
-              this.recipeSubject.next(sentRecipe);
+              this.currentlyLoadingRecipe = false;
+              this.recipeSubject.next(this.recipe);
             },
-            error: (e) => console.log(e)
+            error: (e) => {
+                this.currentlyLoadingRecipe = false;
+                this.recipe = {dishDescription: 'no data loaded', instructions: '', imageURL: ''};
+                this.recipeSubject.next(this.recipe);
+            }
         });
+    }
+
+    recipeIsLoading(): boolean {
+        return this.currentlyLoadingRecipe;
     }
 }
