@@ -4,9 +4,9 @@ import { SearchComponent } from './components/search/search.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 
 const routes: Routes = [
-    { path: '', component: SearchComponent },
-    { path: 'recipe', component: RecipeComponent },
-    { path: '**', redirectTo: '' }
+    { path: 'app', component: SearchComponent },
+    { path: 'app/recipe', component: RecipeComponent },
+    { path: '**', redirectTo: 'app' }
   ];
 
 @NgModule({

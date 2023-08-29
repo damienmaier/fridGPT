@@ -1,18 +1,58 @@
 #header {
-  text-align: center;
   border-bottom: 4px solid #00425a;
+  position:relative;
 }
 
-#main {
-  margin-top: 50px;
+#header p {
+  margin-bottom: 0;
 }
 
-#recipe {
-  background-color: #24486d;
-  width: 20vw;
-  min-height: 100px;
-  padding: 10px;
-  margin: auto;
-  text-align: center;
+.row {
+  height:84vh;
+}
+
+#col-description {
+  border-right: 4px solid #00425a;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding:0;
+}
+
+#dish-img {
+  height: 70vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+#dish-title {
+  position: relative;
+  top:5%;
+}
+
+.col {
+  position: relative;
+}
+
+#recipe-instructions {
+  top:5vh;
+  width: 50vw;
+  height:60vh;
   border-top: 4px solid #00425a;
+  padding:10px;
+}
+
+.dark-bg {
+  background-color: #24486D;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 0px; 
+  right: 0px;
+  bottom:0;
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
 }
