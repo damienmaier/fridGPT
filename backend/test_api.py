@@ -44,6 +44,8 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertIsInstance(response.json['instructions'], str)
 
 
+@unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically."
+               "To run the image endpoint tests, comment this decorator.")
 class ImageEndpointTest(ApiEndpointTest):
     JSON_IMAGE_REQUEST = {
         "dishDescription": "lasagnes aux légumes"
