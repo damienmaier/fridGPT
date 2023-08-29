@@ -49,11 +49,17 @@ export class SearchComponent {
             .toLowerCase()
             .startsWith(this.currentSearch.toLowerCase())
       );
+      // a bit meh... :v TODO: see if we can do better
+      this.filteredIngredients.map((element) => {
+        element.selected = this.selectedIngredients.includes(element);
+        return element;
+      });
       this.filteredIngredients.sort((e1: Ingredient, e2: Ingredient) => e1.strIngredient < e2.strIngredient ? -1 : 1);
     }
   }
 
   addIngredientToRecipe(baseIngredient: Ingredient): void {
+    baseIngredient.selected = true;
     this.selectedIngredients.push(baseIngredient);
     this.currentSearch        = '';
     this.filteredIngredients  = [];
@@ -70,6 +76,6 @@ export class SearchComponent {
   }
 
   searchListHeight(): string {
-    return (window.screen.height / 2 - this.selectedIngredients.length * 34) +'px';
+    return (window.screen.height * 0.4 - this.selectedIngredients.length * 34) +'px';
   }
 }

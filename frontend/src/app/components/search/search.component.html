@@ -6,7 +6,7 @@
     <img src="/assets_app/bernardo.png" width="60" alt="" />
   </div>
 </div>
-<div class="container">
+<div class="container" #container>
   <div class="row">
     <div class="col-md-6 offset-md-3" #search>
       <div id="ingredients-header" class="light-blue-bg">
@@ -43,8 +43,10 @@
       </div>
       <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
         <ng-container *ngFor="let item of filteredIngredients">
-          <option class="search-item light-blue-bg hand-cursor white" [value]="item" (click)="addIngredientToRecipe(item)">{{
-            item.strIngredient }}</option>
+          <div class="search-item light-blue-bg hand-cursor white" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
+            <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
+            {{ item.strIngredient }}
+          </div>
         </ng-container>
       </div>
     </div>

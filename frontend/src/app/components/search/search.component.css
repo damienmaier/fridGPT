@@ -33,12 +33,24 @@ p {
     border-radius: 5px;
 }
 
+.button-item {
+   padding:0 5px 0 5px;
+   border-radius: 60px;
+   margin-right:5px;
+   margin-bottom: 2px;
+   border: 2px solid #1D5B79;
+}
+
+.search-item:hover > .button-item, .selected-item > .button-item {
+    background-color: #1D5B79
+}
+
 .progress-bar {
     width: 100%;
     background-color: #EF6262;
 }
 
-.progress{
+.progress {
     height:10px;
 }
 
