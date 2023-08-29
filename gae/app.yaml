@@ -3,16 +3,23 @@ runtime: python310
 default_expiration: 1s
 
 handlers:
+  # backend
   - url: /api/.*
     script: auto
+  # landing page
   - url: /
     static_files: static/lp.html
     upload: static/lp.html
-  - url: /app
+  # frontend
+  - url: /app.*
     static_files: static/index.html
     upload: static/index.html
+  # static files for frontend and landing page
   - url: /
     static_dir: static
 
 automatic_scaling:
     max_instances: 1
+
+env_variables:
+  OPENAI_API_KEY: <OPENAI_API_KEY>
