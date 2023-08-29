@@ -32,7 +32,7 @@ export class SearchComponent {
 
   startloadingRecipes(): void {
     this.recipesService.loadRecipe(this.selectedIngredients);
-    this.router.navigate(['recipe']);
+    this.router.navigate(['app/recipe']);
   }
 
   filter(): void {
