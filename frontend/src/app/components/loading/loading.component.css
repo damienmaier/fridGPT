@@ -6,22 +6,22 @@
     align-items: flex-start;
 }
 
-#gear1 {
+#left-gear {
     align-self:flex-end;
 }
 
-.rotation-fw, .rotation-bw {
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-}
-
-.rotation-fw {
+#rotation-fw {
     animation-name: spin-fw;
 }
 
-.rotation-bw {
+#rotation-bw {
     animation-name: spin-bw;
+}
+
+.rotation {
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
 }
   
 @keyframes spin-fw {

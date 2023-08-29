@@ -1,17 +1,21 @@
-#header {
+#main-header {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
 }
 
-#menu-header {
-    background-color: #468B97;
+#ingredients-header {
     height: 45px;
     padding: 5px;
+    border-radius: 5px;
 }
 
-#ingredientsHeader, #ingredientsForm, .form-search {
+#ingredients-header-icon {
+    margin:0px 10px 2px 10px;
+}
+
+#ingredients-header-title, #ingredients-row, .form-search {
     margin: 10px 0 0 0;
 }
 
@@ -24,12 +28,7 @@ p {
     margin-bottom: 0;
 }
 
-.header-icon {
-    margin:0px 10px 2px 10px;
-}
-
 .search-item {
-    background-color: #468B97;
     border-bottom: 1px solid black;
     padding:10px;
     border-radius: 5px;

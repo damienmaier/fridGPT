@@ -15,6 +15,18 @@ html, .main-bg {
     cursor: pointer;
 }
 
+.light-blue-bg {
+    background-color: #468B97;
+}
+
+.dark-blue-bg {
+    background-color: #1D5B79;
+}
+
+.light-red-bg {
+    background-color: #EF6262;
+}
+
 .debug {
     border: 1px solid red;
 }

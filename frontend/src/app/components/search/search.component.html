@@ -1,4 +1,4 @@
-<div id="header">
+<div id="main-header">
   <p class="fs-6 white margin-right">Pour commencer, donnons quelques indications aux coachs !</p>
   <div>
     <img src="/assets_app/germaine.png" width="60" alt="" />
@@ -9,19 +9,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3" #search>
-      <div id="menu-header" class="second-color">
-        <h4> <img class="header-icon" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+      <div id="ingredients-header" class="light-blue-bg">
+        <h4> <img id="ingredients-header-icon" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
       </div>
-      <div class="row" id="ingredientsHeader">
+      <div class="row" id="ingredients-header-title">
         <div class="col-md">
           <p class="fs-5 white">Nom</p>
         </div>
         <div class="col-sm-1"></div>
       </div>
-
       <div id="ingredients-content">
         <ng-container *ngFor="let item of selectedIngredients">
-          <div class="row justify-content-end" id="ingredientsForm">
+          <div class="row justify-content-end" id="ingredients-row">
             <div class="col-md">
               <p class="fs-6 white">{{ item.baseIngredient.name }}</p>
             </div>
@@ -44,7 +43,7 @@
       </div>
       <div id="search-list">
         <ng-container *ngFor="let item of filteredIngredients">
-          <option class="search-item hand-cursor white" [value]="item" (click)="addIngredientToRecipe(item)">{{
+          <option class="search-item light-blue-bg hand-cursor white" [value]="item" (click)="addIngredientToRecipe(item)">{{
             item.name }}</option>
         </ng-container>
       </div>
