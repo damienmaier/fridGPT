@@ -3,7 +3,6 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { DemoComponent } from './components/demo/demo.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { RecipesService } from './services/recipes.service';
@@ -13,7 +12,6 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
     SearchComponent,
     LoadingComponent,
     RecipeComponent
