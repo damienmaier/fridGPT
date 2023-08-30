@@ -192,7 +192,7 @@ class ImageEndpointTest(ApiEndpointTest):
                         'Should return an image url')
 
 
-@unittest.skip("Not implemented")
+# @unittest.skip("Not implemented")
 class IngredientsEndpointTest(ApiEndpointTest):
 
     def test_result(self):

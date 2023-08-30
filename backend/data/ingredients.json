@@ -1,0 +1,3448 @@
+{
+    "ingredients": [
+        {
+            "name": "Poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saumon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bœuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Porc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Avocat",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre de cidre de pomme",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Asperges",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Aubergine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Petites tomates prunes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bacon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Levure chimique",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre balsamique",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Basilic",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles de basilic",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Riz basmati",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuille de laurier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles de laurier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poitrine de bœuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Filet de boeuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce au bœuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bouillon de boeuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bicarbonate de soude",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Biryani Masala",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivre noir",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mélasse noire",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots Borlotti",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtes nœud papillon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes Bramley",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Brandy",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pain",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": " Fil d'Ariane ",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Brocoli",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lentilles brunes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Riz brun",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre brun",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Beurre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cacao",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cajun",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates en conserve",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots cannellini",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cardamome",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Carottes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noix de cajou",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noix de cajou",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre en poudre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivre de Cayenne",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Céleri-rave",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Céleri",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sel de céleri",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Échalotes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes de terre Charlotte",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage cheddar",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage en grains",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates cerises",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Champignon châtaignier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poitrine de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poitrines de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cuisses de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bouillon de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cuisses de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pois chiches",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre de chili",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Beurre réfrigéré",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Piment",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre de piment",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Brocoli chinois",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pépites de chocolat",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oignon haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Persil haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates hachées",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chorizo",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pudding de Noël",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Coriandre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cannelle",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bâton de cannelle",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Girofle",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre de Coco",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cacao",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème de noix de coco",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait de coco",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Colby Jack",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Eau froide",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait concentré",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Coriandre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles de coriandre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graines de coriandre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tortillas de maïs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fécule de maïs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème Fraiche",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Feta en cubes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Concombre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cumin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graines de cumin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre de curry",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre brun foncé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre brun mou foncé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce soja noire",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre Demerara",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates en dés",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Biscuits digestifs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Aneth",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Viande de Doner",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Double crème",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Origan séché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vin blanc sec",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Aubergines",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtés impériaux",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Blanc d'oeuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jaunes d'œufs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oeufs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce Enchilada",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Moutarde anglaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile d'olive extra vierge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Assaisonnement Fajita",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Farfalle",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bulbe de fenouil",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graines de fenouil",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fenugrec",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feta",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce de poisson",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Amandes effilées",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Œufs de lin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Farine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tortilla à la farine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes de terre farineuses",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Œuf fermier, battu",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Œufs fermiers, battus",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lentilles françaises",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Basilic frais",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Thym frais",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Persil fraîchement haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Frites",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Yaourt entier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Garam Masala",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ail",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gousse d'ail",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre d'ail",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce à l'ail",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ghee",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gingembre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cordial au gingembre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte d'ail et de gingembre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte de gingembre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sirop doré",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Gouda",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre granulé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates raisins",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Yaourt grec",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots verts",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Piment vert",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Olives vertes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lentilles vertes et rouges",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Salsa verte",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Amandes moulues",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cumin moulu",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gingembre moulu",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gruyère",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Coquilles à tacos dures",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Épice Harissa",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème épaisse",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chérie",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "raifort",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bouillon de bœuf chaud",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce piquante",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème glacée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saucisses italiennes au fenouil",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Assaisonnement italien",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jalapeno",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Riz au jasmin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Topinambours",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chou frisé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Khus Khus",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gambas",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sel casher",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Agneau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Côtelettes de longe d'agneau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Agneau haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles de lasagnes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bœuf haché maigre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poireau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Citron",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jus de citron",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Zeste de citron",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Citrons",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Laitue",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chaux",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Laitue Little Gem",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Macaronis",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Maquereau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte de Madras",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Marjolaine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte de curry Massaman",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Dates Medjool",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Nids de meringue",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ail haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Guimauves miniatures",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Menthe",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Monterey Jack",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Boules de mozzarella",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre muscovado",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Champignons",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Moutarde",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Moutarde en poudre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graines de moutarde",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noix de muscade",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile d'olive",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sel d'oignon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oignons",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Orange",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Zeste d'orange",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Origan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce aux huîtres",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Paprika",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jambon de Parme",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Parmesan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Parmesan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Parmigiano-reggiano",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Persil",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Beurre de cacahuète",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile d'arachide",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cacahuètes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pois",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pecorino",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Penne Rigate",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pignons de pin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Olives noires dénoyautées",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chocolat nature",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Farine nature",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates prunes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fécule de pomme de terre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes de terre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crevettes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte feuilletée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Confiture de framboises",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crevettes crues",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Flacons de piment rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Piment rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre de piment rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oignons rouges",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivron rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Flacons de piment rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vin rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots frits",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Nouilles de riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Nouilles en bâtonnets de riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vermicelles de riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rigatoni",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fusée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Flocons d'avoine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Safran",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sage",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saké",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Salsa",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sel",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Beurre salé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saucisses",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sel marin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Farine autolevante",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait demi-écrémé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graine de sésame",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Échalotes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage mexicain râpé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Monterey Jack râpé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Petites pommes de terre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Paprika fumé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Paprika fumé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème sure",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce soja",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait de soja",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Spaghetti",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Épinards",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oignons nouveaux",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Courge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Légumes sautés",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fraises",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sultanes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile de tournesol",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Boule de tamarin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte de tamarin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce de poisson thaïlandaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte de curry vert thaïlandais",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte de curry rouge thaïlandaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Thym",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ketchup aux tomates",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Purée de tomates",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Toor Dal",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Thon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Curcuma",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre de curcuma",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Navets",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vanille",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Extrait de vanille",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Veau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Beurre végétalien",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile végétale",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bouillon de légumes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cube de bouillon de légumes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigrette",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles de vigne",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Eau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pépites de chocolat blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poisson blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Filets de poisson blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vin blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait entier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Blé entier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pain complet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce Worcestershire",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Yaourt",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Courgettes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bretzels",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage à la crème",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre glace",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Popcorn au caramel",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Caramel",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce caramel",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tagliatelles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fettuccines",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème coagulée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Farine de maïs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Moules",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fidéo",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lotte",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtes vermicelles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bébé calamar",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Calmar",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bouillon de poisson",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sardins",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Olives noires",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oignon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomate",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Canard",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cuisses de canard",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cube de bouillon de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtes Pappardelle",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtes Paccheri",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtes Linguine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pois sucrés",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pain croustillant",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Frais",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Palourdes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Passata",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile de colza",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage Stilton",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cuisse d'agneau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Épaule d'agneau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Abricot",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Courge musquée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Couscous",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bœuf haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Dinde hachée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce barbecue",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Maïs doux",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graisse d'oie",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graisse de canard",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fenouil",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre de vin rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Romarin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots beurre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots Pinto",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce tomate",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mascarpone",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mozzarella",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ricotta",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Abricots secs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Câpres",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Banane",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Framboises",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bleuets",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noix",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noix de pécan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sirop d'érable",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre mou brun clair",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre mou brun foncé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pépites de chocolat noir",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chocolat au lait",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chocolat noir",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Citrouille",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte brisée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Biscuits aux cacahuètes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles de gélatine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cacahuète cassante",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pêches",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivre jaune",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivre vert",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Courgettes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates en conserve",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Châtaignes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Champignons sauvages",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile de truffe",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Paneer",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pain Naan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lentilles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Légumes rôtis",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots rouges",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Céréales mélangées",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tahini",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tortillas",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Nouilles Udon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chou",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Champignons shiitake",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mirin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile de graines de sésame",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Baguette",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates de vigne",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Suif",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Suédois",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jambon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huîtres",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Stout",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saindoux",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Roin d'agneau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rodin de boeuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "aiglefin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "aiglefin fumé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Choux de Bruxelles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Raisins secs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Groseilles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème anglaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Peau mixte",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Groseilles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mûres",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noisettes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes Braeburn",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Colorant alimentaire rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Colorant alimentaire rose",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Colorant alimentaire bleu",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Colorant alimentaire jaune",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Confiture d'abricots",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâte d'amande",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Amandes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Boudin noir",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fèves au lard",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Farine blanche",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Levure",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mélange de fruits",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fruits secs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cerise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cerise glacée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mélasse",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gruau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Avoine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oeuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tibia de bœuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bouquet Garni",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème unique",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gelée de vin rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fromage de chèvre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Prosciutto",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Beurre non salé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Brie",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Feuilles d'estragon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ciboulette",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poires",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chocolat blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Anis étoilé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crevettes tigrées",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poudre à crème anglaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Noix de coco desséchée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pois surgelés",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Porc haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Crème de maïs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tomates séchées au soleil",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Moutarde de Dijon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce Tabasco",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Huile de canola",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Morue",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Morue salée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ackee",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jerk",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bœuf haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Bébé Aubergine",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Paella Riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Scotch Bonnet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Queue de bœuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Fèves",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vivaneau rouge",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre de malt",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre de riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Châtaigne d'eau",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tofu",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Doubanjiang",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots noirs fermentés",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Échalotes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Poivre du Sichuan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Peau Wonton",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Amidon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vin de riz",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cuisiner le vin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sauce au canard",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Gochujang",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Germes de soja",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Nouilles",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Champignons à oreilles de bois",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rhum brun",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rhum léger",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rhum",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Muffins anglais",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Muffins",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Vinaigre de vin blanc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saumon fumé",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Barre Mars",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rice Krispies",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Piments ancho",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Lait d'amande",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Piment de la Jamaïque",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Extrait d'amande",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tripes",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Viande de chèvre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Haricots noirs",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Filet d'anchois",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ras el hanout",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pâtisserie filo",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Eau de fleur d'oranger",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "écorces confites",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Grand Marnier",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Xérès",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Eau de rose",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mélange d'épices",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Viande hachée",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Patates douces",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Petits pains",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Chignon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Petits pains aux pommes de terre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Porc haché",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Côtelettes de porc",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pommes de terre Yukon Gold",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Oignon jaune",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Concentré de bouillon de bœuf",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Concentré de bouillon de poulet",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Concombre persan",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mayonnaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sriracha",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Rhubarbe",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Pain pita",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Boulgour",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Quinoa",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "cornichons à l'aneth",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Petits pains à hamburger aux graines de sésame",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Petits pains",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Laitue iceberg",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Relish aux cornichons",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Tranches de fromage",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Raccourcissement",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Eau tiède",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Eau bouillante",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Jus de cornichon",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sucre en poudre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Kielbasa",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Saucisse polonaise",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Choucroute",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Graine de carvi",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Hareng",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Confiture",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Mulukhiyah",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Riz à sushi",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Figues",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Cidre",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Betterave",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sardines",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Ciabatta",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        },
+        {
+            "name": "Sarrasin",
+            "unit": "todo",
+            "defaultQuantity": 1.0,
+            "autoAdd": false
+        }
+    ]
+}
