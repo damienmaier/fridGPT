@@ -144,29 +144,33 @@ class RecipeEndpointTest(ApiEndpointTest):
 
         self.assertEqual(response.status_code, 200, 'Should return 200')
 
-        self.assertIsInstance(response.json['dishName'], str, 'Should return a dish name')
-        self.assertTrue(3 <= len(response.json['dishName']) <= 50, 'Should return a dish name of correct length')
+        self.assertIsInstance(response.json['recipes'], list, 'Should return recipes list')
+        self.assertTrue(1 <= len(response.json['recipes']) <= 10, 'Should return recipes list of correct length')
 
-        self.assertIsInstance(response.json['dishDescription'], str, 'Should return a dish description')
-        self.assertTrue(3 <= len(response.json['dishDescription']) <= 100,
-                        'Should return a dish description of correct length')
+        for recipe in response.json['recipes']:
+            self.assertIsInstance(recipe['dishName'], str, 'Should return a dish name')
+            self.assertTrue(3 <= len(recipe['dishName']) <= 50, 'Should return a dish name of correct length')
 
-        self.assertIsInstance(response.json['ingredients'], str, 'Should return ingredients list')
-        self.assertTrue(3 <= len(response.json['ingredients']) <= 500,
-                        'Should return ingredients list of correct length')
+            self.assertIsInstance(recipe['dishDescription'], str, 'Should return a dish description')
+            self.assertTrue(3 <= len(recipe['dishDescription']) <= 100,
+                            'Should return a dish description of correct length')
 
-        self.assertIsInstance(response.json['steps'], list, 'Should return steps list')
-        self.assertTrue(1 <= len(response.json['steps']) <= 20, 'Should return steps list of correct length')
-        for step in response.json['steps']:
-            self.assertIsInstance(step, str, 'Should return steps content')
-            self.assertTrue(3 <= len(step) <= 500, 'Steps should have correct length')
+            self.assertIsInstance(recipe['ingredients'], str, 'Should return ingredients list')
+            self.assertTrue(3 <= len(recipe['ingredients']) <= 500,
+                            'Should return ingredients list of correct length')
 
-        self.assertIsInstance(response.json['coach']['name'], str, 'Should return a coach name')
-        self.assertTrue(3 <= len(response.json['coach']['name']) <= 50, 'Should return a coach name of correct length')
+            self.assertIsInstance(recipe['steps'], list, 'Should return steps list')
+            self.assertTrue(1 <= len(recipe['steps']) <= 20, 'Should return steps list of correct length')
+            for step in recipe['steps']:
+                self.assertIsInstance(step, str, 'Should return steps content')
+                self.assertTrue(3 <= len(step) <= 500, 'Steps should have correct length')
 
-        self.assertIsInstance(response.json['coach']['description'], str, 'Should return a coach description')
-        self.assertTrue(3 <= len(response.json['coach']['description']) <= 500,
-                        'Should return a coach description of correct length')
+            self.assertIsInstance(recipe['coach']['name'], str, 'Should return a coach name')
+            self.assertTrue(3 <= len(recipe['coach']['name']) <= 50, 'Should return a coach name of correct length')
+
+            self.assertIsInstance(recipe['coach']['description'], str, 'Should return a coach description')
+            self.assertTrue(3 <= len(recipe['coach']['description']) <= 500,
+                            'Should return a coach description of correct length')
 
 
 @unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically.")
