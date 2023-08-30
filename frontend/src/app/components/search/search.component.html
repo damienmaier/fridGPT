@@ -6,49 +6,59 @@
     <img src="/assets_app/bernardo.png" width="60" alt="" />
   </div>
 </div>
-<div class="container" #container>
-  <div class="row">
-    <div class="col-md-6 offset-md-3" #search>
-      <div id="ingredients-header" class="light-blue-bg">
-        <h4> <img id="ingredients-header-icon" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+<div class="row justify-content-md-center margin-both-sides">
+  <!-- ingredients picking menu -->
+  <div class="col">
+    <div class="light-blue-bg content-header">
+      <h4> <img class="margin-both-sides" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+    </div>
+    <div class="row margin-top" id="ingredients-header-title">
+      <div class="col">
+        <p class="fs-5 white">Nom</p>
       </div>
-      <div class="row" id="ingredients-header-title">
-        <div class="col-md">
-          <p class="fs-5 white">Nom</p>
+      <div class="col-sm-1"></div>
+    </div>
+    <div id="ingredients-content">
+      <ng-container *ngFor="let item of selectedIngredients">
+        <div class="row justify-content-end margin-top">
+          <div class="col-md">
+            <p class="fs-6 white">{{ item.strIngredient }}</p>
+          </div>
+          <div class="col-sm-1 trash">
+            <i class="bi bi-trash-fill white hand-cursor" (click)="removeIngredientFromList(item.idIngredient)"></i>
+          </div>
         </div>
-        <div class="col-sm-1"></div>
-      </div>
-      <div id="ingredients-content">
-        <ng-container *ngFor="let item of selectedIngredients">
-          <div class="row justify-content-end" id="ingredients-row">
-            <div class="col-md">
-              <p class="fs-6 white">{{ item.strIngredient }}</p>
-            </div>
-            <div class="col-sm-1 trash">
-              <i class="bi bi-trash-fill white hand-cursor" (click)="removeIngredientFromList(item.idIngredient)"></i>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-      <div class="form form-search">
-        <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" name="search"
-          autocomplete="off" required />
-        <label for="search" class="input-label">
-          <span class="input-label-content"><i class="bi bi-search"></i> Rechercher</span>
-        </label>
-      </div>
-      <div class="progress" *ngIf="noData()">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
-          aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-      <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
-        <ng-container *ngFor="let item of filteredIngredients">
-          <div class="search-item light-blue-bg hand-cursor white" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
-            <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
-            {{ item.strIngredient }}
-          </div>
-        </ng-container>
-      </div>
+      </ng-container>
+    </div>
+    <div class="form form-search margin-top">
+      <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" name="search"
+        autocomplete="off" required />
+      <label for="search" class="input-label">
+        <span class="input-label-content"><i class="bi bi-search"></i> Rechercher</span>
+      </label>
+    </div>
+    <div class="progress" *ngIf="noData()">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+        aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <!-- ingredients list -->
+    <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
+      <ng-container *ngFor="let item of filteredIngredients">
+        <div class="search-item light-blue-bg hand-cursor white" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
+          <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
+          {{ item.strIngredient }}
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- parameters menu -->
+  <div class="col">
+    <div class="light-blue-bg content-header">
+      <h4> <img class="margin-both-sides" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+    </div>
+    <div class="margin-top custom-checkbox">
+      <input type="checkbox" class="form-check-input" id="imageCheck" [(ngModel)]="generateImages">
+      <label class="form-check-label margin-both-sides white" for="imageCheck">Générer une illustration pour chaque recette</label>
     </div>
   </div>
 </div>
