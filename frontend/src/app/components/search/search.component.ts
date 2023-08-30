@@ -73,7 +73,7 @@ export class SearchComponent {
     if(ingredient.selected) { 
       return; // no duplicates
     }
-    this.selectedIngredients.push(new IngredientForRecipe(ingredient.name, "kg", ingredient.defaultQuantity));
+    this.selectedIngredients.push(new IngredientForRecipe(ingredient.name, ingredient.unit, ingredient.defaultQuantity));
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
