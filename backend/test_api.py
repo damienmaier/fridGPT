@@ -14,70 +14,62 @@ class ApiEndpointTest(unittest.TestCase):
 
 
 class RecipeEndpointTest(ApiEndpointTest):
-    JSON_RECIPE_REQUEST = {
-        "ingredients": [
-            "carottes",
-            "pommes de terre",
-            "poireaux",
-            "oignons",
-            "beurre",
-            "lardons"
-        ]
-    }
 
-    JSON_RECIPE_REQUEST_EMPTY = {
-        "ingredients": []
-    }
+    def test_empty_ingredients_list(self):
+        json_request = {
+            "ingredients": []
+        }
+        response = self.client.post('/api/recipe', json=json_request)
+        self.assertEqual(response.status_code, 400, 'Should return 400')
 
-    def test_should_return_400_for_empty_ingredients_list(self):
-        response = self.client.post('/api/recipe', json=self.JSON_RECIPE_REQUEST_EMPTY)
-        self.assertEqual(response.status_code, 400)
-
-    def test_should_return_200_for_correct_request(self):
-        response = self.client.post('/api/recipe', json=self.JSON_RECIPE_REQUEST)
-        self.assertEqual(response.status_code, 200)
-
-    def test_should_return_dish_description(self):
-        response = self.client.post('/api/recipe', json=self.JSON_RECIPE_REQUEST)
-        self.assertIsInstance(response.json['dishDescription'], str)
-
-    def test_should_return_instructions(self):
-        response = self.client.post('/api/recipe', json=self.JSON_RECIPE_REQUEST)
-        self.assertIsInstance(response.json['instructions'], str)
+    def test_correct_request(self):
+        json_request = {
+            "ingredients": [
+                "carottes",
+                "pommes de terre",
+                "poireaux",
+                "oignons",
+                "beurre",
+                "lardons"
+            ]
+        }
+        response = self.client.post('/api/recipe', json=json_request)
+        self.assertEqual(response.status_code, 200, 'Should return 200')
+        self.assertIsInstance(response.json['dishDescription'], str, 'Should return dish description')
+        self.assertIsInstance(response.json['instructions'], str, 'Should return instructions')
 
 
-@unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically."
-               "To run the image endpoint tests, comment this decorator.")
+@unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically.")
 class ImageEndpointTest(ApiEndpointTest):
-    JSON_IMAGE_REQUEST = {
-        "dishDescription": "lasagnes aux légumes"
-    }
 
-    JSON_IMAGE_REQUEST_EMPTY = {
-        "dishDescription": ""
-    }
+    def test_empty_image_request(self):
+        json_request = {
+            "dishDescription": ""
+        }
+        response = self.client.post('/api/image', json=json_request)
+        self.assertEqual(response.status_code, 400, 'Should return 400')
 
-    def test_should_return_400_for_empty_dish_description(self):
-        response = self.client.post('/api/image', json=self.JSON_IMAGE_REQUEST_EMPTY)
-        self.assertEqual(response.status_code, 400)
+    def test_correct_request(self):
+        json_request = {
+            "dishDescription": "lasagnes aux légumes"
+        }
+        response = self.client.post('/api/image', json=json_request)
 
-    def test_should_return_200_for_correct_request(self):
-        response = self.client.post('/api/image', json=self.JSON_IMAGE_REQUEST)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200, 'Should return 200')
 
-    def test_should_return_valid_image_url(self):
-        response = self.client.post('/api/image', json=self.JSON_IMAGE_REQUEST)
         image_url = response.json['url']
-        self.assertTrue(requests.head(image_url).headers['content-type'].startswith('image/'))
+        self.assertTrue(requests.head(image_url).headers['content-type'].startswith('image/'),
+                        'Should return an image url')
 
 
 class IngredientsEndpointTest(ApiEndpointTest):
-    def test_should_return_200(self):
+
+    def test_a(self):
         response = self.client.get('/api/ingredients')
-        self.assertEqual(response.status_code, 200)
-    
-    def test_should_return_correct_json_file(self):
-        with open('./data/ingredients_fr.json', 'r', encoding='utf-8') as file:
+
+        self.assertEqual(response.status_code, 200, 'Should return 200')
+
+        with open(main.PROJECT_ROOT_PATH / 'data' / 'ingredients_fr.json', 'r', encoding='utf-8') as file:
             ingredients = json.load(file)
         response = self.client.get('/api/ingredients')
-        self.assertEqual(response.json, ingredients)
+        self.assertEqual(response.json, ingredients, 'Should return ingredients list')
