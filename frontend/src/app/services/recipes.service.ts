@@ -39,13 +39,18 @@ export class RecipesService {
         }
     }
 
-    loadRecipe(selection: Ingredient[]): void {
+    loadRecipe(selection: Ingredient[], generateImages: boolean): void {
         this.currentlyLoadingRecipe = true;
         this.recipe                 = {dishDescription: '', instructions: '', image: { url: ''}};
         const params = {ingredients: selection.map((e) => e.strIngredient)};
         this.http.post<Recipe>('/api/recipe', params).subscribe({
             next: (sentRecipe: Recipe) => {
               this.recipe = sentRecipe;
+              if(!generateImages) {
+                this.recipe.image = {url: ''};
+                this.emitRecipe(); // no images to load, only the recipe
+                return;
+              }
               // we load now the image
               this.http.post<DishImage>('/api/image', {dishDescription: this.recipe.dishDescription}).subscribe({
                 next: (image: DishImage) => {
@@ -71,7 +76,11 @@ export class RecipesService {
 
     private emitRecipe(hasErrors: boolean = false): void {
         if(hasErrors) {
-            this.recipe.dishDescription = 'no data loaded';
+            this.recipe = {
+                dishDescription: 'Aucune recette n\'a pu être chargée.', 
+                instructions: 'Une erreur est survenue, veuillez recharger la page pour recommencer.', 
+                image: {url: ''}
+            }
         }
         this.recipeSubject.next(this.recipe);
         this.currentlyLoadingRecipe = false;

@@ -5,32 +5,27 @@
     justify-content: center;
 }
 
-#ingredients-header {
-    height: 45px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#ingredients-header-icon {
-    margin:0px 10px 2px 10px;
-}
-
-#ingredients-header-title, #ingredients-row, .form-search {
-    margin: 10px 0 0 0;
-}
-
 #search-list, #ingredients-content {
     overflow-y: auto;
 }
 
-p {
-    margin-bottom: 0;
+#ingredients-content {
+    max-height: 30vh;
+}
+
+.form-check-input:checked {
+    background-color: #EF6262;
+    border-color: #EF6262;
 }
 
 .search-item {
     border-bottom: 1px solid black;
     padding:10px;
     border-radius: 5px;
+}
+
+.search-item:hover > .button-item, .selected-item > .button-item {
+    background-color: #1D5B79
 }
 
 .button-item {
@@ -41,8 +36,10 @@ p {
    border: 2px solid #1D5B79;
 }
 
-.search-item:hover > .button-item, .selected-item > .button-item {
-    background-color: #1D5B79
+.content-header {
+    height: 45px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .progress-bar {
@@ -52,6 +49,18 @@ p {
 
 .progress {
     height:10px;
+}
+
+.margin-both-sides {
+    margin:0px 10px 0px 10px;
+}
+
+.margin-top {
+    margin: 10px 0 0 0;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 /* ------ search input ------ */

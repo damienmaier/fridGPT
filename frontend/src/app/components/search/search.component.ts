@@ -13,6 +13,7 @@ export class SearchComponent {
   filteredIngredients: Ingredient[];
   selectedIngredients: Ingredient[];
   currentSearch: string = '';
+  generateImages: boolean = false;
 
   constructor(private recipesService: RecipesService, private router: Router) {
     this.filteredIngredients = [];
@@ -32,7 +33,7 @@ export class SearchComponent {
 
   startloadingRecipes(): void {
     if(this.selectedIngredients.length <= 0) { return; }
-    this.recipesService.loadRecipe(this.selectedIngredients);
+    this.recipesService.loadRecipe(this.selectedIngredients, this.generateImages);
     this.router.navigate(['app/recipe']);
   }
 
@@ -76,6 +77,10 @@ export class SearchComponent {
   }
 
   searchListHeight(): string {
-    return (window.screen.height * 0.4 - this.selectedIngredients.length * 34) +'px';
+    if(this.selectedIngredients.length <= 7) {
+      return (window.screen.height * 0.4 - this.selectedIngredients.length * 34) + 'px';
+    } else {
+      return window.screen.height * 0.2 + 'px';
+    }
   }
 }
