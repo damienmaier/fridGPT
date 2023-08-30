@@ -44,7 +44,7 @@
     <!-- ingredients list -->
     <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
-        <div class="search-item light-blue-bg hand-cursor white" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
+        <div class="search-item light-blue-bg hand-cursor white small-padding" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
           {{ item.strIngredient }}
         </div>
@@ -56,7 +56,7 @@
     <div class="light-blue-bg content-header">
       <h4> <img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
     </div>
-    <div class="margin-top custom-checkbox">
+    <div class="margin-top image-checkbox">
       <input type="checkbox" class="form-check-input" id="imageCheck" [(ngModel)]="generateImages">
       <label class="form-check-label margin-both-sides white" for="imageCheck">Générer une illustration pour chaque recette</label>
     </div>

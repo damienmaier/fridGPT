@@ -1,8 +1,10 @@
 #main-header {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content:flex-end;
+    margin-right: 20px;
+    gap:20px;
 }
 
 #search-list, #ingredients-content {
@@ -13,14 +15,15 @@
     max-height: 30vh;
 }
 
-.form-check-input:checked {
-    background-color: #EF6262;
-    border-color: #EF6262;
+.content-header {
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .search-item {
+    padding: 10px;
     border-bottom: 1px solid black;
-    padding:10px;
     border-radius: 5px;
 }
 
@@ -29,17 +32,11 @@
 }
 
 .button-item {
-   padding:0 5px 0 5px;
+   padding: 0 5px 0 5px;
    border-radius: 60px;
    margin-right:5px;
    margin-bottom: 2px;
    border: 2px solid #1D5B79;
-}
-
-.content-header {
-    height: 45px;
-    padding: 5px;
-    border-radius: 5px;
 }
 
 .progress-bar {
@@ -48,11 +45,20 @@
 }
 
 .progress {
-    height:10px;
+    height: 10px;
+}
+
+.image-checkbox {
+    padding: 10px;
+}
+
+.form-check-input:checked {
+    background-color: #EF6262;
+    border-color: #EF6262;
 }
 
 .margin-both-sides {
-    margin:0px 10px 0px 10px;
+    margin: 0px 10px 0px 10px;
 }
 
 .margin-top {
