@@ -149,7 +149,7 @@ p {
     width: 110px;
     line-height: 50px;
     background: #00425A;
-    text-align: center;
+
     border: 3px solid #00425A;
     transition: all .35s;
     border-radius: 5px;
@@ -185,4 +185,12 @@ p {
     border: 3px solid #EF6262;
     right: -25%;
     background-color: #468B97;
+  }
+
+  .toast-body {
+    border-radius: 5px;
+  }
+
+  .toast {
+    width: fit-content;
   }

@@ -41,8 +41,8 @@ export class RecipesService {
 
     loadRecipe(selection: Ingredient[], generateImages: boolean): void {
         this.currentlyLoadingRecipe = true;
-        this.recipe                 = {dishDescription: '', instructions: '', image: { url: ''}};
-        const params = {ingredients: selection.map((e) => e.strIngredient)};
+        this.recipe                 = { dishDescription: '', instructions: '', image: { url: ''}};
+        const params = {ingredients: selection.map((e) => e.name)};
         this.http.post<Recipe>('/api/recipe', params).subscribe({
             next: (sentRecipe: Recipe) => {
               this.recipe = sentRecipe;

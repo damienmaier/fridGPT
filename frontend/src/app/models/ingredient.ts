@@ -1,5 +1,8 @@
 export interface Ingredient {
-    idIngredient: number;
-    strIngredient: string;
-    selected: boolean;
+    id: number; // generated & used by frontend only
+    selected: boolean; // generated & used by frontend only
+    name: string;
+    unit: string;
+    defaultQuantity: number;
+    autoAdd: boolean;
 }
