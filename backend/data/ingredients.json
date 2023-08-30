@@ -1,3447 +1,3447 @@
 {
     "ingredients": [
         {
-            "name": "Poulet",
-            "unit": "todo",
+            "name": "poulet",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Saumon",
-            "unit": "todo",
+            "name": "saumon",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Bœuf",
-            "unit": "todo",
+            "name": "bœuf",
+            "unit": "kg",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Porc",
-            "unit": "todo",
+            "name": "porc",
+            "unit": "kg",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Avocat",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "avocat",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre de cidre de pomme",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre de cidre de pomme",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Asperges",
-            "unit": "todo",
+            "name": "asperges",
+            "unit": "botte",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Aubergine",
-            "unit": "todo",
+            "name": "aubergine",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Petites tomates prunes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "petites tomates prunes",
+            "unit": "gramme",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Bacon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bacon",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Levure chimique",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "levure chimique",
+            "unit": "cuillère à café",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre balsamique",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre balsamique",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Basilic",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "basilic",
+            "unit": "gramme",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles de basilic",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles de basilic",
+            "unit": "feuille",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Riz basmati",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "riz basmati",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Feuille de laurier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuille de laurier",
+            "unit": "feuille",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles de laurier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles de laurier",
+            "unit": "feuille",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Poitrine de bœuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poitrine de bœuf",
+            "unit": "gramme",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Filet de boeuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "filet de boeuf",
+            "unit": "gramme",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce au bœuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce au bœuf",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Bouillon de boeuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bouillon de boeuf",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Bicarbonate de soude",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bicarbonate de soude",
+            "unit": "cuillère à café",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Biryani Masala",
-            "unit": "todo",
+            "name": "biryani masala",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Poivre noir",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poivre noir",
+            "unit": "cuillère à café",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Mélasse noire",
-            "unit": "todo",
+            "name": "mélasse noire",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots Borlotti",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots borlotti",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtes nœud papillon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtes nœud papillon",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes Bramley",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes bramley",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Brandy",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "brandy",
+            "unit": "ml",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Pain",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pain",
+            "unit": "tranche",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": " Fil d'Ariane ",
-            "unit": "todo",
+            "name": " fil d'ariane ",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Brocoli",
-            "unit": "todo",
+            "name": "brocoli",
+            "unit": "tête",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Lentilles brunes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lentilles brunes",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Riz brun",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "riz brun",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre brun",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre brun",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Beurre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "beurre",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Cacao",
-            "unit": "todo",
+            "name": "cacao",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Cajun",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cajun",
+            "unit": "cuillère à café",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates en conserve",
-            "unit": "todo",
+            "name": "tomates en conserve",
+            "unit": "boîte",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots cannellini",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots cannellini",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Cardamome",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cardamome",
+            "unit": "gramme",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Carottes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "carottes",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Noix de cajou",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noix de cajou",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Noix de cajou",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noix de cajou",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre en poudre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre en poudre",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Poivre de Cayenne",
-            "unit": "todo",
+            "name": "poivre de cayenne",
+            "unit": "pincée",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Céleri-rave",
-            "unit": "todo",
+            "name": "céleri-rave",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Céleri",
-            "unit": "todo",
+            "name": "céleri",
+            "unit": "tige",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Sel de céleri",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sel de céleri",
+            "unit": "cuillère à café",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Échalotes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "échalotes",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes de terre Charlotte",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes de terre charlotte",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage cheddar",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage cheddar",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage en grains",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage en grains",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates cerises",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates cerises",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Champignon châtaignier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "champignon châtaignier",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Poitrine de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poitrine de poulet",
+            "unit": "gramme",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Poitrines de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poitrines de poulet",
+            "unit": "gramme",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Cuisses de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cuisses de poulet",
+            "unit": "gramme",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Bouillon de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bouillon de poulet",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Cuisses de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cuisses de poulet",
+            "unit": "gramme",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Pois chiches",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pois chiches",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre de chili",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poudre de chili",
+            "unit": "cuillère à café",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Beurre réfrigéré",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "beurre réfrigéré",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Piment",
-            "unit": "todo",
+            "name": "piment",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre de piment",
-            "unit": "todo",
+            "name": "poudre de piment",
+            "unit": "pincée",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Brocoli chinois",
-            "unit": "todo",
+            "name": "brocoli chinois",
+            "unit": "tête",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Pépites de chocolat",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pépites de chocolat",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Oignon haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oignon haché",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Persil haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "persil haché",
+            "unit": "gramme",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates hachées",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates hachées",
+            "unit": "gramme",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Chorizo",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chorizo",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Pudding de Noël",
-            "unit": "todo",
+            "name": "pudding de noël",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Coriandre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "coriandre",
+            "unit": "gramme",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Cannelle",
-            "unit": "todo",
+            "name": "cannelle",
+            "unit": "cuillère à café",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Bâton de cannelle",
-            "unit": "todo",
+            "name": "bâton de cannelle",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Girofle",
-            "unit": "todo",
+            "name": "girofle",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre de Coco",
-            "unit": "todo",
+            "name": "sucre de coco",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Cacao",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cacao",
+            "unit": "cuillère à café",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Crème de noix de coco",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème de noix de coco",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Lait de coco",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait de coco",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Colby Jack",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage colby jack",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Eau froide",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "eau froide",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Lait concentré",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait concentré",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Coriandre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "coriandre",
+            "unit": "gramme",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles de coriandre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles de coriandre",
+            "unit": "gramme",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Graines de coriandre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graines de coriandre",
+            "unit": "gramme",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Tortillas de maïs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tortillas de maïs",
+            "unit": "pièce",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Fécule de maïs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fécule de maïs",
+            "unit": "cuillère à soupe",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Crème",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Crème Fraiche",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème fraiche",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Feta en cubes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage feta en cubes",
+            "unit": "gramme",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Concombre",
-            "unit": "todo",
+            "name": "concombre",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Cumin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cumin",
+            "unit": "cuillère à café",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Graines de cumin",
-            "unit": "todo",
+            "name": "graines de cumin",
+            "unit": "cuillère à café",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre de curry",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poudre de curry",
+            "unit": "cuillère à café",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre brun foncé",
-            "unit": "todo",
+            "name": "sucre brun foncé",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre brun mou foncé",
-            "unit": "todo",
+            "name": "sucre brun mou foncé",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce soja noire",
-            "unit": "todo",
+            "name": "sauce soja noire",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre Demerara",
-            "unit": "todo",
+            "name": "sucre demerara",
+            "unit": "cuillère à soupe",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates en dés",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates en dés",
+            "unit": "g",
+            "defaultQuantity": 400.0,
             "autoAdd": false
         },
         {
-            "name": "Biscuits digestifs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "biscuits digestifs",
+            "unit": "pièce",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Aneth",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "aneth",
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Viande de Doner",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "viande de doner",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Double crème",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "double crème",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Origan séché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "origan séché",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Vin blanc sec",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vin blanc sec",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Aubergines",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "aubergines",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtés impériaux",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtés impériaux",
+            "unit": "pièce",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Blanc d'oeuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "blanc d'oeuf",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Jaunes d'œufs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jaunes d'œufs",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Oeufs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oeufs",
+            "unit": "pièce",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce Enchilada",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce enchilada",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Moutarde anglaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "moutarde anglaise",
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Huile d'olive extra vierge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile d'olive extra vierge",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Assaisonnement Fajita",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "assaisonnement fajita",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Farfalle",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "farfalle",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Bulbe de fenouil",
-            "unit": "todo",
+            "name": "bulbe de fenouil",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Graines de fenouil",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graines de fenouil",
+            "unit": "g",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Fenugrec",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fenugrec",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Feta",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feta",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce de poisson",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce de poisson",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Amandes effilées",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "amandes effilées",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Œufs de lin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "œufs de lin",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Farine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "farine",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Tortilla à la farine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tortilla à la farine",
+            "unit": "pièce",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes de terre farineuses",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes de terre farineuses",
+            "unit": "kg",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Œuf fermier, battu",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "œuf fermier, battu",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Œufs fermiers, battus",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "œufs fermiers, battus",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Lentilles françaises",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lentilles françaises",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Basilic frais",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "basilic frais",
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Thym frais",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "thym frais",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Persil fraîchement haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "persil fraîchement haché",
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Frites",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "frites",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Yaourt entier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "yaourt entier",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Garam Masala",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "garam masala",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Ail",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ail",
+            "unit": "g",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Gousse d'ail",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gousse d'ail",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre d'ail",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poudre d'ail",
+            "unit": "g",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce à l'ail",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce à l'ail",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Ghee",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ghee",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Gingembre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gingembre",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Cordial au gingembre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cordial au gingembre",
+            "unit": "ml",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte d'ail et de gingembre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte d'ail et de gingembre",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte de gingembre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte de gingembre",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Sirop doré",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sirop doré",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Gouda",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage gouda",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre granulé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre granulé",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates raisins",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates raisins",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Yaourt grec",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "yaourt grec",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots verts",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots verts",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Piment vert",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "piment vert",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Olives vertes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "olives vertes",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Lentilles vertes et rouges",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lentilles vertes et rouges",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Salsa verte",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "salsa verte",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Amandes moulues",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "amandes moulues",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Cumin moulu",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cumin moulu",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Gingembre moulu",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gingembre moulu",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Gruyère",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gruyère",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Coquilles à tacos dures",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "coquilles à tacos dures",
+            "unit": "pièce",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Épice Harissa",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "épice harissa",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Crème épaisse",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème épaisse",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Chérie",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chérie",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
             "name": "raifort",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Bouillon de bœuf chaud",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bouillon de bœuf chaud",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce piquante",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce piquante",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Crème glacée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème glacée",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Saucisses italiennes au fenouil",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "saucisses italiennes au fenouil",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Assaisonnement italien",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "assaisonnement italien",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Jalapeno",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jalapeno",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Riz au jasmin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "riz au jasmin",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Topinambours",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "topinambours",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Chou frisé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chou frisé",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Khus Khus",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "khus khus",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Gambas",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gambas",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Sel casher",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sel casher",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Agneau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "agneau",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Côtelettes de longe d'agneau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "côtelettes de longe d'agneau",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Agneau haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "agneau haché",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles de lasagnes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles de lasagnes",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Bœuf haché maigre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bœuf haché maigre",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Poireau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poireau",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Citron",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "citron",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Jus de citron",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jus de citron",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Zeste de citron",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "zeste de citron",
+            "unit": "g",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Citrons",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "citrons",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Laitue",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "laitue",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Chaux",
-            "unit": "todo",
+            "name": "chaux",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Laitue Little Gem",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "laitue little gem",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Macaronis",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "macaronis",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Maquereau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "maquereau",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte de Madras",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte de madras",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Marjolaine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "marjolaine",
+            "unit": "g",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte de curry Massaman",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte de curry massaman",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Dates Medjool",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "dates medjool",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Nids de meringue",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "nids de meringue",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Lait",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Ail haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ail haché",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Guimauves miniatures",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "guimauves miniatures",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Menthe",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "menthe",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Monterey Jack",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage monterey jack",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Boules de mozzarella",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "boules de mozzarella",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre muscovado",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre muscovado",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Champignons",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "champignons",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Moutarde",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "moutarde",
+            "unit": "ml",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Moutarde en poudre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "moutarde en poudre",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Graines de moutarde",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graines de moutarde",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Noix de muscade",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noix de muscade",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Huile",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Huile d'olive",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile d'olive",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Sel d'oignon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sel d'oignon",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Oignons",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oignons",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Orange",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "orange",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Zeste d'orange",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "zeste d'orange",
+            "unit": "g",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Origan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "origan",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce aux huîtres",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce aux huîtres",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Paprika",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "paprika",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Jambon de Parme",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jambon de parme",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Parmesan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "parmesan",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Parmesan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "parmesan",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Parmigiano-reggiano",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "parmigiano-reggiano",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Persil",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "persil",
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Beurre de cacahuète",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "beurre de cacahuète",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Huile d'arachide",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile d'arachide",
+            "unit": "ml",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Cacahuètes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cacahuètes",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Pois",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pois",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Pecorino",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pecorino",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Penne Rigate",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "penne rigate",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Poivre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poivre",
+            "unit": "g",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Pignons de pin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pignons de pin",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Olives noires dénoyautées",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "olives noires dénoyautées",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Chocolat nature",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chocolat nature",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Farine nature",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "farine nature",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates prunes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates prunes",
+            "unit": "g",
+            "defaultQuantity": 400.0,
             "autoAdd": false
         },
         {
-            "name": "Fécule de pomme de terre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fécule de pomme de terre",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes de terre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes de terre",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Crevettes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crevettes",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte feuilletée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte feuilletée",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Confiture de framboises",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "confiture de framboises",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Crevettes crues",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crevettes crues",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Flacons de piment rouge",
-            "unit": "todo",
+            "name": "flacons de piment rouge",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Piment rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "piment rouge",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre de piment rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poudre de piment rouge",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Oignons rouges",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oignons rouges",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Poivron rouge",
-            "unit": "todo",
+            "name": "poivron rouge",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Flacons de piment rouge",
-            "unit": "todo",
+            "name": "flacons de piment rouge",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Vin rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vin rouge",
+            "unit": "ml",
+            "defaultQuantity": 750.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots frits",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots frits",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "riz",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Nouilles de riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "nouilles de riz",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Nouilles en bâtonnets de riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "nouilles en bâtonnets de riz",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Vermicelles de riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vermicelles de riz",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Rigatoni",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rigatoni",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Fusée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fusée",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Flocons d'avoine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "flocons d'avoine",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Safran",
-            "unit": "todo",
+            "name": "safran",
+            "unit": "g",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Sage",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sage",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Saké",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "saké",
+            "unit": "ml",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Salsa",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "salsa",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Sel",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sel",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Beurre salé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "beurre salé",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Saucisses",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "saucisses",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Sel marin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sel marin",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Farine autolevante",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "farine autolevante",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Lait demi-écrémé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait demi-écrémé",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Graine de sésame",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graine de sésame",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Échalotes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "échalotes",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage mexicain râpé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage mexicain râpé",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Monterey Jack râpé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage monterey jack râpé",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Petites pommes de terre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "petites pommes de terre",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Paprika fumé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "paprika fumé",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Paprika fumé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "paprika fumé",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Crème sure",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème sure",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce soja",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce soja",
+            "unit": "ml",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Lait de soja",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait de soja",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Spaghetti",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "spaghetti",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Épinards",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "épinards",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Oignons nouveaux",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oignons nouveaux",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Courge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "courge",
+            "unit": "g",
+            "defaultQuantity": 800.0,
             "autoAdd": false
         },
         {
-            "name": "Légumes sautés",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "légumes sautés",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Fraises",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fraises",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Sultanes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sultanes",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Huile de tournesol",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile de tournesol",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Boule de tamarin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "boule de tamarin",
+            "unit": "pièce",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte de tamarin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte de tamarin",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce de poisson thaïlandaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce de poisson thaïlandaise",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte de curry vert thaïlandais",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte de curry vert thaïlandais",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte de curry rouge thaïlandaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte de curry rouge thaïlandais",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Thym",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "thym",
+            "unit": "g",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Ketchup aux tomates",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ketchup aux tomates",
+            "unit": "ml",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Purée de tomates",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "purée de tomates",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Toor Dal",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "toor dal",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Thon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "thon",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Curcuma",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "curcuma",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre de curcuma",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poudre de curcuma",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Navets",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "navets",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Vanille",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vanille",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Extrait de vanille",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "extrait de vanille",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Veau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "veau",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Beurre végétalien",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "beurre végétalien",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Huile végétale",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile végétale",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Bouillon de légumes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bouillon de légumes",
+            "unit": "ml",
+            "defaultQuantity": 750.0,
             "autoAdd": false
         },
         {
-            "name": "Cube de bouillon de légumes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cube de bouillon de légumes",
+            "unit": "unité",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigrette",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigrette",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles de vigne",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles de vigne",
+            "unit": "pièce",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Eau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "eau",
+            "unit": "ml",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Pépites de chocolat blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pépites de chocolat blanc",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Poisson blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poisson blanc",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Filets de poisson blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "filets de poisson blanc",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre blanc",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Vin blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vin blanc",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Lait entier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait entier",
+            "unit": "ml",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Blé entier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "blé entier",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Pain complet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pain complet",
+            "unit": "tranche",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce Worcestershire",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce worcestershire",
+            "unit": "ml",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Yaourt",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "yaourt",
+            "unit": "unité",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Courgettes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "courgettes",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Bretzels",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bretzels",
+            "unit": "unité",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage à la crème",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage à la crème",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre glace",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre glace",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Popcorn au caramel",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "popcorn au caramel",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Caramel",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "caramel",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce caramel",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce caramel",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Tagliatelles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tagliatelles",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Fettuccines",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fettuccines",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Crème coagulée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème coagulée",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Farine de maïs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "farine de maïs",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Moules",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "moules",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Fidéo",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fidéo",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Lotte",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lotte",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtes vermicelles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtes vermicelles",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Bébé calamar",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bébé calamar",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Calmar",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "calmar",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Bouillon de poisson",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bouillon de poisson",
+            "unit": "ml",
+            "defaultQuantity": 750.0,
             "autoAdd": false
         },
         {
-            "name": "Sardins",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sardins",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Olives noires",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "olives noires",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Oignon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oignon",
+            "unit": "pièce",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Tomate",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomate",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Canard",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "canard",
+            "unit": "g",
+            "defaultQuantity": 2000.0,
             "autoAdd": false
         },
         {
-            "name": "Cuisses de canard",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cuisses de canard",
+            "unit": "g",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Cube de bouillon de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cube de bouillon de poulet",
+            "unit": "unité",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtes Pappardelle",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtes pappardelle",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtes Paccheri",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtes paccheri",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtes Linguine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtes linguine",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Pois sucrés",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pois sucrés",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Pain croustillant",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pain croustillant",
+            "unit": "tranche",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Frais",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage frais",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Palourdes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "palourdes",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Passata",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "passata",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Huile de colza",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile de colza",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage Stilton",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage stilton",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Cuisse d'agneau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cuisse d'agneau",
+            "unit": "g",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Épaule d'agneau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "épaule d'agneau",
+            "unit": "g",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Abricot",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "abricot",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Courge musquée",
-            "unit": "todo",
+            "name": "courge musquée",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Couscous",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "couscous",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Bœuf haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bœuf haché",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Dinde hachée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "dinde hachée",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce barbecue",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce barbecue",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Maïs doux",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "maïs doux",
+            "unit": "unité",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Graisse d'oie",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graisse d'oie",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Graisse de canard",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graisse de canard",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Fenouil",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fenouil",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre de vin rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre de vin rouge",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Romarin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "romarin",
+            "unit": "branche",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots beurre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots beurre",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots Pinto",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots pinto",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce tomate",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce tomate",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Mascarpone",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mascarpone",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Mozzarella",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mozzarella",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Ricotta",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ricotta",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Abricots secs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "abricots secs",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Câpres",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "câpres",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Banane",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "banane",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Framboises",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "framboises",
+            "unit": "g",
+            "defaultQuantity": 125.0,
             "autoAdd": false
         },
         {
-            "name": "Bleuets",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bleuets",
+            "unit": "g",
+            "defaultQuantity": 125.0,
             "autoAdd": false
         },
         {
-            "name": "Noix",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noix",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Noix de pécan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noix de pécan",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Sirop d'érable",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sirop d'érable",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre mou brun clair",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre mou brun clair",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre mou brun foncé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre mou brun foncé",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Pépites de chocolat noir",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pépites de chocolat noir",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Chocolat au lait",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chocolat au lait",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Chocolat noir",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chocolat noir",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Citrouille",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "citrouille",
+            "unit": "g",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte brisée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte brisée",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Biscuits aux cacahuètes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "biscuits aux cacahuètes",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles de gélatine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles de gélatine",
+            "unit": "feuille",
+            "defaultQuantity": 8.0,
             "autoAdd": false
         },
         {
-            "name": "Cacahuète cassante",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cacahuète cassante",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Pêches",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pêches",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Poivre jaune",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poivre jaune",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Poivre vert",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poivre vert",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Courgettes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "courgettes",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates en conserve",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates en conserve",
+            "unit": "ml",
+            "defaultQuantity": 400.0,
             "autoAdd": false
         },
         {
-            "name": "Châtaignes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "châtaignes",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Champignons sauvages",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "champignons sauvages",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Huile de truffe",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile de truffe",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Paneer",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "paneer",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Pain Naan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pain naan",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Lentilles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lentilles",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Légumes rôtis",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "légumes rôtis",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots rouges",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots rouges",
+            "unit": "g",
+            "defaultQuantity": 400.0,
             "autoAdd": false
         },
         {
-            "name": "Céréales mélangées",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "céréales mélangées",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Tahini",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tahini",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Tortillas",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tortillas",
+            "unit": "pièce",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Nouilles Udon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "nouilles udon",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Chou",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chou",
+            "unit": "g",
+            "defaultQuantity": 800.0,
             "autoAdd": false
         },
         {
-            "name": "Champignons shiitake",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "champignons shiitake",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Mirin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mirin",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Huile de graines de sésame",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile de graines de sésame",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Baguette",
-            "unit": "todo",
+            "name": "baguette",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates de vigne",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates de vigne",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Suif",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "suif",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Suédois",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "suédois",
+            "unit": "pièce",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Jambon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jambon",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Huîtres",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huîtres",
+            "unit": "pièce",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Stout",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "stout",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Saindoux",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "saindoux",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Roin d'agneau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "roin d'agneau",
+            "unit": "g",
+            "defaultQuantity": 800.0,
             "autoAdd": false
         },
         {
-            "name": "Rodin de boeuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rodin de boeuf",
+            "unit": "g",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
             "name": "aiglefin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
             "name": "aiglefin fumé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Choux de Bruxelles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "choux de bruxelles",
+            "unit": "g",
+            "defaultQuantity": 400.0,
             "autoAdd": false
         },
         {
-            "name": "Raisins secs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "raisins secs",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Groseilles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "groseilles",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Crème anglaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème anglaise",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Peau mixte",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "peau mixte",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Groseilles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "groseilles",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Mûres",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mûres",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Noisettes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noisettes",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes Braeburn",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes braeburn",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Colorant alimentaire rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "colorant alimentaire rouge",
+            "unit": "goutte",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Colorant alimentaire rose",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "colorant alimentaire rose",
+            "unit": "goutte",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Colorant alimentaire bleu",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "colorant alimentaire bleu",
+            "unit": "goutte",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Colorant alimentaire jaune",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "colorant alimentaire jaune",
+            "unit": "goutte",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Confiture d'abricots",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "confiture d'abricots",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Pâte d'amande",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâte d'amande",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Amandes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "amandes",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Boudin noir",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "boudin noir",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Fèves au lard",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fèves au lard",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Farine blanche",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "farine blanche",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Levure",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "levure",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Mélange de fruits",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mélange de fruits",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Fruits secs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fruits secs",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Cerise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cerise",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Cerise glacée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cerise glacée",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Mélasse",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mélasse",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Gruau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gruau",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Avoine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "avoine",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Oeuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oeuf",
+            "unit": "pièce",
+            "defaultQuantity": 12.0,
             "autoAdd": false
         },
         {
-            "name": "Tibia de bœuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tibia de bœuf",
+            "unit": "g",
+            "defaultQuantity": 1000.0,
             "autoAdd": false
         },
         {
-            "name": "Bouquet Garni",
-            "unit": "todo",
+            "name": "bouquet garni",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Crème unique",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème unique",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Gelée de vin rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gelée de vin rouge",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Fromage de chèvre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fromage de chèvre",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Prosciutto",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "prosciutto",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Beurre non salé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "beurre non salé",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Brie",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "brie",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Feuilles d'estragon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "feuilles d'estragon",
+            "unit": "g",
+            "defaultQuantity": 15.0,
             "autoAdd": false
         },
         {
-            "name": "Ciboulette",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ciboulette",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Poires",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poires",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Chocolat blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "chocolat blanc",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Anis étoilé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "anis étoilé",
+            "unit": "pièce",
+            "defaultQuantity": 5.0,
             "autoAdd": false
         },
         {
-            "name": "Crevettes tigrées",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crevettes tigrées",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Poudre à crème anglaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poudre à crème anglaise",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Noix de coco desséchée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "noix de coco desséchée",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Pois surgelés",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pois surgelés",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Porc haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "porc haché",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Crème de maïs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "crème de maïs",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Tomates séchées au soleil",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tomates séchées au soleil",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Moutarde de Dijon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "moutarde de dijon",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce Tabasco",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce tabasco",
+            "unit": "ml",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Huile de canola",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "huile de canola",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Morue",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "morue",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Morue salée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "morue salée",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Ackee",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ackee",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Jerk",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jerk",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Bœuf haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bœuf haché",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Bébé Aubergine",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "bébé aubergine",
+            "unit": "pièce",
+            "defaultQuantity": 4.0,
             "autoAdd": false
         },
         {
-            "name": "Paella Riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "paella riz",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Scotch Bonnet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "scotch bonnet",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Queue de bœuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "queue de bœuf",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Fèves",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "fèves",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Vivaneau rouge",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vivaneau rouge",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre de malt",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre de malt",
+            "unit": "ml",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre de riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre de riz",
+            "unit": "ml",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Châtaigne d'eau",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "châtaigne d'eau",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Tofu",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tofu",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Doubanjiang",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "doubanjiang",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots noirs fermentés",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots noirs fermentés",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Échalotes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "échalotes",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Poivre du Sichuan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "poivre du sichuan",
+            "unit": "g",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Peau Wonton",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "peau wonton",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Amidon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "amidon",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Vin de riz",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vin de riz",
+            "unit": "ml",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Cuisiner le vin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cuisiner le vin",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Sauce au canard",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sauce au canard",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Gochujang",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "gochujang",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Germes de soja",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "germes de soja",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Nouilles",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "nouilles",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Champignons à oreilles de bois",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "champignons à oreilles de bois",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Rhum brun",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rhum brun",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Rhum léger",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rhum léger",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Rhum",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rhum",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Muffins anglais",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "muffins anglais",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Muffins",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "muffins",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Vinaigre de vin blanc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "vinaigre de vin blanc",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Saumon fumé",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "saumon fumé",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Barre Mars",
-            "unit": "todo",
+            "name": "barre mars",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Rice Krispies",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rice krispies",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Piments ancho",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "piments ancho",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Lait d'amande",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "lait d'amande",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Piment de la Jamaïque",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "piment de la jamaïque",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Extrait d'amande",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "extrait d'amande",
+            "unit": "ml",
+            "defaultQuantity": 10.0,
             "autoAdd": false
         },
         {
-            "name": "Tripes",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tripes",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Viande de chèvre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "viande de chèvre",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Haricots noirs",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "haricots noirs",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Filet d'anchois",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "filet d'anchois",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Ras el hanout",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ras el hanout",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Pâtisserie filo",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pâtisserie filo",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Eau de fleur d'oranger",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "eau de fleur d'oranger",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
             "autoAdd": false
         },
         {
             "name": "écorces confites",
-            "unit": "todo",
+            "unit": "g",
+            "defaultQuantity": 100.0,
+            "autoAdd": false
+        },
+        {
+            "name": "grand marnier",
+            "unit": "ml",
+            "defaultQuantity": 50.0,
+            "autoAdd": false
+        },
+        {
+            "name": "xérès",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
+            "autoAdd": false
+        },
+        {
+            "name": "eau de rose",
+            "unit": "ml",
+            "defaultQuantity": 30.0,
+            "autoAdd": false
+        },
+        {
+            "name": "mélange d'épices",
+            "unit": "g",
+            "defaultQuantity": 50.0,
+            "autoAdd": false
+        },
+        {
+            "name": "viande hachée",
+            "unit": "g",
+            "defaultQuantity": 500.0,
+            "autoAdd": false
+        },
+        {
+            "name": "patates douces",
+            "unit": "g",
+            "defaultQuantity": 500.0,
+            "autoAdd": false
+        },
+        {
+            "name": "petits pains",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
+            "autoAdd": false
+        },
+        {
+            "name": "chignon",
+            "unit": "pièce",
             "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
-            "name": "Grand Marnier",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "petits pains aux pommes de terre",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Xérès",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "porc haché",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Eau de rose",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "côtelettes de porc",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Mélange d'épices",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pommes de terre yukon gold",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Viande hachée",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "oignon jaune",
+            "unit": "pièce",
+            "defaultQuantity": 3.0,
             "autoAdd": false
         },
         {
-            "name": "Patates douces",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "concentré de bouillon de bœuf",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Petits pains",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "concentré de bouillon de poulet",
+            "unit": "g",
+            "defaultQuantity": 20.0,
             "autoAdd": false
         },
         {
-            "name": "Chignon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "concombre persan",
+            "unit": "pièce",
+            "defaultQuantity": 2.0,
             "autoAdd": false
         },
         {
-            "name": "Petits pains aux pommes de terre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mayonnaise",
+            "unit": "ml",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Porc haché",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sriracha",
+            "unit": "ml",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Côtelettes de porc",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "rhubarbe",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Pommes de terre Yukon Gold",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "pain pita",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Oignon jaune",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "boulgour",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Concentré de bouillon de bœuf",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Concentré de bouillon de poulet",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Concombre persan",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Mayonnaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Sriracha",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Rhubarbe",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Pain pita",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Boulgour",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
-            "autoAdd": false
-        },
-        {
-            "name": "Quinoa",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "quinoa",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
             "name": "cornichons à l'aneth",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Petits pains à hamburger aux graines de sésame",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "petits pains à hamburger aux graines de sésame",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Petits pains",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "petits pains",
+            "unit": "pièce",
+            "defaultQuantity": 6.0,
             "autoAdd": false
         },
         {
-            "name": "Laitue iceberg",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "laitue iceberg",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Relish aux cornichons",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "relish aux cornichons",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Tranches de fromage",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "tranches de fromage",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Raccourcissement",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "raccourcissement",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Eau tiède",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "eau tiède",
+            "unit": "ml",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Eau bouillante",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "eau bouillante",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Jus de cornichon",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "jus de cornichon",
+            "unit": "ml",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Sucre en poudre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sucre en poudre",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Kielbasa",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "kielbasa",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Saucisse polonaise",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "saucisse polonaise",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Choucroute",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "choucroute",
+            "unit": "g",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Graine de carvi",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "graine de carvi",
+            "unit": "g",
+            "defaultQuantity": 50.0,
             "autoAdd": false
         },
         {
-            "name": "Hareng",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "hareng",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Confiture",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "confiture",
+            "unit": "g",
+            "defaultQuantity": 250.0,
             "autoAdd": false
         },
         {
-            "name": "Mulukhiyah",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "mulukhiyah",
+            "unit": "g",
+            "defaultQuantity": 100.0,
             "autoAdd": false
         },
         {
-            "name": "Riz à sushi",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "riz à sushi",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Figues",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "figues",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Cidre",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "cidre",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
             "autoAdd": false
         },
         {
-            "name": "Betterave",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "betterave",
+            "unit": "g",
+            "defaultQuantity": 150.0,
             "autoAdd": false
         },
         {
-            "name": "Sardines",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sardines",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         },
         {
-            "name": "Ciabatta",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "ciabatta",
+            "unit": "g",
+            "defaultQuantity": 300.0,
             "autoAdd": false
         },
         {
-            "name": "Sarrasin",
-            "unit": "todo",
-            "defaultQuantity": 1.0,
+            "name": "sarrasin",
+            "unit": "g",
+            "defaultQuantity": 200.0,
             "autoAdd": false
         }
     ]
