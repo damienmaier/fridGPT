@@ -22,6 +22,23 @@ class RecipeEndpointTest(ApiEndpointTest):
         }
         response = self.client.post('/api/recipe', json=json_request)
         self.assertEqual(response.status_code, 400, 'Should return 400')
+        self.assertEqual(
+            response.json,
+            {"error": "no ingredients"},
+            'Should return no ingredients error'
+        )
+
+    def test_too_many_ingredients(self):
+        json_request = [
+            {f"name": f"ingredient{i}"} for i in range(101)
+        ]
+        response = self.client.post('/api/recipe', json=json_request)
+        self.assertEqual(response.status_code, 400, 'Should return 400')
+        self.assertEqual(
+            response.json,
+            {"error": "too many ingredients"},
+            'Should return too many ingredients error'
+        )
 
     def test_ingredient_in_list_wrong_unit(self):
         json_request = {
@@ -34,6 +51,24 @@ class RecipeEndpointTest(ApiEndpointTest):
             {
                 "error": "wrong ingredient",
                 "ingredient": {"name": "carottes", "quantity": {"unit": "kg", "value": 4}}
+            },
+            'Should return wrong ingredient error with ingredient'
+        )
+
+    def test_too_long_custom_ingredient(self):
+        json_request = {
+            "ingredients": [
+                {"name": "carottes", "quantity": {"unit": "kg", "value": 4}},
+                {"name": "a" * 51, "quantity": {"unit": "kg", "value": 4}}
+            ]
+        }
+        response = self.client.post('/api/recipe', json=json_request)
+        self.assertEqual(response.status_code, 400, 'Should return 400')
+        self.assertEqual(
+            response.json,
+            {
+                "error": "wrong ingredient",
+                "ingredient": {"name": "a" * 51, "quantity": {"unit": "kg", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'
         )
@@ -85,8 +120,8 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(response.status_code, 400, 'Should return 400')
         self.assertEqual(
             response.json,
-            {"error": "not enough ingredients"},
-            'Should return not enough ingredients error'
+            {"error": "insufficient ingredients"},
+            'Should return insufficient ingredients error'
         )
 
     def test_correct_request(self):
