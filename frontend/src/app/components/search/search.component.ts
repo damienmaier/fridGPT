@@ -1,8 +1,8 @@
-import { Component, Renderer2, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Toast } from 'bootstrap'
 import { RecipesService } from 'src/app/services/recipes.service';
-import { Ingredient } from 'src/app/models/ingredient';
+import { Ingredient, IngredientForRecipe } from 'src/app/models/ingredient';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +12,7 @@ import { Ingredient } from 'src/app/models/ingredient';
 export class SearchComponent {
   private baseIngredients: Ingredient[];
   filteredIngredients: Ingredient[];
-  selectedIngredients: Ingredient[];
+  selectedIngredients: IngredientForRecipe[];
   currentSearch: string   = '';
   generateImages: boolean = false;
   @ViewChild('ingredientsMissingToast', {static:true}) ingredientsMissingToast: any;
@@ -27,6 +27,9 @@ export class SearchComponent {
     this.recipesService.ingredientsSubject.subscribe(
       (list: Ingredient[]) => {
         this.baseIngredients = list; // if the ingredients list in the service changes we will be notified here as we're subscribed to it
+        this.selectedIngredients = 
+          this.baseIngredients.filter((element:Ingredient) => element.autoAdd)
+          .map((element:Ingredient) => new IngredientForRecipe(element.name,element.unit,element.defaultQuantity));
       }
     );
     this.recipesService.loadIngredients(); // will trigger the list emission from the service
@@ -57,29 +60,27 @@ export class SearchComponent {
     );
     // adding custom element
     if(!customAlreadyAdded) {
-      this.filteredIngredients.unshift({id:-1, selected: false, name: this.currentSearch, unit:'', defaultQuantity: 1, autoAdd: false});
+      this.filteredIngredients.unshift({selected: false, name: this.currentSearch, unit:'', defaultQuantity: 1, autoAdd: false});
     }
     // marking the selected elements
     this.filteredIngredients.map((element: Ingredient) =>
-      element.selected = this.selectedIngredients.some((ingredient: Ingredient) => element.id === ingredient.id || element.name == ingredient.name)
+      element.selected = this.selectedIngredients.some((ingredient: IngredientForRecipe) => element.name == ingredient.name)
     );
     this.filteredIngredients.sort((e1: Ingredient, e2: Ingredient) => e1.name < e2.name ? -1 : 1);
   }
 
-  addIngredientToRecipe(newIngredient: Ingredient): void {
-    if(newIngredient.selected) { 
+  addIngredientToRecipe(ingredient: Ingredient): void {
+    if(ingredient.selected) { 
       return; // no duplicates
     }
-    newIngredient.selected    = true;
-    newIngredient.id          = this.selectedIngredients.length;
-    this.selectedIngredients.push(newIngredient);
+    this.selectedIngredients.push(new IngredientForRecipe(ingredient.name, "kg", ingredient.defaultQuantity));
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
 
-  removeIngredientFromList(idToRemove: number): void {
+  removeIngredientFromList(nameToRemove: string): void {
     this.selectedIngredients = this.selectedIngredients.filter(
-      (ingredient: Ingredient) => ingredient.id != idToRemove
+      (ingredient: IngredientForRecipe) => ingredient.name != nameToRemove
     );
   }
 
