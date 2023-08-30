@@ -16,6 +16,15 @@
       <div class="col">
         <p class="fs-5 text-white">Nom</p>
       </div>
+      <div class="col-md-3 text-center">
+        <p class="fs-5 text-white">Avec quantité</p>
+      </div>
+      <div class="col-md-2 text-center">
+        <p class="fs-5 text-white">Quantité</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <p class="fs-5 text-white">Unité</p>
+      </div>
       <div class="col-sm-1"></div>
     </div>
     <div id="ingredients-content">
@@ -23,6 +32,41 @@
         <div class="row justify-content-end margin-top">
           <div class="col-md">
             <p class="fs-6 text-white">{{ item.name }}</p>
+          </div>
+          <div class="col-md">
+            <div class="form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.withQuantity">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form form-quantity">
+              <ng-container *ngIf="item.withQuantity">
+                <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required />
+                <label for="qty"></label>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <ng-container *ngIf="item.withQuantity">
+              <select class="form-select unit-select" [(ngModel)]="item.quantity.unit" [disabled]="!item.isCustom">
+                <option value="pièce">pièce</option>
+                <option value="kg">kg</option>
+                <option value="ml">ml</option>
+                <option value="botte">botte</option>
+                <option value="gramme">gramme</option>
+                <option value="cuillère à café">cuillère à café</option>
+                <option value="feuille">feuille</option>
+                <option value="cuillère à soupe">cuillère à soupe</option>
+                <option value="tranche">tranche</option>
+                <option value="tête">tête</option>
+                <option value="boîte">boîte</option>
+                <option value="pincée">pincée</option>
+                <option value="tige">tige</option>
+                <option value="g">g</option>
+                <option value="unité">unité</option>
+                <option value="goutte">goutte</option>
+              </select>
+            </ng-container>
           </div>
           <div class="col-sm-1 trash">
             <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(item.name)"></i>

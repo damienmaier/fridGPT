@@ -1,5 +1,6 @@
 export interface Ingredient {
     selected: boolean; // generated & used by frontend only
+    isCustom: boolean // generated & used by frontend only
     name: string;
     unit: string;
     defaultQuantity: number;
@@ -12,10 +13,13 @@ interface IngredientQuantity {
 }
 
 export class IngredientForRecipe {
+    isCustom: boolean // generated & used by frontend only
     name!: string;
     quantity!: IngredientQuantity;
-    constructor(name: string, unit: string, qty: number) {
-        this.quantity   = {unit, value: qty};
-        this.name       = name;
+    withQuantity: boolean = true;
+    constructor(ingredient: Ingredient) {
+        this.quantity   = {unit: ingredient.unit, value: ingredient.defaultQuantity};
+        this.name       = ingredient.name;
+        this.isCustom   = ingredient.isCustom;
     }
 }

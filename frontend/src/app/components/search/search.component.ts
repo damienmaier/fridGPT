@@ -15,7 +15,7 @@ export class SearchComponent {
   selectedIngredients: IngredientForRecipe[];
   currentSearch: string   = '';
   generateImages: boolean = false;
-  @ViewChild('ingredientsMissingToast', {static:true}) ingredientsMissingToast: any;
+  @ViewChild('ingredientsMissingToast', {static: true}) ingredientsMissingToast: any;
 
   constructor(private recipesService: RecipesService, private router: Router) {
     this.filteredIngredients = [];
@@ -27,9 +27,9 @@ export class SearchComponent {
     this.recipesService.ingredientsSubject.subscribe(
       (list: Ingredient[]) => {
         this.baseIngredients = list; // if the ingredients list in the service changes we will be notified here as we're subscribed to it
-        this.selectedIngredients = 
-          this.baseIngredients.filter((element:Ingredient) => element.autoAdd)
-          .map((element:Ingredient) => new IngredientForRecipe(element.name,element.unit,element.defaultQuantity));
+        this.selectedIngredients = this.baseIngredients
+          .filter((element:Ingredient) => element.autoAdd)
+          .map((element:Ingredient) => new IngredientForRecipe(element));
       }
     );
     this.recipesService.loadIngredients(); // will trigger the list emission from the service
@@ -37,7 +37,7 @@ export class SearchComponent {
 
   startloadingRecipes(): void {
     if(this.selectedIngredients.length <= 0) {
-      const toast = new Toast(this.ingredientsMissingToast.nativeElement,{})
+      const toast = new Toast(this.ingredientsMissingToast.nativeElement, {})
       toast.show();
       return; 
     }
@@ -51,20 +51,19 @@ export class SearchComponent {
       this.filteredIngredients = [];
       return;
     } 
-    let customAlreadyAdded: boolean = false;
-    this.filteredIngredients = this.baseIngredients.filter(
+    let customAlreadyAdded    = false;
+    this.filteredIngredients  = this.baseIngredients.filter(
       (ingredient: Ingredient) => {
-        if(ingredient.name == this.currentSearch) { customAlreadyAdded = true; }
+        if(ingredient.name === this.currentSearch) { customAlreadyAdded = true; }
         return ingredient.name.toLowerCase().startsWith(this.currentSearch.toLowerCase())
       }
     );
-    // adding custom element
-    if(!customAlreadyAdded) {
-      this.filteredIngredients.unshift({selected: false, name: this.currentSearch, unit:'', defaultQuantity: 1, autoAdd: false});
+    if(!customAlreadyAdded) { // adding custom element
+      this.filteredIngredients.unshift({selected: false, isCustom: true, name: this.currentSearch, unit:'pièce', defaultQuantity: 1, autoAdd: false});
     }
     // marking the selected elements
-    this.filteredIngredients.map((element: Ingredient) =>
-      element.selected = this.selectedIngredients.some((ingredient: IngredientForRecipe) => element.name == ingredient.name)
+    this.filteredIngredients.map(
+      (element: Ingredient) => element.selected = this.selectedIngredients.some((ingredient: IngredientForRecipe) => element.name == ingredient.name)
     );
     this.filteredIngredients.sort((e1: Ingredient, e2: Ingredient) => e1.name < e2.name ? -1 : 1);
   }
@@ -73,15 +72,13 @@ export class SearchComponent {
     if(ingredient.selected) { 
       return; // no duplicates
     }
-    this.selectedIngredients.push(new IngredientForRecipe(ingredient.name, ingredient.unit, ingredient.defaultQuantity));
+    this.selectedIngredients.push(new IngredientForRecipe(ingredient));
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
 
   removeIngredientFromList(nameToRemove: string): void {
-    this.selectedIngredients = this.selectedIngredients.filter(
-      (ingredient: IngredientForRecipe) => ingredient.name != nameToRemove
-    );
+    this.selectedIngredients = this.selectedIngredients.filter((ingredient: IngredientForRecipe) => ingredient.name != nameToRemove);
   }
 
   noData(): boolean {
