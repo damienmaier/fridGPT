@@ -15,10 +15,10 @@ class FridGptError(Exception, abc.ABC):
         }
 
 
-class NoIngredientsError(FridGptError):
+class MalformedRequestError(FridGptError):
 
     def error_name(self) -> str:
-        return 'no ingredients'
+        return 'malformed request'
 
 
 class TooManyIngredientsError(FridGptError):

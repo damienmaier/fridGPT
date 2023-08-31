@@ -14,6 +14,18 @@ class ApiEndpointTest(unittest.TestCase):
 @unittest.skip("Not implemented")
 class RecipeEndpointTest(ApiEndpointTest):
 
+    def test_malformed_request(self):
+        json_request = {
+            "ingredients": [{"name": "carottes", "quantity": {"unit": "kg"}}]
+        }
+        response = self.client.post('/api/recipe', json=json_request)
+        self.assertEqual(response.status_code, 400, 'Should return 400')
+        self.assertEqual(
+            response.json,
+            {"error": "malformed request"},
+            'Should return malformed request error'
+        )
+
     def test_empty_ingredients_list(self):
         json_request = {
             "ingredients": []
@@ -22,8 +34,8 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(response.status_code, 400, 'Should return 400')
         self.assertEqual(
             response.json,
-            {"error": "no ingredients"},
-            'Should return no ingredients error'
+            {"error": "malformed request"},
+            'Should return malformed request error'
         )
 
     def test_too_many_ingredients(self):
