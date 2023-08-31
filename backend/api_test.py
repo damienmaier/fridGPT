@@ -33,7 +33,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(response.status_code, 400, 'Should return 400')
         self.assertEqual(
             response.json,
-            {"error": "malformed request"},
+            {"error": "malformed requests"},
             'Should return malformed request error'
         )
 
