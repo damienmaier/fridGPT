@@ -23,7 +23,7 @@ def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient
         if ingredient.quantity and ingredient.quantity.unit != models.SUGGESTED_INGREDIENTS[ingredient.name].unit:
             raise errors.WrongIngredientUnitError(ingredient)
     else:
-        if len(ingredient.name) > 50:
+        if not 0 < len(ingredient.name) <= 50:
             raise errors.InvalidCustomIngredientError(ingredient)
 
     return ingredient
