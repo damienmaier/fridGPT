@@ -16,12 +16,16 @@ class GptAssistedIngredientNameValidation(gpt.task.GptAssistedTask):
 
         prompt.add_user_message('pommes de terre')
         prompt.add_assistant_message('oui')
+
         prompt.add_user_message('ajsfhjksdfh')
         prompt.add_assistant_message('non')
+
         prompt.add_user_message('table')
         prompt.add_assistant_message('non')
+
         prompt.add_user_message('carotte toit')
         prompt.add_assistant_message('non')
+
         prompt.add_user_message(ingredient_name)
 
         return prompt
@@ -40,12 +44,16 @@ class GptAssistedIngredientUnitValidation(gpt.task.GptAssistedTask):
 
         prompt.add_user_message('pommes de terre --- kg')
         prompt.add_assistant_message('oui')
+
         prompt.add_user_message('pommes de terre --- pièce')
         prompt.add_assistant_message('oui')
+
         prompt.add_user_message('pommes de terre --- l')
         prompt.add_assistant_message('non')
+
         prompt.add_user_message('lait --- l')
         prompt.add_assistant_message('oui')
+        
         prompt.add_user_message(f'{ingredient_name} --- {unit}')
 
         return prompt
