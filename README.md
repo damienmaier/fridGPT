@@ -83,7 +83,7 @@ The frontend server automatically proxies all API requests (/api/...) to the bac
 Run the backend tests :
 
 ```bash
-python3 -m unittest
+python3 run_tests.py
 ```
 
 Run the frontend tests :
