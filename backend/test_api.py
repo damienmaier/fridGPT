@@ -118,7 +118,6 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return wrong ingredient error with ingredient'
         )
 
-    @unittest.skip("Not implemented")
     def test_insufficient_ingredients(self):
         json_request = {
             "ingredients": [

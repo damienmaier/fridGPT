@@ -25,6 +25,10 @@ class RequestedIngredient:
             quantity=RequestedIngredientQuantity(**data['quantity']) if 'quantity' in data else None
         )
 
+    @staticmethod
+    def to_json(ingredients: list['RequestedIngredient']) -> str:
+        return json.dumps([ingredient.as_dict() for ingredient in ingredients], ensure_ascii=False, indent=4)
+
 
 @dataclasses.dataclass
 class SuggestedIngredient:

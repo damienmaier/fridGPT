@@ -8,10 +8,9 @@ def parse_and_validate_ingredients(json_request) -> [models.RequestedIngredient]
         raise errors.MalformedRequestError
     if len(json_request['ingredients']) > 100:
         raise errors.TooManyIngredientsError
-    try:
-        ingredients = [parse_and_validate_ingredient(ingredient) for ingredient in json_request['ingredients']]
-    except (TypeError, KeyError):
-        raise errors.MalformedRequestError
+    ingredients = [parse_and_validate_ingredient(ingredient) for ingredient in json_request['ingredients']]
+    if not gpt.is_sufficient_ingredients(ingredients):
+        raise errors.InsufficientIngredients
 
 
 def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient:
