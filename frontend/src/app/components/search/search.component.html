@@ -1,5 +1,5 @@
 <div id="main-header">
-  <p class="fs-6 white margin-right">Pour commencer, donnons quelques indications aux coachs !</p>
+  <p class="fs-6 text-white margin-right">Pour commencer, donnons quelques indications aux coachs !</p>
   <div>
     <img src="/assets_app/germaine.png" width="60" alt="" />
     <img src="/assets_app/travis.png" width="60" alt="" />
@@ -14,7 +14,16 @@
     </div>
     <div class="row margin-top" id="ingredients-header-title">
       <div class="col">
-        <p class="fs-5 white">Nom</p>
+        <p class="fs-5 text-white">Nom</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <p class="fs-5 text-white">Avec quantité</p>
+      </div>
+      <div class="col-md-2 text-center">
+        <p class="fs-5 text-white">Quantité</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <p class="fs-5 text-white">Unité</p>
       </div>
       <div class="col-sm-1"></div>
     </div>
@@ -22,10 +31,45 @@
       <ng-container *ngFor="let item of selectedIngredients">
         <div class="row justify-content-end margin-top">
           <div class="col-md">
-            <p class="fs-6 white">{{ item.strIngredient }}</p>
+            <p class="fs-6 text-white">{{ item.name }}</p>
+          </div>
+          <div class="col-md">
+            <div class="form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.withQuantity">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form form-quantity">
+              <ng-container *ngIf="item.withQuantity">
+                <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required />
+                <label for="qty"></label>
+              </ng-container>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <ng-container *ngIf="item.withQuantity">
+              <select class="form-select unit-select" [(ngModel)]="item.quantity.unit" [disabled]="!item.isCustom">
+                <option value="pièce">pièce</option>
+                <option value="kg">kg</option>
+                <option value="ml">ml</option>
+                <option value="botte">botte</option>
+                <option value="gramme">gramme</option>
+                <option value="cuillère à café">cuillère à café</option>
+                <option value="feuille">feuille</option>
+                <option value="cuillère à soupe">cuillère à soupe</option>
+                <option value="tranche">tranche</option>
+                <option value="tête">tête</option>
+                <option value="boîte">boîte</option>
+                <option value="pincée">pincée</option>
+                <option value="tige">tige</option>
+                <option value="g">g</option>
+                <option value="unité">unité</option>
+                <option value="goutte">goutte</option>
+              </select>
+            </ng-container>
           </div>
           <div class="col-sm-1 trash">
-            <i class="bi bi-trash-fill white hand-cursor" (click)="removeIngredientFromList(item.idIngredient)"></i>
+            <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(item.name)"></i>
           </div>
         </div>
       </ng-container>
@@ -44,9 +88,9 @@
     <!-- ingredients list -->
     <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
-        <div class="search-item light-blue-bg hand-cursor white small-padding" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
+        <div class="search-item light-blue-bg hand-cursor text-white small-padding" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
-          {{ item.strIngredient }}
+          {{ item.name }}
         </div>
       </ng-container>
     </div>
@@ -58,15 +102,24 @@
     </div>
     <div class="margin-top image-checkbox">
       <input type="checkbox" class="form-check-input" id="imageCheck" [(ngModel)]="generateImages">
-      <label class="form-check-label margin-both-sides white" for="imageCheck">Générer une illustration pour chaque recette</label>
+      <label class="form-check-label margin-both-sides text-white" for="imageCheck">Générer une illustration pour chaque recette</label>
     </div>
   </div>
 </div>
 <div class="search-button hand-cursor" (click)="startloadingRecipes()">
   <div class="search-button-content">
-    <p class="white search-button-text bold"> C'est parti !</p>
+    <p class="text-white search-button-text bold text-center"> C'est parti !</p>
     <div class="icon">
       <img src="/assets_app/rocket_on_hover.png" width="30" alt="" />
     </div>
   </div>
 </div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div #ingredientsMissingToast class="toast hide" role="alert" data-bs-delay="2000">
+    <div class="toast-body text-center light-red-bg">
+      Veuillez sélectionner des ingrédients
+    </div>
+  </div>
+</div>
+

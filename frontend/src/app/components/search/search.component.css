@@ -7,18 +7,15 @@
     gap:20px;
 }
 
-#search-list, #ingredients-content {
-    overflow-y: auto;
-}
-
-#ingredients-content {
-    max-height: 30vh;
-}
-
 .content-header {
     height: 40px;
     padding: 5px;
     border-radius: 5px;
+}
+
+/* search items */
+#search-list, #ingredients-content {
+    overflow-y: auto;
 }
 
 .search-item {
@@ -32,13 +29,51 @@
 }
 
 .button-item {
-   padding: 0 5px 0 5px;
-   border-radius: 60px;
-   margin-right:5px;
-   margin-bottom: 2px;
-   border: 2px solid #1D5B79;
+    padding: 0 5px 0 5px;
+    border-radius: 60px;
+    margin-right:5px;
+    margin-bottom: 2px;
+    border: 2px solid #1D5B79;
+ }
+
+ /* ingredients table */
+#ingredients-content {
+    max-height: 30vh;
 }
 
+.form-check-input:checked {
+    background-color: #EF6262;
+    border-color: #EF6262;
+}
+
+.unit-select {
+    background-color: #1D5B79;
+    border: 1px solid #1D5B79;
+    margin-bottom:4px;
+    padding-top:0;
+    padding-left: 0;
+}
+
+.unit-select option {
+    background-color: #468B97;
+}
+
+.row {
+   min-height: 38px;
+
+}
+
+.form-switch {
+    display: flex;
+    justify-content: center;
+}
+
+/* parameters */
+.image-checkbox {
+    padding: 10px;
+}
+
+/* general styles and other elements */
 .progress-bar {
     width: 100%;
     background-color: #EF6262;
@@ -46,15 +81,6 @@
 
 .progress {
     height: 10px;
-}
-
-.image-checkbox {
-    padding: 10px;
-}
-
-.form-check-input:checked {
-    background-color: #EF6262;
-    border-color: #EF6262;
 }
 
 .margin-both-sides {
@@ -70,16 +96,14 @@ p {
 }
 
 /* ------ search input ------ */
-
 .form {
     position: relative;
-    height: 60px;
+    
     overflow-x: hidden;
 }
 
 .form input  {
     width: 100%;
-    height: 100%;
     border: none;
     background-color: #1D5B79;
     outline: none;
@@ -87,7 +111,12 @@ p {
 }
 
 .form-search {
+    height: 60px;
     padding-top:20px;
+}
+
+.form-search input {
+    height:100%;
 }
 
 .form label {
@@ -132,30 +161,29 @@ p {
 }
 
 /* ------ search button ------ */
-
 .search-button {
     position: fixed;
     bottom: 50px;
     right: 0;
     transform: translate(-50%, -50%);
-  }
+}
   
-  .search-button-content {
+.search-button-content {
     position: relative;
-  }
+}
   
-  .search-button-text {
+.search-button-text {
     display: block;
     width: 110px;
     line-height: 50px;
     background: #00425A;
-    text-align: center;
+
     border: 3px solid #00425A;
     transition: all .35s;
     border-radius: 5px;
-  }
+}
   
-  .icon {
+.icon {
     width: 50px;
     height: 50px;
     border: 3px solid transparent;
@@ -165,24 +193,32 @@ p {
     top: 0;
     z-index: -1;
     transition: all .35s;
-  }
-  
-  .icon img {
+}
+
+.icon img {
     position: absolute;
     top: calc(50% - 15px);
     left: calc(50% - 15px);
     transform: rotate(-45deg);
     transition: all .35s;
-  }
+}
   
- .search-button-text:hover {
+.search-button-text:hover {
     width: 170px;
     border: 3px solid #EF6262;
     background: transparent;
-  }
-  
-  .search-button-text:hover + .icon {
+}
+
+.search-button-text:hover + .icon {
     border: 3px solid #EF6262;
     right: -25%;
     background-color: #468B97;
-  }
+}
+
+.toast-body {
+    border-radius: 5px;
+}
+
+.toast {
+    width: fit-content;
+}

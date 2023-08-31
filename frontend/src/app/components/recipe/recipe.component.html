@@ -3,7 +3,7 @@
 </ng-container>
 
     <div id="header" *ngIf="!loading">
-        <p class="fs-4 white absolute-center">A vous de jouer !</p>
+        <p class="fs-4 text-white absolute-center">A vous de jouer !</p>
     </div>
     <div class="container-fluid" *ngIf="!loading">
         <div class="row h-100">
@@ -11,11 +11,11 @@
                 <div id="img-div">
                     <img id="img" [src]="recipe.image.url"/>
                 </div>
-                <p class="fs-5 white">{{ recipe.dishDescription }}</p>
+                <p class="fs-5 text-white">{{ recipe.dishDescription }}</p>
             </div>
             <div class="col">
                 <div id="recipe-instructions" class="dark-bg absolute-center">
-                    <p class="white">{{ recipe.instructions }}</p>
+                    <p class="text-white">{{ recipe.instructions }}</p>
                 </div>
             </div>
         </div>

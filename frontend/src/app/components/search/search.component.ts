@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Toast } from 'bootstrap'
 import { RecipesService } from 'src/app/services/recipes.service';
-import { Ingredient } from 'src/app/models/ingredient';
+import { Ingredient, IngredientForRecipe } from 'src/app/models/ingredient';
 
 @Component({
   selector: 'app-search',
@@ -11,9 +12,10 @@ import { Ingredient } from 'src/app/models/ingredient';
 export class SearchComponent {
   private baseIngredients: Ingredient[];
   filteredIngredients: Ingredient[];
-  selectedIngredients: Ingredient[];
-  currentSearch: string = '';
+  selectedIngredients: IngredientForRecipe[];
+  currentSearch: string   = '';
   generateImages: boolean = false;
+  @ViewChild('ingredientsMissingToast', {static: true}) ingredientsMissingToast: any;
 
   constructor(private recipesService: RecipesService, private router: Router) {
     this.filteredIngredients = [];
@@ -24,52 +26,59 @@ export class SearchComponent {
   ngOnInit() {
     this.recipesService.ingredientsSubject.subscribe(
       (list: Ingredient[]) => {
-        this.baseIngredients = list;
-        // if the ingredients list in the service changes we will be notified here as we're subscribed to it
+        this.baseIngredients = list; // if the ingredients list in the service changes we will be notified here as we're subscribed to it
+        this.selectedIngredients = this.baseIngredients
+          .filter((element:Ingredient) => element.autoAdd)
+          .map((element:Ingredient) => new IngredientForRecipe(element));
       }
     );
     this.recipesService.loadIngredients(); // will trigger the list emission from the service
   }
 
   startloadingRecipes(): void {
-    if(this.selectedIngredients.length <= 0) { return; }
+    if(this.selectedIngredients.length <= 0) {
+      const toast = new Toast(this.ingredientsMissingToast.nativeElement, {})
+      toast.show();
+      return; 
+    }
     this.recipesService.loadRecipe(this.selectedIngredients, this.generateImages);
     this.router.navigate(['app/recipe']);
   }
 
   filter(): void {
-    if (this.noData()) {
-      return;
-    }
+    if (this.noData()) { return; }
     if (this.currentSearch === '') {
       this.filteredIngredients = [];
-    } else {
-      this.filteredIngredients = this.baseIngredients.filter(
-        (ingredient: Ingredient) =>
-          ingredient.strIngredient
-            .toLowerCase()
-            .startsWith(this.currentSearch.toLowerCase())
-      );
-      // a bit meh... :v TODO: see if we can do better
-      this.filteredIngredients.map((element) => {
-        element.selected = this.selectedIngredients.includes(element);
-        return element;
-      });
-      this.filteredIngredients.sort((e1: Ingredient, e2: Ingredient) => e1.strIngredient < e2.strIngredient ? -1 : 1);
+      return;
+    } 
+    let customAlreadyAdded    = false;
+    this.filteredIngredients  = this.baseIngredients.filter(
+      (ingredient: Ingredient) => {
+        if(ingredient.name === this.currentSearch) { customAlreadyAdded = true; }
+        return ingredient.name.toLowerCase().startsWith(this.currentSearch.toLowerCase())
+      }
+    );
+    if(!customAlreadyAdded) { // adding custom element
+      this.filteredIngredients.unshift({selected: false, isCustom: true, name: this.currentSearch, unit:'pièce', defaultQuantity: 1, autoAdd: false});
     }
+    // marking the selected elements
+    this.filteredIngredients.map(
+      (element: Ingredient) => element.selected = this.selectedIngredients.some((ingredient: IngredientForRecipe) => element.name == ingredient.name)
+    );
+    this.filteredIngredients.sort((e1: Ingredient, e2: Ingredient) => e1.name < e2.name ? -1 : 1);
   }
 
-  addIngredientToRecipe(baseIngredient: Ingredient): void {
-    baseIngredient.selected = true;
-    this.selectedIngredients.push(baseIngredient);
+  addIngredientToRecipe(ingredient: Ingredient): void {
+    if(ingredient.selected) { 
+      return; // no duplicates
+    }
+    this.selectedIngredients.push(new IngredientForRecipe(ingredient));
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
 
-  removeIngredientFromList(idToRemove: number): void {
-    this.selectedIngredients = this.selectedIngredients.filter(
-      (ingredient: Ingredient) => ingredient.idIngredient != idToRemove
-    );
+  removeIngredientFromList(nameToRemove: string): void {
+    this.selectedIngredients = this.selectedIngredients.filter((ingredient: IngredientForRecipe) => ingredient.name != nameToRemove);
   }
 
   noData(): boolean {

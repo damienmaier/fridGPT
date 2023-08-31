@@ -1,5 +1,5 @@
 import { Subject } from "rxjs";
-import { Ingredient } from "../models/ingredient";
+import { Ingredient, IngredientForRecipe } from "../models/ingredient";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe";
@@ -39,10 +39,10 @@ export class RecipesService {
         }
     }
 
-    loadRecipe(selection: Ingredient[], generateImages: boolean): void {
+    loadRecipe(selection: IngredientForRecipe[], generateImages: boolean): void {
         this.currentlyLoadingRecipe = true;
-        this.recipe                 = {dishDescription: '', instructions: '', image: { url: ''}};
-        const params = {ingredients: selection.map((e) => e.strIngredient)};
+        // TODO: replace this when the new API specs is pushed
+        const params = {ingredients: selection.map((e) => e.name)};
         this.http.post<Recipe>('/api/recipe', params).subscribe({
             next: (sentRecipe: Recipe) => {
               this.recipe = sentRecipe;
