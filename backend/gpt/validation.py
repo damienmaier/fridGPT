@@ -1,42 +1,9 @@
-import abc
-
-import gpt.prompt
+import gpt.classifier
 import gpt.task
 import models
 
 
-class GptAssistedClassifier(gpt.task.GptAssistedTask, abc.ABC):
-    def __init__(self, system_message: str, ok_cases: list, nok_cases: list):
-        super().__init__()
-        self.system_message = system_message
-        self.ok_cases = ok_cases
-        self.nok_cases = nok_cases
-
-    @staticmethod
-    @abc.abstractmethod
-    def convert_case_to_gpt_message(*args, **kwargs) -> str:
-        pass
-
-    def build_gpt_prompt(self, *args, **kwargs) -> gpt.prompt.Prompt:
-        prompt = gpt.prompt.Prompt(self.system_message + "\n Tu dois simplement répondre par oui ou non.")
-
-        for ok_case in self.ok_cases:
-            prompt.add_user_message(self.convert_case_to_gpt_message(*ok_case))
-            prompt.add_assistant_message('oui')
-
-        for nok_case in self.nok_cases:
-            prompt.add_user_message(self.convert_case_to_gpt_message(*nok_case))
-            prompt.add_assistant_message('non')
-
-        prompt.add_user_message(self.convert_case_to_gpt_message(*args, **kwargs))
-
-        return prompt
-
-    def post_process_gpt_response(self, gpt_response_content: str):
-        return gpt_response_content == "oui"
-
-
-class GptAssistedIngredientNameValidation(GptAssistedClassifier):
+class GptAssistedIngredientNameValidation(gpt.classifier.GptAssistedClassifier):
 
     def __init__(self):
         system_message = (
@@ -62,11 +29,8 @@ class GptAssistedIngredientNameValidation(GptAssistedClassifier):
     def convert_case_to_gpt_message(case: str) -> str:
         return case
 
-    def temperature(self):
-        return 0
 
-
-class GptAssistedIngredientUnitValidation(GptAssistedClassifier):
+class GptAssistedIngredientUnitValidation(gpt.classifier.GptAssistedClassifier):
 
     def __init__(self):
         system_message = (
@@ -95,11 +59,8 @@ class GptAssistedIngredientUnitValidation(GptAssistedClassifier):
     def convert_case_to_gpt_message(ingredient_name, unit) -> str:
         return f'{ingredient_name} --- {unit}'
 
-    def temperature(self):
-        return 0
 
-
-class GptAssistedSufficientIngredientsValidation(GptAssistedClassifier):
+class GptAssistedSufficientIngredientsValidation(gpt.classifier.GptAssistedClassifier):
 
     def __init__(self):
         system_message = (
@@ -141,6 +102,3 @@ class GptAssistedSufficientIngredientsValidation(GptAssistedClassifier):
     @staticmethod
     def convert_case_to_gpt_message(case: [models.RequestedIngredient]) -> str:
         return models.RequestedIngredient.to_json(case)
-
-    def temperature(self):
-        return 0
