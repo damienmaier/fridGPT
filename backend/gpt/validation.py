@@ -1,11 +1,12 @@
-import json
-
-import gpt.task
 import gpt.prompt
+import gpt.task
 import models
 
 
 class GptAssistedIngredientNameValidation(gpt.task.GptAssistedTask):
+
+    def temperature(self):
+        return 0
 
     def build_gpt_prompt(self, ingredient_name: str) -> gpt.prompt.Prompt:
         prompt = gpt.prompt.Prompt(
@@ -39,6 +40,10 @@ class GptAssistedIngredientNameValidation(gpt.task.GptAssistedTask):
 
 
 class GptAssistedIngredientUnitValidation(gpt.task.GptAssistedTask):
+
+    def temperature(self):
+        return 0
+
     def build_gpt_prompt(self, ingredient_name: str, unit: str) -> gpt.prompt.Prompt:
         prompt = gpt.prompt.Prompt(
             "Tu vas recevoir dans chaque message un nom d'ingrédient et une unité de mesure. "
@@ -76,6 +81,10 @@ class GptAssistedIngredientUnitValidation(gpt.task.GptAssistedTask):
 
 
 class GptAssistedSufficientIngredientsValidation(gpt.task.GptAssistedTask):
+
+    def temperature(self):
+        return 0
+
     def build_gpt_prompt(self, ingredients: [models.RequestedIngredient]) -> gpt.prompt.Prompt:
         prompt = gpt.prompt.Prompt(
             "Tu vas recevoir dans chaque message un texte json décrivant une liste d'ingrédients de cuisine "
