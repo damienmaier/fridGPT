@@ -9,6 +9,12 @@
         <div class="row h-100">
             <div class="col col-lg-4 dark-bg" id="col-description">
                 <div id="img-div">
+                    <ng-container *ngIf="recipe.image.url != ''; else noImage">
+                        <img id="img" [src]="recipe.image.url"/>
+                      </ng-container>
+                      <ng-template #noImage>
+                        <img id="img" src="/assets_app/empty.jpg"/>
+                      </ng-template>
                     <img id="img" [src]="recipe.image.url"/>
                 </div>
                 <p class="fs-5 text-white">{{ recipe.dishDescription }}</p>
