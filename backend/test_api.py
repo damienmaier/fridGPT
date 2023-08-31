@@ -82,11 +82,10 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return wrong ingredient error with ingredient'
         )
 
-    @unittest.skip("Not implemented")
     def test_custom_ingredient_unsuitable_unit(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "kg", "value": 4}},
+                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "ananas", "quantity": {"unit": "l", "value": 4}}
             ]
         }
@@ -95,7 +94,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(
             response.json,
             {
-                "error": "wrong ingredient unit",
+                "error": "invalid custom ingredient unit",
                 "ingredient": {"name": "ananas", "quantity": {"unit": "l", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'

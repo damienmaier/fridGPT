@@ -50,6 +50,12 @@ class InvalidCustomIngredientError(IngredientError):
         return 'invalid custom ingredient'
 
 
+class InvalidCustomIngredientUnitError(IngredientError):
+
+    def error_name(self) -> str:
+        return 'invalid custom ingredient unit'
+
+
 class InsufficientIngredients(FridGptError):
 
     def error_name(self) -> str:

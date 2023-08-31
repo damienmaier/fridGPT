@@ -28,5 +28,8 @@ def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient
             raise errors.InvalidCustomIngredientError(ingredient)
         if not gpt.is_valid_ingredient(ingredient.name):
             raise errors.InvalidCustomIngredientError(ingredient)
+        if ingredient.quantity:
+            if not gpt.is_valid_unit_for_ingredient(ingredient_name=ingredient.name, unit=ingredient.quantity.unit):
+                raise errors.InvalidCustomIngredientUnitError(ingredient)
 
     return ingredient
