@@ -5,12 +5,8 @@ import gpt.task
 
 class GptAssistedRecipeFinder(gpt.task.GptAssistedTask):
 
-    def model(self):
-        return 'gpt-3.5-turbo-16k'
-
-    def max_tokens(self):
-        return 12500
-
+    def __init__(self):
+        super().__init__(model='gpt-3.5-turbo-16k', max_tokens=12500)
 
     def build_gpt_prompt(self, ingredients: [str]):
         """
@@ -20,7 +16,7 @@ class GptAssistedRecipeFinder(gpt.task.GptAssistedTask):
 
         userInput = userInput[:-2]
         """
-  
+
         return [
             {
                 "role": "system",
