@@ -47,7 +47,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(
             response.json,
             {
-                "error": "wrong ingredient",
+                "error": "wrong ingredient unit",
                 "ingredient": {"name": "carottes", "quantity": {"unit": "kg", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'
@@ -65,7 +65,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(
             response.json,
             {
-                "error": "wrong ingredient",
+                "error": "invalid custom ingredient",
                 "ingredient": {"name": "a" * 51, "quantity": {"unit": "kg", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'
@@ -83,7 +83,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(
             response.json,
             {
-                "error": "wrong ingredient",
+                "error": "wrong ingredient unit",
                 "ingredient": {"name": "ananas", "quantity": {"unit": "l", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'
@@ -101,7 +101,7 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(
             response.json,
             {
-                "error": "wrong ingredient",
+                "error": "invalid custom ingredient",
                 "ingredient": {"name": "brique", "quantity": {"unit": "kg", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'
