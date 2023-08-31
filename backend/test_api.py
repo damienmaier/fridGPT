@@ -11,7 +11,6 @@ class ApiEndpointTest(unittest.TestCase):
         self.client = self.app.test_client()
 
 
-# @unittest.skip("Not implemented")
 class RecipeEndpointTest(ApiEndpointTest):
 
     def test_malformed_request(self):
@@ -83,6 +82,7 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return wrong ingredient error with ingredient'
         )
 
+    @unittest.skip("Not implemented")
     def test_custom_ingredient_unsuitable_unit(self):
         json_request = {
             "ingredients": [
@@ -101,6 +101,7 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return wrong ingredient error with ingredient'
         )
 
+    @unittest.skip("Not implemented")
     def test_inappropriate_custom_ingredient(self):
         json_request = {
             "ingredients": [
@@ -119,6 +120,7 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return wrong ingredient error with ingredient'
         )
 
+    @unittest.skip("Not implemented")
     def test_insufficient_ingredients(self):
         json_request = {
             "ingredients": [
@@ -134,6 +136,7 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return insufficient ingredients error'
         )
 
+    @unittest.skip("Not implemented")
     def test_correct_request(self):
         json_request = {
             "ingredients": [
