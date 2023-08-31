@@ -1,4 +1,5 @@
 import errors
+import gpt
 import models
 
 
@@ -24,6 +25,8 @@ def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient
             raise errors.WrongIngredientUnitError(ingredient)
     else:
         if not 0 < len(ingredient.name) <= 50:
+            raise errors.InvalidCustomIngredientError(ingredient)
+        if not gpt.is_valid_ingredient(ingredient.name):
             raise errors.InvalidCustomIngredientError(ingredient)
 
     return ingredient
