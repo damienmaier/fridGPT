@@ -19,8 +19,8 @@ def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient
     except (TypeError, KeyError):
         raise errors.MalformedRequestError
 
-    if ingredient.name in models.suggested_ingredients:
-        if ingredient.quantity and ingredient.quantity.unit != models.suggested_ingredients[ingredient.name].unit:
+    if ingredient.name in models.SUGGESTED_INGREDIENTS:
+        if ingredient.quantity and ingredient.quantity.unit != models.SUGGESTED_INGREDIENTS[ingredient.name].unit:
             raise errors.WrongIngredientUnitError(ingredient)
     else:
         if len(ingredient.name) > 50:

@@ -15,7 +15,7 @@ def create_api(app: flask.Flask) -> None:
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():
-        with open(root.PROJECT_ROOT_PATH / 'data' / 'ingredients.json', 'r', encoding='utf-8') as file:
+        with open(root.PROJECT_ROOT_PATH / 'data' / 'suggested_ingredients.json', 'r', encoding='utf-8') as file:
             ingredients = json.load(file)
 
         return ingredients
