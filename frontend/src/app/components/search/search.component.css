@@ -60,6 +60,14 @@
     padding-left:15px;
 }
 
+.form-quantity {
+    width: 50%;
+}
+
+.col-qty {
+    display: flex;
+}
+
 
 .unit-select option {
     background-color: #468B97;
@@ -67,7 +75,6 @@
 
 .row {
    min-height: 38px;
-
 }
 
 .form-switch {
@@ -109,7 +116,6 @@ p {
 /* ------ search input ------ */
 .form {
     position: relative;
-    
     overflow-x: hidden;
 }
 
@@ -232,4 +238,87 @@ p {
 
 .toast {
     width: fit-content;
+}
+
+.trash {
+    justify-self: end;
+}
+
+@media screen and (max-width: 770px) {
+    #main-header {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #main-header img {
+        width: 50px;
+    }
+
+    #main-row {
+        flex-direction: column;
+        height:85%;
+        overflow: hidden;
+    }
+
+    #main-row .col {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #customization-col {
+        max-height: 50%;
+        justify-content: flex-end;
+    }
+
+    .image-checkbox {
+        display: flex;
+    }
+
+    #ingredients-header-title div, #ingredients-content div {
+        width: fit-content;
+        justify-content: center;
+    }
+
+    .col-name {
+        max-width: 40vw;
+        min-width: 40vw;
+    }
+
+    .row-ingredient {
+        justify-content: flex-start!important;
+        width: 100%;
+    }
+
+    .col .fs-5, .unit-select {
+        font-size: 1em!important;
+    }
+
+    .search-button {
+        bottom: 20px;
+    }
+
+    .col-qty {
+        max-width: 27%;
+        justify-content: flex-start!important;
+    }
+
+    .col-qty .form-quantity {
+        max-width: 40%;
+    }
+
+    .unit-select {
+        padding:2px;
+    }
+
+    .col-toggle {
+        max-width: 15%;
+    }
+
+    #search-list {
+        min-height:20px!important;
+    }
+
+    #ingredients-content {
+        max-height: 20vh;
+    }
 }

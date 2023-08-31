@@ -6,46 +6,39 @@
     <img src="/assets_app/bernardo.png" width="60" alt="" />
   </div>
 </div>
-<div class="row margin-both-sides">
+<div class="row margin-both-sides" id="main-row">
   <!-- ingredients picking menu -->
   <div class="col">
     <div class="light-blue-bg content-header">
       <h4> <img class="margin-both-sides" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
     </div>
     <div class="row justify-content-start margin-top" id="ingredients-header-title">
-      <div class="col">
-        <p class="fs-5 text-white">Name</p>
+      <div class="col col-name">
+        <p class="fs-5 text-white">Nom</p>
       </div>
-      <div class="col-md-auto col-no-padding">
-        <p class="fs-5 text-white text-center">Quantity</p>
+      <div class="col-md-2 col-no-padding">
+        <p class="fs-5 text-white text-center ">Quantité</p>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-2">
-        <p class="fs-5 text-white text-right">Unité</p>
-      </div>
+      <div class="col-md-3"></div>
       <div class="col-sm-1"></div>
     </div>
     <div id="ingredients-content">
       <ng-container *ngFor="let item of selectedIngredients">
         <div class="row margin-top row-ingredient">
-          <div class="col">
+          <div class="col col-name">
             <p class="fs-6 text-white">{{ item.name }}</p>
           </div>
-          <div class="col-md-auto">
+          <div class="col-md-2 col-toggle">
             <div class="form-switch">
               <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.withQuantity">
             </div>
           </div>
-          <div class="col-md-1 col-no-padding">
-            <div class="form form-quantity">
-              <ng-container *ngIf="item.withQuantity">
+          <div class="col-md-3 col-no-padding col-qty">
+            <ng-container *ngIf="item.withQuantity">
+              <div class="form form-quantity">
                 <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required/>
                 <label for="qty"></label>
-              </ng-container>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <ng-container *ngIf="item.withQuantity">
+              </div>
               <ng-container *ngIf="item.isCustom; else fixedUnit">
                 <select class="form-select unit-select text-white" [(ngModel)]="item.quantity.unit">
                   <option value="pièce">Pièce</option>
@@ -89,7 +82,7 @@
     </div>
   </div>
   <!-- parameters menu -->
-  <div class="col">
+  <div class="col" id="customization-col">
     <div class="light-blue-bg content-header">
       <h4><img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
     </div>

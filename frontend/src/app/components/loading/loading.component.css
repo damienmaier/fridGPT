@@ -45,7 +45,7 @@
 
 @media screen and (max-width: 1250px) {
 
-    #coach-row div, #loading-row div {
+    #coach-row div, #loading-row div:not(.col) {
         width: fit-content;
         justify-content: center;
     }
@@ -58,4 +58,4 @@
     #left-gear {
         align-self:center;
     }
-  }
+}
