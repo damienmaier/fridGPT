@@ -52,4 +52,9 @@ class InsufficientIngredients(FridGptError):
 
     def error_name(self) -> str:
         return 'insufficient ingredients'
-   
+
+
+def create_exception_handlers(app: flask.Flask) -> None:
+    @app.errorhandler(FridGptError)
+    def handle_fridgpt_error(error: FridGptError):
+        return error.to_json(), 400
