@@ -2,8 +2,6 @@ import unittest
 
 import requests
 
-import json
-
 import main
 
 
@@ -29,9 +27,9 @@ class RecipeEndpointTest(ApiEndpointTest):
         )
 
     def test_too_many_ingredients(self):
-        json_request = [
-            {f"name": f"ingredient{i}"} for i in range(101)
-        ]
+        json_request = {
+            "ingredients": [{"name": f"ingredient {i}"} for i in range(101)]
+        }
         response = self.client.post('/api/recipe', json=json_request)
         self.assertEqual(response.status_code, 400, 'Should return 400')
         self.assertEqual(
@@ -127,7 +125,7 @@ class RecipeEndpointTest(ApiEndpointTest):
     def test_correct_request(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "pièces", "value": 4}},
+                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "pommes de terre", "quantity": {"unit": "kg", "value": 2.5}},
                 {"name": "poireaux", "quantity": {"unit": "pièce", "value": 2}},
                 {"name": "oignons", "quantity": {"unit": "pièce", "value": 2}},
@@ -196,7 +194,6 @@ class ImageEndpointTest(ApiEndpointTest):
                         'Should return an image url')
 
 
-# @unittest.skip("Not implemented")
 class IngredientsEndpointTest(ApiEndpointTest):
 
     def test_result(self):
