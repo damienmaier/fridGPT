@@ -12,13 +12,13 @@ class GptAssistedIngredientNameValidation(gpt.task.GptAssistedTask):
         )
 
         prompt.add_user_message('pommes de terre')
-        prompt.add_system_message('oui')
+        prompt.add_assistant_message('oui')
         prompt.add_user_message('ajsfhjksdfh')
-        prompt.add_system_message('non')
+        prompt.add_assistant_message('non')
         prompt.add_user_message('table')
-        prompt.add_system_message('non')
+        prompt.add_assistant_message('non')
         prompt.add_user_message('carotte toit')
-        prompt.add_system_message('non')
+        prompt.add_assistant_message('non')
         prompt.add_user_message(ingredient_name)
 
         return prompt
