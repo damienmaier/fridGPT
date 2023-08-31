@@ -11,12 +11,12 @@ class ApiEndpointTest(unittest.TestCase):
         self.client = self.app.test_client()
 
 
-@unittest.skip("Not implemented")
+# @unittest.skip("Not implemented")
 class RecipeEndpointTest(ApiEndpointTest):
 
     def test_malformed_request(self):
         json_request = {
-            "ingredients": [{"name": "carottes", "quantity": {"unit": "kg"}}]
+            "ingredients": [{"quantity": {"unit": "kg", "value": 4}}]
         }
         response = self.client.post('/api/recipe', json=json_request)
         self.assertEqual(response.status_code, 400, 'Should return 400')
@@ -68,7 +68,7 @@ class RecipeEndpointTest(ApiEndpointTest):
     def test_too_long_custom_ingredient(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "kg", "value": 4}},
+                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "a" * 51, "quantity": {"unit": "kg", "value": 4}}
             ]
         }

@@ -1,22 +1,21 @@
-import dalle
-import gpt
-import flask
 import json
 
-import main
+import flask
+
+import dalle
+import root
+import validation
 
 
 def create_api(app: flask.Flask) -> None:
     @app.post('/api/recipe')
     def recipe_endpoint():
-        ingredients = flask.request.json['ingredients']
-        if not ingredients:
-            flask.abort(400)
-        return gpt.find_recipe(ingredients)
+        validation.parse_and_validate_ingredients(flask.request.json)
+        return {}
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():
-        with open(main.PROJECT_ROOT_PATH / 'data' / 'ingredients.json', 'r', encoding='utf-8') as file:
+        with open(root.PROJECT_ROOT_PATH / 'data' / 'ingredients.json', 'r', encoding='utf-8') as file:
             ingredients = json.load(file)
 
         return ingredients

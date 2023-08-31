@@ -2,6 +2,8 @@ import abc
 
 import flask
 
+import models
+
 
 class FridGptError(Exception, abc.ABC):
 
@@ -29,11 +31,11 @@ class TooManyIngredientsError(FridGptError):
 
 class IngredientError(FridGptError, abc.ABC):
 
-    def __init__(self, ingredient: str):
+    def __init__(self, ingredient: 'models.RequestedIngredient'):
         self.ingredient = ingredient
 
     def to_json(self) -> dict:
-        return super().to_json() | {'ingredient': self.ingredient}
+        return super().to_json() | {'ingredient': self.ingredient.as_dict()}
 
 
 class WrongIngredientUnitError(IngredientError):
