@@ -1,8 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { Toast } from 'bootstrap'
 import { RecipesService } from 'src/app/services/recipes.service';
-import { Ingredient, IngredientForRecipe } from 'src/app/models/ingredient';
+import { HttpErrorResponse } from '@angular/common/http';
+import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
+import { APIError } from 'src/app/models/api-error';
+import { RequestedIngredient } from 'src/app/models/requested-ingredient';
+import { createRequestedIngredient } from 'src/app/models/translation-tool';
 
 @Component({
   selector: 'app-search',
@@ -10,14 +13,15 @@ import { Ingredient, IngredientForRecipe } from 'src/app/models/ingredient';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
-  private baseIngredients: Ingredient[];
-  filteredIngredients: Ingredient[];
-  selectedIngredients: IngredientForRecipe[];
+  private baseIngredients: SuggestedIngredient[];
+  filteredIngredients: SuggestedIngredient[];
+  selectedIngredients: RequestedIngredient[];
   currentSearch: string   = '';
   generateImages: boolean = false;
-  @ViewChild('ingredientsMissingToast', {static: true}) ingredientsMissingToast: any;
+  loading: boolean        = false;
+  @ViewChild('ErrorToast', {static: true}) toastOnError: any;
 
-  constructor(private recipesService: RecipesService, private router: Router) {
+  constructor(private recipesService: RecipesService) {
     this.filteredIngredients = [];
     this.selectedIngredients = [];
     this.baseIngredients     = [];
@@ -25,11 +29,11 @@ export class SearchComponent {
 
   ngOnInit() {
     this.recipesService.ingredientsSubject.subscribe(
-      (list: Ingredient[]) => {
-        this.baseIngredients = list; // if the ingredients list in the service changes we will be notified here as we're subscribed to it
-        this.selectedIngredients = this.baseIngredients
-          .filter((element:Ingredient) => element.autoAdd)
-          .map((element:Ingredient) => new IngredientForRecipe(element));
+      (list: SuggestedIngredient[]) => {
+        this.baseIngredients      = list;
+        this.baseIngredients.forEach((ingredient: SuggestedIngredient) => {
+          if(ingredient.autoAdd) { this.addIngredientToList(ingredient); }
+        });
       }
     );
     this.recipesService.loadIngredients(); // will trigger the list emission from the service
@@ -37,12 +41,26 @@ export class SearchComponent {
 
   startloadingRecipes(): void {
     if(this.selectedIngredients.length <= 0) {
-      const toast = new Toast(this.ingredientsMissingToast.nativeElement, {})
-      toast.show();
+      this.displayToast('Veuillez sélectionner des ingrédients');
       return; 
     }
-    this.recipesService.loadRecipe(this.selectedIngredients, this.generateImages);
-    this.router.navigate(['app/recipe']);
+    this.loading = true;
+    this.recipesService.loadRecipe(this.selectedIngredients, this.generateImages).subscribe({
+      next: () => {},
+      error: (httpError: HttpErrorResponse) => {
+        if(httpError.error) {
+          const error: APIError = httpError.error;
+          let message = error.error;
+          if(error.ingredient) {
+            message += `\n L'ingrédient ${error.ingredient.name} est incorrect`;
+            this.displayToast(message);
+          } 
+        } else {
+          this.displayToast('Une erreur est survenue lors du chargement des recettes');
+        }
+      },
+      complete: () => this.loading = false
+    });
   }
 
   filter(): void {
@@ -53,32 +71,34 @@ export class SearchComponent {
     } 
     let customAlreadyAdded    = false;
     this.filteredIngredients  = this.baseIngredients.filter(
-      (ingredient: Ingredient) => {
+      (ingredient: SuggestedIngredient) => {
         if(ingredient.name === this.currentSearch) { customAlreadyAdded = true; }
         return ingredient.name.toLowerCase().startsWith(this.currentSearch.toLowerCase())
       }
     );
     if(!customAlreadyAdded) { // adding custom element
-      this.filteredIngredients.unshift({selected: false, isCustom: true, name: this.currentSearch, unit:'pièce', defaultQuantity: 1, autoAdd: false});
+      this.filteredIngredients.unshift(
+        {name: this.currentSearch, unit:'pièce', defaultQuantity: 1, autoAdd: false,selected: false, isCustom: true}
+      );
     }
     // marking the selected elements
     this.filteredIngredients.map(
-      (element: Ingredient) => element.selected = this.selectedIngredients.some((ingredient: IngredientForRecipe) => element.name == ingredient.name)
+      (element: SuggestedIngredient) => element.selected = this.selectedIngredients.some(
+        (ingredient: RequestedIngredient) => element.name == ingredient.name
+      )
     );
-    this.filteredIngredients.sort((e1: Ingredient, e2: Ingredient) => e1.name < e2.name ? -1 : 1);
+    this.filteredIngredients.sort();
   }
 
-  addIngredientToRecipe(ingredient: Ingredient): void {
-    if(ingredient.selected) { 
-      return; // no duplicates
-    }
-    this.selectedIngredients.push(new IngredientForRecipe(ingredient));
+  addIngredientToList(ingredient: SuggestedIngredient): void {
+    if(ingredient.selected) { return; } // no duplicates
+    this.selectedIngredients.push(createRequestedIngredient(ingredient));
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
 
   removeIngredientFromList(nameToRemove: string): void {
-    this.selectedIngredients = this.selectedIngredients.filter((ingredient: IngredientForRecipe) => ingredient.name != nameToRemove);
+    this.selectedIngredients = this.selectedIngredients.filter((ingredient: RequestedIngredient) => ingredient.name != nameToRemove);
   }
 
   noData(): boolean {
@@ -91,5 +111,11 @@ export class SearchComponent {
     } else {
       return window.screen.height * 0.2 + 'px';
     }
+  }
+
+  private displayToast(message: string): void {
+    this.toastOnError.nativeElement.querySelector('.toast-body').textContent = message;
+    const toast = new Toast(this.toastOnError.nativeElement, {});
+    toast.show();
   }
 }

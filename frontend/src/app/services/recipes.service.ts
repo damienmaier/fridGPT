@@ -1,88 +1,70 @@
-import { Subject } from "rxjs";
-import { Ingredient, IngredientForRecipe } from "../models/ingredient";
+import { Observable, Subject, map, tap } from "rxjs";
+import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested-ingredient";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe";
-import { DishImage } from "../models/image";
-
-interface IngredientsResponse {
-    ingredients: Ingredient[]
-}
+import { Router } from "@angular/router";
+import { BehaviorSubject } from 'rxjs';
+import { RequestedIngredient } from "../models/requested-ingredient";
+import { requestedIngredientForAPI } from "../models/translation-tool";
+import { RecipeResponse, SuggestedIngredientResponse } from "../models/api-response";
 
 @Injectable()
 export class RecipesService {
-    private currentlyLoadingRecipe: boolean = false;
-    
-    private recipe!: Recipe;
-    recipeSubject: Subject<Recipe> = new Subject<Recipe>();
+    private recipes: Recipe[]                            = [];
+    recipeSubject: BehaviorSubject<Recipe[]>             = new BehaviorSubject<Recipe[]>([]);
 
-    private ingredientsList: Ingredient[] = [];
-    ingredientsSubject: Subject<Ingredient[]> = new Subject<Ingredient[]>();
+    private ingredientsList: SuggestedIngredient[]       = [];
+    ingredientsSubject: Subject<SuggestedIngredient[]>   = new Subject<SuggestedIngredient[]>();
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private router: Router) {}
 
     loadIngredients(): void {
         if(this.ingredientsList.length > 0) {
-            // avoid reloading ingredients for nothing
             this.ingredientsSubject.next(this.ingredientsList.slice());
-        } else {
-            this.http.get<IngredientsResponse>('/api/ingredients').subscribe({
-                next: (list: IngredientsResponse) => {
-                    this.ingredientsList = list.ingredients;
-                    this.ingredientsSubject.next(this.ingredientsList.slice());
-                },
-                error: (e:Error) => {
-                    this.ingredientsList = [];
-                    console.log(e);      
-                }
-            });
+            return;
         }
-    }
-
-    loadRecipe(selection: IngredientForRecipe[], generateImages: boolean): void {
-        this.currentlyLoadingRecipe = true;
-        // TODO: replace this when the new API specs is pushed
-        const params = {ingredients: selection.map((e) => e.name)};
-        this.http.post<Recipe>('/api/recipe', params).subscribe({
-            next: (sentRecipe: Recipe) => {
-              this.recipe = sentRecipe;
-              if(!generateImages) {
-                this.recipe.image = {url: ''};
-                this.emitRecipe(); // no images to load, only the recipe
-                return;
-              }
-              // we load now the image
-              this.http.post<DishImage>('/api/image', {dishDescription: this.recipe.dishDescription}).subscribe({
-                next: (image: DishImage) => {
-                    this.recipe.image = image;
-                    this.emitRecipe();
-                },
-                error: (e:Error) => {
-                    console.log(e); // todo: better error management
-                    this.emitRecipe(true);
-                }
-              });
+        this.http.get<SuggestedIngredientResponse>('/api/ingredients').subscribe({
+            next: (response: SuggestedIngredientResponse) => {
+                this.ingredientsList = response.ingredients.map((i: SuggestedIngredientAPI) => i as SuggestedIngredient);
             },
-            error: (e:Error) => {
-                console.log(e); // todo: better error management
-                this.emitRecipe(true);
-            }
+            error: ()    => this.ingredientsList = [],
+            complete: () => this.ingredientsSubject.next(this.ingredientsList.slice())
         });
     }
 
-    recipeIsLoading(): boolean {
-        return this.currentlyLoadingRecipe;
+    loadRecipe(selection: RequestedIngredient[], generateImages: boolean): Observable<void> {
+        const params = { ingredients: selection.map(requestedIngredientForAPI) };
+        this.recipes =  [];
+        return this.http.post<RecipeResponse>('/api/recipe', params).pipe(map((
+            (response: RecipeResponse) => {
+              this.recipes = response.recipes;
+              if(!generateImages) {
+                
+                this.onRecipesLoaded();
+              } // TODO : LOAD IMAGES
+            }
+            // error case managed in component
+        )));
     }
 
-    private emitRecipe(hasErrors: boolean = false): void {
-        if(hasErrors) {
-            this.recipe = {
-                dishDescription: 'Aucune recette n\'a pu être chargée.', 
-                instructions: 'Une erreur est survenue, veuillez recharger la page pour recommencer.', 
-                image: {url: ''}
-            }
+    onRecipesLoaded(): void {
+        this.recipeSubject.next(this.recipes.slice());
+        this.router.navigate(['/app/result']);
+    }
+
+    onRecipeSelected(index: number): void {
+        this.router.navigate(['/app/recipe', index]);
+    }
+
+    getRecipe(index: number): (Recipe | null) {
+        if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
+            return null;
         }
-        this.recipeSubject.next(this.recipe);
-        this.currentlyLoadingRecipe = false;
+        return this.recipes[index];
+    }
+
+    goToHome(): void {
+        this.router.navigate(['/app']);
     }
 }
