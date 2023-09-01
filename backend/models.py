@@ -38,7 +38,7 @@ class SuggestedIngredient:
 
     @staticmethod
     def read_suggested_ingredients() -> dict[str, 'SuggestedIngredient']:
-        with open(root.PROJECT_ROOT_PATH / 'data' / 'suggested_ingredients.json') as f:
+        with open(root.PROJECT_ROOT_PATH / 'data' / 'suggested_ingredients.json', encoding='utf-8') as f:
             return {
                 data['name']: SuggestedIngredient(data['unit'], data['defaultQuantity'], data['autoAdd'])
                 for data in json.load(f)['ingredients']
