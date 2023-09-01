@@ -26,7 +26,7 @@ class RequestedIngredient:
         )
 
     @staticmethod
-    def to_json(ingredients: list['RequestedIngredient']) -> str:
+    def ingredient_list_to_json(ingredients: list['RequestedIngredient']) -> str:
         return json.dumps([ingredient.as_dict() for ingredient in ingredients], ensure_ascii=False, indent=4)
 
 
