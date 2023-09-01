@@ -13,7 +13,7 @@ class RequestedIngredientQuantity:
 @dataclasses.dataclass
 class RequestedIngredient:
     name: str
-    quantity: RequestedIngredientQuantity
+    quantity: RequestedIngredientQuantity | None
 
     def as_dict(self) -> dict:
         return dataclasses.asdict(self)
