@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Germaine",
+    "description": "Germaine, une retraitée pleine de vie, enchante sa cuisine de couleurs et de sourires en concoctant des délices pour ses petits-enfants. \nToujours à la recherche de nouvelles recettes, elle transforme chaque repas en une aventure gourmande, prête à rire de ses échecs et à partager des moments savoureux avec sa famille.\nSa cuisine est un voyage joyeux où chaque plat raconte une histoire et chaque bouchée révèle sa passion pour faire plaisir aux autres.",
+    "url": "/assets_app/germaine.png"
+  },
+  {
+    "name": "Bernardo",
+    "description": "Rencontrez Bernardo, le tourbillon culinaire à l'accent italien aussi vivant que les rues de Rome un jour de fête ! Bernardo ne cuisine pas seulement, il danse avec les saveurs et jongle avec les ingrédients comme s'ils étaient ses partenaires de bal.\nAvec une personnalité aussi pétillante que le meilleur prosecco, Bernardo concocte des plats qui sont des œuvres d'art comestibles. Sa cuisine est un mélange harmonieux de traditions italiennes et d'expérimentations audacieuses qui ne manquent jamais de surprendre et de ravir les papilles.",
+    "url": "/assets_app/bernardo.png"
+  },
+  {
+    "name": "Travis",
+    "description": "Faites place à Travis, le magicien culinaire au look mystérieux et aux tours de cuisine éblouissants ! Avec sa veste en cuir et son sourire en coin, il est le Gandalf de la gastronomie, jonglant avec les casseroles comme s'il lançait des sorts.\nTravis apporte une touche de modernité à la cuisine, transformant chaque plat en une expérience magique et impossible. Il fusionne des ingrédients que personne n'aurait osé marier et les fait danser dans une chorégraphie gustative digne d'une superproduction hollywoodienne.",
+    "url": "/assets_app/travis.png"
+  },
+  {
+    "name": "Stewen",
+    "description": "Rencontrez Stewen, le vagabond culinaire dont les rêves sont aussi vastes que les horizons lointains qu'il explore. Arborant un sourire rêveur et des yeux pétillants, Stewen danse au rythme des woks et des saveurs exotiques.\nIl parle le langage de la cuisine asiatique comme s'il s'agissait de poésie, dialoguant avec les ingrédients comme s'ils étaient des amis de longue date. Ses plats sont des toiles d'art abstraites, où les couleurs et les textures se marient dans une symphonie gustative unique."
+  },
+  {
+    "name": "Miggin",
+    "description": "Laissez-moi vous présenter Miggin Mc Miggins, le pirate au cœur aussi grand que les océans qu'il sillonne ! Sous son regard téméraire et sa barbe sauvage, se cache un passionné de cuisine qui jongle entre le maniement de l'épée et la maîtrise des saveurs. Entre deux aventures à la recherche de trésors, il se transforme en maître cuistot en plein air.\nSous le clair de lune, il raconte des légendes culinaires tout en préparant ses mets. Alors, hissez les voiles de l'appétit et embarquez pour une aventure gustative avec le pirate aux talents culinaires insoupçonnés.",
+    "url": "/assets_app/miggin.png"
+  }
+]
