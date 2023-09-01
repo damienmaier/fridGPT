@@ -748,7 +748,7 @@
             "name": "farine",
             "unit": "g",
             "defaultQuantity": 500.0,
-            "autoAdd": false
+            "autoAdd": true
         },
         {
             "name": "tortilla à la farine",
@@ -965,6 +965,12 @@
             "unit": "g",
             "defaultQuantity": 15.0,
             "autoAdd": false
+        },
+        {
+            "name": "armoire à épices complète",
+            "unit": "g",
+            "defaultQuantity": 15.0,
+            "autoAdd": true
         },
         {
             "name": "crème épaisse",
@@ -1258,7 +1264,7 @@
             "name": "huile d'olive",
             "unit": "ml",
             "defaultQuantity": 500.0,
-            "autoAdd": false
+            "autoAdd": true
         },
         {
             "name": "sel d'oignon",
@@ -1372,7 +1378,7 @@
             "name": "poivre",
             "unit": "g",
             "defaultQuantity": 30.0,
-            "autoAdd": false
+            "autoAdd": true
         },
         {
             "name": "pignons de pin",
@@ -1558,7 +1564,7 @@
             "name": "sel",
             "unit": "g",
             "defaultQuantity": 100.0,
-            "autoAdd": false
+            "autoAdd": true
         },
         {
             "name": "beurre salé",
@@ -1690,7 +1696,7 @@
             "name": "sucre",
             "unit": "g",
             "defaultQuantity": 250.0,
-            "autoAdd": false
+            "autoAdd": true
         },
         {
             "name": "sultanes",
@@ -1819,6 +1825,12 @@
             "autoAdd": false
         },
         {
+            "name": "huile de cuisson",
+            "unit": "ml",
+            "defaultQuantity": 500.0,
+            "autoAdd": true
+        },
+        {
             "name": "bouillon de légumes",
             "unit": "ml",
             "defaultQuantity": 750.0,
@@ -1846,7 +1858,7 @@
             "name": "vinaigre",
             "unit": "ml",
             "defaultQuantity": 250.0,
-            "autoAdd": false
+            "autoAdd": true
         },
         {
             "name": "eau",
