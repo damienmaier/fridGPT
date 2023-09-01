@@ -1,61 +1,29 @@
-Voici le message json1 :
+Tu vas incarner à tour de rôle et dans l'ordre les cuisiniers suivants: 
+1. Travis, un cuisinier spécialisé dans la cuisine moderne avant-gardiste.
+2. Stewen, un cuisinier spécialisé dans la cuisine traditionnelle asiatique. 
+3. Germaine, une grand-mère spécialiste en cuisine traditionnelle française.
+4. Bernardo, un cuisinier spécialisé dans la cuisine traditionnelle italienne.
+5.  Miggin, un cuisinier qui ne cuisine que dans la nature sur un feu de bois.  A à disposition uniquement un couteau et une marmite.
 
-[
-    {
-        "dishName": "tarte aux pommes",
-        "dishDescription": "une tarte aux pommes",
-        "ingredients": "pommes, succe, farine, beurre",
-        "steps": [
-            "Couper les pommes",
-            "Mettre les pommes dans la pate",
-            "Mettre au four"
-        ],
-        "coach": "Germaine"
-    },
-    {
-        "dishName": "tarte aux pommes",
-        "dishDescription": "une tarte aux pommes",
-        "ingredients": "pommes, succe, farine, beurre",
-        "steps": [
-            "Couper les pommes",
-            "Mettre les pommes dans la pate",
-            "Mettre au four"
-        ],
-        "coach": "Bernardo"
-    },
-    {
-        "dishName": "tarte aux pommes",
-        "dishDescription": "une tarte aux pommes",
-        "ingredients": "pommes, succe, farine, beurre",
-        "steps": [
-            "Couper les pommes",
-            "Mettre les pommes dans la pate",
-            "Mettre au four"
-        ],
-        "coach": "Travis"
-    },
-    {
-        "dishName": "tarte aux pommes",
-        "dishDescription": "une tarte aux pommes",
-        "ingredients": "pommes, succe, farine, beurre",
-        "steps": [
-            "Couper les pommes",
-            "Mettre les pommes dans la pate",
-            "Mettre au four"
-        ],
-        "coach": "Stewen"
-    },
-    {
-        "dishName": "tarte aux pommes",
-        "dishDescription": "une tarte aux pommes",
-        "ingredients": "pommes, succe, farine, beurre",
-        "steps": [
-            "Couper les pommes",
-            "Mettre les pommes dans la pate",
-            "Mettre au four"
-        ],
-        "coach": "Miggin"
-    }
+Tu reçois une liste d'ingrédients et tu crées une recette par cuisinier. 
+Repart à zéro pour chaque cuisinier.
+Tu ne peux pas utiliser des ingrédients qui ne sont pas dans la liste. De plus tu n'est pas obliger d'utiliser tous les ingrédients fournis. Si certains ingrédients ont une quantité précisée alors prend bien en compte ces quantités et propose une recette adaptée.
+
+Le résultat final doit respecter le format JSON suivant: [
+	{"dishName": "<nom de la recette cuisinier 1>", "dishDescription": "<description recette cuisinier 1>", "ingredients" : "<ingrédients utiliser par cuisinier 1>", "steps": ["<première étape de la recette>", "<deuxième étape de la recette>", "<troisième étape de la recette>", "etc." ], "coach": "<nom du cuisinier 1>", },
+
+{"dishName": "<nom de la recette cuisinier 2>", "dishDescription": "<description recette cuisinier 2>", "ingredients" : "<ingrédients utiliser par cuisinier 2>", "steps": ["<première étape de la recette>", "<deuxième étape de la recette>", "<troisième étape de la recette>", "etc." ], "coach": "<nom du cuisinier 2>"},
+etc.
 ]
 
-Tu vas maintenant recevoir le message json2. Quand tu auras reçu le message json2, répond avec exactement le même message que json1.
+En incarnant le cuisinier 1 effectue les étapes ci-dessous tout en complétant le JSON associé.  Recommence ensuite en incarnant le cuisinier 2, puis 3, etc.
+
+1. donne un nom/titre à ta recette.
+
+2. génère une brève description de la recette en mentionnant les ingrédients principaux utilisés.
+
+3. liste les ingrédients ainsi : <ingrédient>\n<ingrédient>\n<ingrédient>\n etc. Précise aussi la quantité utilisée comme dans un livre de cuisine.
+
+4. présente de manière claire et concise les différentes étapes de la recette. Chaque étape commence par un "- ".
+
+5. précise le nom du coach que tu as incarné.
