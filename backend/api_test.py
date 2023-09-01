@@ -182,6 +182,10 @@ class RecipeEndpointTest(ApiEndpointTest):
             self.assertTrue(3 <= len(recipe['coach']['description']) <= 500,
                             'Should return a coach description of correct length')
 
+            self.assertIsInstance(recipe['coach']['image'], str, 'Should return a coach image url')
+            self.assertTrue(requests.head(recipe['coach']['image']).headers['content-type'].startswith('image/'),
+                            'url should return an image')
+
 
 @unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically.")
 class ImageEndpointTest(ApiEndpointTest):
