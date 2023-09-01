@@ -12,6 +12,8 @@ def parse_and_validate_ingredients(json_request) -> [models.RequestedIngredient]
     if not gpt.is_sufficient_ingredients(ingredients):
         raise errors.InsufficientIngredients
 
+    return ingredients
+
 
 def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient:
     try:

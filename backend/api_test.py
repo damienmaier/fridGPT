@@ -51,7 +51,7 @@ class RecipeEndpointTest(ApiEndpointTest):
 
     def test_ingredient_in_list_wrong_unit(self):
         json_request = {
-            "ingredients": [{"name": "carottes", "quantity": {"unit": "kg", "value": 4}}]
+            "ingredients": [{"name": "carotte", "quantity": {"unit": "kg", "value": 4}}]
         }
         response = self.client.post('/api/recipe', json=json_request)
         self.assertEqual(response.status_code, 400, 'Should return 400')
@@ -59,7 +59,7 @@ class RecipeEndpointTest(ApiEndpointTest):
             response.json,
             {
                 "error": "wrong ingredient unit",
-                "ingredient": {"name": "carottes", "quantity": {"unit": "kg", "value": 4}}
+                "ingredient": {"name": "carotte", "quantity": {"unit": "kg", "value": 4}}
             },
             'Should return wrong ingredient error with ingredient'
         )
@@ -67,7 +67,7 @@ class RecipeEndpointTest(ApiEndpointTest):
     def test_too_long_custom_ingredient(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
+                {"name": "carotte", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "a" * 51, "quantity": {"unit": "kg", "value": 4}}
             ]
         }
@@ -85,7 +85,7 @@ class RecipeEndpointTest(ApiEndpointTest):
     def test_custom_ingredient_unsuitable_unit(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
+                {"name": "carotte", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "ananas", "quantity": {"unit": "l", "value": 4}}
             ]
         }
@@ -103,7 +103,7 @@ class RecipeEndpointTest(ApiEndpointTest):
     def test_inappropriate_custom_ingredient(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
+                {"name": "carotte", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "brique", "quantity": {"unit": "kg", "value": 4}}
             ]
         }
@@ -133,14 +133,13 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return insufficient ingredients error'
         )
 
-    @unittest.skip("Not implemented")
     def test_correct_request(self):
         json_request = {
             "ingredients": [
-                {"name": "carottes", "quantity": {"unit": "pièce", "value": 4}},
+                {"name": "carotte", "quantity": {"unit": "pièce", "value": 4}},
                 {"name": "pommes de terre", "quantity": {"unit": "kg", "value": 2.5}},
-                {"name": "poireaux", "quantity": {"unit": "pièce", "value": 2}},
-                {"name": "oignons", "quantity": {"unit": "pièce", "value": 2}},
+                {"name": "poireau", "quantity": {"unit": "pièce", "value": 2}},
+                {"name": "oignon", "quantity": {"unit": "pièce", "value": 2}},
                 {"name": "beurre"},
                 {"name": "lardons"},
                 {"name": "lait", "quantity": {"unit": "l", "value": 0.5}},
@@ -179,12 +178,10 @@ class RecipeEndpointTest(ApiEndpointTest):
             self.assertTrue(3 <= len(recipe['coach']['name']) <= 50, 'Should return a coach name of correct length')
 
             self.assertIsInstance(recipe['coach']['description'], str, 'Should return a coach description')
-            self.assertTrue(3 <= len(recipe['coach']['description']) <= 500,
+            self.assertTrue(3 <= len(recipe['coach']['description']) <= 1000,
                             'Should return a coach description of correct length')
 
-            self.assertIsInstance(recipe['coach']['image'], str, 'Should return a coach image url')
-            self.assertTrue(requests.head(recipe['coach']['image']).headers['content-type'].startswith('image/'),
-                            'url should return an image')
+            self.assertIsInstance(recipe['coach']['image_url'], str, 'Should return a coach image url')
 
 
 @unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically.")

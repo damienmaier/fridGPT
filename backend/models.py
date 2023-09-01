@@ -13,7 +13,7 @@ class RequestedIngredientQuantity:
 @dataclasses.dataclass
 class RequestedIngredient:
     name: str
-    quantity: RequestedIngredientQuantity
+    quantity: RequestedIngredientQuantity | None
 
     def as_dict(self) -> dict:
         return dataclasses.asdict(self)
@@ -26,12 +26,13 @@ class RequestedIngredient:
         )
 
     @staticmethod
-    def to_json(ingredients: list['RequestedIngredient']) -> str:
+    def ingredient_list_to_json(ingredients: list['RequestedIngredient']) -> str:
         return json.dumps([ingredient.as_dict() for ingredient in ingredients], ensure_ascii=False, indent=4)
 
 
 @dataclasses.dataclass
 class SuggestedIngredient:
+    name: str
     unit: str
     default_quantity: float
     auto_add: bool
@@ -40,9 +41,30 @@ class SuggestedIngredient:
     def read_suggested_ingredients() -> dict[str, 'SuggestedIngredient']:
         with open(root.PROJECT_ROOT_PATH / 'data' / 'suggested_ingredients.json', encoding='utf-8') as f:
             return {
-                data['name']: SuggestedIngredient(data['unit'], data['defaultQuantity'], data['autoAdd'])
+                data['name']: SuggestedIngredient(data['name'], data['unit'], data['defaultQuantity'], data['autoAdd'])
                 for data in json.load(f)['ingredients']
             }
 
 
 SUGGESTED_INGREDIENTS = SuggestedIngredient.read_suggested_ingredients()
+
+
+@dataclasses.dataclass
+class Coach:
+    name: str
+    description: str
+    image_url: str
+
+    def as_dict(self):
+        return dataclasses.asdict(self)
+
+    @staticmethod
+    def read_coaches() -> dict[str, 'Coach']:
+        with open(root.PROJECT_ROOT_PATH / 'data' / 'coaches.json', encoding='utf-8') as f:
+            return {
+                data['name']: Coach(data['name'], data['description'], data['image_url'])
+                for data in json.load(f)
+            }
+
+
+COACHES = Coach.read_coaches()

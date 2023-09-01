@@ -101,4 +101,4 @@ class GptAssistedSufficientIngredientsValidation(gpt.classifier.GptAssistedClass
 
     @staticmethod
     def convert_case_to_gpt_message(case: [models.RequestedIngredient]) -> str:
-        return models.RequestedIngredient.to_json(case)
+        return models.RequestedIngredient.ingredient_list_to_json(case)
