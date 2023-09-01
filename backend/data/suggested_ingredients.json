@@ -247,7 +247,7 @@
             "autoAdd": false
         },
         {
-            "name": "carottes",
+            "name": "carotte",
             "unit": "pièce",
             "defaultQuantity": 3.0,
             "autoAdd": false
@@ -1184,8 +1184,8 @@
         },
         {
             "name": "lait",
-            "unit": "ml",
-            "defaultQuantity": 500.0,
+            "unit": "l",
+            "defaultQuantity": 1.0,
             "autoAdd": false
         },
         {
@@ -1273,7 +1273,7 @@
             "autoAdd": false
         },
         {
-            "name": "oignons",
+            "name": "oignon",
             "unit": "pièce",
             "defaultQuantity": 3.0,
             "autoAdd": false
@@ -1418,7 +1418,7 @@
         },
         {
             "name": "pommes de terre",
-            "unit": "g",
+            "unit": "kg",
             "defaultQuantity": 500.0,
             "autoAdd": false
         },

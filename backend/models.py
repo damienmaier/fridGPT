@@ -63,7 +63,7 @@ class Coach:
         with open(root.PROJECT_ROOT_PATH / 'data' / 'coaches.json', encoding='utf-8') as f:
             return {
                 data['name']: Coach(data['name'], data['description'], data['image_url'])
-                for data in json.load(f)['coaches']
+                for data in json.load(f)
             }
 
 
