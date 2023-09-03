@@ -1,23 +1,22 @@
 import dataclasses
 import json
-
-import root
+import pathlib
 
 
 @dataclasses.dataclass
 class SuggestedIngredient:
     name: str
     unit: str
-    default_quantity: float
-    auto_add: bool
+    defaultQuantity: float
+    autoAdd: bool
+
+    def as_dict(self):
+        return dataclasses.asdict(self)
 
     @staticmethod
     def read_suggested_ingredients() -> dict[str, 'SuggestedIngredient']:
-        with open(root.PROJECT_ROOT_PATH / 'data' / 'suggested_ingredients.json', encoding='utf-8') as f:
-            return {
-                data['name']: SuggestedIngredient(data['name'], data['unit'], data['defaultQuantity'], data['autoAdd'])
-                for data in json.load(f)['ingredients']
-            }
+        with open(pathlib.Path(__file__).parent / 'suggested_ingredients.json', encoding='utf-8') as f:
+            return {data['name']: SuggestedIngredient(**data) for data in json.load(f)}
 
 
 SUGGESTED_INGREDIENTS = SuggestedIngredient.read_suggested_ingredients()

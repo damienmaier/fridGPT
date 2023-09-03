@@ -1,9 +1,7 @@
-import json
-
 import flask
 
 import dalle
-import root
+import models
 import validation
 
 
@@ -16,10 +14,7 @@ def create_api(app: flask.Flask) -> None:
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():
-        with open(root.PROJECT_ROOT_PATH / 'data' / 'suggested_ingredients.json', 'r', encoding='utf-8') as file:
-            ingredients = json.load(file)
-
-        return ingredients
+        return {'ingredients': [ingredient.as_dict() for ingredient in models.SUGGESTED_INGREDIENTS.values()]}
 
     @app.post('/api/image')
     def image_endpoint():

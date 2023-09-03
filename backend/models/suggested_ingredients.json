@@ -1,0 +1,3458 @@
+[
+  {
+    "name": "poulet",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saumon",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bœuf",
+    "unit": "kg",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "porc",
+    "unit": "kg",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "avocat",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre de cidre de pomme",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "asperges",
+    "unit": "botte",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "aubergine",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "petites tomates prunes",
+    "unit": "gramme",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bacon",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "levure chimique",
+    "unit": "cuillère à café",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre balsamique",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "basilic",
+    "unit": "gramme",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles de basilic",
+    "unit": "feuille",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "riz basmati",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuille de laurier",
+    "unit": "feuille",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles de laurier",
+    "unit": "feuille",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poitrine de bœuf",
+    "unit": "gramme",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "filet de boeuf",
+    "unit": "gramme",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce au bœuf",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bouillon de boeuf",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bicarbonate de soude",
+    "unit": "cuillère à café",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "biryani masala",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivre noir",
+    "unit": "cuillère à café",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mélasse noire",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots borlotti",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtes nœud papillon",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes bramley",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "brandy",
+    "unit": "ml",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pain",
+    "unit": "tranche",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": " fil d'ariane ",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "brocoli",
+    "unit": "tête",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lentilles brunes",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "riz brun",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre brun",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "beurre",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cacao",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cajun",
+    "unit": "cuillère à café",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates en conserve",
+    "unit": "boîte",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots cannellini",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cardamome",
+    "unit": "gramme",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "carotte",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noix de cajou",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noix de cajou",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre en poudre",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivre de cayenne",
+    "unit": "pincée",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "céleri-rave",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "céleri",
+    "unit": "tige",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sel de céleri",
+    "unit": "cuillère à café",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "échalotes",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes de terre charlotte",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage cheddar",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage en grains",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates cerises",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "champignon châtaignier",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poitrine de poulet",
+    "unit": "gramme",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poitrines de poulet",
+    "unit": "gramme",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cuisses de poulet",
+    "unit": "gramme",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bouillon de poulet",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cuisses de poulet",
+    "unit": "gramme",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pois chiches",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre de chili",
+    "unit": "cuillère à café",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "beurre réfrigéré",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "piment",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre de piment",
+    "unit": "pincée",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "brocoli chinois",
+    "unit": "tête",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pépites de chocolat",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oignon haché",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "persil haché",
+    "unit": "gramme",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates hachées",
+    "unit": "gramme",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chorizo",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pudding de noël",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "coriandre",
+    "unit": "gramme",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cannelle",
+    "unit": "cuillère à café",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bâton de cannelle",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "girofle",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre de coco",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cacao",
+    "unit": "cuillère à café",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème de noix de coco",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait de coco",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage colby jack",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "eau froide",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait concentré",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "coriandre",
+    "unit": "gramme",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles de coriandre",
+    "unit": "gramme",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graines de coriandre",
+    "unit": "gramme",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tortillas de maïs",
+    "unit": "pièce",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fécule de maïs",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème fraiche",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage feta en cubes",
+    "unit": "gramme",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "concombre",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cumin",
+    "unit": "cuillère à café",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graines de cumin",
+    "unit": "cuillère à café",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre de curry",
+    "unit": "cuillère à café",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre brun foncé",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre brun mou foncé",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce soja noire",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre demerara",
+    "unit": "cuillère à soupe",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates en dés",
+    "unit": "g",
+    "defaultQuantity": 400.0,
+    "autoAdd": false
+  },
+  {
+    "name": "biscuits digestifs",
+    "unit": "pièce",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "aneth",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "viande de doner",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "double crème",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "origan séché",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vin blanc sec",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "aubergines",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtés impériaux",
+    "unit": "pièce",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "blanc d'oeuf",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jaunes d'œufs",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oeufs",
+    "unit": "pièce",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce enchilada",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "moutarde anglaise",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile d'olive extra vierge",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "assaisonnement fajita",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "farfalle",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bulbe de fenouil",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graines de fenouil",
+    "unit": "g",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fenugrec",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feta",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce de poisson",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "amandes effilées",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "œufs de lin",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "farine",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": true
+  },
+  {
+    "name": "tortilla à la farine",
+    "unit": "pièce",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes de terre farineuses",
+    "unit": "kg",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "œuf fermier, battu",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "œufs fermiers, battus",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lentilles françaises",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "basilic frais",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "thym frais",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "persil fraîchement haché",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "frites",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "yaourt entier",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "garam masala",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ail",
+    "unit": "g",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gousse d'ail",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre d'ail",
+    "unit": "g",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce à l'ail",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ghee",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gingembre",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cordial au gingembre",
+    "unit": "ml",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte d'ail et de gingembre",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte de gingembre",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sirop doré",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage gouda",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre granulé",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates raisins",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "yaourt grec",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots verts",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "piment vert",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "olives vertes",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lentilles vertes et rouges",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "salsa verte",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "amandes moulues",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cumin moulu",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gingembre moulu",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gruyère",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "coquilles à tacos dures",
+    "unit": "pièce",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "épice harissa",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "armoire à épices complète",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": true
+  },
+  {
+    "name": "crème épaisse",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chérie",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "raifort",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bouillon de bœuf chaud",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce piquante",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème glacée",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saucisses italiennes au fenouil",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "assaisonnement italien",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jalapeno",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "riz au jasmin",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "topinambours",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chou frisé",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "khus khus",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gambas",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sel casher",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "agneau",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "côtelettes de longe d'agneau",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "agneau haché",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles de lasagnes",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bœuf haché maigre",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poireau",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "citron",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jus de citron",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "zeste de citron",
+    "unit": "g",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "citrons",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "laitue",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chaux",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "laitue little gem",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "macaronis",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "maquereau",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte de madras",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "marjolaine",
+    "unit": "g",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte de curry massaman",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "dates medjool",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "nids de meringue",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait",
+    "unit": "l",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ail haché",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "guimauves miniatures",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "menthe",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage monterey jack",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "boules de mozzarella",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre muscovado",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "champignons",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "moutarde",
+    "unit": "ml",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "moutarde en poudre",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graines de moutarde",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noix de muscade",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile d'olive",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": true
+  },
+  {
+    "name": "sel d'oignon",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oignon",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "orange",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "zeste d'orange",
+    "unit": "g",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "origan",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce aux huîtres",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "paprika",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jambon de parme",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "parmesan",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "parmesan",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "parmigiano-reggiano",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "persil",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "beurre de cacahuète",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile d'arachide",
+    "unit": "ml",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cacahuètes",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pois",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pecorino",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "penne rigate",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivre",
+    "unit": "g",
+    "defaultQuantity": 30.0,
+    "autoAdd": true
+  },
+  {
+    "name": "pignons de pin",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "olives noires dénoyautées",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chocolat nature",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "farine nature",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates prunes",
+    "unit": "g",
+    "defaultQuantity": 400.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fécule de pomme de terre",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes de terre",
+    "unit": "kg",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crevettes",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte feuilletée",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "confiture de framboises",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crevettes crues",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "flacons de piment rouge",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "piment rouge",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre de piment rouge",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oignons rouges",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivron rouge",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "flacons de piment rouge",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vin rouge",
+    "unit": "ml",
+    "defaultQuantity": 750.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots frits",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "riz",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "nouilles de riz",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "nouilles en bâtonnets de riz",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vermicelles de riz",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rigatoni",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fusée",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "flocons d'avoine",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "safran",
+    "unit": "g",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sage",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saké",
+    "unit": "ml",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "salsa",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sel",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": true
+  },
+  {
+    "name": "beurre salé",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saucisses",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sel marin",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "farine autolevante",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait demi-écrémé",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graine de sésame",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "échalotes",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage mexicain râpé",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage monterey jack râpé",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "petites pommes de terre",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "paprika fumé",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "paprika fumé",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème sure",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce soja",
+    "unit": "ml",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait de soja",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "spaghetti",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "épinards",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oignons nouveaux",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "courge",
+    "unit": "g",
+    "defaultQuantity": 800.0,
+    "autoAdd": false
+  },
+  {
+    "name": "légumes sautés",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fraises",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": true
+  },
+  {
+    "name": "sultanes",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile de tournesol",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "boule de tamarin",
+    "unit": "pièce",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte de tamarin",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce de poisson thaïlandaise",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte de curry vert thaïlandais",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte de curry rouge thaïlandais",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "thym",
+    "unit": "g",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ketchup aux tomates",
+    "unit": "ml",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "purée de tomates",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "toor dal",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "thon",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "curcuma",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre de curcuma",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "navets",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vanille",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "extrait de vanille",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "veau",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "beurre végétalien",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile végétale",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile de cuisson",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": true
+  },
+  {
+    "name": "bouillon de légumes",
+    "unit": "ml",
+    "defaultQuantity": 750.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cube de bouillon de légumes",
+    "unit": "unité",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigrette",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles de vigne",
+    "unit": "pièce",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": true
+  },
+  {
+    "name": "eau",
+    "unit": "ml",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pépites de chocolat blanc",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poisson blanc",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "filets de poisson blanc",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre blanc",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vin blanc",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait entier",
+    "unit": "ml",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "blé entier",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pain complet",
+    "unit": "tranche",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce worcestershire",
+    "unit": "ml",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "yaourt",
+    "unit": "unité",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "courgettes",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bretzels",
+    "unit": "unité",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage à la crème",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre glace",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "popcorn au caramel",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "caramel",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce caramel",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tagliatelles",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fettuccines",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème coagulée",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "farine de maïs",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "moules",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fidéo",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lotte",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtes vermicelles",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bébé calamar",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "calmar",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bouillon de poisson",
+    "unit": "ml",
+    "defaultQuantity": 750.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sardins",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "olives noires",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oignon",
+    "unit": "pièce",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomate",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "canard",
+    "unit": "g",
+    "defaultQuantity": 2000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cuisses de canard",
+    "unit": "g",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cube de bouillon de poulet",
+    "unit": "unité",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtes pappardelle",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtes paccheri",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtes linguine",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pois sucrés",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pain croustillant",
+    "unit": "tranche",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage frais",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "palourdes",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "passata",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile de colza",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage stilton",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cuisse d'agneau",
+    "unit": "g",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "épaule d'agneau",
+    "unit": "g",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "abricot",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "courge musquée",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "couscous",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bœuf haché",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "dinde hachée",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce barbecue",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "maïs doux",
+    "unit": "unité",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graisse d'oie",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graisse de canard",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fenouil",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre de vin rouge",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "romarin",
+    "unit": "branche",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots beurre",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots pinto",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce tomate",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mascarpone",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mozzarella",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ricotta",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "abricots secs",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "câpres",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "banane",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "framboises",
+    "unit": "g",
+    "defaultQuantity": 125.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bleuets",
+    "unit": "g",
+    "defaultQuantity": 125.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noix",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noix de pécan",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sirop d'érable",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre mou brun clair",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre mou brun foncé",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pépites de chocolat noir",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chocolat au lait",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chocolat noir",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "citrouille",
+    "unit": "g",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte brisée",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "biscuits aux cacahuètes",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles de gélatine",
+    "unit": "feuille",
+    "defaultQuantity": 8.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cacahuète cassante",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pêches",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivre jaune",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivre vert",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "courgettes",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates en conserve",
+    "unit": "ml",
+    "defaultQuantity": 400.0,
+    "autoAdd": false
+  },
+  {
+    "name": "châtaignes",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "champignons sauvages",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile de truffe",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "paneer",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pain naan",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lentilles",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "légumes rôtis",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots rouges",
+    "unit": "g",
+    "defaultQuantity": 400.0,
+    "autoAdd": false
+  },
+  {
+    "name": "céréales mélangées",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tahini",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tortillas",
+    "unit": "pièce",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "nouilles udon",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chou",
+    "unit": "g",
+    "defaultQuantity": 800.0,
+    "autoAdd": false
+  },
+  {
+    "name": "champignons shiitake",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mirin",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile de graines de sésame",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "baguette",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates de vigne",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "suif",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "suédois",
+    "unit": "pièce",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jambon",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huîtres",
+    "unit": "pièce",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "stout",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saindoux",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "roin d'agneau",
+    "unit": "g",
+    "defaultQuantity": 800.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rodin de boeuf",
+    "unit": "g",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "aiglefin",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "aiglefin fumé",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "choux de bruxelles",
+    "unit": "g",
+    "defaultQuantity": 400.0,
+    "autoAdd": false
+  },
+  {
+    "name": "raisins secs",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "groseilles",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème anglaise",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "peau mixte",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "groseilles",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mûres",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noisettes",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes braeburn",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "colorant alimentaire rouge",
+    "unit": "goutte",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "colorant alimentaire rose",
+    "unit": "goutte",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "colorant alimentaire bleu",
+    "unit": "goutte",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "colorant alimentaire jaune",
+    "unit": "goutte",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "confiture d'abricots",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâte d'amande",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "amandes",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "boudin noir",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fèves au lard",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "farine blanche",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "levure",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mélange de fruits",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fruits secs",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cerise",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cerise glacée",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mélasse",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gruau",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "avoine",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oeuf",
+    "unit": "pièce",
+    "defaultQuantity": 12.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tibia de bœuf",
+    "unit": "g",
+    "defaultQuantity": 1000.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bouquet garni",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème unique",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gelée de vin rouge",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fromage de chèvre",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "prosciutto",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "beurre non salé",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "brie",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "feuilles d'estragon",
+    "unit": "g",
+    "defaultQuantity": 15.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ciboulette",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poires",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chocolat blanc",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "anis étoilé",
+    "unit": "pièce",
+    "defaultQuantity": 5.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crevettes tigrées",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poudre à crème anglaise",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "noix de coco desséchée",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pois surgelés",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "porc haché",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "crème de maïs",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tomates séchées au soleil",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "moutarde de dijon",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce tabasco",
+    "unit": "ml",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "huile de canola",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "morue",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "morue salée",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ackee",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jerk",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bœuf haché",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "bébé aubergine",
+    "unit": "pièce",
+    "defaultQuantity": 4.0,
+    "autoAdd": false
+  },
+  {
+    "name": "paella riz",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "scotch bonnet",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "queue de bœuf",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "fèves",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vivaneau rouge",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre de malt",
+    "unit": "ml",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre de riz",
+    "unit": "ml",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "châtaigne d'eau",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tofu",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "doubanjiang",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots noirs fermentés",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "échalotes",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "poivre du sichuan",
+    "unit": "g",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "peau wonton",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "amidon",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vin de riz",
+    "unit": "ml",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cuisiner le vin",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sauce au canard",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "gochujang",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "germes de soja",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "nouilles",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "champignons à oreilles de bois",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rhum brun",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rhum léger",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rhum",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "muffins anglais",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "muffins",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "vinaigre de vin blanc",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saumon fumé",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "barre mars",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rice krispies",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "piments ancho",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "lait d'amande",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "piment de la jamaïque",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "extrait d'amande",
+    "unit": "ml",
+    "defaultQuantity": 10.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tripes",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "viande de chèvre",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "haricots noirs",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "filet d'anchois",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ras el hanout",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pâtisserie filo",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "eau de fleur d'oranger",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "écorces confites",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "grand marnier",
+    "unit": "ml",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "xérès",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "eau de rose",
+    "unit": "ml",
+    "defaultQuantity": 30.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mélange d'épices",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "viande hachée",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "patates douces",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "petits pains",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "chignon",
+    "unit": "pièce",
+    "defaultQuantity": 1.0,
+    "autoAdd": false
+  },
+  {
+    "name": "petits pains aux pommes de terre",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "porc haché",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "côtelettes de porc",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pommes de terre yukon gold",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "oignon jaune",
+    "unit": "pièce",
+    "defaultQuantity": 3.0,
+    "autoAdd": false
+  },
+  {
+    "name": "concentré de bouillon de bœuf",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "concentré de bouillon de poulet",
+    "unit": "g",
+    "defaultQuantity": 20.0,
+    "autoAdd": false
+  },
+  {
+    "name": "concombre persan",
+    "unit": "pièce",
+    "defaultQuantity": 2.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mayonnaise",
+    "unit": "ml",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sriracha",
+    "unit": "ml",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "rhubarbe",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "pain pita",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "boulgour",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "quinoa",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cornichons à l'aneth",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "petits pains à hamburger aux graines de sésame",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "petits pains",
+    "unit": "pièce",
+    "defaultQuantity": 6.0,
+    "autoAdd": false
+  },
+  {
+    "name": "laitue iceberg",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "relish aux cornichons",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "tranches de fromage",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "raccourcissement",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "eau tiède",
+    "unit": "ml",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "eau bouillante",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "jus de cornichon",
+    "unit": "ml",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sucre en poudre",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "kielbasa",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "saucisse polonaise",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "choucroute",
+    "unit": "g",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "graine de carvi",
+    "unit": "g",
+    "defaultQuantity": 50.0,
+    "autoAdd": false
+  },
+  {
+    "name": "hareng",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "confiture",
+    "unit": "g",
+    "defaultQuantity": 250.0,
+    "autoAdd": false
+  },
+  {
+    "name": "mulukhiyah",
+    "unit": "g",
+    "defaultQuantity": 100.0,
+    "autoAdd": false
+  },
+  {
+    "name": "riz à sushi",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "figues",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "cidre",
+    "unit": "ml",
+    "defaultQuantity": 500.0,
+    "autoAdd": false
+  },
+  {
+    "name": "betterave",
+    "unit": "g",
+    "defaultQuantity": 150.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sardines",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  },
+  {
+    "name": "ciabatta",
+    "unit": "g",
+    "defaultQuantity": 300.0,
+    "autoAdd": false
+  },
+  {
+    "name": "sarrasin",
+    "unit": "g",
+    "defaultQuantity": 200.0,
+    "autoAdd": false
+  }
+]
