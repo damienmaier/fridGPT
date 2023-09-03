@@ -5,9 +5,11 @@ import openai
 
 import logging
 
-logging.basicConfig(level=logging.WARNING)
-
 dotenv.load_dotenv()
+
+if 'LOG_LEVEL' in os.environ:
+    logging.basicConfig(level=os.environ['LOG_LEVEL'])
+
 if 'OPENAI_API_KEY' not in os.environ:
     raise Exception('''
     OPENAI_API_KEY environment variable is not set.
