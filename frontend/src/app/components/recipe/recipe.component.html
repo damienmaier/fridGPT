@@ -14,7 +14,14 @@
                 <img [src]="recipe.coach.imageUrl" width="90" alt=""/>
             </div>
         </div>
-        <div class="col">
+        <div class="col" id="col-step">
+            <div id="small-screen-info">
+                <div>
+                    <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
+                    <small class="text-white coach-name"> Proposé par {{ recipe.coach.name }}</small>
+                </div>
+                <img [src]="recipe.coach.imageUrl" width="80" alt=""/>
+            </div>
             <div id="navigation">
                 <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>
                 <button class="btn" (click)="nextStep(true)"><i class="bi bi-chevron-right"></i></button>
