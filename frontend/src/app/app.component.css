@@ -10,13 +10,12 @@
     bottom: 0;
     background-color: #202027;
     padding: 5px;
-    height: 40px;
+    height: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-size: .8em;
 }
-
 
 #app-content {
     position: absolute;
@@ -34,4 +33,24 @@
 #app-logo:hover + p {
     box-shadow: inset 100px 0 0 0 rgba(70, 139, 151, 0.5);
     border-radius: 5px;
+}
+
+@media screen and (max-width: 770px) { 
+    #app-name {
+        display: none;
+    }
+
+    #app-header {
+        background-color: transparent;
+    }
+
+    #app-logo {
+        z-index: 1;
+    }
+
+    #app-footer {
+        padding: 2px;
+        height: 20px;
+        font-size: .6em;
+    }
 }

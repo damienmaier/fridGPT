@@ -8,7 +8,7 @@
   
 .box {
     flex: 0 0 25%;
-    height: 76vh;
+    height: 77vh;
     scroll-snap-align: start;
     position:relative;
     overflow-x: hidden;
@@ -58,4 +58,28 @@ p {
     align-self: flex-end;
 }
 
+@media screen and (max-width: 770px) { 
+    #header {
+       display: none;
+    }
+    .box {
+        min-width: 100vw;
+        height: 98vh;
+        margin-right: 0;
+    }
+
+    .container {
+        
+        position: fixed;
+        top:0;
+    }
+
+    .dish-img {
+        z-index: -1;
+    }
+
+    .dish-title {
+        font-size: 1.4em!important;
+    }
+}
   
