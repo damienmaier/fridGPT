@@ -16,7 +16,7 @@ class RequestedIngredient:
     quantity: RequestedIngredientQuantity | None
 
     def as_dict(self) -> dict:
-        return dataclasses.asdict(self)
+        return {'name': self.name, } | ({'quantity': dataclasses.asdict(self.quantity)} if self.quantity else {})
 
     @staticmethod
     def from_dict(data: dict) -> 'RequestedIngredient':
