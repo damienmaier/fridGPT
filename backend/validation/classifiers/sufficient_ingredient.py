@@ -8,9 +8,11 @@ class SufficientIngredientsValidator(ai.gpt.Classifier):
         system_message = (
             "Tu vas recevoir dans chaque message un texte json décrivant une liste d'ingrédients  "
             "de cuisine disponibles dans une cuisine, avec éventuellement leur quantité. "
-            "Ton travail est d'indiquer si cette liste contient suffisamment d'ingrédients pour "
-            "cuisiner quelque chose. Tu dois tenir compte du fait qu'il n'y a aucun autre ingrédient  "
-            "disponible."
+            "Ton travail est d'indiquer si les ingrédients sont suffisants pour cuisiner un plat. "
+            "Tu dois tenir compte du fait qu'il n'y a aucun autre ingrédient disponible. "
+            "Pour que les ingrédients soient suffisants, il faut au moins qu'ils incluent un aliment nourrissant "
+            "(par exemple un féculent, une céréale, une légumineuse, des légumes, des fruits, etc.) "
+            "dans une quanitité suffisante."
         )
 
         ok_cases = [
@@ -36,7 +38,7 @@ class SufficientIngredientsValidator(ai.gpt.Classifier):
                     data.RequestedIngredient(name="huile d'olive", quantity=None),
                     data.RequestedIngredient(name='lentilles', quantity=data.RequestedIngredientQuantity('g', 1)),
                 ]
-            ]
+            ],
         ]
 
         super().__init__(system_message, ok_cases, nok_cases)
