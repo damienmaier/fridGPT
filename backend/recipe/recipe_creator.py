@@ -14,7 +14,7 @@ class RecipeCreator(ai.gpt.Task):
         with open(pathlib.Path(__file__).parent / 'recipe_prompt.txt', 'r', encoding='utf-8') as f:
             system_message = f.read()
 
-        prompt = ai.gpt.prompt.Prompt(system_message)
+        prompt = ai.gpt.prompt.Prompt(system_message.format(coach_description=coach_description))
 
         prompt.add_user_message(data.RequestedIngredient.ingredient_list_to_json(ingredients))
 

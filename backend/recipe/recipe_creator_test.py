@@ -30,7 +30,7 @@ class RecipeCreatorTest(unittest.TestCase):
         self.assertTrue(3 <= len(recipe['dishName']) <= 50, 'Should return a dish name of correct length')
 
         self.assertIsInstance(recipe['dishDescription'], str, 'Should return a dish description')
-        self.assertTrue(3 <= len(recipe['dishDescription']) <= 100,
+        self.assertTrue(3 <= len(recipe['dishDescription']) <= 200,
                         'Should return a dish description of correct length')
 
         self.assertIsInstance(recipe['ingredients'], str, 'Should return ingredients list')

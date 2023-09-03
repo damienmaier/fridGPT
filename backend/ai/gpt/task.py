@@ -1,4 +1,5 @@
 import abc
+import logging
 
 import openai
 
@@ -17,6 +18,9 @@ class Task(abc.ABC):
 
     def __call__(self, *args, **kwargs):
         prompt = self.build_gpt_prompt(*args, **kwargs)
+
+        logging.info(f'Sending prompt to GPT: {prompt.messages}')
+
         gpt_response = openai.ChatCompletion.create(
             model=self._model,
             messages=prompt.messages,
@@ -26,7 +30,11 @@ class Task(abc.ABC):
             frequency_penalty=self._frequency_penalty,
             presence_penalty=self._presence_penalty,
         )
-        return self.post_process_gpt_response(gpt_response["choices"][0]["message"]["content"])
+        gpt_response_message = gpt_response["choices"][0]["message"]["content"]
+
+        logging.info(f'GPT response: {gpt_response_message}')
+
+        return self.post_process_gpt_response(gpt_response_message)
 
     @abc.abstractmethod
     def build_gpt_prompt(self, *args, **kwargs) -> 'ai.gpt.Prompt':
