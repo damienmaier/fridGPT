@@ -30,14 +30,14 @@
           </div>
           <div class="col-md-2 col-toggle">
             <div class="form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.displayQuantity">
+              <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.displayQuantity">
             </div>
           </div>
           <div class="col-md-3 col-no-padding col-qty">
             <ng-container *ngIf="item.quantity && item.displayQuantity">
               <div class="form form-quantity">
-                <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required/>
-                <label for="qty"></label>
+                <input name="quantity" class="text-center" [(ngModel)]="item.quantity.value" type="number" required/>
+                <label></label>
               </div>
               <ng-container *ngIf="item.isCustom; else fixedUnit">
                 <select class="form-select unit-select text-white" [(ngModel)]="item.quantity.unit">
@@ -60,7 +60,7 @@
       </ng-container>
     </div>
     <div class="form form-search margin-top">
-      <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" name="search"
+      <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" id="search"
         autocomplete="off" required />
       <label for="search" class="input-label">
         <span class="input-label-content"><i class="bi bi-search"></i> Rechercher</span>
@@ -87,8 +87,8 @@
       <h4><img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
     </div>
     <div class="margin-top image-checkbox">
-      <input type="checkbox" class="form-check-input" id="imageCheck" (change)="toggleImageLoading($event)">
-      <label class="form-check-label margin-both-sides text-white" for="imageCheck">Générer une illustration pour chaque recette</label>
+      <input type="checkbox" class="form-check-input" id="image-toggle" (change)="toggleImageLoading($event)">
+      <label class="form-check-label margin-both-sides text-white" for="image-toggle">Générer une illustration pour chaque recette</label>
     </div>
   </div>
 </div>
