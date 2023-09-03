@@ -1,13 +1,20 @@
 import concurrent.futures
 
+import config
 import data
 from . import recipe_creator
+
+logger = config.logging.getLogger(__name__)
 
 
 def create_recipes(ingredients: [data.RequestedIngredient]):
     def create_recipe(coach: data.coach.Coach):
-        return (recipe_creator.create_recipe(coach_description=coach.descriptionForGpt, ingredients=ingredients) |
-                {'coach': coach.as_dict()})
+
+        logger.info(f'Starting recipe creation for {coach.name}')
+        recipe = recipe_creator.create_recipe(coach_description=coach.descriptionForGpt, ingredients=ingredients)
+        logger.info(f'Finished recipe creation for {coach.name}')
+
+        return recipe | {'coach': coach.as_dict()}
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
         recipes_iterator = executor.map(create_recipe, data.COACHES.values(), timeout=30)
