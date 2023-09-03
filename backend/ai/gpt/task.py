@@ -20,7 +20,7 @@ class Task(abc.ABC):
     def __call__(self, *args, **kwargs):
         prompt = self.build_gpt_prompt(*args, **kwargs)
 
-        logger.info(f'Sending prompt to GPT: {prompt.messages}')
+        logger.debug(f'Sending prompt to GPT: {prompt.messages}')
 
         gpt_response = openai.ChatCompletion.create(
             model=self._model,
@@ -33,7 +33,7 @@ class Task(abc.ABC):
         )
         gpt_response_message = gpt_response["choices"][0]["message"]["content"]
 
-        logger.info(f'GPT response: {gpt_response_message}')
+        logger.debug(f'GPT response: {gpt_response_message}')
 
         return self.post_process_gpt_response(gpt_response_message)
 
