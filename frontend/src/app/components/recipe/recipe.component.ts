@@ -10,6 +10,8 @@ import { RecipesService } from 'src/app/services/recipes.service';
 })
 export class RecipeComponent {
   recipe!: Recipe;
+  currentStep: string = '';
+  currentStepIndex!: number;
 
   constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
 
@@ -21,5 +23,17 @@ export class RecipeComponent {
     } else {
       this.recipe = recipe;
     }
+    this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>');
+    this.currentStep        = this.recipe.ingredients;
+    this.currentStepIndex   = this.recipe.steps.length;
+  }
+
+  nextStep(forward: boolean) {
+    this.currentStepIndex = (this.currentStepIndex + (forward ? 1 : -1)) % (this.recipe.steps.length + 1);
+    if (this.currentStepIndex < 0) {
+      this.currentStepIndex += this.recipe.steps.length + 1;
+    }
+    this.currentStep = this.currentStepIndex == this.recipe.steps.length ? 
+      this.recipe.ingredients : this.recipe.steps[this.currentStepIndex];
   }
 }

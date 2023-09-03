@@ -1,62 +1,80 @@
-#header {
-  border-bottom: 4px solid #00425a;
-  position:relative;
-}
-
-#header p {
-  margin-bottom: 5px;
-}
-
 #col-description {
-  border-right: 4px solid #00425a;
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding:0;
-}
-
-.container-fluid {
-  height: 100%;
-}
-
-.img {
-  height: 65vh;
-}
-
-.dish-info {
-  display: flex;
-  align-items: flex-end;
-  position: absolute;
-  bottom:0;
-}
-
-.col-lg-4 {
+  height: 76vh;
+  position:relative;
   overflow-x: hidden;
 }
 
-.col {
-  position: relative;
-}
-
-#recipe-instructions {
-  top:5vh;
-  width: 50vw;
-  height:60vh;
-  border-top: 4px solid #00425a;
-  padding:10px;
-}
-
-.dark-bg {
-  background-color: #24486D;
-}
-
-.absolute-center {
+.description {
   position: absolute;
-  left: 0px; 
-  right: 0px;
-  bottom:0;
-  margin-left: auto; 
-  margin-right: auto; 
-  text-align: center;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  display: flex;
+}
+
+.description img, .coach-name {
+  align-self: flex-end;
+}
+
+.dish-img {
+  height:80%;
+  position: absolute;
+  top: 0;
+  left:0;
+  overflow-x: hidden;
+}
+
+.description div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+}
+
+#step {
+  width:85%;
+  height: 60vh;
+  margin:0px auto 0px auto;
+  border-top: 4px solid #00425a;
+  padding:10px 30px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+#step-detail {
+  margin:auto;
+}
+
+#step-counter {
+  position: absolute;
+  bottom: -40px;
+  left:-40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #202027;
+}
+
+#step-counter p {
+  position:relative;
+  top:20px;
+  left: 50px;
+  display: inline;
+}
+
+.container-fluid, #step {
+  border-top: 4px solid #00425a;
+}
+
+.bi {
+  font-size: 30px;
+}
+
+#navigation {
+  display:flex;
+  justify-content: space-around;
 }

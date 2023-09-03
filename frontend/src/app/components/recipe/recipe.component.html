@@ -1,26 +1,35 @@
 <div id="header">
-    <p class="fs-4 text-white absolute-center">A vous de jouer !</p>
+    <p class="fs-4 text-white text-center">A vous de jouer !</p>
 </div>
 <div class="container-fluid">
-    <div class="row h-100">
-        <div class="col col-lg-4 dark-bg" id="col-description">
-            <ng-container *ngIf="recipe.imageURL != ''; else noImage">
-                <img class="img" [src]="recipe.imageURL"/>
-              </ng-container>
-            <ng-template #noImage>
-                <img class="img" src="/assets_app/empty.jpg"/>
-            </ng-template>
-            <div class="dish-info">
+    <div class="row">
+        <div class="col col-lg-4 dark-blue-bg" id="col-description">
+            <img class="dish-img" src="/assets_app/empty.jpg" alt=""/>
+            <div class="description darker-blue-bg">
                 <div>
-                    <p class="dish-title smaller text-center text-white">{{recipe.dishDescription}}</p>
-                    <small class="text-white coach-name">Proposé par Bernardo</small>
+                    <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
+                    <p class="fs-6 text-center text-white">{{ recipe.dishDescription }}</p>
+                    <p class="text-white coach-name"> Proposé par {{ recipe.coach.name }}</p>
                 </div>
-                <img src="/assets_app/bernardo.png" width="70" alt="" />
+                <img [src]="recipe.coach.imageUrl" width="90" alt=""/>
             </div>
         </div>
         <div class="col">
-            <div id="recipe-instructions" class="dark-bg absolute-center">
-                <p class="text-white">{{ recipe.steps }}</p>
+            <div id="navigation">
+                <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>
+                <button class="btn" (click)="nextStep(true)"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div id="step" class="darker-blue-bg">
+                <ng-container *ngIf="currentStepIndex == recipe.steps.length;else step">
+                    <p class="fs-4 text-white">Ingrédients </p>
+                    <p class="text-white" [innerHTML]="recipe.ingredients"></p>
+                </ng-container>
+                <ng-template #step>
+                    <p class="fs-5 text-white text-center" id="step-detail" [innerHTML]="currentStep"></p>
+                    <div id="step-counter">
+                        <p class="text-white">{{ currentStepIndex + 1}} / {{ recipe.steps.length }}</p>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </div>
