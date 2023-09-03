@@ -6,6 +6,7 @@ import pathlib
 @dataclasses.dataclass
 class Coach:
     name: str
+    descriptionForGpt: str
     description: str
     imageUrl: str
 

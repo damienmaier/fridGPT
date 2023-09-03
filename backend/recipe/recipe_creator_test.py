@@ -1,7 +1,7 @@
 import unittest
 
 import data
-from .recipe import create_recipe
+from .recipe_creator import create_recipe
 
 
 class RecipeCreatorTest(unittest.TestCase):
