@@ -1,7 +1,7 @@
 import flask
 
 import dalle
-import models
+import data
 import validation
 
 
@@ -14,7 +14,7 @@ def create_api(app: flask.Flask) -> None:
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():
-        return {'ingredients': [ingredient.as_dict() for ingredient in models.SUGGESTED_INGREDIENTS.values()]}
+        return {'ingredients': [ingredient.as_dict() for ingredient in data.SUGGESTED_INGREDIENTS.values()]}
 
     @app.post('/api/image')
     def image_endpoint():

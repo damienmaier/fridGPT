@@ -1,6 +1,6 @@
 import unittest
 
-from models.requested_ingredient import RequestedIngredient, RequestedIngredientQuantity
+from data.requested_ingredient import RequestedIngredient, RequestedIngredientQuantity
 
 
 class RequestedIngredientTest(unittest.TestCase):

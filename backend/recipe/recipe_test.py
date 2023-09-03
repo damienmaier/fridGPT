@@ -1,30 +1,30 @@
 import unittest
 
 import gpt
-import models
+import data
 
 @unittest.skip("not implemented")
 class GptAssistedIngredientNameValidationTest(unittest.TestCase):
     def test_recipes(self):
 
         ingredients = [
-            models.RequestedIngredient('carotte', models.RequestedIngredientQuantity('pièce', 4)),
-            models.RequestedIngredient('pommes de terre', models.RequestedIngredientQuantity('kg', 2.5)),
-            models.RequestedIngredient('poireau', models.RequestedIngredientQuantity('pièce', 2)),
-            models.RequestedIngredient('oignon', models.RequestedIngredientQuantity('pièce', 2)),
-            models.RequestedIngredient('beurre', None),
-            models.RequestedIngredient('lardons', None),
-            models.RequestedIngredient('lait', models.RequestedIngredientQuantity('l', 0.5)),
-            models.RequestedIngredient('farine', models.RequestedIngredientQuantity('g', 50)),
-            models.RequestedIngredient('gruyère râpé', models.RequestedIngredientQuantity('g', 50)),
-            models.RequestedIngredient('sel', None),
-            models.RequestedIngredient('poivre', None),
+            data.RequestedIngredient('carotte', data.RequestedIngredientQuantity('pièce', 4)),
+            data.RequestedIngredient('pommes de terre', data.RequestedIngredientQuantity('kg', 2.5)),
+            data.RequestedIngredient('poireau', data.RequestedIngredientQuantity('pièce', 2)),
+            data.RequestedIngredient('oignon', data.RequestedIngredientQuantity('pièce', 2)),
+            data.RequestedIngredient('beurre', None),
+            data.RequestedIngredient('lardons', None),
+            data.RequestedIngredient('lait', data.RequestedIngredientQuantity('l', 0.5)),
+            data.RequestedIngredient('farine', data.RequestedIngredientQuantity('g', 50)),
+            data.RequestedIngredient('gruyère râpé', data.RequestedIngredientQuantity('g', 50)),
+            data.RequestedIngredient('sel', None),
+            data.RequestedIngredient('poivre', None),
         ]
 
         recipes = gpt.find_recipe(ingredients)
 
-        self.assertEqual(len(recipes), len(models.COACHES))
-        self.assertEqual(set(recipe['coach'] for recipe in recipes), set(coach for coach in models.COACHES))
+        self.assertEqual(len(recipes), len(data.COACHES))
+        self.assertEqual(set(recipe['coach'] for recipe in recipes), set(coach for coach in data.COACHES))
 
         for recipe in recipes:
             self.assertIsInstance(recipe['dishName'], str, 'Should return a dish name')

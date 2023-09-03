@@ -1,9 +1,9 @@
 import errors
-import models
+import data
 from . import classifiers
 
 
-def parse_and_validate_ingredients(json_request) -> [models.RequestedIngredient]:
+def parse_and_validate_ingredients(json_request) -> [data.RequestedIngredient]:
     if not json_request['ingredients']:
         raise errors.MalformedRequestError
     if len(json_request['ingredients']) > 100:
@@ -15,14 +15,14 @@ def parse_and_validate_ingredients(json_request) -> [models.RequestedIngredient]
     return ingredients
 
 
-def _parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient:
+def _parse_and_validate_ingredient(json_ingredient) -> data.RequestedIngredient:
     try:
-        ingredient = models.RequestedIngredient.from_dict(json_ingredient)
+        ingredient = data.RequestedIngredient.from_dict(json_ingredient)
     except (TypeError, KeyError):
         raise errors.MalformedRequestError
 
-    if ingredient.name in models.SUGGESTED_INGREDIENTS:
-        if ingredient.quantity and ingredient.quantity.unit != models.SUGGESTED_INGREDIENTS[ingredient.name].unit:
+    if ingredient.name in data.SUGGESTED_INGREDIENTS:
+        if ingredient.quantity and ingredient.quantity.unit != data.SUGGESTED_INGREDIENTS[ingredient.name].unit:
             raise errors.WrongIngredientUnitError(ingredient)
     else:
         if not 0 < len(ingredient.name) <= 50:

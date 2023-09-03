@@ -1,5 +1,5 @@
 import gpt
-import models
+import data
 
 
 class SufficientIngredientsValidator(gpt.Classifier):
@@ -16,15 +16,15 @@ class SufficientIngredientsValidator(gpt.Classifier):
         ok_cases = [
             [
                 [
-                    models.RequestedIngredient(name='sel', quantity=None),
-                    models.RequestedIngredient(name='poivre', quantity=None),
-                    models.RequestedIngredient(name='huile de cuisson', quantity=None),
-                    models.RequestedIngredient(name='vinaigre', quantity=None),
-                    models.RequestedIngredient(name='lentilles',
-                                               quantity=models.RequestedIngredientQuantity('g', 500)),
-                    models.RequestedIngredient(name='carotte',
-                                               quantity=models.RequestedIngredientQuantity('pièce', 3)),
-                    models.RequestedIngredient(name='pâtes', quantity=models.RequestedIngredientQuantity('g', 300)),
+                    data.RequestedIngredient(name='sel', quantity=None),
+                    data.RequestedIngredient(name='poivre', quantity=None),
+                    data.RequestedIngredient(name='huile de cuisson', quantity=None),
+                    data.RequestedIngredient(name='vinaigre', quantity=None),
+                    data.RequestedIngredient(name='lentilles',
+                                             quantity=data.RequestedIngredientQuantity('g', 500)),
+                    data.RequestedIngredient(name='carotte',
+                                             quantity=data.RequestedIngredientQuantity('pièce', 3)),
+                    data.RequestedIngredient(name='pâtes', quantity=data.RequestedIngredientQuantity('g', 300)),
                 ]
             ]
         ]
@@ -32,9 +32,9 @@ class SufficientIngredientsValidator(gpt.Classifier):
         nok_cases = [
             [
                 [
-                    models.RequestedIngredient(name='safran', quantity=None),
-                    models.RequestedIngredient(name="huile d'olive", quantity=None),
-                    models.RequestedIngredient(name='lentilles', quantity=models.RequestedIngredientQuantity('g', 1)),
+                    data.RequestedIngredient(name='safran', quantity=None),
+                    data.RequestedIngredient(name="huile d'olive", quantity=None),
+                    data.RequestedIngredient(name='lentilles', quantity=data.RequestedIngredientQuantity('g', 1)),
                 ]
             ]
         ]
@@ -42,8 +42,8 @@ class SufficientIngredientsValidator(gpt.Classifier):
         super().__init__(system_message, ok_cases, nok_cases)
 
     @staticmethod
-    def convert_case_to_gpt_message(case: [models.RequestedIngredient]) -> str:
-        return models.RequestedIngredient.ingredient_list_to_json(case)
+    def convert_case_to_gpt_message(case: [data.RequestedIngredient]) -> str:
+        return data.RequestedIngredient.ingredient_list_to_json(case)
 
 
 is_sufficient_ingredients = SufficientIngredientsValidator()
