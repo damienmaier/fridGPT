@@ -1,66 +1,46 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { Toast } from 'bootstrap'
 import { RecipesService } from 'src/app/services/recipes.service';
-import { HttpErrorResponse } from '@angular/common/http';
-import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
-import { APIError } from 'src/app/models/api-error';
-import { RequestedIngredient } from 'src/app/models/requested-ingredient';
-import { createRequestedIngredient } from 'src/app/models/translation-tool';
+import { SuggestedIngredient } from 'src/app/models/suggested-ingredient-adapter';
+import { RequestedIngredient } from 'src/app/models/requested-ingredient-adapter';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent {
-  private baseIngredients: SuggestedIngredient[];
-  filteredIngredients: SuggestedIngredient[];
-  selectedIngredients: RequestedIngredient[];
+export class SearchComponent implements OnDestroy {
+  private baseIngredients: SuggestedIngredient[]  = [];
+  filteredIngredients: SuggestedIngredient[]      = [];
+  selectedIngredients: RequestedIngredient[]      = [];
+  ingredientsSub!: Subscription;
   currentSearch: string   = '';
   generateImages: boolean = false;
-  loading: boolean        = false;
   @ViewChild('ErrorToast', {static: true}) toastOnError: any;
 
-  constructor(private recipesService: RecipesService) {
-    this.filteredIngredients = [];
-    this.selectedIngredients = [];
-    this.baseIngredients     = [];
-  }
+  constructor(private recipesService: RecipesService) {}
 
   ngOnInit() {
-    this.recipesService.ingredientsSubject.subscribe(
+    const lastError = this.recipesService.fetchLastError();
+    if(lastError != null) {
+      this.displayToast(this.recipesService.buildErrorMessage());
+      this.selectedIngredients = lastError.lastIngredients;
+    }
+    this.ingredientsSub = this.recipesService.loadIngredients().subscribe(
       (list: SuggestedIngredient[]) => {
-        this.baseIngredients      = list;
-        this.baseIngredients.forEach((ingredient: SuggestedIngredient) => {
-          if(ingredient.autoAdd) { this.addIngredientToList(ingredient); }
-        });
+        this.baseIngredients = list;
+        if(this.selectedIngredients.length == 0) {
+          this.baseIngredients.forEach((ingredient: SuggestedIngredient) => {
+            if(ingredient.autoAdd) { this.addIngredientToList(ingredient); }
+          });
+        }
       }
     );
-    this.recipesService.loadIngredients(); // will trigger the list emission from the service
   }
 
   startloadingRecipes(): void {
-    if(this.selectedIngredients.length <= 0) {
-      this.displayToast('Veuillez sélectionner des ingrédients');
-      return; 
-    }
-    this.loading = true;
-    this.recipesService.loadRecipe(this.selectedIngredients, this.generateImages).subscribe({
-      next: () => {},
-      error: (httpError: HttpErrorResponse) => {
-        if(httpError.error) {
-          const error: APIError = httpError.error;
-          let message = error.error;
-          if(error.ingredient) {
-            message += `\n L'ingrédient ${error.ingredient.name} est incorrect`;
-            this.displayToast(message);
-          } 
-        } else {
-          this.displayToast('Une erreur est survenue lors du chargement des recettes');
-        }
-      },
-      complete: () => this.loading = false
-    });
+    this.recipesService.startLoadingRecipe(this.selectedIngredients);
   }
 
   filter(): void {
@@ -77,12 +57,9 @@ export class SearchComponent {
       }
     );
     if(!customAlreadyAdded) { // adding custom element
-      this.filteredIngredients.unshift(
-        {name: this.currentSearch, unit:'pièce', defaultQuantity: 1, autoAdd: false,selected: false, isCustom: true}
-      );
+      this.filteredIngredients.unshift( new SuggestedIngredient(this.currentSearch, 'pièce', false, 1, true));
     }
-    // marking the selected elements
-    this.filteredIngredients.map(
+    this.filteredIngredients.map( // marking the selected elements
       (element: SuggestedIngredient) => element.selected = this.selectedIngredients.some(
         (ingredient: RequestedIngredient) => element.name == ingredient.name
       )
@@ -92,7 +69,7 @@ export class SearchComponent {
 
   addIngredientToList(ingredient: SuggestedIngredient): void {
     if(ingredient.selected) { return; } // no duplicates
-    this.selectedIngredients.push(createRequestedIngredient(ingredient));
+    this.selectedIngredients.push(ingredient.toRequestedIngredient());
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
@@ -117,5 +94,9 @@ export class SearchComponent {
     this.toastOnError.nativeElement.querySelector('.toast-body').textContent = message;
     const toast = new Toast(this.toastOnError.nativeElement, {});
     toast.show();
+  }
+
+  ngOnDestroy(): void {
+    this.ingredientsSub.unsubscribe();
   }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
 
@@ -7,26 +8,32 @@ import { RecipesService } from 'src/app/services/recipes.service';
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css']
 })
-export class ResultComponent {
-  recipes!: Recipe[];
+export class ResultComponent implements OnDestroy {
+  recipes: Recipe[] = [];
+  loading: boolean = false;
+  recipesSub!: Subscription;
 
-  constructor(private recipeService: RecipesService) {
-    this.recipes = [];
-  }
+  constructor(private recipeService: RecipesService) {}
 
   ngOnInit() {
-    // we fetch the recipes that have been already loaded
-    this.recipeService.recipeSubject.subscribe(
-      (sentRecipes: Recipe[]) => {
+    this.loading = true;
+    this.recipesSub = this.recipeService.fetchRecipes().subscribe({
+      next: (sentRecipes: Recipe[]) => {
         if(sentRecipes.length == 0) {
+          this.loading = false;
           this.recipeService.goToHome();
         }
         this.recipes = sentRecipes;
-      }
-    );
+        this.loading = false;
+      } // errors catched in service
+    });
   }
 
   selectRecipe(selectedId: number): void {
     this.recipeService.onRecipeSelected(selectedId);
+  }
+
+  ngOnDestroy(): void {
+    this.recipesSub.unsubscribe();
   }
 }

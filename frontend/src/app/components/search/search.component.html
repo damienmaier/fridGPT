@@ -1,111 +1,106 @@
-<ng-container *ngIf="loading;else loadingFinished">
-  <app-loading></app-loading>
-</ng-container>
-<ng-template #loadingFinished>
-  <div id="main-header">
-    <p class="fs-6 text-white margin-right">Pour commencer, donnons quelques indications aux coachs !</p>
-    <div>
-      <img src="/assets_app/germaine.png" width="60" alt="" />
-      <img src="/assets_app/travis.png" width="60" alt="" />
-      <img src="/assets_app/bernardo.png" width="60" alt="" />
-    </div>
+<div id="main-header">
+  <p class="fs-6 text-white margin-right">Pour commencer, donnons quelques indications aux coachs !</p>
+  <div>
+    <img src="/assets_app/germaine.png" width="60" alt="" />
+    <img src="/assets_app/travis.png" width="60" alt="" />
+    <img src="/assets_app/bernardo.png" width="60" alt="" />
   </div>
-  <div class="row margin-both-sides" id="main-row">
-    <!-- ingredients picking menu -->
-    <div class="col">
-      <div class="light-blue-bg content-header">
-        <h4> <img class="margin-both-sides" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+</div>
+<div class="row margin-both-sides" id="main-row">
+  <!-- ingredients picking menu -->
+  <div class="col">
+    <div class="light-blue-bg content-header">
+      <h4> <img class="margin-both-sides" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+    </div>
+    <div class="row justify-content-start margin-top" id="ingredients-header-title">
+      <div class="col col-name">
+        <p class="fs-5 text-white">Nom</p>
       </div>
-      <div class="row justify-content-start margin-top" id="ingredients-header-title">
-        <div class="col col-name">
-          <p class="fs-5 text-white">Nom</p>
-        </div>
-        <div class="col-md-2 col-no-padding">
-          <p class="fs-5 text-white text-center ">Quantité</p>
-        </div>
-        <div class="col-md-3"></div>
-        <div class="col-sm-1"></div>
+      <div class="col-md-2 col-no-padding">
+        <p class="fs-5 text-white text-center ">Quantité</p>
       </div>
-      <div id="ingredients-content">
-        <ng-container *ngFor="let item of selectedIngredients">
-          <div class="row margin-top row-ingredient">
-            <div class="col col-name">
-              <p class="fs-6 text-white">{{ item.name }}</p>
+      <div class="col-md-3"></div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div id="ingredients-content">
+      <ng-container *ngFor="let item of selectedIngredients">
+        <div class="row margin-top row-ingredient">
+          <div class="col col-name">
+            <p class="fs-6 text-white">{{ item.name }}</p>
+          </div>
+          <div class="col-md-2 col-toggle">
+            <div class="form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.displayQuantity">
             </div>
-            <div class="col-md-2 col-toggle">
-              <div class="form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.displayQuantity">
+          </div>
+          <div class="col-md-3 col-no-padding col-qty">
+            <ng-container *ngIf="item.quantity && item.displayQuantity">
+              <div class="form form-quantity">
+                <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required/>
+                <label for="qty"></label>
               </div>
-            </div>
-            <div class="col-md-3 col-no-padding col-qty">
-              <ng-container *ngIf="item.quantity && item.displayQuantity">
-                <div class="form form-quantity">
-                  <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required/>
-                  <label for="qty"></label>
-                </div>
-                <ng-container *ngIf="item.isCustom; else fixedUnit">
-                  <select class="form-select unit-select text-white" [(ngModel)]="item.quantity.unit">
-                    <option value="pièce">Pièce</option>
-                    <option value="kg">kg</option>
-                    <option value="g">g</option>
-                    <option value="ml">ml</option>
-                    <option value="L">L</option>
-                  </select>
-                </ng-container>
-                <ng-template #fixedUnit>
-                  <p class="fs-6 text-white qty-text">{{ item.quantity.unit }}</p>
-                </ng-template>
+              <ng-container *ngIf="item.isCustom; else fixedUnit">
+                <select class="form-select unit-select text-white" [(ngModel)]="item.quantity.unit">
+                  <option value="pièce">Pièce</option>
+                  <option value="kg">kg</option>
+                  <option value="g">g</option>
+                  <option value="ml">ml</option>
+                  <option value="L">L</option>
+                </select>
               </ng-container>
-            </div>
-            <div class="col-sm-1 trash">
-              <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(item.name)"></i>
-            </div>
+              <ng-template #fixedUnit>
+                <p class="fs-6 text-white qty-text">{{ item.quantity.unit }}</p>
+              </ng-template>
+            </ng-container>
           </div>
-        </ng-container>
-      </div>
-      <div class="form form-search margin-top">
-        <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" name="search"
-          autocomplete="off" required />
-        <label for="search" class="input-label">
-          <span class="input-label-content"><i class="bi bi-search"></i> Rechercher</span>
-        </label>
-      </div>
-      <div class="progress" *ngIf="noData()">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
-          aria-valuemin="0" aria-valuemax="100">
+          <div class="col-sm-1 trash">
+            <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(item.name)"></i>
+          </div>
         </div>
-      </div>
-      <!-- ingredients list -->
-      <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
-        <ng-container *ngFor="let item of filteredIngredients">
-          <div class="search-item light-blue-bg hand-cursor text-white small-padding" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
-            <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
-            {{ item.name }}
-          </div>
-        </ng-container>
+      </ng-container>
+    </div>
+    <div class="form form-search margin-top">
+      <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" name="search"
+        autocomplete="off" required />
+      <label for="search" class="input-label">
+        <span class="input-label-content"><i class="bi bi-search"></i> Rechercher</span>
+      </label>
+    </div>
+    <div class="progress" *ngIf="noData()">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+        aria-valuemin="0" aria-valuemax="100">
       </div>
     </div>
-    <!-- parameters menu -->
-    <div class="col" id="customization-col">
-      <div class="light-blue-bg content-header">
-        <h4><img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
-      </div>
-      <div class="margin-top image-checkbox">
-        <input type="checkbox" class="form-check-input" id="imageCheck" [(ngModel)]="generateImages">
-        <label class="form-check-label margin-both-sides text-white" for="imageCheck">Générer une illustration pour chaque recette</label>
-      </div>
-    </div>
-  </div>
-  <!-- start button -->
-  <div class="search-button hand-cursor" (click)="startloadingRecipes()">
-    <div class="search-button-content">
-      <p class="text-white search-button-text bold text-center"> C'est parti !</p>
-      <div class="icon">
-        <img src="/assets_app/rocket_on_hover.png" width="30" alt="" />
-      </div>
+    <!-- ingredients list -->
+    <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
+      <ng-container *ngFor="let item of filteredIngredients">
+        <div class="search-item light-blue-bg hand-cursor text-white small-padding" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
+          <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
+          {{ item.name }}
+        </div>
+      </ng-container>
     </div>
   </div>
-</ng-template>
+  <!-- parameters menu -->
+  <div class="col" id="customization-col">
+    <div class="light-blue-bg content-header">
+      <h4><img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
+    </div>
+    <div class="margin-top image-checkbox">
+      <input type="checkbox" class="form-check-input" id="imageCheck" [(ngModel)]="generateImages">
+      <label class="form-check-label margin-both-sides text-white" for="imageCheck">Générer une illustration pour chaque recette</label>
+    </div>
+  </div>
+</div>
+<!-- start button -->
+<div class="search-button hand-cursor" (click)="startloadingRecipes()">
+  <div class="search-button-content">
+    <p class="text-white search-button-text bold text-center"> C'est parti !</p>
+    <div class="icon">
+      <img src="/assets_app/rocket_on_hover.png" width="30" alt="" />
+    </div>
+  </div>
+</div>
 
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
   <div #ErrorToast class="toast hide" role="alert" data-bs-delay="2000">
