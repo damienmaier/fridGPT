@@ -1,4 +1,4 @@
-import { Observable, catchError, map, of } from "rxjs";
+import { Observable, catchError, forkJoin, map, of } from "rxjs";
 import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe";
@@ -8,12 +8,14 @@ import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapt
 import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested-ingredient";
 import { RequestedIngredient } from "../models/requested-ingredient";
 import { APIError } from "../models/api-error";
+import { DishImage } from "../models/image";
 
 @Injectable()
 export class RecipesService {
     private lastError: APIError|null = null;
     private recipes: Recipe[] = [];
     private ingredients: RequestedIngredient[] = [];
+    loadImages: boolean = false;
 
     constructor(private http: HttpClient, private router: Router, 
         private suggestedIngredientAdapter: SuggestedIngredientAdapter,
@@ -43,11 +45,20 @@ export class RecipesService {
                 return response.recipes;
             }
         )),
+
         catchError((error: HttpErrorResponse) => {
             this.lastError = {info: error.error, lastIngredients: this.ingredients.slice()};
             this.goToHome();
             return [];
         }));
+    }
+
+    loadRecipeImages(dishDescriptions: string[]): Observable<string[]> {
+        if(!this.loadImages) {
+            return of(dishDescriptions.map(() => '/assets_app/empty.jpg'));
+        }
+        return forkJoin(dishDescriptions.map((description) => this.http.post<DishImage>('/api/image', {dishDescription: description})
+            .pipe(map((response: DishImage) => response.url))));
     }
 
     onRecipeSelected(index: number): void {

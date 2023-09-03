@@ -24,8 +24,18 @@ export class ResultComponent implements OnDestroy {
           this.recipeService.goToHome();
         }
         this.recipes = sentRecipes;
-        // TODO : load pictures here
-        this.loading = false;
+        this.recipeService.loadRecipeImages(this.recipes.map((recipe:Recipe) => recipe.dishName)).subscribe(
+          (images: string[]) => {
+            if(images.length == 0) {
+              this.recipes.map((recipe: Recipe) => recipe.imageUrl = '/assets_app/empty.jpg');
+            } else {
+              for(let i = 0; i < this.recipes.length; ++i) {
+                this.recipes[i].imageUrl = images[i];
+              }
+            }
+            this.loading = false;
+          }
+        )
       } // errors catched in service
     });
   }

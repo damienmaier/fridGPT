@@ -8,7 +8,7 @@
     <div class="container">
         <ng-container *ngFor="let recipe of recipes; let i = index">
             <div class="box" (click)="selectRecipe(i)">
-                <img class="dish-img" src="/assets_app/empty.jpg" alt="" />
+                <img class="dish-img" [src]="recipe.imageUrl" alt="" />
                 <div class="description darker-blue-bg">
                     <div>
                         <p class="dish-title smaller text-center text-white">{{ recipe.dishName }}</p>

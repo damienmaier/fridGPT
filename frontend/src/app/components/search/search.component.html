@@ -87,7 +87,7 @@
       <h4><img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
     </div>
     <div class="margin-top image-checkbox">
-      <input type="checkbox" class="form-check-input" id="imageCheck" [(ngModel)]="generateImages">
+      <input type="checkbox" class="form-check-input" id="imageCheck" (change)="toggleImageLoading($event)">
       <label class="form-check-label margin-both-sides text-white" for="imageCheck">Générer une illustration pour chaque recette</label>
     </div>
   </div>

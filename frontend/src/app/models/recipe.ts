@@ -9,6 +9,6 @@ export interface Recipe {
     dishDescription: string;
     ingredients: string;
     steps: string[];
-    imageURL: string;
+    imageUrl: string;
     coach: Coach;
 }

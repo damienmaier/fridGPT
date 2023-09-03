@@ -16,7 +16,6 @@ export class SearchComponent implements OnDestroy {
   selectedIngredients: RequestedIngredient[]      = [];
   ingredientsSub!: Subscription;
   currentSearch: string   = '';
-  generateImages: boolean = false;
   @ViewChild('ErrorToast', {static: true}) toastOnError: any;
 
   constructor(private recipesService: RecipesService) {}
@@ -92,6 +91,10 @@ export class SearchComponent implements OnDestroy {
     } else {
       return window.screen.height * 0.2 + 'px';
     }
+  }
+
+  toggleImageLoading(event:any) {
+    this.recipesService.loadImages = event.target != null ? event.target.checked : false;
   }
 
   private displayToast(message: string): void {
