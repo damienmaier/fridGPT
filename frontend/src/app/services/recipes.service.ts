@@ -1,88 +1,81 @@
-import { Subject } from "rxjs";
-import { Ingredient, IngredientForRecipe } from "../models/ingredient";
-import { HttpClient } from "@angular/common/http";
+import { Observable, catchError, map, of } from "rxjs";
+import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe";
-import { DishImage } from "../models/image";
-
-interface IngredientsResponse {
-    ingredients: Ingredient[]
-}
+import { Router } from "@angular/router";
+import { SuggestedIngredientAdapter } from "../models/suggested-ingredient-adapter";
+import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapter";
+import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested-ingredient";
+import { RequestedIngredient } from "../models/requested-ingredient";
+import { APIError } from "../models/api-error";
 
 @Injectable()
 export class RecipesService {
-    private currentlyLoadingRecipe: boolean = false;
-    
-    private recipe!: Recipe;
-    recipeSubject: Subject<Recipe> = new Subject<Recipe>();
+    private lastError: APIError|null = null;
+    private recipes: Recipe[] = [];
+    private ingredients: RequestedIngredient[] = [];
 
-    private ingredientsList: Ingredient[] = [];
-    ingredientsSubject: Subject<Ingredient[]> = new Subject<Ingredient[]>();
+    constructor(private http: HttpClient, private router: Router, 
+        private suggestedIngredientAdapter: SuggestedIngredientAdapter,
+        private requestedIngredientAdapter: RequestedIngredientAdapter) {}
 
-    constructor(private http: HttpClient) {}
-
-    loadIngredients(): void {
-        if(this.ingredientsList.length > 0) {
-            // avoid reloading ingredients for nothing
-            this.ingredientsSubject.next(this.ingredientsList.slice());
-        } else {
-            this.http.get<IngredientsResponse>('/api/ingredients').subscribe({
-                next: (list: IngredientsResponse) => {
-                    this.ingredientsList = list.ingredients;
-                    this.ingredientsSubject.next(this.ingredientsList.slice());
-                },
-                error: (e:Error) => {
-                    this.ingredientsList = [];
-                    console.log(e);      
-                }
-            });
-        }
+    loadIngredients(): Observable<SuggestedIngredient[]> {
+        return this.http.get<{ingredients: SuggestedIngredientAPI[]}>('/api/ingredients').pipe(
+            map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
+                return data.ingredients.map(this.suggestedIngredientAdapter.adapt);
+            }),
+            catchError(err => []));
     }
 
-    loadRecipe(selection: IngredientForRecipe[], generateImages: boolean): void {
-        this.currentlyLoadingRecipe = true;
-        // TODO: replace this when the new API specs is pushed
-        const params = {ingredients: selection.map((e) => e.name)};
-        this.http.post<Recipe>('/api/recipe', params).subscribe({
-            next: (sentRecipe: Recipe) => {
-              this.recipe = sentRecipe;
-              if(!generateImages) {
-                this.recipe.image = {url: ''};
-                this.emitRecipe(); // no images to load, only the recipe
-                return;
-              }
-              // we load now the image
-              this.http.post<DishImage>('/api/image', {dishDescription: this.recipe.dishDescription}).subscribe({
-                next: (image: DishImage) => {
-                    this.recipe.image = image;
-                    this.emitRecipe();
-                },
-                error: (e:Error) => {
-                    console.log(e); // todo: better error management
-                    this.emitRecipe(true);
-                }
-              });
-            },
-            error: (e:Error) => {
-                console.log(e); // todo: better error management
-                this.emitRecipe(true);
+    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
+        this.ingredients = ingredients;
+        this.router.navigate(['/app/result']);
+    }
+
+    fetchRecipes(): Observable<Recipe[]> {
+        if(this.ingredients.length == 0) { return of([])}
+        this.recipes = [];
+        const params = { ingredients: this.ingredients.map(this.requestedIngredientAdapter.adapt) };
+        return this.http.post<{recipes: Recipe[]}>('/api/recipe', params).pipe(map((
+            (response: {recipes: Recipe[]}) => {
+                this.ingredients    = [];
+                this.recipes        = response.recipes;
+                return response.recipes;
             }
-        });
+        )),
+        catchError((error: HttpErrorResponse) => {
+            this.lastError = {info: error.error, lastIngredients: this.ingredients.slice()};
+            this.goToHome();
+            return [];
+        }));
     }
 
-    recipeIsLoading(): boolean {
-        return this.currentlyLoadingRecipe;
+    onRecipeSelected(index: number): void {
+        this.router.navigate(['/app/recipe', index]);
     }
 
-    private emitRecipe(hasErrors: boolean = false): void {
-        if(hasErrors) {
-            this.recipe = {
-                dishDescription: 'Aucune recette n\'a pu être chargée.', 
-                instructions: 'Une erreur est survenue, veuillez recharger la page pour recommencer.', 
-                image: {url: ''}
-            }
+    getRecipe(index: number): (Recipe | null) {
+        if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
+            return null;
         }
-        this.recipeSubject.next(this.recipe);
-        this.currentlyLoadingRecipe = false;
+        return this.recipes[index];
+    }
+
+    goToHome(): void {
+        this.router.navigate(['/app']);
+    }
+
+    fetchLastError(): APIError|null {
+        return this.lastError;
+    }
+
+    buildErrorMessage(): string {
+        if(this.lastError == null) { return ''; }
+        let message = this.lastError.info.error;
+        if(this.lastError.info.ingredient) {
+            message += `\n L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+        }
+        this.lastError = null;
+        return message;
     }
 }

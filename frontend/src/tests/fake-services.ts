@@ -1,12 +1,12 @@
-import { Subject } from "rxjs";
-import { Ingredient } from "src/app/models/ingredient";
-import { Recipe } from "src/app/models/recipe";
+import { of } from "rxjs";
 import { RecipesService } from "src/app/services/recipes.service";
 
 function createRecipesServiceSpy() {
-    const spyObj              = jasmine.createSpyObj<RecipesService>('RecipesService', ['loadIngredients', 'loadRecipe', 'recipeIsLoading']);
-    spyObj.ingredientsSubject = new Subject<Ingredient[]>();
-    spyObj.recipeSubject      = new Subject<Recipe>();
+    const spyObj              = jasmine.createSpyObj<RecipesService>('RecipesService', 
+    ['loadIngredients', 'startLoadingRecipe', 'fetchRecipes', 'onRecipeSelected','getRecipe','goToHome',
+    'fetchLastError', 'buildErrorMessage']);
+    spyObj.loadIngredients.and.returnValue(of([]));
+    spyObj.fetchRecipes.and.returnValue(of([]));
     return spyObj;
 }
 

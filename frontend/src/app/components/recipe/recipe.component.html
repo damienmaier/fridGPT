@@ -1,29 +1,28 @@
-<ng-container *ngIf="loading">
-    <app-loading></app-loading>
-</ng-container>
-
-    <div id="header" *ngIf="!loading">
-        <p class="fs-4 text-white absolute-center">A vous de jouer !</p>
-    </div>
-    <div class="container-fluid" *ngIf="!loading">
-        <div class="row h-100">
-            <div class="col col-lg-4 dark-bg" id="col-description">
-                <div id="img-div">
-                    <ng-container *ngIf="recipe.image.url != ''; else noImage">
-                        <img id="img" [src]="recipe.image.url"/>
-                      </ng-container>
-                      <ng-template #noImage>
-                        <img id="img" src="/assets_app/empty.jpg"/>
-                      </ng-template>
-                    <img id="img" [src]="recipe.image.url"/>
+<div id="header">
+    <p class="fs-4 text-white absolute-center">A vous de jouer !</p>
+</div>
+<div class="container-fluid">
+    <div class="row h-100">
+        <div class="col col-lg-4 dark-bg" id="col-description">
+            <ng-container *ngIf="recipe.imageURL != ''; else noImage">
+                <img class="img" [src]="recipe.imageURL"/>
+              </ng-container>
+            <ng-template #noImage>
+                <img class="img" src="/assets_app/empty.jpg"/>
+            </ng-template>
+            <div class="dish-info">
+                <div>
+                    <p class="dish-title smaller text-center text-white">{{recipe.dishDescription}}</p>
+                    <small class="text-white coach-name">Proposé par Bernardo</small>
                 </div>
-                <p class="fs-5 text-white">{{ recipe.dishDescription }}</p>
+                <img src="/assets_app/bernardo.png" width="70" alt="" />
             </div>
-            <div class="col">
-                <div id="recipe-instructions" class="dark-bg absolute-center">
-                    <p class="text-white">{{ recipe.instructions }}</p>
-                </div>
+        </div>
+        <div class="col">
+            <div id="recipe-instructions" class="dark-bg absolute-center">
+                <p class="text-white">{{ recipe.steps }}</p>
             </div>
         </div>
     </div>
+</div>
 

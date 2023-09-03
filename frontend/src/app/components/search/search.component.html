@@ -30,11 +30,11 @@
           </div>
           <div class="col-md-2 col-toggle">
             <div class="form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.withQuantity">
+              <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.displayQuantity">
             </div>
           </div>
           <div class="col-md-3 col-no-padding col-qty">
-            <ng-container *ngIf="item.withQuantity">
+            <ng-container *ngIf="item.quantity && item.displayQuantity">
               <div class="form form-quantity">
                 <input class="text-center" [(ngModel)]="item.quantity.value" type="number" name="qty" required/>
                 <label for="qty"></label>
@@ -74,7 +74,7 @@
     <!-- ingredients list -->
     <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
-        <div class="search-item light-blue-bg hand-cursor text-white small-padding" (click)="addIngredientToRecipe(item)" [ngClass]="{'selected-item': item.selected}">
+        <div class="search-item light-blue-bg hand-cursor text-white small-padding" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
           {{ item.name }}
         </div>
@@ -101,12 +101,9 @@
     </div>
   </div>
 </div>
-<!-- warning toast -->
+
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-  <div #ingredientsMissingToast class="toast hide" role="alert" data-bs-delay="2000">
-    <div class="toast-body text-center light-red-bg">
-      Veuillez sélectionner des ingrédients
-    </div>
+  <div #ErrorToast class="toast hide" role="alert" data-bs-delay="2000">
+    <div class="toast-body text-center light-red-bg"></div>
   </div>
 </div>
-

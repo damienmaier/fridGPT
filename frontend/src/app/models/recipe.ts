@@ -1,7 +1,14 @@
-import { DishImage } from "./image";
+interface Coach {
+    name: string;
+    description: string;
+    imageUrl: string;
+}
 
 export interface Recipe {
+    dishName: string;
     dishDescription: string;
-    instructions: string;
-    image: DishImage;
+    ingredients: string;
+    steps: string[];
+    imageURL: string;
+    coach: Coach;
 }

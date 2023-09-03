@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
 
@@ -9,19 +9,17 @@ import { RecipesService } from 'src/app/services/recipes.service';
   styleUrls: ['./recipe.component.css'],
 })
 export class RecipeComponent {
-  constructor(private recipeService: RecipesService, private router: Router) {}
   recipe!: Recipe;
-  loading: boolean = false;
+
+  constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    if (!this.recipeService.recipeIsLoading()) {
-      this.router.navigate(['app']);
+    const index   = this.route.snapshot.paramMap.get('recipeId');
+    const recipe  = this.recipeService.getRecipe(index == null ? -1 : +index);
+    if(recipe == null) {
+      this.recipeService.goToHome(); // no recipes loaded, go back to home screen
     } else {
-      this.loading = true;
-      this.recipeService.recipeSubject.subscribe((sentRecipe: Recipe) => {
-        this.recipe = sentRecipe;
-        this.loading = false;
-      });
+      this.recipe = recipe;
     }
   }
 }
