@@ -23,7 +23,7 @@ describe('RecipeComponent', () => {
     fixture    = TestBed.createComponent(RecipeComponent);
     component  = fixture.componentInstance;
     component.recipe = {dishName:'', dishDescription: '', ingredients: '',steps: [], imageURL: '',
-    coach: {name: '', description: '', image_url:''}};
+    coach: {name: '', description: '', imageUrl:''}};
     fixture.detectChanges();
   });
 
