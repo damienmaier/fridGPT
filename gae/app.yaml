@@ -27,4 +27,4 @@ automatic_scaling:
 
 env_variables:
   OPENAI_API_KEY: <OPENAI_API_KEY>
-  LOV_LEVEL: DEBUG
+  LOG_LEVEL: DEBUG
