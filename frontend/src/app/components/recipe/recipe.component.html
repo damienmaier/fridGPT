@@ -4,8 +4,8 @@
 <div class="container-fluid">
     <div class="row h-100">
         <div class="col col-lg-4 dark-bg" id="col-description">
-            <ng-container *ngIf="recipe.image.url != ''; else noImage">
-                <img class="img" [src]="recipe.image.url"/>
+            <ng-container *ngIf="recipe.imageURL != ''; else noImage">
+                <img class="img" [src]="recipe.imageURL"/>
               </ng-container>
             <ng-template #noImage>
                 <img class="img" src="/assets_app/empty.jpg"/>
@@ -20,7 +20,7 @@
         </div>
         <div class="col">
             <div id="recipe-instructions" class="dark-bg absolute-center">
-                <p class="text-white">{{ recipe.instructions }}</p>
+                <p class="text-white">{{ recipe.steps }}</p>
             </div>
         </div>
     </div>

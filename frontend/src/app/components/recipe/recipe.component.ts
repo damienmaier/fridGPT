@@ -9,7 +9,6 @@ import { RecipesService } from 'src/app/services/recipes.service';
   styleUrls: ['./recipe.component.css'],
 })
 export class RecipeComponent {
-  
   recipe!: Recipe;
 
   constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
