@@ -1,7 +1,4 @@
-import openai
-
-# noinspection PyUnresolvedReferences
-import config
+from config import openai
 
 
 def create_image(prompt, size='512x512') -> str:

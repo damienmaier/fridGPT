@@ -1,9 +1,8 @@
 import abc
 
-import openai
-
 import ai.gpt
 import config
+from config import openai
 
 logger = config.logging.getLogger(__name__)
 
