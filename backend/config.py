@@ -3,6 +3,10 @@ import os
 import dotenv
 import openai
 
+import logging
+
+logging.basicConfig(level=logging.WARNING)
+
 dotenv.load_dotenv()
 if 'OPENAI_API_KEY' not in os.environ:
     raise Exception('''

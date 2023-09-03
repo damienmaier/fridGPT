@@ -1,9 +1,11 @@
 import abc
-import logging
 
 import openai
 
 import ai.gpt
+import config
+
+logger = config.logging.getLogger(__name__)
 
 
 class Task(abc.ABC):
@@ -19,7 +21,7 @@ class Task(abc.ABC):
     def __call__(self, *args, **kwargs):
         prompt = self.build_gpt_prompt(*args, **kwargs)
 
-        logging.info(f'Sending prompt to GPT: {prompt.messages}')
+        logger.info(f'Sending prompt to GPT: {prompt.messages}')
 
         gpt_response = openai.ChatCompletion.create(
             model=self._model,
@@ -32,7 +34,7 @@ class Task(abc.ABC):
         )
         gpt_response_message = gpt_response["choices"][0]["message"]["content"]
 
-        logging.info(f'GPT response: {gpt_response_message}')
+        logger.info(f'GPT response: {gpt_response_message}')
 
         return self.post_process_gpt_response(gpt_response_message)
 
