@@ -1,8 +1,8 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { Toast } from 'bootstrap'
 import { RecipesService } from 'src/app/services/recipes.service';
-import { SuggestedIngredient } from 'src/app/models/suggested-ingredient-adapter';
-import { RequestedIngredient } from 'src/app/models/requested-ingredient-adapter';
+import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
+import { RequestedIngredient } from 'src/app/models/requested-ingredient';
 import { Subscription } from 'rxjs';
 
 @Component({

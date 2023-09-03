@@ -1,15 +1,9 @@
-interface IngredientQuantity {
-    unit: string;
-    value: number;
-}
-
 export interface RequestedIngredientAPI {
     name: string;
-    quantity?: IngredientQuantity;
+    quantity?: {value: number, unit: string},
 }
-
+  
 export interface RequestedIngredient extends RequestedIngredientAPI {
     isCustom: boolean;
     displayQuantity: boolean;
 }
-

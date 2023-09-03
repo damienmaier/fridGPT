@@ -1,13 +1,32 @@
-interface SuggestedIngredientAPI {
+export interface SuggestedIngredientAPI {
     name: string;
     unit: string;
-    defaultQuantity: number;
     autoAdd: boolean;
+    defaultQuantity: number;
 }
+  
+export class SuggestedIngredient implements SuggestedIngredientAPI {
+    name!: string;
+    unit!: string;
+    autoAdd!: boolean;
+    defaultQuantity!: number;
+    selected!: boolean;
+    isCustom!: boolean;
+    constructor(name: string,unit: string, autoAdd: boolean, defaultQuantity: number, isCustom: boolean = false) {
+        this.name     = name;
+        this.unit     = unit;
+        this.autoAdd  = autoAdd;
+        this.defaultQuantity = defaultQuantity;
+        this.selected = false;
+        this.isCustom = isCustom;
+    }
 
-interface SuggestedIngredient extends SuggestedIngredientAPI {
-    selected: boolean;
-    isCustom: boolean;
+    toRequestedIngredient() {
+        return {
+        name: this.name, 
+        quantity: {value: this.defaultQuantity, unit: this.unit}, 
+        isCustom: this.isCustom, 
+        displayQuantity: this.isCustom
+        };
+    }
 }
-
-export { SuggestedIngredient, SuggestedIngredientAPI }

@@ -1,6 +1,8 @@
-import { RequestedIngredientAPI } from "./requested-ingredient";
+import { RequestedIngredient, RequestedIngredientAPI } from "./requested-ingredient";
 
 export interface APIError {
-    error: string;
-    ingredient?:RequestedIngredientAPI;
+    info: {
+        error: string; ingredient?: RequestedIngredientAPI
+    };
+    lastIngredients:RequestedIngredient[];
 }
