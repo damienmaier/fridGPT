@@ -3,6 +3,7 @@ import { createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { RecipeComponent } from './recipe.component';
 import { LoadingComponent } from '../loading/loading.component';
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe('RecipeComponent', () => {
   let component: RecipeComponent;
@@ -13,6 +14,7 @@ describe('RecipeComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     TestBed.configureTestingModule({
       declarations: [RecipeComponent, LoadingComponent],
+      imports: [RouterTestingModule],
       providers:    [{provide: RecipesService, useValue: fakeRecipeService}]
     }).compileComponents();
   });
@@ -20,7 +22,8 @@ describe('RecipeComponent', () => {
   beforeEach(() => {
     fixture    = TestBed.createComponent(RecipeComponent);
     component  = fixture.componentInstance;
-    component.recipe = {dishDescription: '', instructions: '', image: { url: ''}};
+    component.recipe = {dishName:'', dishDescription: '', ingredients: '',steps: [], imageURL: '',
+    coach: {name: '', description: '', image_url:''}};
     fixture.detectChanges();
   });
 

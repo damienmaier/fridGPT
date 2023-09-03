@@ -1,4 +1,4 @@
-import { Observable, catchError, map } from "rxjs";
+import { Observable, catchError, map, of } from "rxjs";
 import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe";
@@ -33,6 +33,7 @@ export class RecipesService {
     }
 
     fetchRecipes(): Observable<Recipe[]> {
+        if(this.ingredients.length == 0) { return of([])}
         this.recipes = [];
         const params = { ingredients: this.ingredients.map(this.requestedIngredientAdapter.adapt) };
         return this.http.post<{recipes: Recipe[]}>('/api/recipe', params).pipe(map((
