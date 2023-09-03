@@ -27,7 +27,7 @@ export class RecipesService {
             catchError(err => []));
     }
 
-    startLoadingRecipe(ingredients: RequestedIngredient[]) {
+    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
         this.ingredients = ingredients;
         this.router.navigate(['/app/result']);
     }

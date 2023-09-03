@@ -40,7 +40,11 @@ export class SearchComponent implements OnDestroy {
   }
 
   startloadingRecipes(): void {
-    this.recipesService.startLoadingRecipe(this.selectedIngredients);
+    if(this.selectedIngredients.length === 0) {
+      this.displayToast('Veuillez ajouter au moins un ingrédient');
+    } else {
+      this.recipesService.startLoadingRecipe(this.selectedIngredients);
+    }
   }
 
   filter(): void {

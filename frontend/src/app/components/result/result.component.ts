@@ -24,6 +24,7 @@ export class ResultComponent implements OnDestroy {
           this.recipeService.goToHome();
         }
         this.recipes = sentRecipes;
+        // TODO : load pictures here
         this.loading = false;
       } // errors catched in service
     });
