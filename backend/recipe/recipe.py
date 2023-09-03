@@ -1,30 +1,16 @@
-from ai import gpt
+import concurrent.futures
+
 import data
+
+from . import recipe_creator
 
 
 def create_recipes(ingredients: [data.RequestedIngredient]):
-    recipes = gpt.find_recipe(ingredients)
+    def create_recipe(coach: data.coach.Coach):
+        return (recipe_creator.create_recipe(coach_description=coach.descriptionForGpt, ingredients=ingredients) |
+                {'coach': coach})
 
-    for recipe in recipes:
-        recipe['coach'] = data.COACHES[recipe['coach']]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+        recipes_iterator = executor.map(create_recipe, data.COACHES.values(), timeout=30)
 
-    return recipes
-
-
-class GptAssistedRecipeFinder(ai.gpt.task.GptAssistedTask):
-
-    def __init__(self):
-        super().__init__(max_tokens=3000, frequency_penalty=0.2, presence_penalty=0.2, temperature=0.8)
-
-    def build_gpt_prompt(self, ingredients: [data.RequestedIngredient]):
-
-        with open(root.PROJECT_ROOT_PATH / 'data' / 'recipe_prompt.txt', 'r', encoding='utf-8') as f:
-            system_message = f.read()
-
-        prompt = ai.gpt.prompt.Prompt(system_message)
-        prompt.add_user_message(data.RequestedIngredient.ingredient_list_to_json(ingredients))
-
-        return prompt
-
-    def post_process_gpt_response(self, gpt_response_content: str):
-        return json.loads(gpt_response_content)
+    return list(recipes_iterator)

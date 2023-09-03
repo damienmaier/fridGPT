@@ -125,7 +125,6 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return insufficient ingredients error'
         )
 
-    @unittest.skip('not implemented')
     def test_correct_request(self):
         json_request = {
             "ingredients": [
@@ -174,4 +173,4 @@ class RecipeEndpointTest(ApiEndpointTest):
             self.assertTrue(3 <= len(recipe['coach']['description']) <= 1000,
                             'Should return a coach description of correct length')
 
-            self.assertIsInstance(recipe['coach']['image_url'], str, 'Should return a coach image url')
+            self.assertIsInstance(recipe['coach']['imageUrl'], str, 'Should return a coach image url')
