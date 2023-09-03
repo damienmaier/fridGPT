@@ -1,6 +1,6 @@
 import abc
 
-import gpt
+from ai import gpt
 
 
 class Classifier(gpt.Task, abc.ABC):

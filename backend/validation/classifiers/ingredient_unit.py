@@ -1,7 +1,7 @@
-import gpt
+import ai.gpt
 
 
-class IngredientUnitValidator(gpt.Classifier):
+class IngredientUnitValidator(ai.gpt.Classifier):
 
     def __init__(self):
         system_message = (

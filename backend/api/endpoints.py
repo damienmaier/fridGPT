@@ -1,6 +1,6 @@
 import flask
 
-import dalle
+from ai import dalle
 import data
 import validation
 

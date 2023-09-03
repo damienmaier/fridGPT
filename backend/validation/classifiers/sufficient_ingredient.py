@@ -1,8 +1,8 @@
-import gpt
+import ai.gpt
 import data
 
 
-class SufficientIngredientsValidator(gpt.Classifier):
+class SufficientIngredientsValidator(ai.gpt.Classifier):
 
     def __init__(self):
         system_message = (

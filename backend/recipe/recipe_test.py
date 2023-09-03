@@ -1,6 +1,6 @@
 import unittest
 
-import gpt
+from ai import gpt
 import data
 
 @unittest.skip("not implemented")
