@@ -1,7 +1,7 @@
 interface Coach {
     name: string;
     description: string;
-    image_url: string;
+    imageUrl: string;
 }
 
 export interface Recipe {
