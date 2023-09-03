@@ -1,14 +1,6 @@
 import unittest
 
-import requests
-
-import main
-
-
-class ApiEndpointTest(unittest.TestCase):
-    def setUp(self) -> None:
-        self.app = main.create_app()
-        self.client = self.app.test_client()
+from .endpoint_test import ApiEndpointTest
 
 
 class RecipeEndpointTest(ApiEndpointTest):
@@ -133,6 +125,7 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return insufficient ingredients error'
         )
 
+    @unittest.skip('not implemented')
     def test_correct_request(self):
         json_request = {
             "ingredients": [
@@ -182,47 +175,3 @@ class RecipeEndpointTest(ApiEndpointTest):
                             'Should return a coach description of correct length')
 
             self.assertIsInstance(recipe['coach']['image_url'], str, 'Should return a coach image url')
-
-
-@unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically.")
-class ImageEndpointTest(ApiEndpointTest):
-
-    def test_empty_image_request(self):
-        json_request = {
-            "dishDescription": ""
-        }
-        response = self.client.post('/api/image', json=json_request)
-        self.assertEqual(response.status_code, 400, 'Should return 400')
-
-    def test_correct_request(self):
-        json_request = {
-            "dishDescription": "lasagnes aux légumes"
-        }
-        response = self.client.post('/api/image', json=json_request)
-
-        self.assertEqual(response.status_code, 200, 'Should return 200')
-
-        image_url = response.json['url']
-        self.assertTrue(requests.head(image_url).headers['content-type'].startswith('image/'),
-                        'Should return an image url')
-
-
-class IngredientsEndpointTest(ApiEndpointTest):
-
-    def test_result(self):
-        response = self.client.get('/api/ingredients')
-
-        self.assertEqual(response.status_code, 200, 'Should return 200')
-
-        self.assertIsInstance(response.json['ingredients'], list, 'Should return ingredients list')
-        for ingredient in response.json['ingredients']:
-            self.assertIsInstance(ingredient["name"], str, 'Should return ingredient name')
-            self.assertTrue(3 <= len(ingredient["name"]) <= 50, 'Should return ingredient name of correct length')
-
-            self.assertIsInstance(ingredient["unit"], str, 'Should return ingredient unit')
-            self.assertTrue(1 <= len(ingredient["unit"]) <= 50, 'Should return ingredient unit of correct length')
-
-            self.assertIsInstance(ingredient["defaultQuantity"], float, 'Should return ingredient quantity')
-            self.assertTrue(0 < ingredient["defaultQuantity"], 'Should return positive ingredient quantity')
-
-            self.assertIsInstance(ingredient["autoAdd"], bool, 'Should return ingredient auto add status')

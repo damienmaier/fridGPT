@@ -1,9 +1,14 @@
-import json
-import gpt.prompt
-
-import gpt.task
+import gpt
 import models
-import root
+
+
+def create_recipes(ingredients: [models.RequestedIngredient]):
+    recipes = gpt.find_recipe(ingredients)
+
+    for recipe in recipes:
+        recipe['coach'] = models.COACHES[recipe['coach']]
+
+    return recipes
 
 
 class GptAssistedRecipeFinder(gpt.task.GptAssistedTask):

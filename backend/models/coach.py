@@ -20,3 +20,6 @@ class Coach:
                 data['name']: Coach(data['name'], data['description'], data['image_url'])
                 for data in json.load(f)
             }
+
+
+COACHES = Coach.read_coaches()

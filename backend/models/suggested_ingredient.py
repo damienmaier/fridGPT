@@ -18,3 +18,6 @@ class SuggestedIngredient:
                 data['name']: SuggestedIngredient(data['name'], data['unit'], data['defaultQuantity'], data['autoAdd'])
                 for data in json.load(f)['ingredients']
             }
+
+
+SUGGESTED_INGREDIENTS = SuggestedIngredient.read_suggested_ingredients()

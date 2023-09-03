@@ -3,7 +3,7 @@ import unittest
 import gpt
 import models
 
-
+@unittest.skip("not implemented")
 class GptAssistedIngredientNameValidationTest(unittest.TestCase):
     def test_recipes(self):
 

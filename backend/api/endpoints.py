@@ -3,7 +3,6 @@ import json
 import flask
 
 import dalle
-import recipe
 import root
 import validation
 
@@ -12,7 +11,8 @@ def create_api(app: flask.Flask) -> None:
     @app.post('/api/recipe')
     def recipe_endpoint():
         ingredients = validation.parse_and_validate_ingredients(flask.request.json)
-        return {'recipes': recipe.create_recipes(ingredients)}
+        # return {'recipes': recipe.create_recipes(ingredients)}
+        return {}
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():

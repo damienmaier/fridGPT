@@ -5,7 +5,7 @@ import openai
 import gpt.prompt
 
 
-class GptAssistedTask(abc.ABC):
+class Task(abc.ABC):
 
     def __init__(self, temperature: float = 1, max_tokens: int = 1000, model: str = 'gpt-3.5-turbo', frequency_penalty: float = 0, presence_penalty: float = 0):
         self._temperature = temperature

@@ -1,6 +1,6 @@
 import errors
-import gpt
 import models
+from . import classifiers
 
 
 def parse_and_validate_ingredients(json_request) -> [models.RequestedIngredient]:
@@ -8,14 +8,14 @@ def parse_and_validate_ingredients(json_request) -> [models.RequestedIngredient]
         raise errors.MalformedRequestError
     if len(json_request['ingredients']) > 100:
         raise errors.TooManyIngredientsError
-    ingredients = [parse_and_validate_ingredient(ingredient) for ingredient in json_request['ingredients']]
-    if not gpt.is_sufficient_ingredients(ingredients):
+    ingredients = [_parse_and_validate_ingredient(ingredient) for ingredient in json_request['ingredients']]
+    if not classifiers.is_sufficient_ingredients(ingredients):
         raise errors.InsufficientIngredients
 
     return ingredients
 
 
-def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient:
+def _parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient:
     try:
         ingredient = models.RequestedIngredient.from_dict(json_ingredient)
     except (TypeError, KeyError):
@@ -27,10 +27,11 @@ def parse_and_validate_ingredient(json_ingredient) -> models.RequestedIngredient
     else:
         if not 0 < len(ingredient.name) <= 50:
             raise errors.InvalidCustomIngredientError(ingredient)
-        if not gpt.is_valid_ingredient(ingredient.name):
+        if not classifiers.is_valid_ingredient(ingredient.name):
             raise errors.InvalidCustomIngredientError(ingredient)
         if ingredient.quantity:
-            if not gpt.is_valid_unit_for_ingredient(ingredient_name=ingredient.name, unit=ingredient.quantity.unit):
+            if not classifiers.is_valid_unit_for_ingredient(ingredient_name=ingredient.name,
+                                                            unit=ingredient.quantity.unit):
                 raise errors.InvalidCustomIngredientUnitError(ingredient)
 
     return ingredient
