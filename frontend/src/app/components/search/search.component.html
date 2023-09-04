@@ -1,6 +1,6 @@
 <div id="main-header">
   <p class="fs-6 text-white margin-right">Pour commencer, donnons quelques indications aux coachs !</p>
-  <div>
+  <div id="header-coach">
     <img src="/assets_app/germaine.png" width="60" alt="" />
     <img src="/assets_app/travis.png" width="60" alt="" />
     <img src="/assets_app/bernardo.png" width="60" alt="" />
@@ -10,7 +10,7 @@
   <!-- ingredients picking menu -->
   <div class="col">
     <div class="light-blue-bg content-header">
-      <h4> <img class="margin-both-sides" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
+      <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
     </div>
     <div class="row justify-content-start margin-top" id="ingredients-header-title">
       <div class="col col-name">
@@ -84,7 +84,7 @@
   <!-- parameters menu -->
   <div class="col" id="customization-col">
     <div class="light-blue-bg content-header">
-      <h4><img class="margin-both-sides" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
+      <h4><img class="margin-both-sides header-icon" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
     </div>
     <div class="margin-top image-checkbox">
       <input type="checkbox" class="form-check-input" id="image-toggle" (change)="toggleImageLoading($event)">
