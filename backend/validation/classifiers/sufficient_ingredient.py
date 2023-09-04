@@ -18,10 +18,10 @@ class SufficientIngredientsValidator(ai.gpt.Classifier):
         ok_cases = [
             [
                 [
-                    data.RequestedIngredient(name='sel', quantity=None),
-                    data.RequestedIngredient(name='poivre', quantity=None),
-                    data.RequestedIngredient(name='huile de cuisson', quantity=None),
-                    data.RequestedIngredient(name='vinaigre', quantity=None),
+                    data.RequestedIngredient(name='sel'),
+                    data.RequestedIngredient(name='poivre'),
+                    data.RequestedIngredient(name='huile de cuisson'),
+                    data.RequestedIngredient(name='vinaigre'),
                     data.RequestedIngredient(name='lentilles',
                                              quantity=data.RequestedIngredientQuantity('g', 500)),
                     data.RequestedIngredient(name='carotte',
@@ -34,8 +34,8 @@ class SufficientIngredientsValidator(ai.gpt.Classifier):
         nok_cases = [
             [
                 [
-                    data.RequestedIngredient(name='safran', quantity=None),
-                    data.RequestedIngredient(name="huile d'olive", quantity=None),
+                    data.RequestedIngredient(name='safran'),
+                    data.RequestedIngredient(name="huile d'olive"),
                     data.RequestedIngredient(name='lentilles', quantity=data.RequestedIngredientQuantity('g', 1)),
                 ]
             ],
