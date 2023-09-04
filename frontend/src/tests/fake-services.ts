@@ -6,6 +6,7 @@ function createRecipesServiceSpy() {
     ['loadIngredients', 'fetchRecipes', 'onRecipeSelected','getRecipe','goToHome','fetchLastError']);
     spyObj.loadIngredients.and.returnValue(of([]));
     spyObj.fetchRecipes.and.returnValue(of([]));
+    spyObj.getRecipe.and.returnValue({dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''});
     return spyObj;
 }
 
