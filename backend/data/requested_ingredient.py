@@ -11,17 +11,26 @@ class RequestedIngredientQuantity:
 @dataclasses.dataclass
 class RequestedIngredient:
     name: str
-    quantity: RequestedIngredientQuantity | None
+    quantity: RequestedIngredientQuantity | None = None
+    mandatory: bool = False
 
     def as_dict(self) -> dict:
-        return {'name': self.name, } | ({'quantity': dataclasses.asdict(self.quantity)} if self.quantity else {})
+        dict_ = dataclasses.asdict(self)
+        if not self.quantity:
+            del dict_['quantity']
+        if not self.mandatory:
+            del dict_['mandatory']
+
+        return dict_
 
     @staticmethod
     def from_dict(data: dict) -> 'RequestedIngredient':
-        return RequestedIngredient(
-            name=data['name'],
-            quantity=RequestedIngredientQuantity(**data['quantity']) if 'quantity' in data else None
-        )
+        data = data.copy()
+
+        if 'quantity' in data:
+            data['quantity'] = RequestedIngredientQuantity(**data['quantity'])
+
+        return RequestedIngredient(**data)
 
     @staticmethod
     def ingredient_list_to_json(ingredients: list['RequestedIngredient']) -> str:
