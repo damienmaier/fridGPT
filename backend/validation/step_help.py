@@ -4,7 +4,7 @@ import errors
 logger = config.logging.getLogger(__name__)
 
 
-def parse_and_validate_step_help(json_request):
+def parse_and_validate_step_help(json_request) -> ([str], int):
     try:
         recipe_steps = json_request['steps']
         step_number = json_request['stepNumber']

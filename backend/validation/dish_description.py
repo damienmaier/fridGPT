@@ -4,7 +4,7 @@ import errors
 logger = config.logging.getLogger(__name__)
 
 
-def parse_and_validate_dish_description(json_request):
+def parse_and_validate_dish_description(json_request) -> str:
     if not json_request['dishDescription']:
         logger.error('received empty dish description')
         raise errors.MalformedRequestError
