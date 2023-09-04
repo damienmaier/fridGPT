@@ -1,9 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Coach, Recipe } from 'src/app/models/recipe';
+import { ModalService } from 'src/app/services/modal.service';
 import { RecipesService } from 'src/app/services/recipes.service';
-import { CoachModalComponent } from '../modals/coach-modal/coach-modal.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-result',
@@ -15,11 +14,11 @@ export class ResultComponent implements OnDestroy {
   loading: boolean = false;
   recipesSub!: Subscription;
 
-  constructor(private recipeService: RecipesService) {}
+  constructor(private recipeService: RecipesService, private modalService: ModalService) {}
 
   ngOnInit() {
     this.loading = true;
-    this.recipesSub = this.recipeService.fetchRecipes().subscribe({
+    this.recipesSub = this.recipeService.loadRecipes().subscribe({
       next: (sentRecipes: Recipe[]) => {
         if(sentRecipes.length == 0) {
           this.loading = false;
@@ -47,7 +46,7 @@ export class ResultComponent implements OnDestroy {
   }
 
   openCoachModal(coach: Coach): void {
-    this.recipeService.openCoachModal(coach);
+    this.modalService.openCoachModal(coach);
   }
 
   ngOnDestroy(): void {

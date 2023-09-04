@@ -1,7 +1,7 @@
 import { Observable, catchError, forkJoin, map, of } from "rxjs";
 import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Coach, Recipe } from "../models/recipe";
+import { Recipe } from "../models/recipe";
 import { Router } from "@angular/router";
 import { SuggestedIngredientAdapter } from "../models/suggested-ingredient-adapter";
 import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapter";
@@ -9,21 +9,20 @@ import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested
 import { RequestedIngredient } from "../models/requested-ingredient";
 import { APIError } from "../models/api-error";
 import { DishImage } from "../models/image";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { CoachModalComponent } from "../components/modals/coach-modal/coach-modal.component";
-import { HelpModalComponent } from "../components/modals/help-modal/help-modal.component";
 
 @Injectable()
 export class RecipesService {
+    // no direct access to data here
     private lastError: APIError|null = null;
     private recipes: Recipe[] = [];
     private ingredients: RequestedIngredient[] = [];
     loadImages: boolean = false;
 
-    constructor(private http: HttpClient, private router: Router, private _modalService: NgbModal,
+    constructor(private http: HttpClient, private router: Router,
         private suggestedIngredientAdapter: SuggestedIngredientAdapter,
         private requestedIngredientAdapter: RequestedIngredientAdapter) {}
 
+    /* --------- HTTP requests ------------------------------ */
     loadIngredients(): Observable<SuggestedIngredient[]> {
         return this.http.get<{ingredients: SuggestedIngredientAPI[]}>('/api/ingredients').pipe(
             map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
@@ -32,13 +31,7 @@ export class RecipesService {
             catchError(err => []));
     }
 
-    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
-        this.ingredients = ingredients;
-        this.recipes     = [];
-        this.router.navigate(['/app/result']);
-    }
-
-    fetchRecipes(): Observable<Recipe[]> {
+    loadRecipes(): Observable<Recipe[]> {
         if(this.recipes.length > 0) { return of(this.recipes)}
         this.recipes = [];
         const params = { ingredients: this.ingredients.map(this.requestedIngredientAdapter.adapt) };
@@ -64,10 +57,26 @@ export class RecipesService {
             .pipe(map((response: DishImage) => response.url))));
     }
 
+    loadHelpForStep(steps: string[], stepIndex: number): Observable<{recipes: Recipe[]}> {
+        return this.http.post<{recipes: Recipe[]}>('/api/help', {steps, stepIndex});
+    }
+
+    /* --------- navigation related actions ------------------------------ */
+    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
+        this.ingredients = ingredients;
+        this.recipes     = [];
+        this.router.navigate(['/app/result']);
+    }
+
     onRecipeSelected(index: number): void {
         this.router.navigate(['/app/recipe', index]);
     }
 
+    goToHome(): void {
+        this.router.navigate(['/app']);
+    }
+
+    /* --------- other data requests from components ------------------------------ */
     getRecipe(index: number): Recipe {
         if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
             return {dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''};
@@ -75,39 +84,23 @@ export class RecipesService {
         return this.recipes[index];
     }
 
-    goToHome(): void {
-        this.router.navigate(['/app']);
-    }
-
-    fetchLastError(): APIError|null {
+    fetchLastError(): APIError | null {
         return this.lastError;
     }
 
     buildErrorMessage(): string {
         if(this.lastError == null) { return ''; }
-        let message = this.lastError.info.error;
+        let message = '';
         if(this.lastError.info.ingredient) {
-            message += `\n L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+            message = `Impossible de générer des recettes, L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+        } else {
+            if(this.lastError.info.error ===  'insufficient ingredients') {
+                message = 'Impossible de générer des recettes à partir des ingrédients sélectionnés, veuillez compléter la liste.'
+            } else {
+                message = 'Une erreur innatendue est survenue lors de la génération des recettes, veuillez réessayer'
+            }
         }
         this.lastError = null;
         return message;
-    }
-
-    openCoachModal(coach: Coach) {
-        const modalRef = this._modalService.open(CoachModalComponent);
-        if(modalRef != undefined) {
-            modalRef.componentInstance.coach = coach;
-        }
-    }
-
-    openHelpModal(steps: string[], stepIndex: number): Observable<void> {
-        return this.http.post<{recipes: Recipe[]}>('/api/help', {steps, stepIndex}).pipe(map(
-            (explanation:any) => {
-                const modalRef = this._modalService.open(HelpModalComponent);
-                if(modalRef != undefined) {
-                    modalRef.componentInstance.explanation = explanation.helpText;
-                }
-            }
-        ));
     }
 }

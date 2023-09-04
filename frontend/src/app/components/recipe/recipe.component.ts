@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { Coach, Recipe } from 'src/app/models/recipe';
+import { ModalService } from 'src/app/services/modal.service';
 import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class RecipeComponent {
   currentStepIndex!: number;
   loadingHelp: boolean = false;
 
-  constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
+  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {}
 
   ngOnInit() {
     const index             = this.route.snapshot.paramMap.get('recipeId');
@@ -37,12 +38,12 @@ export class RecipeComponent {
   }
 
   openCoachModal(coach: Coach): void {
-    this.recipeService.openCoachModal(coach);
+    this.modalService.openCoachModal(coach);
   }
 
   openHelpModal(): void {
     this.loadingHelp = true;
-    this.recipeService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(
+    this.modalService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(
       () => { this.loadingHelp = false; }
     )
   }
