@@ -1,1 +1,2 @@
 from .ingredient import parse_and_validate_ingredients
+from .dish_description import parse_and_validate_dish_description
