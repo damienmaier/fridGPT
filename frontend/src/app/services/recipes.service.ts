@@ -35,7 +35,7 @@ export class RecipesService {
     }
 
     fetchRecipes(): Observable<Recipe[]> {
-        if(this.ingredients.length == 0) { return of([])}
+        if(this.recipes.length > 0) { return of(this.recipes)}
         this.recipes = [];
         const params = { ingredients: this.ingredients.map(this.requestedIngredientAdapter.adapt) };
         return this.http.post<{recipes: Recipe[]}>('/api/recipe', params).pipe(map((
@@ -45,7 +45,6 @@ export class RecipesService {
                 return response.recipes;
             }
         )),
-
         catchError((error: HttpErrorResponse) => {
             this.lastError = {info: error.error, lastIngredients: this.ingredients.slice()};
             this.goToHome();
@@ -65,9 +64,9 @@ export class RecipesService {
         this.router.navigate(['/app/recipe', index]);
     }
 
-    getRecipe(index: number): (Recipe | null) {
+    getRecipe(index: number): Recipe {
         if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
-            return null;
+            return {dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''};
         }
         return this.recipes[index];
     }

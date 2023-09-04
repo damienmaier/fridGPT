@@ -1,3 +1,20 @@
+#header {
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  gap:100px;
+  padding:5px;
+}
+
+#back-btn {
+  background: #00425A;
+  height: 50%;
+}
+
+p {
+  margin-bottom: 0;
+}
+
 #col-description {
   height: 77vh;
   position:relative;
@@ -70,7 +87,7 @@
   border-top: 4px solid #00425a;
 }
 
-.bi {
+.bi-chevron-left, .bi-chevron-right {
   font-size: 30px;
 }
 

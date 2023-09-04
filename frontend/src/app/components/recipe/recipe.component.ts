@@ -16,16 +16,14 @@ export class RecipeComponent {
   constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    const index   = this.route.snapshot.paramMap.get('recipeId');
-    const recipe  = this.recipeService.getRecipe(index == null ? -1 : +index);
-    if(recipe == null) {
-      this.recipeService.goToHome(); // no recipes loaded, go back to home screen
-    } else {
-      this.recipe = recipe;
-    }
-    this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>');
+    const index             = this.route.snapshot.paramMap.get('recipeId');
+    this.recipe             = this.recipeService.getRecipe(index == null ? -1 : +index);
     this.currentStep        = this.recipe.ingredients;
     this.currentStepIndex   = this.recipe.steps.length;
+    if(this.recipe.dishName === '') {
+      this.recipeService.goToHome(); // no recipes loaded, go back to home screen
+    }
+    this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>'); 
   }
 
   nextStep(forward: boolean) {
