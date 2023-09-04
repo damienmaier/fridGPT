@@ -23,3 +23,8 @@ def create_api(app: flask.Flask) -> None:
         image_url = dalle.create_image(f'photo professionnelle, gros plan, délicieux, {dish_description}')
 
         return {'url': image_url}
+
+    @app.post('/api/help')
+    def help_endpoint():
+        recipe_steps, step_number = validation.parse_and_validate_step_help(flask.request.json)
+        return {}

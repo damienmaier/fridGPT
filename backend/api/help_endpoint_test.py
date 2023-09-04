@@ -3,7 +3,7 @@ import unittest
 from api.endpoint_test import ApiEndpointTest
 
 
-@unittest.skip("Not implemented")
+# @unittest.skip("Not implemented")
 class HelpEndpointTest(ApiEndpointTest):
 
     def test_malformed_request(self):
@@ -45,7 +45,7 @@ class HelpEndpointTest(ApiEndpointTest):
             {"error": "malformed request"},
             'Should return a malformed request error'
         )
-        
+
     def test_empty_steps(self):
         json_request = {
             "steps": [],

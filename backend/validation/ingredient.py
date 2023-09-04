@@ -22,10 +22,10 @@ def parse_and_validate_ingredients(json_request) -> [data.RequestedIngredient]:
     if all(ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[ingredient.name].autoAdd
            for ingredient in ingredients):
         logger.warning('only default ingredients were received')
-        raise errors.InsufficientIngredients
+        raise errors.InsufficientIngredientsError
     if not classifiers.is_sufficient_ingredients(ingredients):
         logger.warning('insufficient ingredients')
-        raise errors.InsufficientIngredients
+        raise errors.InsufficientIngredientsError
 
     return ingredients
 
