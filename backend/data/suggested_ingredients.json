@@ -1377,7 +1377,7 @@
     "name": "poivre",
     "unit": "g",
     "defaultQuantity": 30.0,
-    "autoAdd": true
+    "autoAdd": false
   },
   {
     "name": "pignons de pin",
@@ -1563,7 +1563,7 @@
     "name": "sel",
     "unit": "g",
     "defaultQuantity": 100.0,
-    "autoAdd": true
+    "autoAdd": false
   },
   {
     "name": "beurre salé",
