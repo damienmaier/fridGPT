@@ -54,7 +54,7 @@ export class SearchComponent implements OnDestroy {
     let customAlreadyAdded    = false;
     this.filteredIngredients  = this.baseIngredients.filter(
       (ingredient: SuggestedIngredient) => {
-        if(ingredient.name === this.currentSearch) { customAlreadyAdded = true; }
+        if(ingredient.name.toLowerCase() === this.currentSearch.toLowerCase()) { customAlreadyAdded = true; }
         return ingredient.name.toLowerCase().startsWith(this.currentSearch.toLowerCase())
       }
     );
@@ -66,12 +66,12 @@ export class SearchComponent implements OnDestroy {
         (ingredient: RequestedIngredient) => element.name == ingredient.name
       )
     );
-    this.filteredIngredients.sort();
+    this.filteredIngredients.sort((e1:SuggestedIngredient,e2:SuggestedIngredient) => e1.name > e2.name ? 1 : -1);
   }
 
   addIngredientToList(ingredient: SuggestedIngredient): void {
     if(ingredient.selected) { return; } // no duplicates
-    this.selectedIngredients.push(ingredient.toRequestedIngredient());
+    this.selectedIngredients.unshift(ingredient.toRequestedIngredient());
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
