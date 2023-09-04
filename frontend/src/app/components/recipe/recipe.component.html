@@ -14,7 +14,7 @@
                     <p class="fs-6 text-center text-white">{{ recipe.dishDescription }}</p>
                     <p class="text-white coach-name"> Proposé par {{ recipe.coach.name }}</p>
                 </div>
-                <img [src]="recipe.coach.imageUrl" width="90" alt=""/>
+                <img [src]="recipe.coach.imageUrl" width="90" alt="" (click)="openCoachModal(recipe.coach)"/>
             </div>
         </div>
         <div class="col" id="col-step">

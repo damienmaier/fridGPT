@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { Recipe } from 'src/app/models/recipe';
+import { Coach, Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
@@ -33,5 +33,9 @@ export class RecipeComponent {
     }
     this.currentStep = this.currentStepIndex == this.recipe.steps.length ? 
       this.recipe.ingredients : this.recipe.steps[this.currentStepIndex];
+  }
+
+  openCoachModal(coach: Coach): void {
+    this.recipeService.openCoachModal(coach);
   }
 }
