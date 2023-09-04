@@ -1,6 +1,9 @@
 import json
 
 import ai.gpt
+import config
+
+logger = config.logging.getLogger(__name__)
 
 
 class HelpMessageCreator(ai.gpt.Task):
@@ -31,4 +34,9 @@ class HelpMessageCreator(ai.gpt.Task):
         return gpt_response_content
 
 
-create_help_message_for_step = HelpMessageCreator()
+def create_help_message_for_step(recipe_steps: [str], step_index: int) -> str:
+    logger.info("Creating help message for recipe step")
+    help_message = HelpMessageCreator()(recipe_steps, step_index)
+    logger.info("Help message created")
+
+    return help_message
