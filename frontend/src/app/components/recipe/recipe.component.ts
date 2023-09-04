@@ -12,6 +12,7 @@ export class RecipeComponent {
   recipe!: Recipe;
   currentStep: string = '';
   currentStepIndex!: number;
+  loadingHelp: boolean = false;
 
   constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
 
@@ -37,5 +38,12 @@ export class RecipeComponent {
 
   openCoachModal(coach: Coach): void {
     this.recipeService.openCoachModal(coach);
+  }
+
+  openHelpModal(): void {
+    this.loadingHelp = true;
+    this.recipeService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(
+      () => { this.loadingHelp = false; }
+    )
   }
 }

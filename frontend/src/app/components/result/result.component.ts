@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Coach, Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
-import { CoachModalComponent } from '../coach-modal/coach-modal.component';
+import { CoachModalComponent } from '../modals/coach-modal/coach-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

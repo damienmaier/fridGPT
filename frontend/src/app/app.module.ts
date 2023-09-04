@@ -10,7 +10,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { ResultComponent } from './components/result/result.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CoachModalComponent } from './components/coach-modal/coach-modal.component';
+import { CoachModalComponent } from './components/modals/coach-modal/coach-modal.component';
+import { HelpModalComponent } from './components/modals/help-modal/help-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CoachModalComponent } from './components/coach-modal/coach-modal.compon
     LoadingComponent,
     RecipeComponent,
     ResultComponent,
-    CoachModalComponent
+    CoachModalComponent,
+    HelpModalComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,8 @@ import { RequestedIngredient } from "../models/requested-ingredient";
 import { APIError } from "../models/api-error";
 import { DishImage } from "../models/image";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { CoachModalComponent } from "../components/coach-modal/coach-modal.component";
+import { CoachModalComponent } from "../components/modals/coach-modal/coach-modal.component";
+import { HelpModalComponent } from "../components/modals/help-modal/help-modal.component";
 
 @Injectable()
 export class RecipesService {
@@ -97,5 +98,16 @@ export class RecipesService {
         if(modalRef != undefined) {
             modalRef.componentInstance.coach = coach;
         }
+    }
+
+    openHelpModal(steps: string[], stepIndex: number): Observable<void> {
+        return this.http.post<{recipes: Recipe[]}>('/api/help', {steps, stepIndex}).pipe(map(
+            (explanation:any) => {
+                const modalRef = this._modalService.open(HelpModalComponent);
+                if(modalRef != undefined) {
+                    modalRef.componentInstance.explanation = explanation.helpText;
+                }
+            }
+        ));
     }
 }

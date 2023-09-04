@@ -35,9 +35,10 @@
                 </ng-container>
                 <ng-template #step>
                     <p class="fs-5 text-white text-center" id="step-detail" [innerHTML]="currentStep"></p>
-                    <div id="step-counter">
+                    <<div id="step-counter">
                         <p class="text-white">{{ currentStepIndex + 1}} / {{ recipe.steps.length }}</p>
                     </div>
+                    <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">J'ai besoin d'aide !</button>
                 </ng-template>
             </div>
         </div>
