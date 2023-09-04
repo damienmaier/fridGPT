@@ -8,7 +8,7 @@ class HelpEndpointTest(ApiEndpointTest):
 
     def test_malformed_request(self):
         json_request = {
-            "stepNumber": 2
+            "stepIndex": 2
         }
 
         response = self.client.post('api/help', json=json_request)
@@ -34,7 +34,7 @@ class HelpEndpointTest(ApiEndpointTest):
                 "Enfournez le plat pendant 30 minutes.",
                 "Servez chaud avec une cuillère à soupe de crème fraîche.",
             ],
-            "stepNumber": 10
+            "stepIndex": 10
         }
 
         response = self.client.post('api/help', json=json_request)
@@ -49,7 +49,7 @@ class HelpEndpointTest(ApiEndpointTest):
     def test_empty_steps(self):
         json_request = {
             "steps": [],
-            "stepNumber": 2
+            "stepIndex": 2
         }
 
         response = self.client.post('api/help', json=json_request)
@@ -75,7 +75,7 @@ class HelpEndpointTest(ApiEndpointTest):
                 "Enfournez le plat pendant 30 minutes.",
                 "Servez chaud avec une cuillère à soupe de crème fraîche.",
             ],
-            "stepNumber": 2
+            "stepIndex": 2
         }
 
         response = self.client.post('api/help', json=json_request)
@@ -101,7 +101,7 @@ class HelpEndpointTest(ApiEndpointTest):
                 "Enfournez le plat pendant 30 minutes.",
                 "Servez chaud avec une cuillère à soupe de crème fraîche.",
             ],
-            "stepNumber": 2
+            "stepIndex": 2
         }
 
         response = self.client.post('api/help', json=json_request)

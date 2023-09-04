@@ -26,5 +26,5 @@ def create_api(app: flask.Flask) -> None:
 
     @app.post('/api/help')
     def help_endpoint():
-        recipe_steps, step_number = validation.parse_and_validate_step_help(flask.request.json)
-        return {'helpText': recipe.create_help_message_for_recipe_step(recipe_steps, step_number)}
+        recipe_steps, step_index = validation.parse_and_validate_step_help(flask.request.json)
+        return {'helpText': recipe.create_help_message_for_recipe_step(recipe_steps, step_index)}
