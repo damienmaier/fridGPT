@@ -24,7 +24,7 @@
     </div>
     <div id="ingredients-content">
       <ng-container *ngFor="let item of selectedIngredients">
-        <div class="row margin-top row-ingredient">
+        <div class="row margin-top row-ingredient" [ngClass]="{'invalid-row': item.isInvalid}">
           <div class="col col-name">
             <p class="fs-6 text-white">{{ item.name }}</p>
           </div>

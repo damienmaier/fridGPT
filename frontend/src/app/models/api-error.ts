@@ -2,7 +2,8 @@ import { RequestedIngredient, RequestedIngredientAPI } from "./requested-ingredi
 
 export interface APIError {
     info: {
-        error: string; ingredient?: RequestedIngredientAPI
+        error: string; 
+        ingredient?: RequestedIngredientAPI
     };
     lastIngredients:RequestedIngredient[];
 }

@@ -41,6 +41,10 @@
     max-height: 30vh;
 }
 
+.invalid-row .col-name {
+    background-color: rgba(168, 50, 50,.4);
+}
+
 .form-check-input:checked {
     background-color: #EF6262;
     border-color: #EF6262;
@@ -292,6 +296,7 @@ p {
 
     .col-name {
         max-width: 40vw;
+        padding:3px;
         min-width: 40vw;
     }
 

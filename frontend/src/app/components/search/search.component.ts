@@ -21,9 +21,17 @@ export class SearchComponent implements OnDestroy {
 
   ngOnInit() {
     const lastError = this.recipesService.fetchLastError();
+    this.selectedIngredients.map((ingredient: RequestedIngredient) => ingredient.isInvalid = false);
     if(lastError != null) {
       this.toastService.show(this.recipesService.buildErrorMessage());
       this.selectedIngredients = lastError.lastIngredients;
+      if(lastError.info.ingredient) {
+        this.selectedIngredients.map((ingredient: RequestedIngredient) => {
+          if(ingredient.name === lastError.info.ingredient?.name) {
+            ingredient.isInvalid = true;
+          }
+        })
+      }
     }
     this.ingredientsSub = this.recipesService.loadIngredients().subscribe(
       (list: SuggestedIngredient[]) => {

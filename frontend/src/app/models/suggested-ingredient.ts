@@ -26,7 +26,8 @@ export class SuggestedIngredient implements SuggestedIngredientAPI {
         name: this.name, 
         quantity: {value: this.defaultQuantity, unit: this.unit}, 
         isCustom: this.isCustom, 
-        displayQuantity: this.isCustom
+        displayQuantity: this.isCustom,
+        isInvalid: false
         };
     }
 }
