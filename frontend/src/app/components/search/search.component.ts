@@ -1,9 +1,9 @@
-import { Component, OnDestroy, ViewChild } from '@angular/core';
-import { Toast } from 'bootstrap'
+import { Component, OnDestroy } from '@angular/core';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
 import { RequestedIngredient } from 'src/app/models/requested-ingredient';
 import { Subscription } from 'rxjs';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-search',
@@ -14,16 +14,15 @@ export class SearchComponent implements OnDestroy {
   private baseIngredients: SuggestedIngredient[]  = [];
   filteredIngredients: SuggestedIngredient[]      = [];
   selectedIngredients: RequestedIngredient[]      = [];
+  currentSearch: string                           = '';
   ingredientsSub!: Subscription;
-  currentSearch: string   = '';
-  @ViewChild('ErrorToast', {static: true}) toastOnError: any;
 
-  constructor(private recipesService: RecipesService) {}
+  constructor(private recipesService: RecipesService, public toastService: ToastService) {}
 
   ngOnInit() {
     const lastError = this.recipesService.fetchLastError();
     if(lastError != null) {
-      this.displayToast(this.recipesService.buildErrorMessage());
+      this.toastService.show(this.recipesService.buildErrorMessage());
       this.selectedIngredients = lastError.lastIngredients;
     }
     this.ingredientsSub = this.recipesService.loadIngredients().subscribe(
@@ -40,7 +39,7 @@ export class SearchComponent implements OnDestroy {
 
   startloadingRecipes(): void {
     if(this.selectedIngredients.length === 0) {
-      this.displayToast('Veuillez ajouter au moins un ingrédient');
+      this.toastService.show('Veuillez ajouter au moins un ingrédient');
     } else {
       this.recipesService.startLoadingRecipe(this.selectedIngredients);
     }
@@ -95,12 +94,6 @@ export class SearchComponent implements OnDestroy {
 
   toggleImageLoading(event:any) {
     this.recipesService.loadImages = event.target != null ? event.target.checked : false;
-  }
-
-  private displayToast(message: string): void {
-    this.toastOnError.nativeElement.querySelector('.toast-body').textContent = message;
-    const toast = new Toast(this.toastOnError.nativeElement, {});
-    toast.show();
   }
 
   ngOnDestroy(): void {

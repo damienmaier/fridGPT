@@ -12,6 +12,10 @@ import { ResultComponent } from './components/result/result.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoachModalComponent } from './components/modals/coach-modal/coach-modal.component';
 import { HelpModalComponent } from './components/modals/help-modal/help-modal.component';
+import { ModalService } from './services/modal.service';
+import { ToastService } from './services/toast.service';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +25,18 @@ import { HelpModalComponent } from './components/modals/help-modal/help-modal.co
     RecipeComponent,
     ResultComponent,
     CoachModalComponent,
-    HelpModalComponent
+    HelpModalComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgbToastModule
   ],
-  providers: [RecipesService],
+  providers: [RecipesService, ModalService, ToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
