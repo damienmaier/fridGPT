@@ -1,7 +1,7 @@
 import { Observable, catchError, forkJoin, map, of } from "rxjs";
 import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Recipe } from "../models/recipe";
+import { Coach, Recipe } from "../models/recipe";
 import { Router } from "@angular/router";
 import { SuggestedIngredientAdapter } from "../models/suggested-ingredient-adapter";
 import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapter";
@@ -9,6 +9,8 @@ import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested
 import { RequestedIngredient } from "../models/requested-ingredient";
 import { APIError } from "../models/api-error";
 import { DishImage } from "../models/image";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { CoachModalComponent } from "../components/coach-modal/coach-modal.component";
 
 @Injectable()
 export class RecipesService {
@@ -17,7 +19,7 @@ export class RecipesService {
     private ingredients: RequestedIngredient[] = [];
     loadImages: boolean = false;
 
-    constructor(private http: HttpClient, private router: Router, 
+    constructor(private http: HttpClient, private router: Router, private _modalService: NgbModal,
         private suggestedIngredientAdapter: SuggestedIngredientAdapter,
         private requestedIngredientAdapter: RequestedIngredientAdapter) {}
 
@@ -88,5 +90,12 @@ export class RecipesService {
         }
         this.lastError = null;
         return message;
+    }
+
+    openCoachModal(coach: Coach) {
+        const modalRef = this._modalService.open(CoachModalComponent);
+        if(modalRef != undefined) {
+            modalRef.componentInstance.coach = coach;
+        }
     }
 }

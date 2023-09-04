@@ -16,17 +16,20 @@ p {
 }
 
 #col-description {
-  height: 77vh;
   position:relative;
   overflow-x: hidden;
 }
 
 .description {
   position: absolute;
-  bottom: 0;
+  bottom: 4%;
   left:0;
   width: 100%;
   display: flex;
+}
+
+.container-fluid, .row, .col {
+  height: 100%;
 }
 
 .description img, .coach-name {
@@ -34,7 +37,7 @@ p {
 }
 
 .dish-img {
-  height:80%;
+  height:85%;
   position: absolute;
   top: 0;
   left:0;

@@ -1,7 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Recipe } from 'src/app/models/recipe';
+import { Coach, Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
+import { CoachModalComponent } from '../coach-modal/coach-modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-result',
@@ -42,6 +44,10 @@ export class ResultComponent implements OnDestroy {
 
   selectRecipe(selectedId: number): void {
     this.recipeService.onRecipeSelected(selectedId);
+  }
+
+  openCoachModal(coach: Coach): void {
+    this.recipeService.openCoachModal(coach);
   }
 
   ngOnDestroy(): void {

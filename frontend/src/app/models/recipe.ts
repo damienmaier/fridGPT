@@ -1,4 +1,4 @@
-interface Coach {
+export interface Coach {
     name: string;
     description: string;
     imageUrl: string;
