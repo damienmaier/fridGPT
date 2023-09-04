@@ -56,10 +56,16 @@ class InvalidCustomIngredientUnitError(IngredientError):
         return 'invalid custom ingredient unit'
 
 
-class InsufficientIngredients(FridGptError):
+class InsufficientIngredientsError(FridGptError):
 
     def error_name(self) -> str:
         return 'insufficient ingredients'
+
+
+class TooLargeRequestError(FridGptError):
+
+    def error_name(self) -> str:
+        return 'too large request'
 
 
 def create_exception_handlers(app: flask.Flask) -> None:
