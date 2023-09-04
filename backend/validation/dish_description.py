@@ -1,16 +1,15 @@
 import config
 import errors
+from validation.util import get_and_validate_type
 
 logger = config.logging.getLogger(__name__)
 
 
 def parse_and_validate_dish_description(json_request) -> str:
-    if not json_request['dishDescription']:
-        logger.error('received empty dish description')
-        raise errors.MalformedRequestError
+    dish_description = get_and_validate_type(json_request, 'dishDescription', str)
 
-    if len(json_request['dishDescription']) > 1000:
+    if len(dish_description) > 1000:
         logger.error('received dish description longer than 1000 characters')
         raise errors.MalformedRequestError
 
-    return json_request['dishDescription']
+    return dish_description

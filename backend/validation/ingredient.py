@@ -3,20 +3,29 @@ import config
 import data
 import errors
 from . import classifiers
+from .util import get_and_validate_type, validate_type
 
 logger = config.logging.getLogger(__name__)
 
 
-def parse_and_validate_ingredients(json_request) -> [data.RequestedIngredient]:
-    if not json_request['ingredients']:
+def parse_and_validate_ingredients_and_params(json_request) -> ([data.RequestedIngredient], dict):
+    json_ingredients = get_and_validate_type(json_request, 'ingredients', list)
+    json_params = validate_type(json_request.get('params', {}), dict)
+
+    return parse_and_validate_ingredients(json_ingredients), parse_and_validate_params(json_params)
+
+
+def parse_and_validate_ingredients(ingredients) -> [data.RequestedIngredient]:
+
+    if not ingredients:
         logger.error('received empty ingredients list')
         raise errors.MalformedRequestError
 
-    if len(json_request['ingredients']) > 100:
+    if len(ingredients) > 100:
         logger.error('received too many ingredients')
         raise errors.TooManyIngredientsError
 
-    ingredients = [_parse_and_validate_ingredient(ingredient) for ingredient in json_request['ingredients']]
+    ingredients = [_parse_and_validate_ingredient(ingredient) for ingredient in ingredients]
 
     logger.info('checking if sufficient ingredients were received')
     if all(ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[ingredient.name].autoAdd

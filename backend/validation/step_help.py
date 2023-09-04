@@ -1,16 +1,16 @@
 import config
 import errors
+from validation.util import get_and_validate_type, validate_type
 
 logger = config.logging.getLogger(__name__)
 
 
 def parse_and_validate_step_help(json_request) -> ([str], int):
-    try:
-        recipe_steps = json_request['steps']
-        step_index = json_request['stepIndex']
-    except KeyError:
-        logger.error('received malformed request')
-        raise errors.MalformedRequestError
+    recipe_steps = get_and_validate_type(json_request, 'steps', list)
+    step_index = get_and_validate_type(json_request, 'stepIndex', int)
+
+    for step in recipe_steps:
+        validate_type(step, str)
 
     if not recipe_steps:
         logger.error('received empty recipe steps')
