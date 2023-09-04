@@ -4,11 +4,12 @@
     max-width: 100vw;
     scroll-snap-type: x mandatory;
     padding:0;
+    height: 100%;
 }
   
 .box {
     flex: 0 0 25%;
-    height: 77vh;
+    height: 100%;
     scroll-snap-align: start;
     position:relative;
     overflow-x: hidden;
