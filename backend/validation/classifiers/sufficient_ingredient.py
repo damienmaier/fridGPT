@@ -45,7 +45,7 @@ class SufficientIngredientsValidator(ai.gpt.Classifier):
 
     @staticmethod
     def convert_case_to_gpt_message(case: [data.RequestedIngredient]) -> str:
-        return data.RequestedIngredient.ingredient_list_to_json(case)
+        return data.RequestedIngredient.ingredient_list_to_json(case, ignore_mandatory=True)
 
 
 is_sufficient_ingredients = SufficientIngredientsValidator()

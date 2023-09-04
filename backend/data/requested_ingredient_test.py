@@ -42,6 +42,11 @@ class RequestedIngredientTest(unittest.TestCase):
         ingredient_dict = {"name": "carotte", "mandatory": True}
         self.assertEqual(ingredient.as_dict(), ingredient_dict)
 
+    def test_as_dict_ignore_mandatory(self):
+        ingredient = RequestedIngredient(name='carotte', mandatory=True)
+        ingredient_dict = {"name": "carotte"}
+        self.assertEqual(ingredient.as_dict(ignore_mandatory=True), ingredient_dict)
+
 
     def test_ingredient_list_to_json(self):
 
