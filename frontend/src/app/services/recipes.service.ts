@@ -31,6 +31,7 @@ export class RecipesService {
 
     startLoadingRecipe(ingredients: RequestedIngredient[]): void {
         this.ingredients = ingredients;
+        this.recipes     = [];
         this.router.navigate(['/app/result']);
     }
 
