@@ -10,7 +10,7 @@ import { Injectable } from "@angular/core";
 export class ModalService {
     constructor(private _modalService: NgbModal, private recipeService: RecipesService) {}
 
-    openCoachModal(coach: Coach) {
+    openCoachModal(coach: Coach): void{
         const modalRef = this._modalService.open(CoachModalComponent);
         if(modalRef != undefined) {
             modalRef.componentInstance.coach = coach;
