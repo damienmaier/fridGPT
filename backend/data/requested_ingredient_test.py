@@ -7,7 +7,7 @@ class RequestedIngredientTest(unittest.TestCase):
 
     def test_from_dict_without_quantity(self):
         ingredient_dict = {"name": "carotte"}
-        ingredient = RequestedIngredient(name='carotte', quantity=None)
+        ingredient = RequestedIngredient(name='carotte')
         self.assertEqual(RequestedIngredient.from_dict(ingredient_dict), ingredient)
 
     def test_from_dict_with_quantity(self):
@@ -18,8 +18,14 @@ class RequestedIngredientTest(unittest.TestCase):
         )
         self.assertEqual(RequestedIngredient.from_dict(ingredient_dict), ingredient)
 
+    def test_from_dict_with_mandatory(self):
+        ingredient_dict = {"name": "carotte", "mandatory": True}
+        ingredient = RequestedIngredient(name='carotte', mandatory=True)
+        self.assertEqual(RequestedIngredient.from_dict(ingredient_dict), ingredient)
+
+
     def test_as_dict_without_quantity(self):
-        ingredient = RequestedIngredient(name='carotte', quantity=None)
+        ingredient = RequestedIngredient(name='carotte')
         ingredient_dict = {"name": "carotte"}
         self.assertEqual(ingredient.as_dict(), ingredient_dict)
 
@@ -30,6 +36,17 @@ class RequestedIngredientTest(unittest.TestCase):
         )
         ingredient_dict = {"name": "carotte", "quantity": {"unit": "kg", "value": 4}}
         self.assertEqual(ingredient.as_dict(), ingredient_dict)
+
+    def test_as_dict_with_mandatory(self):
+        ingredient = RequestedIngredient(name='carotte', mandatory=True)
+        ingredient_dict = {"name": "carotte", "mandatory": True}
+        self.assertEqual(ingredient.as_dict(), ingredient_dict)
+
+    def test_as_dict_ignore_mandatory(self):
+        ingredient = RequestedIngredient(name='carotte', mandatory=True)
+        ingredient_dict = {"name": "carotte"}
+        self.assertEqual(ingredient.as_dict(ignore_mandatory=True), ingredient_dict)
+
 
     def test_ingredient_list_to_json(self):
 
@@ -50,8 +67,8 @@ class RequestedIngredientTest(unittest.TestCase):
                 name='oignon',
                 quantity=RequestedIngredientQuantity(unit='pièce', value=2)
             ),
-            RequestedIngredient(name='beurre', quantity=None),
-            RequestedIngredient(name='lardons', quantity=None),
+            RequestedIngredient(name='beurre', mandatory=True),
+            RequestedIngredient(name='lardons'),
             RequestedIngredient(
                 name='lait',
                 quantity=RequestedIngredientQuantity(unit='l', value=0.5)
@@ -62,10 +79,11 @@ class RequestedIngredientTest(unittest.TestCase):
             ),
             RequestedIngredient(
                 name='gruyère râpé',
-                quantity=RequestedIngredientQuantity(unit='g', value=50)
+                quantity=RequestedIngredientQuantity(unit='g', value=50),
+                mandatory=True
             ),
-            RequestedIngredient(name='sel', quantity=None),
-            RequestedIngredient(name='poivre', quantity=None),
+            RequestedIngredient(name='sel'),
+            RequestedIngredient(name='poivre'),
         ]
 
         ingredients_json = '''\
@@ -99,7 +117,8 @@ class RequestedIngredientTest(unittest.TestCase):
         }
     },
     {
-        "name": "beurre"
+        "name": "beurre",
+        "mandatory": true
     },
     {
         "name": "lardons"
@@ -123,7 +142,8 @@ class RequestedIngredientTest(unittest.TestCase):
         "quantity": {
             "unit": "g",
             "value": 50
-        }
+        },
+        "mandatory": true
     },
     {
         "name": "sel"
