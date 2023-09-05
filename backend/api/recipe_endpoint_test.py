@@ -37,8 +37,8 @@ class RecipeEndpointTest(ApiEndpointTest):
         self.assertEqual(response.status_code, 400, 'Should return 400')
         self.assertEqual(
             response.json,
-            {"error": "too many ingredients"},
-            'Should return too many ingredients error'
+            {"error": "malformed request"},
+            'Should return malformed request error'
         )
 
     def test_ingredient_in_list_wrong_unit(self):
