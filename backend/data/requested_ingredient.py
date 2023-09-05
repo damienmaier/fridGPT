@@ -1,5 +1,6 @@
 import dataclasses
 import json
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -11,7 +12,7 @@ class RequestedIngredientQuantity:
 @dataclasses.dataclass
 class RequestedIngredient:
     name: str
-    quantity: RequestedIngredientQuantity | None = None
+    quantity: Optional[RequestedIngredientQuantity] = None
     mandatory: bool = False
 
     def as_dict(self, ignore_mandatory=False) -> dict:
