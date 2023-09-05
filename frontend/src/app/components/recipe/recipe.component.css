@@ -39,9 +39,9 @@ p {
 .dish-img {
   height:95%;
   position: absolute;
-  top: 0;
-  left:0;
-  overflow-x: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .description div {
