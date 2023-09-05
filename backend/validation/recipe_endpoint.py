@@ -1,51 +1,48 @@
-import config
+import dataclasses
+from typing import Optional
 
+import config
 import data
 import errors
 from . import classifiers
-from .util import get_and_validate_type, validate_type
+from .util import parse_and_validate_types
 
 logger = config.logging.getLogger(__name__)
 
 
-def parse_and_validate_ingredients_and_params(json_request) -> ([data.RequestedIngredient], dict):
-    json_ingredients = get_and_validate_type(json_request, 'ingredients', list)
-    json_params = validate_type(json_request.get('params', {}), dict)
+@dataclasses.dataclass
+class RecipeEndpointRequest:
+    ingredients: list[data.RequestedIngredient]
+    params: Optional[data.RecipeConfig] = None
 
-    return parse_and_validate_ingredients(json_ingredients), parse_and_validate_params(json_params)
 
+def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEndpointRequest:
+    request: RecipeEndpointRequest = parse_and_validate_types(unstructured_request, RecipeEndpointRequest)
 
-def parse_and_validate_ingredients(ingredients) -> [data.RequestedIngredient]:
-
-    if not ingredients:
+    if not request.ingredients:
         logger.error('received empty ingredients list')
         raise errors.MalformedRequestError
 
-    if len(ingredients) > 100:
+    if len(request.ingredients) > 100:
         logger.error('received too many ingredients')
         raise errors.TooManyIngredientsError
 
-    ingredients = [_parse_and_validate_ingredient(ingredient) for ingredient in ingredients]
+    for ingredient in request.ingredients:
+        _validate_ingredient(ingredient)
 
     logger.info('checking if sufficient ingredients were received')
     if all(ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[ingredient.name].autoAdd
-           for ingredient in ingredients):
+           for ingredient in request.ingredients):
         logger.warning('only default ingredients were received')
         raise errors.InsufficientIngredientsError
-    if not classifiers.is_sufficient_ingredients(ingredients):
+    if not classifiers.is_sufficient_ingredients(request.ingredients):
         logger.warning('insufficient ingredients')
         raise errors.InsufficientIngredientsError
 
-    return ingredients
+    return request
 
 
-def _parse_and_validate_ingredient(json_ingredient) -> data.RequestedIngredient:
-    try:
-        ingredient = data.RequestedIngredient.from_dict(json_ingredient)
-    except (TypeError, KeyError):
-        logger.error('malformed request')
-        raise errors.MalformedRequestError
-
+def _validate_ingredient(ingredient) -> None:
     logger.info(f'validating ingredient {ingredient.name}')
 
     if ingredient.name in data.SUGGESTED_INGREDIENTS:
@@ -71,5 +68,3 @@ def _parse_and_validate_ingredient(json_ingredient) -> data.RequestedIngredient:
                                                             unit=ingredient.quantity.unit):
                 logger.warning(f'custom ingredient {ingredient.name} has invalid unit {ingredient.quantity.unit}')
                 raise errors.InvalidCustomIngredientUnitError(ingredient)
-
-    return ingredient

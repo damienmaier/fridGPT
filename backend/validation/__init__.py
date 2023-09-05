@@ -1,3 +1,3 @@
-from .ingredient import parse_and_validate_ingredients
+from .recipe_endpoint import parse_and_validate_recipe_endpoint_request
 from .image_endpoint import parse_and_validate_image_endpoint_request
-from .step_help import parse_and_validate_step_help
+from .help_endpoint import parse_and_validate_help_endpoint_request

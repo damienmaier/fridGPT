@@ -9,8 +9,8 @@ from ai import dalle
 def create_api(app: flask.Flask) -> None:
     @app.post('/api/recipe')
     def recipe_endpoint():
-        ingredients = validation.parse_and_validate_ingredients(flask.request.json)
-        return {'recipes': recipe.create_recipes(ingredients)}
+        request = validation.parse_and_validate_recipe_endpoint_request(flask.request.json)
+        return {'recipes': recipe.create_recipes(request.ingredients)}
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():
@@ -18,13 +18,13 @@ def create_api(app: flask.Flask) -> None:
 
     @app.post('/api/image')
     def image_endpoint():
-        dish_description = validation.parse_and_validate_image_endpoint_request(flask.request.json)
+        request = validation.parse_and_validate_image_endpoint_request(flask.request.json)
 
-        image_url = dalle.create_image(f'photo professionnelle, gros plan, délicieux, {dish_description}')
+        image_url = dalle.create_image(f'photo professionnelle, gros plan, délicieux, {request.dishDescription}')
 
         return {'url': image_url}
 
     @app.post('/api/help')
     def help_endpoint():
-        recipe_steps, step_index = validation.parse_and_validate_step_help(flask.request.json)
-        return {'helpText': recipe.create_help_message_for_step(recipe_steps, step_index)}
+        request = validation.parse_and_validate_help_endpoint_request(flask.request.json)
+        return {'helpText': recipe.create_help_message_for_step(request.steps, request.stepIndex)}
