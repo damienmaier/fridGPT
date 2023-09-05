@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { Recipe } from 'src/app/models/recipe';
+import { Coach, Recipe } from 'src/app/models/recipe';
+import { ModalService } from 'src/app/services/modal.service';
 import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
@@ -12,20 +13,19 @@ export class RecipeComponent {
   recipe!: Recipe;
   currentStep: string = '';
   currentStepIndex!: number;
+  loadingHelp: boolean = false;
 
-  constructor(private recipeService: RecipesService, private route: ActivatedRoute) {}
+  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {}
 
   ngOnInit() {
-    const index   = this.route.snapshot.paramMap.get('recipeId');
-    const recipe  = this.recipeService.getRecipe(index == null ? -1 : +index);
-    if(recipe == null) {
-      this.recipeService.goToHome(); // no recipes loaded, go back to home screen
-    } else {
-      this.recipe = recipe;
-    }
-    this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>');
+    const index             = this.route.snapshot.paramMap.get('recipeId');
+    this.recipe             = this.recipeService.getRecipe(index == null ? -1 : +index);
     this.currentStep        = this.recipe.ingredients;
     this.currentStepIndex   = this.recipe.steps.length;
+    if(this.recipe.dishName === '') {
+      this.recipeService.goToHome(); // no recipes loaded, go back to home screen
+    }
+    this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>'); 
   }
 
   nextStep(forward: boolean) {
@@ -35,5 +35,16 @@ export class RecipeComponent {
     }
     this.currentStep = this.currentStepIndex == this.recipe.steps.length ? 
       this.recipe.ingredients : this.recipe.steps[this.currentStepIndex];
+  }
+
+  openCoachModal(coach: Coach): void {
+    this.modalService.openCoachModal(coach);
+  }
+
+  openHelpModal(): void {
+    this.loadingHelp = true;
+    this.modalService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(
+      () => { this.loadingHelp = false; }
+    )
   }
 }

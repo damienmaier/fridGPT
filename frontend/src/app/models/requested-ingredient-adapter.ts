@@ -9,6 +9,7 @@ export class RequestedIngredientAdapter implements Adapter<RequestedIngredientAP
   adapt(ingredient: RequestedIngredient): RequestedIngredientAPI {
     let ingredientToSend = {
         name: ingredient.name,
+        mandatory: ingredient.mandatory,
         quantity: ingredient.quantity
     }
     if(!ingredient.displayQuantity) {

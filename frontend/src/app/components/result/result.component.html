@@ -7,14 +7,14 @@
     </div>
     <div class="container">
         <ng-container *ngFor="let recipe of recipes; let i = index">
-            <div class="box" (click)="selectRecipe(i)">
-                <img class="dish-img" [src]="recipe.imageUrl" alt="" />
+            <div class="box">
+                <img class="dish-img" [src]="recipe.imageUrl" alt="" (click)="selectRecipe(i)"/>
                 <div class="description darker-blue-bg">
-                    <div>
+                    <div (click)="selectRecipe(i)">
                         <p class="dish-title text-center text-white">{{ recipe.dishName }}</p>
                         <small class="text-white coach-name">Proposé par {{ recipe.coach.name }}</small>
                     </div>
-                    <img [src]="recipe.coach.imageUrl" width="70" alt="" />
+                    <img [src]="recipe.coach.imageUrl" width="70" alt="" (click)="openCoachModal(recipe.coach)"/>
                 </div>
             </div>
         </ng-container>

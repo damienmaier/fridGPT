@@ -1,5 +1,21 @@
+#header {
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  gap:100px;
+  padding:5px;
+}
+
+#back-btn {
+  background: #00425A;
+  height: 50%;
+}
+
+p {
+  margin-bottom: 0;
+}
+
 #col-description {
-  height: 77vh;
   position:relative;
   overflow-x: hidden;
 }
@@ -12,12 +28,16 @@
   display: flex;
 }
 
+.container-fluid, .row, .col {
+  height: 98%;
+}
+
 .description img, .coach-name {
   align-self: flex-end;
 }
 
 .dish-img {
-  height:80%;
+  height:95%;
   position: absolute;
   top: 0;
   left:0;
@@ -37,12 +57,23 @@
   height: 60vh;
   margin:0px auto 0px auto;
   border-top: 4px solid #00425a;
-  padding:10px 30px 10px 30px;
+  padding:10px 20px 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
+  max-width:60vw;
+}
+
+#step p {
+  max-width:100%;
+  overflow:auto;
+}
+
+#help-btn {
+  width: fit-content;
+  margin:0px 20px 20px auto;
 }
 
 #step-detail {
@@ -70,7 +101,7 @@
   border-top: 4px solid #00425a;
 }
 
-.bi {
+.bi-chevron-left, .bi-chevron-right {
   font-size: 30px;
 }
 

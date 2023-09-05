@@ -1,5 +1,8 @@
 <div id="header">
-    <p class="fs-4 text-white text-center">A vous de jouer !</p>
+    <button type="button" class="btn text-white" id="back-btn" routerLink="/app/result">
+        <i class="bi bi-arrow-return-left"></i> Retour à la liste
+    </button>
+    <p class="fs-4 text-white">A vous de jouer !</p>
 </div>
 <div class="container-fluid">
     <div class="row">
@@ -8,7 +11,6 @@
             <div class="description darker-blue-bg">
                 <div>
                     <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
-                    <p class="fs-6 text-center text-white">{{ recipe.dishDescription }}</p>
                     <p class="text-white coach-name"> Proposé par {{ recipe.coach.name }}</p>
                 </div>
                 <img [src]="recipe.coach.imageUrl" width="90" alt=""/>
@@ -33,9 +35,12 @@
                 </ng-container>
                 <ng-template #step>
                     <p class="fs-5 text-white text-center" id="step-detail" [innerHTML]="currentStep"></p>
-                    <div id="step-counter">
+                    <<div id="step-counter">
                         <p class="text-white">{{ currentStepIndex + 1}} / {{ recipe.steps.length }}</p>
                     </div>
+                    <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">
+                        <i class="bi bi-emoji-dizzy-fill"></i> J'ai besoin d'aide !
+                    </button>
                 </ng-template>
             </div>
         </div>

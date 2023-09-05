@@ -1,9 +1,9 @@
-import { Component, OnDestroy, ViewChild } from '@angular/core';
-import { Toast } from 'bootstrap'
+import { Component, OnDestroy } from '@angular/core';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
 import { RequestedIngredient } from 'src/app/models/requested-ingredient';
 import { Subscription } from 'rxjs';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-search',
@@ -14,17 +14,24 @@ export class SearchComponent implements OnDestroy {
   private baseIngredients: SuggestedIngredient[]  = [];
   filteredIngredients: SuggestedIngredient[]      = [];
   selectedIngredients: RequestedIngredient[]      = [];
+  currentSearch: string                           = '';
   ingredientsSub!: Subscription;
-  currentSearch: string   = '';
-  @ViewChild('ErrorToast', {static: true}) toastOnError: any;
 
-  constructor(private recipesService: RecipesService) {}
+  constructor(private recipesService: RecipesService, public toastService: ToastService) {}
 
   ngOnInit() {
     const lastError = this.recipesService.fetchLastError();
+    this.selectedIngredients.map((ingredient: RequestedIngredient) => ingredient.isInvalid = false);
     if(lastError != null) {
-      this.displayToast(this.recipesService.buildErrorMessage());
+      this.toastService.show(this.recipesService.buildErrorMessage());
       this.selectedIngredients = lastError.lastIngredients;
+      if(lastError.info.ingredient) {
+        this.selectedIngredients.map((ingredient: RequestedIngredient) => {
+          if(ingredient.name === lastError.info.ingredient?.name) {
+            ingredient.isInvalid = true;
+          }
+        })
+      }
     }
     this.ingredientsSub = this.recipesService.loadIngredients().subscribe(
       (list: SuggestedIngredient[]) => {
@@ -40,7 +47,7 @@ export class SearchComponent implements OnDestroy {
 
   startloadingRecipes(): void {
     if(this.selectedIngredients.length === 0) {
-      this.displayToast('Veuillez ajouter au moins un ingrédient');
+      this.toastService.show('Veuillez ajouter au moins un ingrédient');
     } else {
       this.recipesService.startLoadingRecipe(this.selectedIngredients);
     }
@@ -55,7 +62,7 @@ export class SearchComponent implements OnDestroy {
     let customAlreadyAdded    = false;
     this.filteredIngredients  = this.baseIngredients.filter(
       (ingredient: SuggestedIngredient) => {
-        if(ingredient.name === this.currentSearch) { customAlreadyAdded = true; }
+        if(ingredient.name.toLowerCase() === this.currentSearch.toLowerCase()) { customAlreadyAdded = true; }
         return ingredient.name.toLowerCase().startsWith(this.currentSearch.toLowerCase())
       }
     );
@@ -67,12 +74,12 @@ export class SearchComponent implements OnDestroy {
         (ingredient: RequestedIngredient) => element.name == ingredient.name
       )
     );
-    this.filteredIngredients.sort();
+    this.filteredIngredients.sort((e1:SuggestedIngredient,e2:SuggestedIngredient) => e1.name > e2.name ? 1 : -1);
   }
 
   addIngredientToList(ingredient: SuggestedIngredient): void {
     if(ingredient.selected) { return; } // no duplicates
-    this.selectedIngredients.push(ingredient.toRequestedIngredient());
+    this.selectedIngredients.unshift(ingredient.toRequestedIngredient());
     this.currentSearch        = '';
     this.filteredIngredients  = [];
   }
@@ -95,12 +102,6 @@ export class SearchComponent implements OnDestroy {
 
   toggleImageLoading(event:any) {
     this.recipesService.loadImages = event.target != null ? event.target.checked : false;
-  }
-
-  private displayToast(message: string): void {
-    this.toastOnError.nativeElement.querySelector('.toast-body').textContent = message;
-    const toast = new Toast(this.toastOnError.nativeElement, {});
-    toast.show();
   }
 
   ngOnDestroy(): void {

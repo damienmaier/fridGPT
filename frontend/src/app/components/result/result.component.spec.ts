@@ -1,18 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ResultComponent } from './result.component';
-import { createRecipesServiceSpy } from 'src/tests/fake-services';
+import { createModalServiceSpy, createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
   let fixture: ComponentFixture<ResultComponent>;
   let fakeRecipeService: RecipesService;
+  let fakeModalService: ModalService;
 
   beforeEach(async () => {
     fakeRecipeService = createRecipesServiceSpy();
+    fakeModalService = createModalServiceSpy();
     TestBed.configureTestingModule({
       declarations: [ResultComponent],
-      providers:    [ {provide: RecipesService, useValue: fakeRecipeService}]
+      providers: [
+        {provide: RecipesService, useValue: fakeRecipeService},
+        {provide: ModalService, useValue: fakeModalService}
+      ]
     }).compileComponents();
   });
 

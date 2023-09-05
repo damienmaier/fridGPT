@@ -41,6 +41,10 @@
     max-height: 30vh;
 }
 
+.invalid-row .col-name {
+    background-color: rgba(168, 50, 50,.4);
+}
+
 .form-check-input:checked {
     background-color: #EF6262;
     border-color: #EF6262;
@@ -194,7 +198,6 @@ p {
     width: 110px;
     line-height: 50px;
     background: #00425A;
-
     border: 3px solid #00425A;
     transition: all .35s;
     border-radius: 5px;
@@ -245,13 +248,25 @@ p {
 }
 
 @media screen and (max-width: 770px) {
-    #main-header {
-        flex-direction: column;
-        align-items: flex-end;
+    #header-coach {
+        display: flex;
     }
 
     #main-header img {
         width: 50px;
+    }
+
+    #main-header p {
+        font-size: .9em!important;
+        padding-left: 10px;
+    }
+
+    #main-header {
+        align-items: flex-end;
+    }
+
+    .header-icon {
+        width: 25px;
     }
 
     #main-row {
@@ -274,13 +289,14 @@ p {
         display: flex;
     }
 
-    #ingredients-header-title div, #ingredients-content div {
+    #ingredients-header-title div, #ingredients-content div .trash {
         width: fit-content;
         justify-content: center;
     }
 
     .col-name {
         max-width: 40vw;
+        padding:3px;
         min-width: 40vw;
     }
 
@@ -319,6 +335,10 @@ p {
     }
 
     #ingredients-content {
-        max-height: 20vh;
+        max-height: 30vh;
+    }
+
+    .search-button {
+        z-index: -1;
     }
 }

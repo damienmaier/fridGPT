@@ -12,15 +12,17 @@ import { DishImage } from "../models/image";
 
 @Injectable()
 export class RecipesService {
+    // no direct access to data here
     private lastError: APIError|null = null;
     private recipes: Recipe[] = [];
     private ingredients: RequestedIngredient[] = [];
     loadImages: boolean = false;
 
-    constructor(private http: HttpClient, private router: Router, 
+    constructor(private http: HttpClient, private router: Router,
         private suggestedIngredientAdapter: SuggestedIngredientAdapter,
         private requestedIngredientAdapter: RequestedIngredientAdapter) {}
 
+    /* --------- HTTP requests ------------------------------ */
     loadIngredients(): Observable<SuggestedIngredient[]> {
         return this.http.get<{ingredients: SuggestedIngredientAPI[]}>('/api/ingredients').pipe(
             map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
@@ -29,13 +31,8 @@ export class RecipesService {
             catchError(err => []));
     }
 
-    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
-        this.ingredients = ingredients;
-        this.router.navigate(['/app/result']);
-    }
-
-    fetchRecipes(): Observable<Recipe[]> {
-        if(this.ingredients.length == 0) { return of([])}
+    loadRecipes(): Observable<Recipe[]> {
+        if(this.recipes.length > 0) { return of(this.recipes)}
         this.recipes = [];
         const params = { ingredients: this.ingredients.map(this.requestedIngredientAdapter.adapt) };
         return this.http.post<{recipes: Recipe[]}>('/api/recipe', params).pipe(map((
@@ -45,7 +42,6 @@ export class RecipesService {
                 return response.recipes;
             }
         )),
-
         catchError((error: HttpErrorResponse) => {
             this.lastError = {info: error.error, lastIngredients: this.ingredients.slice()};
             this.goToHome();
@@ -61,30 +57,48 @@ export class RecipesService {
             .pipe(map((response: DishImage) => response.url))));
     }
 
-    onRecipeSelected(index: number): void {
-        this.router.navigate(['/app/recipe', index]);
+    loadHelpForStep(steps: string[], stepIndex: number): Observable<{recipes: Recipe[]}> {
+        return this.http.post<{recipes: Recipe[]}>('/api/help', {steps, stepIndex});
     }
 
-    getRecipe(index: number): (Recipe | null) {
-        if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
-            return null;
-        }
-        return this.recipes[index];
+    /* --------- navigation related actions ------------------------------ */
+    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
+        this.ingredients = ingredients;
+        this.recipes     = [];
+        this.router.navigate(['/app/result']);
+    }
+
+    onRecipeSelected(index: number): void {
+        this.router.navigate(['/app/recipe', index]);
     }
 
     goToHome(): void {
         this.router.navigate(['/app']);
     }
 
-    fetchLastError(): APIError|null {
+    /* --------- other data requests from components ------------------------------ */
+    getRecipe(index: number): Recipe {
+        if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
+            return {dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''};
+        }
+        return this.recipes[index];
+    }
+
+    fetchLastError(): APIError | null {
         return this.lastError;
     }
 
     buildErrorMessage(): string {
         if(this.lastError == null) { return ''; }
-        let message = this.lastError.info.error;
+        let message = '';
         if(this.lastError.info.ingredient) {
-            message += `\n L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+            message = `Impossible de générer des recettes, L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+        } else {
+            if(this.lastError.info.error ===  'insufficient ingredients') {
+                message = 'Impossible de générer des recettes à partir des ingrédients sélectionnés, veuillez compléter la liste.'
+            } else {
+                message = 'Une erreur innatendue est survenue lors de la génération des recettes, veuillez réessayer'
+            }
         }
         this.lastError = null;
         return message;
