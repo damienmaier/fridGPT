@@ -23,12 +23,6 @@ class MalformedRequestError(FridGptError):
         return 'malformed request'
 
 
-class TooManyIngredientsError(FridGptError):
-
-    def error_name(self) -> str:
-        return 'too many ingredients'
-
-
 class IngredientError(FridGptError, abc.ABC):
 
     def __init__(self, ingredient: 'data.RequestedIngredient'):

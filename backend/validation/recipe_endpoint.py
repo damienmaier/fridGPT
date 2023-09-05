@@ -19,13 +19,9 @@ class RecipeEndpointRequest:
 def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEndpointRequest:
     request: RecipeEndpointRequest = parse_and_validate_types(unstructured_request, RecipeEndpointRequest)
 
-    if not request.ingredients:
-        logger.error('received empty ingredients list')
+    if not 0 < len(request.ingredients) <= 100:
+        logger.error('received invalid number of ingredients')
         raise errors.MalformedRequestError
-
-    if len(request.ingredients) > 100:
-        logger.error('received too many ingredients')
-        raise errors.TooManyIngredientsError
 
     for ingredient in request.ingredients:
         _validate_ingredient(ingredient)
