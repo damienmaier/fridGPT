@@ -125,6 +125,28 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return insufficient ingredients error'
         )
 
+    def test_unexpected_key(self):
+        json_request = {
+            "ingredients": [
+                {"name": "carotte", "quantity": {"unit": "pièce", "value": 4}},
+            ],
+            "params": {
+                "AAAA": 2,
+                "duration": 1.5,
+                "personCount": None,
+                "otherIngredientsAllowed": False
+            }
+        }
+
+        response = self.client.post('/api/recipe', json=json_request)
+
+        self.assertEqual(response.status_code, 400, 'Should return 400')
+        self.assertEqual(
+            response.json,
+            {"error": "malformed request"},
+            'Should return malformed request error'
+        )
+
     def test_correct_request(self):
         json_request = {
             "ingredients": [
