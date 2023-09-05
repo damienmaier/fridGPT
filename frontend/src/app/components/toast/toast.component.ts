@@ -8,7 +8,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./toast.component.css']
 })
 export class ToastComponent implements OnDestroy {
-  toasts: string[] = [];
+  toasts: any[] = [];
   toastsSub!: Subscription;
 
   constructor(public toastService: ToastService) {}

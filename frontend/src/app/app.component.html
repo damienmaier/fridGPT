@@ -1,16 +1,13 @@
 <div class="main-bg">
-    <div id="app-header">
+    <div id="app-header" class="d-flex align-items-end">
       <a routerLink="/" id="app-logo">
         <img src="/assets_app/logo.png" width="80" alt="">
       </a>
       <p class="fs-4 text-white" id="app-name">FridGPT</p>
+      <i class="bi bi-pin-angle align-self-center" (click)="openCredits()"></i>
     </div>
     <div id="app-content">
       <router-outlet></router-outlet>
       <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
-    </div>
-    <div id="app-footer" class="container-fluid">
-      <a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by Freepik - Flaticon</a>
-      <a href="https://www.freepik.com/free-photo/white-empty-plate-with-fork-knife-blue-white-tablecloth_7676497.htm#page=2&query=empty%20plate&position=45&from_view=search&track=ais">Image by jcomp</a> on Freepik
     </div>
 </div>
