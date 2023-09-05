@@ -1,15 +1,22 @@
+import dataclasses
+
 import config
 import errors
-from validation.util import get_and_validate_type
+import cattrs
 
 logger = config.logging.getLogger(__name__)
 
 
-def parse_and_validate_dish_description(json_request) -> str:
-    dish_description = get_and_validate_type(json_request, 'dishDescription', str)
+@dataclasses.dataclass
+class ImageEndpointRequest:
+    dishDescription: str
 
-    if len(dish_description) > 1000:
-        logger.error('received dish description longer than 1000 characters')
+
+def parse_and_validate_image_endpoint_request(json_request) -> str:
+    dish_description = cattrs.structure(json_request, ImageEndpointRequest).dishDescription
+
+    if not 0 < len(dish_description) < 1000:
+        logger.error('received dish description has invalid length')
         raise errors.MalformedRequestError
 
     return dish_description

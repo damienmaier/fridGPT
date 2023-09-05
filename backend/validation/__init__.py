@@ -1,3 +1,3 @@
 from .ingredient import parse_and_validate_ingredients
-from .dish_description import parse_and_validate_dish_description
+from .image_endpoint import parse_and_validate_image_endpoint_request
 from .step_help import parse_and_validate_step_help

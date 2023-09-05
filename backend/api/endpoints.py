@@ -18,7 +18,7 @@ def create_api(app: flask.Flask) -> None:
 
     @app.post('/api/image')
     def image_endpoint():
-        dish_description = validation.parse_and_validate_dish_description(flask.request.json)
+        dish_description = validation.parse_and_validate_image_endpoint_request(flask.request.json)
 
         image_url = dalle.create_image(f'photo professionnelle, gros plan, délicieux, {dish_description}')
 
