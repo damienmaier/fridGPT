@@ -26,6 +26,7 @@ export class SearchComponent implements OnDestroy {
   currentSearch: string                           = '';
   ingredientsSub!: Subscription;
   requestedRecipe!: RequestedRecipe;
+  isCollapsed: boolean = true;
 
   constructor(private recipesService: RecipesService, public toastService: ToastService) {}
 
@@ -33,7 +34,7 @@ export class SearchComponent implements OnDestroy {
     const error = this.recipesService.fetchLastError();
     this.requestedRecipe = (error != null && error.lastRequest) ? error.lastRequest : new RequestedRecipe();
     if(error != null && error.info.error != '') {
-      this.toastService.show(this.recipesService.buildAndDisposeOfErrorMessage());
+      this.toastService.show(this.recipesService.buildAndDisposeOfErrorMessage(),{ classname: 'bg-danger text-light'});
       if(error.info.ingredient) {
         this.requestedRecipe.ingredients.map((ingredient: RequestedIngredient) => {
           if(ingredient.name === error.info.ingredient?.name) {
@@ -103,7 +104,7 @@ export class SearchComponent implements OnDestroy {
 
   searchListHeight(): string {
     if(this.requestedRecipe.ingredients.length <= 7) {
-      return (window.screen.height * 0.4 - this.requestedRecipe.ingredients.length * 34) + 'px';
+      return (window.screen.height * 0.6 - this.requestedRecipe.ingredients.length * 34) + 'px';
     } else {
       return window.screen.height * 0.2 + 'px';
     }

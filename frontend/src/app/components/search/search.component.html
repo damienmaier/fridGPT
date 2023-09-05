@@ -9,7 +9,7 @@
 <div class="row margin-both-sides" id="main-row">
   <!-- ingredients picking menu -->
   <div class="col">
-    <div class="light-blue-bg content-header">
+    <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
     </div>
     <div class="row margin-top d-flex align-items-center" id="ingredients-header-title">
@@ -20,14 +20,14 @@
         <i class="bi bi-exclamation-triangle-fill" ngbTooltip="L'ingrédient doit obligatoirement être utilisé"> </i><i class="bi bi-clock"></i>
       </div>
       <div class="col-md-2 col-no-padding">
-        <p class="fs-5 text-white text-center ">Quantité</p>
+        <p class="fs-5 text-white text-center">Quantité</p>
       </div>
       <div class="col-md-3"></div>
       <div class="col-sm-1"></div>
     </div>
-    <div id="ingredients-content">
+    <div class="ingredients-content">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-        <div class="row margin-top row-ingredient" [ngClass]="{'invalid-row': ingredient.isInvalid}">
+        <div class="row margin-top row-ingredient" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
           <div class="col col-name">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
@@ -39,7 +39,7 @@
               <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="ingredient.displayQuantity">
             </div>
           </div>
-          <div class="col-md-3 col-no-padding col-qty">
+          <div class="col-md-3 col-no-padding d-flex">
             <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
                 <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
@@ -80,7 +80,7 @@
     <!-- ingredients list -->
     <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
-        <div class="search-item light-blue-bg hand-cursor text-white small-padding" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
+        <div class="search-item light-blue-bg hand-cursor text-white round-corners" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
           {{ item.name }}
         </div>
@@ -89,14 +89,13 @@
   </div>
   <!-- parameters menu -->
   <div class="col" id="customization-col">
-    <div class="light-blue-bg content-header">
+    <div class="light-blue-bg content-header round-corners">
       <h4><img class="margin-both-sides header-icon" src="/assets_app/customization.png" width="30" alt="" /> Personnalisation </h4>
     </div>
-    <div class="container col d-flex flex-column justify-content-start margin-top" id="parameters">
-     
+    <div class="col d-flex flex-column margin-top" id="parameters">
       <div class="row d-flex align-items-center">
         <div class="col col-sm-1">
-          <button [ngClass]="{'light-red-bg': requestedRecipe.durationInput != null}" class="btn btn-outline-danger text-white param-title-sm" 
+          <button [ngClass]="{'light-red-bg': requestedRecipe.durationInput != null}" class="btn btn-outline-danger text-white btn-icon" 
             (click)="requestedRecipe.durationInput = flipValue(requestedRecipe.durationInput, {hour:1,minute:0})">
             <i class="bi bi-hourglass-split"></i>
           </button>
@@ -111,7 +110,7 @@
 
       <div class="row d-flex align-items-center">
         <div class="col col-sm-1">
-          <button [ngClass]="{'light-red-bg': requestedRecipe.personCount != null}" class="btn btn-outline-danger text-white param-title-sm" 
+          <button [ngClass]="{'light-red-bg': requestedRecipe.personCount != null}" class="btn btn-outline-danger text-white btn-icon" 
             (click)="requestedRecipe.personCount = flipValue(requestedRecipe.personCount, 1)">
             <i class="bi bi-person-fill-add"></i>
           </button>
@@ -126,7 +125,7 @@
 
       <div class="row d-flex align-items-center">
         <div class="col col-sm-1">
-          <button [ngClass]="{'light-red-bg': requestedRecipe.difficulty != null}" class="btn btn-outline-danger text-white" 
+          <button [ngClass]="{'light-red-bg': requestedRecipe.difficulty != null}" class="btn btn-outline-danger text-white btn-icon" 
             (click)="requestedRecipe.difficulty = flipValue(requestedRecipe.difficulty, 1)">
             <i class="bi bi-fire"></i>
           </button>
@@ -151,13 +150,36 @@
           <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">
           <label class="form-check-label margin-both-sides text-white" for="shopping-toggle">La liste des ingrédients peut être complétée pour élargir les possibilités de recettes</label>   
       </div>
+
+      
+      <div id="default-ingredients" class="d-flex flex-column align-items-center">
+        <div ngbAccordion>
+          <div ngbAccordionItem>
+            <h2 ngbAccordionHeader>
+              <button ngbAccordionButton class="darker-blue-bg">Ingrédients de base</button>
+            </h2>
+            <div ngbAccordionCollapse class="darker-blue-bg">
+              <div ngbAccordionBody class="darker-blue-bg ingredients-content">
+                <ng-template>
+                  <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
+                    <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault">
+                        <p>{{ingredient.name}}</p>
+                        <i class="bi bi-trash-fill hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
+                    </div>
+                  </ng-container>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <!-- start button -->
 <div class="search-button hand-cursor" (click)="startloadingRecipes()">
   <div class="search-button-content">
-    <p class="text-white search-button-text bold text-center"> C'est parti !</p>
+    <p class="text-white search-button-text bold text-center round-corners"> C'est parti !</p>
     <div class="icon">
       <img src="/assets_app/rocket_on_hover.png" width="30" alt="" />
     </div>

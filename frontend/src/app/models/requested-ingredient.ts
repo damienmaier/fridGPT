@@ -8,4 +8,5 @@ export interface RequestedIngredient extends RequestedIngredientAPI {
     isCustom: boolean;
     displayQuantity: boolean;
     isInvalid: boolean;
+    isByDefault: boolean;
 }
