@@ -10,7 +10,7 @@ class RecipeDifficulty(enum.Enum):
 
 
 @dataclasses.dataclass
-class RecipeConfig:
+class RecipeParams:
     difficulty: Optional[RecipeDifficulty] = None
     duration: Optional[float] = None
     personCount: Optional[int] = None
