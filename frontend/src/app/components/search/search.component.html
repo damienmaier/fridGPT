@@ -12,9 +12,12 @@
     <div class="light-blue-bg content-header">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="" /> Ingrédients à disposition </h4>
     </div>
-    <div class="row justify-content-start margin-top" id="ingredients-header-title">
+    <div class="row margin-top" id="ingredients-header-title">
       <div class="col col-name">
         <p class="fs-5 text-white">Nom</p>
+      </div>
+      <div class="col-sm-1 text-white d-flex justify-content-between align-items-center" >
+        <i class="bi bi-exclamation-triangle-fill" ngbTooltip="L'ingrédient doit obligatoirement être utilisé"> </i><i class="bi bi-clock"></i>
       </div>
       <div class="col-md-2 col-no-padding">
         <p class="fs-5 text-white text-center ">Quantité</p>
@@ -23,24 +26,27 @@
       <div class="col-sm-1"></div>
     </div>
     <div id="ingredients-content">
-      <ng-container *ngFor="let item of selectedIngredients">
-        <div class="row margin-top row-ingredient" [ngClass]="{'invalid-row': item.isInvalid}">
+      <ng-container *ngFor="let ingredient of selectedIngredients">
+        <div class="row margin-top row-ingredient" [ngClass]="{'invalid-row': ingredient.isInvalid}">
           <div class="col col-name">
-            <p class="fs-6 text-white">{{ item.name }}</p>
+            <p class="fs-6 text-white">{{ ingredient.name }}</p>
+          </div>
+          <div class="col-sm-1 d-flex justify-content-center">
+            <input type="checkbox" class="form-check-input" [(ngModel)]="ingredient.mandatory">
           </div>
           <div class="col-md-2 col-toggle">
-            <div class="form-switch">
-              <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="item.displayQuantity">
+            <div class="d-flex justify-content-center">
+              <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="ingredient.displayQuantity">
             </div>
           </div>
           <div class="col-md-3 col-no-padding col-qty">
-            <ng-container *ngIf="item.quantity && item.displayQuantity">
+            <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
-                <input name="quantity" class="text-center" [(ngModel)]="item.quantity.value" type="number" required/>
+                <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
                 <label></label>
               </div>
-              <ng-container *ngIf="item.isCustom; else fixedUnit">
-                <select class="form-select unit-select text-white" [(ngModel)]="item.quantity.unit">
+              <ng-container *ngIf="ingredient.isCustom; else fixedUnit">
+                <select class="form-select unit-select text-white" [(ngModel)]="ingredient.quantity.unit">
                   <option value="pièce">Pièce</option>
                   <option value="kg">kg</option>
                   <option value="g">g</option>
@@ -49,12 +55,12 @@
                 </select>
               </ng-container>
               <ng-template #fixedUnit>
-                <p class="fs-6 text-white qty-text">{{ item.quantity.unit }}</p>
+                <p class="fs-6 text-white qty-text">{{ ingredient.quantity.unit }}</p>
               </ng-template>
             </ng-container>
           </div>
-          <div class="col-sm-1 trash">
-            <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(item.name)"></i>
+          <div class="col-sm-1 trash d-flex justify-content-center">
+            <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
           </div>
         </div>
       </ng-container>

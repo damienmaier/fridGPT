@@ -1,5 +1,6 @@
 export interface RequestedIngredientAPI {
     name: string;
+    mandatory: boolean;
     quantity?: {value: number, unit: string},
 }
   
