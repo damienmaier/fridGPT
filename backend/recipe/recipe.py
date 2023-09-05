@@ -7,11 +7,16 @@ from . import recipe_creator
 logger = config.logging.getLogger(__name__)
 
 
-def create_recipes(ingredients: [data.RequestedIngredient]):
+def create_recipes(ingredients: [data.RequestedIngredient], recipe_params: data.RecipeParams):
     def create_recipe(coach: data.coach.Coach):
-
         logger.info(f'Starting recipe creation for {coach.name}')
-        recipe = recipe_creator.create_recipe(coach_description=coach.descriptionForGpt, ingredients=ingredients)
+
+        recipe = recipe_creator.create_recipe(
+            coach_description=coach.descriptionForGpt,
+            ingredients=ingredients,
+            recipe_params=recipe_params
+        )
+
         logger.info(f'Finished recipe creation for {coach.name}')
 
         return recipe | {'coach': coach.as_dict()}

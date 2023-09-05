@@ -13,7 +13,7 @@ logger = config.logging.getLogger(__name__)
 @dataclasses.dataclass
 class RecipeEndpointRequest:
     ingredients: list[data.RequestedIngredient]
-    params: Optional[data.RecipeParams] = None
+    params: data.RecipeParams = dataclasses.field(default_factory=data.RecipeParams)
 
 
 def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEndpointRequest:

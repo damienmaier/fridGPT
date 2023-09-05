@@ -10,7 +10,7 @@ def create_api(app: flask.Flask) -> None:
     @app.post('/api/recipe')
     def recipe_endpoint():
         request = validation.parse_and_validate_recipe_endpoint_request(flask.request.json)
-        return {'recipes': recipe.create_recipes(request.ingredients)}
+        return {'recipes': recipe.create_recipes(request.ingredients, request.params)}
 
     @app.get("/api/ingredients")
     def ingredients_endpoint():
