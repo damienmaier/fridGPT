@@ -43,13 +43,13 @@ class Task(abc.ABC):
                 logger.warning(f'GPT request timed out after {self._timeout} seconds')
                 continue
             except openai.error.OpenAIError as e:
-                logger.warning(f'Got OpenAIError during GPT request: {repr(e)}')
+                logger.warning(f'Got OpenAIError during GPT request: {e}')
                 continue
 
             try:
                 post_processed_response = self.post_process_gpt_response(gpt_response_message)
             except self.PostProcessingError as e:
-                logger.warning(f'GPT response post processing failed: {repr(e)}')
+                logger.warning(f'GPT response post processing failed: {e}')
                 continue
 
             break

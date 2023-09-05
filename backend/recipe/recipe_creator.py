@@ -1,6 +1,8 @@
 import json
 import pathlib
 
+import cattrs
+
 import ai.gpt
 import data
 
@@ -61,8 +63,18 @@ class RecipeCreator(ai.gpt.Task):
 
         return prompt
 
-    def post_process_gpt_response(self, gpt_response_content: str):
-        return json.loads(gpt_response_content)
+    def post_process_gpt_response(self, gpt_response_content: str) -> data.Recipe:
+        try:
+            unstructured_response_content = json.loads(gpt_response_content)
+        except json.JSONDecodeError:
+            raise self.PostProcessingError('Unable to decode GPT response as JSON')
+
+        try:
+            recipe = cattrs.structure(unstructured_response_content, data.Recipe)
+        except cattrs.BaseValidationError:
+            raise self.PostProcessingError('Unable to decode GPT response as Recipe')
+
+        return recipe
 
 
 create_recipe = RecipeCreator()

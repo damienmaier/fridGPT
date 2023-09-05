@@ -19,7 +19,9 @@ def create_recipes(ingredients: [data.RequestedIngredient], recipe_params: data.
 
         logger.info(f'Finished recipe creation for {coach.name}')
 
-        return recipe | {'coach': coach.as_dict()}
+        recipe.coach = coach
+
+        return recipe.as_dict()
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
         recipes_iterator = executor.map(create_recipe, data.COACHES.values(), timeout=30)
