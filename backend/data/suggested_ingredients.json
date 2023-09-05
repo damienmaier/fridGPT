@@ -265,7 +265,7 @@
   },
   {
     "name": "céleri",
-    "unit": "tige",
+    "unit": "pièce",
     "defaultQuantity": 1.0,
     "autoAdd": false
   },
@@ -854,7 +854,7 @@
   {
     "name": "armoire à épices complète",
     "unit": "pas d'unité",
-    "defaultQuantity": 0,
+    "defaultQuantity": 1.0,
     "autoAdd": true
   },
   {
