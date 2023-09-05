@@ -1,8 +1,4 @@
 #main-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:flex-end;
     margin-right: 20px;
     gap:20px;
 }
@@ -81,18 +77,8 @@
    min-height: 38px;
 }
 
-.form-switch {
-    display: flex;
-    justify-content: center;
-}
-
 .col-no-padding {
     padding:0;
-}
-
-/* parameters */
-.image-checkbox {
-    padding: 10px;
 }
 
 /* general styles and other elements */
@@ -123,7 +109,7 @@ p {
     overflow-x: hidden;
 }
 
-.form input  {
+.form input, ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus  {
     width: 100%;
     border: none;
     background-color: #1D5B79;
@@ -171,7 +157,7 @@ p {
 
 .form input:focus + .input-label .input-label-content, 
 .form input:valid + .input-label .input-label-content {
-    transform: translateY(-150%);
+    transform: translateY(-100%);
     font-size: 14px;
     color: white;
 }
@@ -239,12 +225,34 @@ p {
     border-radius: 5px;
 }
 
-.toast {
-    width: fit-content;
-}
-
 .trash {
     justify-self: end;
+}
+
+.filled {
+    color: #EF6262;
+}
+
+#parameters button {
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid #EF6262;
+}
+
+#parameters {
+    gap:30px;
+}
+
+ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-input  {
+    border-radius: 0%;
+    height: 30px;
+    width: 60px;
+    border-bottom: 1px solid #468B97;
+}
+
+#parameters .bi {
+    font-size: 20px;
+    margin-right:10px;
 }
 
 @media screen and (max-width: 770px) {

@@ -23,12 +23,12 @@ export class SuggestedIngredient implements SuggestedIngredientAPI {
 
     toRequestedIngredient() {
         return {
-        name: this.name, 
-        mandatory: false,
-        quantity: {value: this.defaultQuantity, unit: this.unit}, 
-        isCustom: this.isCustom, 
-        displayQuantity: this.isCustom,
-        isInvalid: false
+            name: this.name, 
+            mandatory: false,
+            quantity: {value: this.defaultQuantity, unit: this.unit}, 
+            isCustom: this.isCustom, 
+            displayQuantity: false,
+            isInvalid: false
         };
     }
 }

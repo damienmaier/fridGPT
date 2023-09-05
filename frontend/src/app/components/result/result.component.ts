@@ -23,6 +23,7 @@ export class ResultComponent implements OnDestroy {
         if(sentRecipes.length == 0) {
           this.loading = false;
           this.recipeService.goToHome();
+          return;
         }
         this.recipes = sentRecipes;
         this.recipeService.loadRecipeImages(this.recipes.map((recipe:Recipe) => recipe.dishName)).subscribe(
