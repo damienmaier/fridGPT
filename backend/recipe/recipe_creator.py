@@ -8,7 +8,7 @@ import data
 class RecipeCreator(ai.gpt.Task):
 
     def __init__(self):
-        super().__init__(max_tokens=3000)
+        super().__init__(max_tokens=3000, timeout=60)
 
     @staticmethod
     def _build_system_message(coach_description: str, recipe_params: data.RecipeParams) -> str:
