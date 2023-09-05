@@ -5,25 +5,6 @@ from data.requested_ingredient import RequestedIngredient, RequestedIngredientQu
 
 class RequestedIngredientTest(unittest.TestCase):
 
-    def test_from_dict_without_quantity(self):
-        ingredient_dict = {"name": "carotte"}
-        ingredient = RequestedIngredient(name='carotte')
-        self.assertEqual(RequestedIngredient.from_dict(ingredient_dict), ingredient)
-
-    def test_from_dict_with_quantity(self):
-        ingredient_dict = {"name": "carotte", "quantity": {"unit": "kg", "value": 4}}
-        ingredient = RequestedIngredient(
-            name='carotte',
-            quantity=RequestedIngredientQuantity(unit='kg', value=4)
-        )
-        self.assertEqual(RequestedIngredient.from_dict(ingredient_dict), ingredient)
-
-    def test_from_dict_with_mandatory(self):
-        ingredient_dict = {"name": "carotte", "mandatory": True}
-        ingredient = RequestedIngredient(name='carotte', mandatory=True)
-        self.assertEqual(RequestedIngredient.from_dict(ingredient_dict), ingredient)
-
-
     def test_as_dict_without_quantity(self):
         ingredient = RequestedIngredient(name='carotte')
         ingredient_dict = {"name": "carotte"}

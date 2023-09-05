@@ -24,14 +24,6 @@ class RequestedIngredient:
         return dict_
 
     @staticmethod
-    def from_dict(data: dict) -> 'RequestedIngredient':
-        data = data.copy()
-
-        if 'quantity' in data:
-            data['quantity'] = RequestedIngredientQuantity(**data['quantity'])
-
-        return RequestedIngredient(**data)
-
-    @staticmethod
     def ingredient_list_to_json(ingredients: list['RequestedIngredient'], ignore_mandatory=False) -> str:
-        return json.dumps([ingredient.as_dict(ignore_mandatory) for ingredient in ingredients], ensure_ascii=False, indent=4)
+        return json.dumps([ingredient.as_dict(ignore_mandatory) for ingredient in ingredients], ensure_ascii=False,
+                          indent=4)
