@@ -139,7 +139,13 @@ class RecipeEndpointTest(ApiEndpointTest):
                 {"name": "gruyère râpé", "quantity": {"unit": "g", "value": 50}},
                 {"name": "sel"},
                 {"name": "poivre"},
-            ]
+            ],
+            "params": {
+                "difficulty": 2,
+                "duration": 1.5,
+                "personCount": None,
+                "otherIngredientsAllowed": False
+            }
         }
         response = self.client.post('/api/recipe', json=json_request)
 

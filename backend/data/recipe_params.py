@@ -11,7 +11,7 @@ class RecipeDifficulty(enum.Enum):
 
 @dataclasses.dataclass
 class RecipeParams:
-    difficulty: Optional[RecipeDifficulty] = None
-    duration: Optional[float] = None
-    personCount: Optional[int] = None
+    difficulty: Optional[RecipeDifficulty]
+    duration: Optional[float]
+    personCount: Optional[int]
     otherIngredientsAllowed: bool = False
