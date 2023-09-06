@@ -22,31 +22,19 @@ p {
     margin-bottom: 0;
 }
 
-.smaller {
-    font-size: 0.8em;
-}
-
 @media screen and (max-width: 770px) { 
     #header {
        display: none;
     }
     .box {
         min-width: 100vw;
-        height: 98vh;
+        height: 100vh;
         margin-right: 0;
     }
 
     .container {
         position: fixed;
         top:0;
-    }
-
-    .dish-img {
-        z-index: -1;
-    }
-
-    .dish-title {
-        font-size: 1.4em!important;
     }
 }
   

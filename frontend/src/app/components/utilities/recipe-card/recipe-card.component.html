@@ -1,10 +1,12 @@
 <div id="card-container">
-    <img class="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page"/>
-    <div class="description d-flex darker-blue-bg">
-        <div class="d-flex flex-column justify-content-around align-items-center">
-            <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
-            <p class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</p>
+    <div id="dish-title" class="d-flex darker-blue-bg d-flex justify-content-center align-items-center">
+        <p class="fs-6 text-center text-white">{{ recipe.dishName }}</p>
+    </div>
+    <img (click)="selectRecipe()" class="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page"/>
+    <div id="description" class="d-flex darker-blue-bg" (click)="openCoachModal()">
+        <div class="d-flex flex-column justify-content-around">
+            <p class="fs-6 text-center text-white">Proposé par {{ recipe.coach.name }}</p>
         </div>
-        <img class="align-self-end" [src]="recipe.coach.imageUrl" width="90" alt="face of one of our virtual assistants"/>
+        <img id="coach-face" class="align-self-end" [src]="recipe.coach.imageUrl" width="70" alt="face of one of our virtual assistants"/>
     </div>
 </div>

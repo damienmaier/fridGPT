@@ -32,10 +32,6 @@ export class ResultComponent implements OnDestroy {
     this.recipeService.loadRecipes();
   }
 
-  selectRecipe(selectedId: number): void {
-    this.recipeService.onRecipeSelected(selectedId);
-  }
-
   openCoachModal(coach: Coach): void {
     this.modalService.openCoachModal(coach);
   }

@@ -8,7 +8,7 @@
     <div class="container d-flex">
         <ng-container *ngFor="let recipe of recipes; let i = index">
             <div class="box">
-                <app-recipe-card [recipe]="recipe" (click)="selectRecipe(i)"></app-recipe-card>
+                <app-recipe-card [recipe]="recipe" [recipeId]="i"></app-recipe-card>
             </div>
         </ng-container>
     </div>

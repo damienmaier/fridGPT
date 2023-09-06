@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe';
+import { ModalService } from 'src/app/services/modal.service';
+import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -8,4 +10,17 @@ import { Recipe } from 'src/app/models/recipe';
 })
 export class RecipeCardComponent {
   @Input() recipe!: Recipe;
+  @Input() recipeId!: number;
+
+  constructor(private modalService: ModalService, private recipeService: RecipesService) {}
+
+  openCoachModal(): void {
+    this.modalService.openCoachModal(this.recipe.coach);
+  }
+
+  selectRecipe(): void {
+    if(this.recipeId !== undefined) {
+      this.recipeService.onRecipeSelected(this.recipeId);
+    }
+  }
 }

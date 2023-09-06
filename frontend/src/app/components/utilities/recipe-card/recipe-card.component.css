@@ -1,12 +1,27 @@
 #card-container {
     overflow-x: hidden;
+    overflow-y: visible;
 }
 
-.description {
-    position: absolute;
+p {
+    margin-bottom: 0;
+}
+
+#description {
     bottom: 0;
+}
+
+#dish-title {
+    top: 0;
+    z-index: 10;
+    height: 10%;
+}
+
+#description, #dish-title {
+    position: absolute;
     left:0;
     width: 100%;
+    overflow: visible;
 }
 
 .dish-img {
@@ -17,6 +32,19 @@
     transform: translate(-50%, -50%);
 }
 
-.description div {
-    width: 80%;
+#description div {
+    width: 70%;
+}
+
+#description + #coach-face {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+#description:hover > #coach-face {
+    -webkit-transform: scale(1.3);
+	transform : translate(20%, -20%) scale(1.3);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    filter:drop-shadow(.2rem .2rem .2rem black)
 }
