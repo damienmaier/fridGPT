@@ -19,10 +19,10 @@ export class ModalService {
 
     openHelpModal(steps: string[], stepIndex: number): Observable<void> {
         return this.recipeService.loadHelpForStep(steps, stepIndex).pipe(map(
-            (explanation:any) => {
+            (explanation: {helpText: string}) => {
                 const modalRef = this._modalService.open(HelpModalComponent);
                 if(modalRef != undefined) {
-                    modalRef.componentInstance.explanation = explanation.helpText;
+                    modalRef.componentInstance.explanation = explanation.helpText.replaceAll('\n', '<br>');
                 }
             }
         ));
