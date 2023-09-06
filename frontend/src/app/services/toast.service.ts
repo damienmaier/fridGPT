@@ -7,7 +7,7 @@ export class ToastService {
   toastSubject: Subject<any[]> = new Subject<any[]>();
 
   show(body: string, options: any = {}): void {
-    this.toasts.push({ body, ...options });
+    this.toasts.push({ body: body.replaceAll('\n', '<br>'), ...options });
     this.toastSubject.next(this.toasts.slice());
   }
 

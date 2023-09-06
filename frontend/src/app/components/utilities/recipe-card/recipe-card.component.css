@@ -1,0 +1,22 @@
+#card-container {
+    overflow-x: hidden;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+}
+
+.dish-img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.description div {
+    width: 80%;
+}

@@ -37,8 +37,7 @@ export class RecipesService {
             return;
         }
         if(this.requestedRecipe == undefined) {
-            this.lastError = {info: {error:''}};
-            this.recipesSubject.next([]);
+            this.handleError({info: {error:''}});
             return;
         }
         const params = this.requestedRecipe.APIFormat(this.requestedIngredientAdapter);
@@ -49,7 +48,6 @@ export class RecipesService {
                 if(this.requestedRecipe.withImage) {
                     this.loadRecipeImages();
                 } else {
-                    console.log('loading but no images wanted');
                     this.recipes.map((recipe: Recipe) => {
                         recipe.imageUrl = '/assets_app/empty.jpg';
                         return recipe;
@@ -58,27 +56,34 @@ export class RecipesService {
                 }
             },
             error:(error: HttpErrorResponse) => {
-                this.lastError = {info: error.error, lastRequest: this.requestedRecipe};
-                this.goToHome();
-                this.recipesSubject.next([]);
+                this.handleError({info: error.error, lastRequest: this.requestedRecipe});
             }
         });
     }
 
     loadRecipeImages(): void {
         const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
-        forkJoin(requests).pipe(map(
-            (results: DishImage[]) => {
+        forkJoin(requests).subscribe({
+            next: (results: DishImage[]) => {
                 for(let i = 0; i < this.recipes.length; ++i) {
                     this.recipes[i].imageUrl = results[i].url;
                 }
                 this.recipesSubject.next(this.recipes.slice()); 
+            },
+            error:(error: HttpErrorResponse) => {
+                this.handleError({info: error.error, lastRequest: this.requestedRecipe});
             }
-        ));
+        });
     }
 
-    loadHelpForStep(steps: string[], stepIndex: number): Observable<{recipes: Recipe[]}> {
-        return this.http.post<{recipes: Recipe[]}>('/api/help', {steps, stepIndex});
+    private handleError(receivedError: APIError) {
+        this.lastError = receivedError;
+        this.goToHome();
+        this.recipesSubject.next([]);
+    }
+
+    loadHelpForStep(steps: string[], stepIndex: number): Observable<{helpText: string}> {
+        return this.http.post<{helpText: string}>('/api/help', {steps, stepIndex});
     }
 
     /* --------- navigation related actions ------------------------------ */
@@ -112,12 +117,14 @@ export class RecipesService {
         if(this.lastError == null) { return ''; }
         let message = '';
         if(this.lastError.info.ingredient) {
-            message = `Impossible de générer des recettes, L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+            message = `Impossible de générer des recettes.\nL'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
         } else {
-            if(this.lastError.info.error ===  'insufficient ingredients') {
-                message = 'Impossible de générer des recettes à partir des ingrédients sélectionnés, veuillez compléter la liste.'
-            } else {
-                message = 'Une erreur innatendue est survenue lors de la génération des recettes, veuillez réessayer'
+            switch(this.lastError.info.error) {
+                case 'insufficient ingredients':
+                    message = 'Les coachs jugent les ingrédients sélectionnés insuffisants pour générer des recettes convenables.\n Ajoutez des ingrédients supplémentaires.'
+                    break;
+                default:
+                    message = 'Une erreur innatendue est survenue lors de la génération des recettes.\n Veuillez réessayer'
             }
         }
         this.lastError = null;

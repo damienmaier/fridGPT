@@ -11,36 +11,21 @@
     align-self:flex-end;
 }
 
-#rotation-fw {
-    animation-name: spin-fw;
+.robot {
+    margin-top:40px;
 }
 
-#rotation-bw {
-    animation-name: spin-bw;
+.robot img {
+	-webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
 }
 
-.rotation {
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-}
-  
-@keyframes spin-fw {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
-  
-@keyframes spin-bw {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(-360deg);
-    }
+.robot:hover img {
+    -webkit-transform: rotate(15deg) scale(1.2);
+	transform: rotate(15deg) scale(1.2);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    filter:drop-shadow(.3rem .3rem .3rem #468B97)
 }
 
 @media screen and (max-width: 1250px) {

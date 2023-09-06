@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row d-flex row-title justify-content-center">
+        <div class="col-md-auto">
+            <p class="fs-2 text-white text-center">Génération des recettes en cours</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center" id="loading-row">
+        <div class="col-sm-auto" id="left-gear">
+            <app-rotating-image [goingFoward]="true" imgSource="/assets_app/gear1.png" [imgWidth]="50"></app-rotating-image>
+        </div>
+        <div class="col-sm-auto">
+            <app-rotating-image [goingFoward]="false" imgSource="/assets_app/gear2.png" [imgWidth]="60"></app-rotating-image>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center" id="coach-row">
+        <div class="col-sm-1"><img src="/assets_app/germaine.png" width="70"/></div>
+        <div class="col-sm-1"><img src="/assets_app/travis.png" width="70"/></div>
+        <div class="col-sm-1"><img src="/assets_app/bernardo.png" width="70"/></div>
+        <div class="col-sm-1"><img src="/assets_app/miggin.png" width="70"/></div>
+        <div class="col-sm-1"><img src="/assets_app/stewen.png" width="70"/></div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-1 robot d-flex justify-content-center">
+            <img id="singing" *ngIf="playing()" src="/assets_app/song.png" width="50" 
+                (click)="goToSleep()"/>
+            <img id="sleeping" *ngIf="!playing()" src="/assets_app/sleep.png" width="50"
+                (click)="wakeUp()"/>
+        </div>
+    </div>
+</div>
