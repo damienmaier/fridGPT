@@ -110,11 +110,36 @@ class RecipeEndpointTest(ApiEndpointTest):
             'Should return wrong ingredient error with ingredient'
         )
 
+    def test_less_than_5_non_default_ingredients(self):
+        json_request = {
+            "ingredients": [
+                {"name": "farine"},
+                {"name": "sucre"},
+                {"name": "courgette"},
+                {"name": "carotte"},
+                {"name": "lentilles"},
+                {"name": "crème"},
+            ]
+        }
+        response = self.client.post('/api/recipe', json=json_request)
+        self.assertEqual(response.status_code, 400, 'Should return 400')
+        self.assertEqual(
+            response.json,
+            {"error": "insufficient ingredients"},
+            'Should return insufficient ingredients error'
+        )
+
     def test_insufficient_ingredients(self):
         json_request = {
             "ingredients": [
+                {"name": "beurre"},
                 {"name": "sel"},
-                {"name": "poivre"}
+                {"name": "cannelle"},
+                {"name": "cumin"},
+                {"name": "curry"},
+                {"name": "poivre"},
+                {"name": "paprika"},
+                {"name": "crème"},
             ]
         }
         response = self.client.post('/api/recipe', json=json_request)
