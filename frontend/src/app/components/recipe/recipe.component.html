@@ -31,9 +31,13 @@
                     <<div id="step-counter">
                         <p class="text-white">{{ currentStepIndex + 1}} / {{ recipe.steps.length }}</p>
                     </div>
-                    <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">
-                        <i class="bi bi-emoji-dizzy-fill"></i> J'ai besoin d'aide !
-                    </button>
+                    <div class="align-self-end d-flex">
+                        <app-rotating-image *ngIf="loadingHelp" [goingFoward]="false" imgSource="/assets_app/gear1.png" [imgWidth]="30"></app-rotating-image>
+                        <app-rotating-image *ngIf="loadingHelp" [goingFoward]="true" imgSource="/assets_app/gear1.png" [imgWidth]="20"></app-rotating-image>
+                        <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">
+                            <i class="bi bi-emoji-dizzy-fill"></i> J'ai besoin d'aide !
+                        </button>
+                    </div>
                 </ng-template>
             </div>
         </div>
