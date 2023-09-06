@@ -37,8 +37,7 @@ export class RecipesService {
             return;
         }
         if(this.requestedRecipe == undefined) {
-            this.lastError = {info: {error:''}};
-            this.recipesSubject.next([]);
+            this.handleError({info: {error:''}});
             return;
         }
         const params = this.requestedRecipe.APIFormat(this.requestedIngredientAdapter);
@@ -57,23 +56,30 @@ export class RecipesService {
                 }
             },
             error:(error: HttpErrorResponse) => {
-                this.lastError = {info: error.error, lastRequest: this.requestedRecipe};
-                this.goToHome();
-                this.recipesSubject.next([]);
+                this.handleError({info: error.error, lastRequest: this.requestedRecipe});
             }
         });
     }
 
     loadRecipeImages(): void {
         const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
-        forkJoin(requests).pipe(map(
-            (results: DishImage[]) => {
+        forkJoin(requests).subscribe({
+            next: (results: DishImage[]) => {
                 for(let i = 0; i < this.recipes.length; ++i) {
                     this.recipes[i].imageUrl = results[i].url;
                 }
                 this.recipesSubject.next(this.recipes.slice()); 
+            },
+            error:(error: HttpErrorResponse) => {
+                this.handleError({info: error.error, lastRequest: this.requestedRecipe});
             }
-        ));
+        });
+    }
+
+    private handleError(receivedError: APIError) {
+        this.lastError = receivedError;
+        this.goToHome();
+        this.recipesSubject.next([]);
     }
 
     loadHelpForStep(steps: string[], stepIndex: number): Observable<{helpText: string}> {
