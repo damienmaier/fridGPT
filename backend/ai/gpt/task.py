@@ -56,7 +56,7 @@ class Task(abc.ABC):
 
         else:
             logger.error(f'GPT request failed after {retry_count} retries')
-            raise self.TaskError
+            raise self.MaxRetryReachedError
 
         return post_processed_response
 
@@ -89,7 +89,7 @@ class Task(abc.ABC):
     def post_process_gpt_response(self, gpt_response_content: str):
         pass
 
-    class TaskError(Exception):
+    class MaxRetryReachedError(Exception):
         pass
 
     class PostProcessingError(Exception):
