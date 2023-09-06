@@ -74,7 +74,27 @@ class RecipeCreator(ai.gpt.Task):
         except cattrs.BaseValidationError:
             raise self.PostProcessingError('Unable to decode GPT response as Recipe')
 
+        self._validate_recipe(recipe)
+
         return recipe
+
+    def _validate_recipe(self, recipe: data.Recipe) -> None:
+
+        if not 3 <= len(recipe.dishName) <= 50:
+            raise self.PostProcessingError(f'Recipe dish name has invalid length: {len(recipe.dishName)}')
+
+        if not 3 <= len(recipe.dishDescription) <= 200:
+            raise self.PostProcessingError(f'Recipe dish description has invalid length: {len(recipe.dishDescription)}')
+
+        if not 3 <= len(recipe.ingredients) <= 500:
+            raise self.PostProcessingError(f'Recipe ingredients has invalid length: {len(recipe.ingredients)}')
+
+        if not 1 <= len(recipe.steps) <= 30:
+            raise self.PostProcessingError(f'Invalid recipe steps number: {len(recipe.steps)}')
+
+        for step in recipe.steps:
+            if not 3 <= len(step) <= 500:
+                raise self.PostProcessingError(f'Recipe step has invalid length: {len(step)}')
 
 
 create_recipe = RecipeCreator()

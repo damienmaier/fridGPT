@@ -8,7 +8,7 @@ from .coach import Coach
 class Recipe:
     dishName: str
     dishDescription: str
-    ingredients: list
+    ingredients: str
     steps: list[str]
     coach: Optional[Coach] = None
 
