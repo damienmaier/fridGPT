@@ -8,7 +8,7 @@
 </div>
 <div class="row margin-both-sides" id="main-row">
   <!-- ingredients picking menu -->
-  <div class="col debug ingredient-col">
+  <div class="col ingredient-col">
     <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="basket full of vegetables and gruits"/> Ingrédients à disposition </h4>
     </div>
@@ -78,7 +78,7 @@
       </div>
     </div>
     <!-- ingredients list -->
-    <div id="search-list" class="debug" [ngStyle]="{'max-height':searchListHeight()}">
+    <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
         <div class="search-item light-blue-bg hand-cursor text-white round-corners" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
