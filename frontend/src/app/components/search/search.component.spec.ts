@@ -4,6 +4,7 @@ import { RecipesService } from 'src/app/services/recipes.service';
 import { createRecipesServiceSpy, createToastServiceSpy } from 'src/tests/fake-services';
 import { FormsModule } from '@angular/forms';
 import { ToastService } from 'src/app/services/toast.service';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -16,7 +17,7 @@ describe('SearchComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     TestBed.configureTestingModule({
       declarations: [SearchComponent],
-      imports:      [FormsModule],
+      imports:      [FormsModule, NgbAccordionModule],
       providers:    [
         {provide: RecipesService, useValue: fakeRecipeService},
         {provide: ToastService, useValue: fakeToastService}
