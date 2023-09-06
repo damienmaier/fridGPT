@@ -26,11 +26,17 @@ def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEn
     for ingredient in request.ingredients:
         _validate_ingredient(ingredient)
 
-    logger.info('checking if sufficient ingredients were received')
-    if all(ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[ingredient.name].autoAdd
-           for ingredient in request.ingredients):
-        logger.warning('only default ingredients were received')
+    logger.info('checking if enough non default ingredients were received')
+
+    def is_not_default(ingredient: data.RequestedIngredient) -> bool:
+        return not (ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[ingredient.name].autoAdd)
+
+    if sum(map(is_not_default, request.ingredients)) < 5:
+        logger.warning('less than 5 non default ingredients were received')
         raise errors.InsufficientIngredientsError
+
+    logger.info('checking if ingredients are sufficient to create a recipe')
+
     if not classifiers.is_sufficient_ingredients(request.ingredients):
         logger.warning('insufficient ingredients')
         raise errors.InsufficientIngredientsError
