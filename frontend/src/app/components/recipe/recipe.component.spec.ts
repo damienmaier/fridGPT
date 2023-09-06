@@ -16,7 +16,7 @@ describe('RecipeComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     fakeModalService  = createModalServiceSpy();
     TestBed.configureTestingModule({
-      declarations: [RecipeComponent, LoadingComponent],
+      declarations: [RecipeComponent],
       imports: [RouterTestingModule],
       providers: [
         {provide: RecipesService, useValue: fakeRecipeService},
