@@ -1,5 +1,5 @@
 import abc
-import concurrent.futures
+import multiprocessing.pool
 
 import ai.gpt
 import config
@@ -37,9 +37,9 @@ class Task(abc.ABC):
                 logger.warning(f'retrying gpt task {retry_count} ...')
 
             try:
-                future_gpt_response_message = concurrent.futures.ThreadPoolExecutor().submit(self._send_gpt_request, prompt)
-                gpt_response_message = future_gpt_response_message.result(timeout=self._timeout)
-            except concurrent.futures.TimeoutError:
+                with multiprocessing.pool.Pool() as pool:
+                    gpt_response_message = pool.apply_async(self._send_gpt_request, (prompt,)).get(timeout=self._timeout)
+            except multiprocessing.TimeoutError:
                 logger.warning(f'GPT request timed out after {self._timeout} seconds')
                 continue
             except openai.error.OpenAIError as e:
