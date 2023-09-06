@@ -7,19 +7,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col col-lg-4 dark-blue-bg" id="col-description">
-            <img class="dish-img" [src]="recipe.imageUrl" alt=""/>
-            <div class="description d-flex darker-blue-bg">
-                <div class="d-flex flex-column justify-content-around align-items-center">
-                    <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
-                    <p class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</p>
-                </div>
-                <img class="align-self-end" [src]="recipe.coach.imageUrl" width="90" alt=""/>
-            </div>
+            <app-recipe-card [recipe]="recipe"></app-recipe-card>
         </div>
         <div class="col" id="col-step">
             <div id="small-screen-info" class="invisible">
                 <div>
-                    <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
+                    <p class="fs-5 text-center text-white">AAA {{ recipe.dishName }}</p>
                     <small class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</small>
                 </div>
                 <img class="align-self-end" [src]="recipe.coach.imageUrl" width="80" alt=""/>
@@ -35,12 +28,16 @@
                 </ng-container>
                 <ng-template #step>
                     <p class="fs-5 text-white text-center" id="step-detail" [innerHTML]="currentStep"></p>
-                    <<div id="step-counter">
+                    <div id="step-counter">
                         <p class="text-white">{{ currentStepIndex + 1}} / {{ recipe.steps.length }}</p>
                     </div>
-                    <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">
-                        <i class="bi bi-emoji-dizzy-fill"></i> J'ai besoin d'aide !
-                    </button>
+                    <div class="align-self-end d-flex">
+                        <app-rotating-image *ngIf="loadingHelp" [goingFoward]="false" imgSource="/assets_app/gear1.png" [imgWidth]="30"></app-rotating-image>
+                        <app-rotating-image *ngIf="loadingHelp" [goingFoward]="true" imgSource="/assets_app/gear1.png" [imgWidth]="20"></app-rotating-image>
+                        <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">
+                            <i class="bi bi-emoji-dizzy-fill"></i> J'ai besoin d'aide !
+                        </button>
+                    </div>
                 </ng-template>
             </div>
         </div>

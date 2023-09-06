@@ -14,28 +14,8 @@
     border-radius: 5px;
 }
 
-.description {
-    position: absolute;
-    height: 15%;
-    bottom: 0;
-    width: 100%;
-}
-
-.dish-img {
-    height:100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.3s;
-}
-
 .box:hover {
     opacity: 0.8;
-}
-
-.description div {
-    width: 80%;
 }
 
 p {

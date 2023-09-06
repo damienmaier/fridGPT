@@ -16,26 +16,8 @@ p {
   overflow-x: hidden;
 }
 
-.description {
-  position: absolute;
-  bottom: 0;
-  left:0;
-  width: 100%;
-}
-
-.container-fluid,.row, .col,.dish-img {
+.container-fluid,.row, .col {
   height: 100%;
-}
-
-.dish-img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.description div {
-  width: 80%;
 }
 
 #step {
@@ -56,7 +38,7 @@ p {
 
 #help-btn {
   width: fit-content;
-  margin:0px 20px 20px auto;
+  margin:0px 20px 20px 5px;
 }
 
 #step-detail {
