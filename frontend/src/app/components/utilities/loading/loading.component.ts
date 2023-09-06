@@ -15,7 +15,7 @@ export class LoadingComponent {
       src: ['/assets_app/loading_song.mp3'],
       autoplay: false,
       loop: true,
-      volume: 0.5 
+      volume: 1
     });
   }
 

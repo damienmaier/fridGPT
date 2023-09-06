@@ -11,38 +11,6 @@
     align-self:flex-end;
 }
 
-#rotation-fw {
-    animation-name: spin-fw;
-}
-
-#rotation-bw {
-    animation-name: spin-bw;
-}
-
-.rotation {
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; 
-}
-
-@keyframes spin-fw {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
-  
-@keyframes spin-bw {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(-360deg);
-    }
-}
-
 .robot {
     margin-top:40px;
 }
@@ -51,6 +19,7 @@
 	-webkit-transform: rotate(0) scale(1);
 	transform: rotate(0) scale(1);
 }
+
 .robot:hover img {
     -webkit-transform: rotate(15deg) scale(1.2);
 	transform: rotate(15deg) scale(1.2);
