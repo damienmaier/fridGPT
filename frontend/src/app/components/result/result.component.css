@@ -1,8 +1,6 @@
 .container {
-    display: flex;
     overflow-y: auto;
     max-width: 100vw;
-    scroll-snap-type: x mandatory;
     padding:0;
     height: 100%;
 }
@@ -10,7 +8,6 @@
 .box {
     flex: 0 0 25%;
     height: 100%;
-    scroll-snap-align: start;
     position:relative;
     overflow-x: hidden;
     margin-right: 10px;
@@ -19,18 +16,13 @@
 
 .description {
     position: absolute;
-    height: 20%;
+    height: 15%;
     bottom: 0;
     width: 100%;
-    display: flex;
-}
-
-.description img {
-    align-self: flex-end;
 }
 
 .dish-img {
-    height:80%;
+    height:100%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -44,10 +36,6 @@
 
 .description div {
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items:center;
 }
 
 p {
@@ -56,10 +44,6 @@ p {
 
 .smaller {
     font-size: 0.8em;
-}
-
-.description div .coach-name {
-    align-self: flex-end;
 }
 
 @media screen and (max-width: 770px) { 

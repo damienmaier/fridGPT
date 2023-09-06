@@ -1,4 +1,4 @@
-<div id="header">
+<div id="header" class="d-flex justify-content-around align-items-center">
     <button type="button" class="btn text-white" id="back-btn" routerLink="/app/result">
         <i class="bi bi-arrow-return-left"></i> Retour à la liste
     </button>
@@ -8,27 +8,27 @@
     <div class="row">
         <div class="col col-lg-4 dark-blue-bg" id="col-description">
             <img class="dish-img" [src]="recipe.imageUrl" alt=""/>
-            <div class="description darker-blue-bg">
-                <div>
+            <div class="description d-flex darker-blue-bg">
+                <div class="d-flex flex-column justify-content-around align-items-center">
                     <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
-                    <p class="text-white coach-name"> Proposé par {{ recipe.coach.name }}</p>
+                    <p class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</p>
                 </div>
-                <img [src]="recipe.coach.imageUrl" width="90" alt=""/>
+                <img class="align-self-end" [src]="recipe.coach.imageUrl" width="90" alt=""/>
             </div>
         </div>
         <div class="col" id="col-step">
-            <div id="small-screen-info">
+            <div id="small-screen-info" class="invisible">
                 <div>
                     <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
-                    <small class="text-white coach-name"> Proposé par {{ recipe.coach.name }}</small>
+                    <small class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</small>
                 </div>
-                <img [src]="recipe.coach.imageUrl" width="80" alt=""/>
+                <img class="align-self-end" [src]="recipe.coach.imageUrl" width="80" alt=""/>
             </div>
-            <div id="navigation">
+            <div id="navigation" class="d-flex justify-content-around">
                 <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>
                 <button class="btn" (click)="nextStep(true)"><i class="bi bi-chevron-right"></i></button>
             </div>
-            <div id="step" class="darker-blue-bg">
+            <div id="step" class="darker-blue-bg d-flex flex-column">
                 <ng-container *ngIf="currentStepIndex == recipe.steps.length;else step">
                     <p class="fs-4 text-white">Ingrédients </p>
                     <p class="text-white" [innerHTML]="recipe.ingredients"></p>
