@@ -27,7 +27,7 @@
     </div>
     <div class="ingredients-content">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-        <div class="row margin-top row-ingredient" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
+        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
           <div class="col col-name">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
@@ -154,7 +154,7 @@
       
       <div id="default-ingredients" class="d-flex flex-column align-items-center">
         <div ngbAccordion>
-          <div ngbAccordionItem>
+          <div ngbAccordionItem [collapsed]="false">
             <h2 ngbAccordionHeader>
               <button ngbAccordionButton class="darker-blue-bg">Ingrédients de base</button>
             </h2>
