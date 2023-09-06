@@ -92,3 +92,51 @@ Run the frontend tests :
 npm test
 ```
 
+## Tests
+
+### Backend
+
+To run all the backend tests, cd into the `backend` folder and run :
+
+```bash
+python3 run_tests.py
+```
+
+You will see some warnings and error message, this is an expected behavior due to the fact that some tests are here to check that the backend correctly handles invalid inputs. As long as you see something like `Ran X tests in 79.144s OK (skipped=X)` at the end, the tests are passing.
+
+#### Integration tests
+
+The integration tests for the API endpoints are located in `backend/api/<endpoint_name>_test.py`.
+
+Those tests are useful both for testing the API and for documenting it.
+
+#### Unit tests
+
+The tests for a module are located in the same folder as the module, in a file named `<module_name>_test.py`.
+
+### Frontend
+
+To run all the frontend tests, cd into the `frontend` folder and run :
+
+```bash
+npm test
+```
+
+The test files are located next to the files they test. They are named `<file_name>.spec.ts`.
+
+## How to contribute
+
+### Code style
+
+Here are some guidelines that we follow to keep the code clean and consistent:
+
+- Code, comments, commit messages and documentations are written in English.
+- Write code that is easy to read and understand. Use explicit names for variables, functions, classes, etc.
+- Use comments when something is not obvious.
+- When you add a new feature, write tests to protect against regressions.
+  - If you add a new API endpoint, write integration tests for it.
+
+### Pull requests
+
+If you want to contribute to the project as an external contributor, feel free to fork the project and submit a pull request. We will review it and merge it if it fits the project.
+
