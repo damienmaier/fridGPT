@@ -1,10 +1,10 @@
 <div id="card-container">
-    <img class="dish-img" [src]="recipe.imageUrl" alt=""/>
+    <img class="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page"/>
     <div class="description d-flex darker-blue-bg">
         <div class="d-flex flex-column justify-content-around align-items-center">
             <p class="fs-5 text-center text-white">{{ recipe.dishName }}</p>
             <p class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</p>
         </div>
-        <img class="align-self-end" [src]="recipe.coach.imageUrl" width="90" alt=""/>
+        <img class="align-self-end" [src]="recipe.coach.imageUrl" width="90" alt="face of one of our virtual assistants"/>
     </div>
 </div>
