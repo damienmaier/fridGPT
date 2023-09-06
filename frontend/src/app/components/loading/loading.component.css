@@ -24,7 +24,7 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear; 
 }
-  
+
 @keyframes spin-fw {
     from {
         transform:rotate(0deg);
@@ -41,6 +41,22 @@
     to {
         transform:rotate(-360deg);
     }
+}
+
+.robot {
+    margin-top:40px;
+}
+
+.robot img {
+	-webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
+}
+.robot:hover img {
+    -webkit-transform: rotate(15deg) scale(1.2);
+	transform: rotate(15deg) scale(1.2);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    filter:drop-shadow(.3rem .3rem .3rem #468B97)
 }
 
 @media screen and (max-width: 1250px) {
