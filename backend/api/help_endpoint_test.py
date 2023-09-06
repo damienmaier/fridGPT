@@ -1,6 +1,6 @@
 import unittest
 
-from api.endpoint_test import ApiEndpointTest
+from api.util import ApiEndpointTest
 
 
 # @unittest.skip("Not implemented")

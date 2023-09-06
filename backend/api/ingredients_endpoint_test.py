@@ -1,4 +1,4 @@
-from .endpoint_test import ApiEndpointTest
+from .util import ApiEndpointTest
 
 
 class IngredientsEndpointTest(ApiEndpointTest):

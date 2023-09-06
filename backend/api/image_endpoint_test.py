@@ -2,7 +2,7 @@ import unittest
 
 import requests
 
-from .endpoint_test import ApiEndpointTest
+from .util import ApiEndpointTest
 
 
 @unittest.skip("Image endpoint is expensive and thus we don't want to run its tests automatically.")
