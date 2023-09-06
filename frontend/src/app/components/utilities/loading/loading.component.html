@@ -13,18 +13,16 @@
         </div>
     </div>
     <div class="row d-flex justify-content-center" id="coach-row">
-        <div class="col-sm-1"><img src="/assets_app/germaine.png" width="70"/></div>
-        <div class="col-sm-1"><img src="/assets_app/travis.png" width="70"/></div>
-        <div class="col-sm-1"><img src="/assets_app/bernardo.png" width="70"/></div>
-        <div class="col-sm-1"><img src="/assets_app/miggin.png" width="70"/></div>
-        <div class="col-sm-1"><img src="/assets_app/stewen.png" width="70"/></div>
+        <div class="col-sm-1"><img src="/assets_app/germaine.png" width="70" alt="face of Germaine, an old and kind grandma"/></div>
+        <div class="col-sm-1"><img src="/assets_app/travis.png" width="70" alt="face of Travis, a hipster with a Santa hat and a huge beard"/></div>
+        <div class="col-sm-1"><img src="/assets_app/bernardo.png" width="70" alt="face of Bernardo, an italian guy with a mustache"/></div>
+        <div class="col-sm-1"><img src="/assets_app/miggin.png" width="70" alt="face of Miggin, a bold angry pirate with an eye patch"/></div>
+        <div class="col-sm-1"><img src="/assets_app/stewen.png" width="70" alt="face of Stewen, a mysterious dude with a great hat and a mustache"/></div>
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-1 robot d-flex justify-content-center">
-            <img id="singing" *ngIf="playing()" src="/assets_app/song.png" width="50" 
-                (click)="goToSleep()"/>
-            <img id="sleeping" *ngIf="!playing()" src="/assets_app/sleep.png" width="50"
-                (click)="wakeUp()"/>
+            <img id="singing" *ngIf="playing()" src="/assets_app/song.png" width="50" alt="fridge with Z letters coming out of it like something is sleeping inside it" (click)="goToSleep()"/>
+            <img id="sleeping" *ngIf="!playing()" src="/assets_app/sleep.png" width="50" alt="fridge with robot sticking out and music notes above it" (click)="wakeUp()"/>
         </div>
     </div>
 </div>
