@@ -49,7 +49,6 @@ export class RecipesService {
                 if(this.requestedRecipe.withImage) {
                     this.loadRecipeImages();
                 } else {
-                    console.log('loading but no images wanted');
                     this.recipes.map((recipe: Recipe) => {
                         recipe.imageUrl = '/assets_app/empty.jpg';
                         return recipe;
@@ -77,8 +76,8 @@ export class RecipesService {
         ));
     }
 
-    loadHelpForStep(steps: string[], stepIndex: number): Observable<{recipes: Recipe[]}> {
-        return this.http.post<{recipes: Recipe[]}>('/api/help', {steps, stepIndex});
+    loadHelpForStep(steps: string[], stepIndex: number): Observable<{helpText: string}> {
+        return this.http.post<{helpText: string}>('/api/help', {steps, stepIndex});
     }
 
     /* --------- navigation related actions ------------------------------ */
@@ -112,12 +111,14 @@ export class RecipesService {
         if(this.lastError == null) { return ''; }
         let message = '';
         if(this.lastError.info.ingredient) {
-            message = `Impossible de générer des recettes, L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
+            message = `Impossible de générer des recettes.\nL'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
         } else {
-            if(this.lastError.info.error ===  'insufficient ingredients') {
-                message = 'Impossible de générer des recettes à partir des ingrédients sélectionnés, veuillez compléter la liste.'
-            } else {
-                message = 'Une erreur innatendue est survenue lors de la génération des recettes, veuillez réessayer'
+            switch(this.lastError.info.error) {
+                case 'insufficient ingredients':
+                    message = 'Les coachs jugent les ingrédients sélectionnés insuffisants pour générer des recettes convenables.\n Ajoutez des ingrédients supplémentaires.'
+                    break;
+                default:
+                    message = 'Une erreur innatendue est survenue lors de la génération des recettes.\n Veuillez réessayer'
             }
         }
         this.lastError = null;

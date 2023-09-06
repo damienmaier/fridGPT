@@ -1,4 +1,4 @@
 <div class="modal-body darkest-bg">
-    <p class="text-white">{{ explanation }}</p>
+    <div class="text-white" [innerHTML]="explanation"></div>
     <button type="button" class="btn btn-danger text-white light-red-bg" (click)="close()">Compris !</button>
 </div>

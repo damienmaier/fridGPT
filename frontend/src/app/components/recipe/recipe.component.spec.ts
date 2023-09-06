@@ -2,10 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { createModalServiceSpy, createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { RecipeComponent } from './recipe.component';
-import { LoadingComponent } from '../loading/loading.component';
+import { LoadingComponent } from '../utilities/loading/loading.component';
 import { RouterTestingModule } from "@angular/router/testing";
 import { ModalService } from 'src/app/services/modal.service';
-import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
+import { RecipeCardComponent } from '../utilities/recipe-card/recipe-card.component';
 
 describe('RecipeComponent', () => {
   let component: RecipeComponent;

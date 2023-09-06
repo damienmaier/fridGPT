@@ -1,8 +1,8 @@
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { CoachModalComponent } from "../components/modals/coach-modal/coach-modal.component";
+import { CoachModalComponent } from "../components/utilities/modals/coach-modal/coach-modal.component";
 import { Coach } from "../models/recipe";
 import { Observable, map } from "rxjs";
-import { HelpModalComponent } from "../components/modals/help-modal/help-modal.component";
+import { HelpModalComponent } from "../components/utilities/modals/help-modal/help-modal.component";
 import { RecipesService } from "./recipes.service";
 import { Injectable } from "@angular/core";
 
@@ -19,10 +19,10 @@ export class ModalService {
 
     openHelpModal(steps: string[], stepIndex: number): Observable<void> {
         return this.recipeService.loadHelpForStep(steps, stepIndex).pipe(map(
-            (explanation:any) => {
+            (explanation: {helpText: string}) => {
                 const modalRef = this._modalService.open(HelpModalComponent);
                 if(modalRef != undefined) {
-                    modalRef.componentInstance.explanation = explanation.helpText;
+                    modalRef.componentInstance.explanation = explanation.helpText.replaceAll('\n', '<br>');
                 }
             }
         ));

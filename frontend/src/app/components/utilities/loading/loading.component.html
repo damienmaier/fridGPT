@@ -6,10 +6,10 @@
     </div>
     <div class="row d-flex justify-content-center" id="loading-row">
         <div class="col-sm-auto" id="left-gear">
-            <img id="rotation-fw" class="rotation" src="/assets_app/gear1.png" width="50"/>
+            <app-rotating-image [goingFoward]="true" imgSource="/assets_app/gear1.png" [imgWidth]="50"></app-rotating-image>
         </div>
         <div class="col-sm-auto">
-            <img id="rotation-bw" class="rotation" src="/assets_app/gear2.png" width="60"/>
+            <app-rotating-image [goingFoward]="false" imgSource="/assets_app/gear2.png" [imgWidth]="60"></app-rotating-image>
         </div>
     </div>
     <div class="row d-flex justify-content-center" id="coach-row">
