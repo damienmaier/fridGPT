@@ -11,7 +11,7 @@ To run this project, you need to have the following installed on your system:
 - python 3.10 and pip
 - Google Chrome (for Angular tests)
 
-**Added on 06.09.2023 : There is an issue with node js 20.06 released today (see [here](https://github.com/angular/angular-cli/issues/25782). To run our project, use a previous node version like 20.5.1**
+**Added on 06.09.2023 : There is an issue with node js 20.06 released today (see [here](https://github.com/angular/angular-cli/issues/25782)). To run our project, use a previous node version like 20.5.1**
 
 ### OpenAI API key
 
@@ -80,51 +80,12 @@ The app will automatically reload if you change any of the source files.
 
 The frontend server automatically proxies all API requests (/api/...) to the backend server.
 
-### Run the tests
-
-Run the backend tests :
-
-```bash
-python3 run_tests.py
-```
-
-Run the frontend tests :
-
-```bash
-npm test
-```
-
 ## Tests
 
-### Backend
+Tests description for the frontend and the backend are located in the README.md files of the corresponding folders :
 
-To run all the backend tests, cd into the `backend` folder and run :
-
-```bash
-python3 run_tests.py
-```
-
-You will see some warnings and error message, this is an expected behavior due to the fact that some tests are here to check that the backend correctly handles invalid inputs. As long as you see something like `Ran X tests in 79.144s OK (skipped=X)` at the end, the tests are passing.
-
-#### Integration tests
-
-The integration tests for the API endpoints are located in `backend/api/<endpoint_name>_test.py`.
-
-Those tests are useful both for testing the API and for documenting it.
-
-#### Unit tests
-
-The tests for a module are located in the same folder as the module, in a file named `<module_name>_test.py`.
-
-### Frontend
-
-To run all the frontend tests, cd into the `frontend` folder and run :
-
-```bash
-npm test
-```
-
-The test files are located next to the files they test. They are named `<file_name>.spec.ts`.
+- [frontend/README.md](frontend/README.md)
+- [backend/README.md](backend/README.md)
 
 ## How to contribute
 
@@ -136,7 +97,11 @@ Here are some guidelines that we follow to keep the code clean and consistent:
 - Write code that is easy to read and understand. Use explicit names for variables, functions, classes, etc.
 - Use comments when something is not obvious.
 - When you add a new feature, write tests to protect against regressions.
-  - If you add a new API endpoint, write integration tests for it.
+
+You will find more detailed information in the README.md files of the frontend and the backend :
+
+- [frontend/README.md](frontend/README.md)
+- [backend/README.md](backend/README.md)
 
 ### Pull requests
 
