@@ -5,14 +5,14 @@
     <div id="header">
         <p class="fs-4 text-white text-center"> Voyons ce que les coachs ont à vous proposer !</p>
     </div>
-    <div class="container">
+    <div class="container d-flex">
         <ng-container *ngFor="let recipe of recipes; let i = index">
             <div class="box">
                 <img class="dish-img" [src]="recipe.imageUrl" alt="" (click)="selectRecipe(i)"/>
-                <div class="description darker-blue-bg">
-                    <div (click)="selectRecipe(i)">
+                <div class="description d-flex darker-blue-bg">
+                    <div class="d-flex flex-column justify-content-around align-items-center" (click)="selectRecipe(i)">
                         <p class="dish-title text-center text-white">{{ recipe.dishName }}</p>
-                        <small class="text-white coach-name">Proposé par {{ recipe.coach.name }}</small>
+                        <small class="text-white coach-name align-self-end">Proposé par {{ recipe.coach.name }}</small>
                     </div>
                     <img [src]="recipe.coach.imageUrl" width="70" alt="" (click)="openCoachModal(recipe.coach)"/>
                 </div>

@@ -1,4 +1,4 @@
-import { Observable, catchError, forkJoin, map, of } from "rxjs";
+import { Observable, Subject, catchError, forkJoin, map} from "rxjs";
 import { HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe";
@@ -13,8 +13,9 @@ import { RequestedRecipe } from "../models/requested-recipe";
 @Injectable()
 export class RecipesService {
     // no direct access to data here
-    private lastError: APIError|null = null;
-    private recipes: Recipe[] = [];
+    private lastError: APIError|null    = null;
+    private recipes: Recipe[]           = [];
+    recipesSubject: Subject<Recipe[]>   = new Subject<Recipe[]>();
     private requestedRecipe!: RequestedRecipe;
 
     constructor(private http: HttpClient, private router: Router,
@@ -30,33 +31,50 @@ export class RecipesService {
             catchError(err => []));
     }
 
-    loadRecipes(): Observable<Recipe[]> {
-        if(this.recipes.length > 0) { return of(this.recipes)}
+    loadRecipes(): void {
+        if(this.recipes.length > 0) { 
+            this.recipesSubject.next(this.recipes.slice());
+            return;
+        }
         if(this.requestedRecipe == undefined) {
             this.lastError = {info: {error:''}};
-            return of([])
+            this.recipesSubject.next([]);
+            return;
         }
         const params = this.requestedRecipe.APIFormat(this.requestedIngredientAdapter);
-        return this.http.post<{recipes: Recipe[]}>('/api/recipe', params).pipe(map((
-            (response: {recipes: Recipe[]}) => {
+        this.http.post<{recipes: Recipe[]}>('/api/recipe', params).subscribe({
+            next: (response: {recipes: Recipe[]}) => {
                 this.requestedRecipe.ingredients = [];
                 this.recipes = response.recipes;
-                return response.recipes;
+                if(this.requestedRecipe.withImage) {
+                    this.loadRecipeImages();
+                } else {
+                    console.log('loading but no images wanted');
+                    this.recipes.map((recipe: Recipe) => {
+                        recipe.imageUrl = '/assets_app/empty.jpg';
+                        return recipe;
+                    });
+                    this.recipesSubject.next(this.recipes.slice()); 
+                }
+            },
+            error:(error: HttpErrorResponse) => {
+                this.lastError = {info: error.error, lastRequest: this.requestedRecipe};
+                this.goToHome();
+                this.recipesSubject.next([]);
             }
-        )),
-        catchError((error: HttpErrorResponse) => {
-            this.lastError = {info: error.error, lastRequest: this.requestedRecipe};
-            this.goToHome();
-            return [];
-        }));
+        });
     }
 
-    loadRecipeImages(dishDescriptions: string[]): Observable<string[]> {
-        if(!this.requestedRecipe.withImage) {
-            return of(dishDescriptions.map(() => '/assets_app/empty.jpg'));
-        }
-        return forkJoin(dishDescriptions.map((description) => this.http.post<DishImage>('/api/image', {dishDescription: description})
-            .pipe(map((response: DishImage) => response.url))));
+    loadRecipeImages(): void {
+        const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
+        forkJoin(requests).pipe(map(
+            (results: DishImage[]) => {
+                for(let i = 0; i < this.recipes.length; ++i) {
+                    this.recipes[i].imageUrl = results[i].url;
+                }
+                this.recipesSubject.next(this.recipes.slice()); 
+            }
+        ));
     }
 
     loadHelpForStep(steps: string[], stepIndex: number): Observable<{recipes: Recipe[]}> {

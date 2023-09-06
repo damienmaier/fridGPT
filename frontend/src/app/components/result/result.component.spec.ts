@@ -3,6 +3,7 @@ import { ResultComponent } from './result.component';
 import { createModalServiceSpy, createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { ModalService } from 'src/app/services/modal.service';
+import { LoadingComponent } from '../loading/loading.component';
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -14,7 +15,7 @@ describe('ResultComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     fakeModalService = createModalServiceSpy();
     TestBed.configureTestingModule({
-      declarations: [ResultComponent],
+      declarations: [ResultComponent, LoadingComponent],
       providers: [
         {provide: RecipesService, useValue: fakeRecipeService},
         {provide: ModalService, useValue: fakeModalService}
