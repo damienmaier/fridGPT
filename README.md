@@ -49,7 +49,7 @@ cp .env_template .env
 Run the backend server:
 
 ```bash
-flask --app main run --debug
+python3 -m flask --app main run --debug
 ```
 
 The backend server will automatically reload if you change any of the source files.
