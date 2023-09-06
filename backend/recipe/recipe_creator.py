@@ -1,6 +1,8 @@
 import json
 import pathlib
 
+import cattrs
+
 import ai.gpt
 import data
 
@@ -8,7 +10,7 @@ import data
 class RecipeCreator(ai.gpt.Task):
 
     def __init__(self):
-        super().__init__(max_tokens=3000)
+        super().__init__(max_tokens=3000, timeout=60)
 
     @staticmethod
     def _build_system_message(coach_description: str, recipe_params: data.RecipeParams) -> str:
@@ -61,8 +63,38 @@ class RecipeCreator(ai.gpt.Task):
 
         return prompt
 
-    def post_process_gpt_response(self, gpt_response_content: str):
-        return json.loads(gpt_response_content)
+    def post_process_gpt_response(self, gpt_response_content: str) -> data.Recipe:
+        try:
+            unstructured_response_content = json.loads(gpt_response_content)
+        except json.JSONDecodeError:
+            raise self.PostProcessingError('Unable to decode GPT response as JSON')
+
+        try:
+            recipe = cattrs.structure(unstructured_response_content, data.Recipe)
+        except cattrs.BaseValidationError:
+            raise self.PostProcessingError('Unable to decode GPT response as Recipe')
+
+        self._validate_recipe(recipe)
+
+        return recipe
+
+    def _validate_recipe(self, recipe: data.Recipe) -> None:
+
+        if not 3 <= len(recipe.dishName) <= 50:
+            raise self.PostProcessingError(f'Recipe dish name has invalid length: {len(recipe.dishName)}')
+
+        if not 3 <= len(recipe.dishDescription) <= 200:
+            raise self.PostProcessingError(f'Recipe dish description has invalid length: {len(recipe.dishDescription)}')
+
+        if not 3 <= len(recipe.ingredients) <= 500:
+            raise self.PostProcessingError(f'Recipe ingredients has invalid length: {len(recipe.ingredients)}')
+
+        if not 1 <= len(recipe.steps) <= 30:
+            raise self.PostProcessingError(f'Invalid recipe steps number: {len(recipe.steps)}')
+
+        for step in recipe.steps:
+            if not 3 <= len(step) <= 500:
+                raise self.PostProcessingError(f'Recipe step has invalid length: {len(step)}')
 
 
 create_recipe = RecipeCreator()

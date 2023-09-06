@@ -8,6 +8,9 @@ logger = config.logging.getLogger(__name__)
 
 class HelpMessageCreator(ai.gpt.Task):
 
+    def __init__(self):
+        super().__init__(timeout=60)
+
     def build_gpt_prompt(self, recipe_steps: [str], step_index: int) -> 'ai.gpt.Prompt':
         prompt = ai.gpt.Prompt(f"""
             Voici les instructions d'une recette de cuisine : 
