@@ -24,7 +24,7 @@ def parse_and_validate_help_endpoint_request(unstructured_request) -> HelpEndpoi
         logger.error('received invalid step number')
         raise errors.MalformedRequestError
 
-    if sum(map(len, request.steps)) > 1000:
+    if sum(map(len, request.steps)) > 100002:
         logger.error('received too large request')
         raise errors.TooLargeRequestError
 
