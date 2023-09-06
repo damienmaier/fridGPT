@@ -8,38 +8,38 @@
 </div>
 <div class="row margin-both-sides" id="main-row">
   <!-- ingredients picking menu -->
-  <div class="col">
+  <div class="col debug ingredient-col">
     <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="basket full of vegetables and gruits"/> Ingrédients à disposition </h4>
     </div>
-    <div class="row margin-top d-flex align-items-center debug" id="ingredients-header-title">
+    <div class="row margin-top d-flex align-items-center" id="ingredients-header-title">
       <div class="col col-md-4 col-name">
         <p class="fs-5 text-white">Nom</p>
       </div>
-      <div class="col col-md-2 text-white d-flex justify-content-between align-items-center debug checkbox-col">
+      <div class="col col-md-2 text-white d-flex justify-content-between align-items-center checkbox-col">
         <p class="fs-5 text-white text-center">Obligatoire</p>
       </div>
-      <div class="col col-md-2 col-no-padding debug checkbox-col">
+      <div class="col col-md-2 col-no-padding checkbox-col">
         <p class="fs-5 text-white text-center">Quantité</p>
       </div>
-      <div class="col-md-3 debug quantity-col"></div>
-      <div class="col-sm-1 debug"></div>
+      <div class="col-md-3 quantity-col"></div>
+      <div class="col-sm-1"></div>
     </div>
     <div class="ingredients-content">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
         <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
-          <div class="col col-md-4 col-name debug">
+          <div class="col col-md-4 col-name">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
-          <div class="col col-md-2 d-flex justify-content-center debug checkbox-col">
+          <div class="col col-md-2 d-flex justify-content-center checkbox-col">
             <input type="checkbox" class="form-check-input" name="is-mandatory-toggle" [(ngModel)]="ingredient.mandatory">
           </div>
-          <div class="col col col-md-2 col-toggle debug checkbox-col">
+          <div class="col col col-md-2 col-toggle checkbox-col">
             <div class="d-flex justify-content-center">
               <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="ingredient.displayQuantity">
             </div>
           </div>
-          <div class="col-md-3 col-no-padding d-flex debug quantity-col">
+          <div class="col-md-3 col-no-padding d-flex quantity-col">
             <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
                 <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
@@ -59,7 +59,7 @@
               </ng-template>
             </ng-container>
           </div>
-          <div class="col-sm-1 trash d-flex justify-content-center debug">
+          <div class="col-sm-1 trash d-flex justify-content-center">
             <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
           </div>
         </div>
@@ -78,7 +78,7 @@
       </div>
     </div>
     <!-- ingredients list -->
-    <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
+    <div id="search-list" class="debug" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
         <div class="search-item light-blue-bg hand-cursor text-white round-corners" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 

@@ -292,7 +292,7 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
     }
 
     .checkbox-col {
-        max-width: 25vw;
+        max-width: 40vw;
     }
 
     .quantity-col {
@@ -309,10 +309,14 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
         justify-content: center;
     }
 
-    .col-name {
+    .ingredients-content .col-name {
         max-width: 25vw;
         padding:3px;
         min-width: 25vw;
+    }
+
+    #ingredients-header-title .col-name {
+        max-width: 18vw;
     }
 
     .col .fs-5, .unit-select {
@@ -325,6 +329,12 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
 
     #search-list {
         min-height:20px!important;
+        overflow-y: scroll;
+    }
+
+    .ingredient-col {
+        max-height: 40vh;
+        z-index: 10;
     }
 
     .ingredients-content {
