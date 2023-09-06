@@ -28,6 +28,10 @@ export class LoadingComponent {
   }
 
   goToSleep() {
+    this.audio.pause();
+  }
+
+  ngOnDestroy() {
     this.audio.stop();
   }
 }
