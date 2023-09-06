@@ -52,10 +52,6 @@
     padding-top:0;
 }
 
-.row-ingredient {
-    align-items: center;
-}
-
 .qty-text {
     padding-left:15px;
 }
@@ -166,8 +162,7 @@ p {
 .search-button {
     position: fixed;
     bottom: 10px;
-    right: 80px;
-   
+    right: 70px;
 }
   
 .search-button-content {
@@ -237,7 +232,7 @@ p {
 }
 
 #default-ingredients {
-    width: 75%;
+    width: 50%;
 }
 
 #default-ingredients div {
@@ -245,7 +240,7 @@ p {
 }
 
 #default-ingredients .ingredients-content {
-    max-height: 25vh;
+    max-height: 27vh;
 }
 
 #default-ingredients .default-element {
@@ -296,7 +291,6 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
         padding-left: 0;
     }
 
-
     .image-checkbox {
         display: flex;
     }
@@ -310,11 +304,6 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
         max-width: 40vw;
         padding:3px;
         min-width: 40vw;
-    }
-
-    .row-ingredient {
-        justify-content: flex-start!important;
-        width: 100%;
     }
 
     .col .fs-5, .unit-select {

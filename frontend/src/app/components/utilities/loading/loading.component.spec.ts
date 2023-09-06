@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoadingComponent } from './loading.component';
+import { RotatingImageComponent } from '../rotating-image/rotating-image.component';
 
 describe('LoadingComponent', () => {
   let component: LoadingComponent;
@@ -8,7 +9,7 @@ describe('LoadingComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LoadingComponent]
+      declarations: [LoadingComponent, RotatingImageComponent]
     });
     fixture = TestBed.createComponent(LoadingComponent);
     component = fixture.componentInstance;

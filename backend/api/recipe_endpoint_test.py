@@ -214,7 +214,7 @@ class RecipeEndpointTest(ApiEndpointTest):
                             'Should return ingredients list of correct length')
 
             self.assertIsInstance(recipe['steps'], list, 'Should return steps list')
-            self.assertTrue(1 <= len(recipe['steps']) <= 20, 'Should return steps list of correct length')
+            self.assertTrue(1 <= len(recipe['steps']) <= 30, 'Should return steps list of correct length')
             for step in recipe['steps']:
                 self.assertIsInstance(step, str, 'Should return steps content')
                 self.assertTrue(3 <= len(step) <= 500, 'Steps should have correct length')

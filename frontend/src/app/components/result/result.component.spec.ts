@@ -3,8 +3,9 @@ import { ResultComponent } from './result.component';
 import { createModalServiceSpy, createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { ModalService } from 'src/app/services/modal.service';
-import { LoadingComponent } from '../loading/loading.component';
-import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
+import { LoadingComponent } from '../utilities/loading/loading.component';
+import { RecipeCardComponent } from '../utilities/recipe-card/recipe-card.component';
+import { RotatingImageComponent } from '../utilities/rotating-image/rotating-image.component';
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
@@ -16,7 +17,7 @@ describe('ResultComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     fakeModalService = createModalServiceSpy();
     TestBed.configureTestingModule({
-      declarations: [ResultComponent, LoadingComponent , RecipeCardComponent],
+      declarations: [ResultComponent, LoadingComponent , RecipeCardComponent, RotatingImageComponent],
       providers: [
         {provide: RecipesService, useValue: fakeRecipeService},
         {provide: ModalService, useValue: fakeModalService}
