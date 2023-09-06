@@ -34,7 +34,7 @@ class Task(abc.ABC):
 
         for retry_count in range(self._max_retry_count):
             if retry_count > 0:
-                logger.info(f'retrying gpt task {retry_count}')
+                logger.warning(f'retrying gpt task {retry_count} ...')
 
             try:
                 future_gpt_response_message = concurrent.futures.ThreadPoolExecutor().submit(self._send_gpt_request, prompt)
