@@ -68,6 +68,11 @@
    min-height: 38px;
 }
 
+#time-input {
+    overflow: visible;
+    max-height: 45px;
+}
+
 .col-no-padding {
     padding:0;
 }
@@ -228,7 +233,7 @@ p {
 }
 
 #parameters {
-    gap:15px;
+    gap:10px;
 }
 
 #default-ingredients {
@@ -240,7 +245,7 @@ p {
 }
 
 #default-ingredients .ingredients-content {
-    max-height: 27vh;
+    max-height: 25vh;
 }
 
 #default-ingredients .default-element {
@@ -286,13 +291,17 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
         flex-direction: column;
     }
 
+    .checkbox-col {
+        max-width: 25vw;
+    }
+
+    .quantity-col {
+        width: 40%;
+    }
+
     #main-row .col {
         padding-right: 0;
         padding-left: 0;
-    }
-
-    .image-checkbox {
-        display: flex;
     }
 
     #ingredients-header-title div, .ingredients-content div .trash {
@@ -301,34 +310,17 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
     }
 
     .col-name {
-        max-width: 40vw;
+        max-width: 25vw;
         padding:3px;
-        min-width: 40vw;
+        min-width: 25vw;
     }
 
     .col .fs-5, .unit-select {
         font-size: 1em!important;
     }
 
-    .search-button {
-        bottom: 20px;
-    }
-
-    .col-qty {
-        max-width: 27%;
-        justify-content: flex-start!important;
-    }
-
-    .col-qty .form-quantity {
-        max-width: 40%;
-    }
-
     .unit-select {
         padding:2px;
-    }
-
-    .col-toggle {
-        max-width: 15%;
     }
 
     #search-list {
@@ -340,6 +332,17 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
     }
 
     .search-button {
-        z-index: -1;
+        position: fixed;
+        bottom: 5px;
+        right:20px;
+        z-index: 1;
+    }
+
+    .search-button .icon {
+        display: none;
+    }
+
+    .col-param-title {
+        max-width: 20vw!important;
     }
 }

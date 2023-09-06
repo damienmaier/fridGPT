@@ -12,35 +12,34 @@
     <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="basket full of vegetables and gruits"/> Ingrédients à disposition </h4>
     </div>
-    <div class="row margin-top d-flex align-items-center" id="ingredients-header-title">
+    <div class="row margin-top d-flex align-items-center debug" id="ingredients-header-title">
       <div class="col col-md-4 col-name">
         <p class="fs-5 text-white">Nom</p>
       </div>
-      <div class="col col-md-2 text-white d-flex justify-content-between align-items-center">
+      <div class="col col-md-2 text-white d-flex justify-content-between align-items-center debug checkbox-col">
         <p class="fs-5 text-white text-center">Obligatoire</p>
       </div>
-      <div class="col col-md-2 col-no-padding">
+      <div class="col col-md-2 col-no-padding debug checkbox-col">
         <p class="fs-5 text-white text-center">Quantité</p>
       </div>
-      <div class="col-md-3"></div>
-      <div class="col-sm-1"></div>
+      <div class="col-md-3 debug quantity-col"></div>
+      <div class="col-sm-1 debug"></div>
     </div>
     <div class="ingredients-content">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-        <!-- <div class="row margin-top row-ingredient align-items-center debug" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault"> -->
-        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}">
-          <div class="col col-md-4 col-name">
+        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
+          <div class="col col-md-4 col-name debug">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
-          <div class="col col-md-2 d-flex justify-content-center">
+          <div class="col col-md-2 d-flex justify-content-center debug checkbox-col">
             <input type="checkbox" class="form-check-input" name="is-mandatory-toggle" [(ngModel)]="ingredient.mandatory">
           </div>
-          <div class="col col col-md-2 col-toggle">
+          <div class="col col col-md-2 col-toggle debug checkbox-col">
             <div class="d-flex justify-content-center">
               <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="ingredient.displayQuantity">
             </div>
           </div>
-          <div class="col-md-3 col-no-padding d-flex">
+          <div class="col-md-3 col-no-padding d-flex debug quantity-col">
             <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
                 <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
@@ -60,7 +59,7 @@
               </ng-template>
             </ng-container>
           </div>
-          <div class="col-sm-1 trash d-flex justify-content-center">
+          <div class="col-sm-1 trash d-flex justify-content-center debug">
             <i class="bi bi-trash-fill text-white hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
           </div>
         </div>
@@ -94,14 +93,14 @@
       <h4><img class="margin-both-sides header-icon" src="/assets_app/customization.png" width="30" alt="icon with boxes and forms" /> Personnalisation </h4>
     </div>
     <div class="col d-flex flex-column margin-top" id="parameters">
-      <div class="row d-flex align-items-center">
-        <div class="col col-sm-1">
+      <div class="row d-flex align-items-center margin-top">
+        <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.durationInput != null}" class="btn btn-outline-danger text-white btn-icon" 
             (click)="requestedRecipe.durationInput = flipValue(requestedRecipe.durationInput, {hour:1,minute:0})">
             <i class="bi bi-hourglass-split"></i>
           </button>
         </div>
-        <div class="col">
+        <div class="col d-flex" id="time-input">
           <div class="d-flex align-items-center" [@fadeInOut] *ngIf="requestedRecipe.durationInput != null">
             <p class="fs-6 text-white margin-both-sides">Temps à disposition </p>
             <ngb-timepicker name="duration-input" [(ngModel)]="requestedRecipe.durationInput"></ngb-timepicker>
@@ -109,8 +108,8 @@
         </div>
       </div>
 
-      <div class="row d-flex align-items-center">
-        <div class="col col-sm-1">
+      <div class="row d-flex align-items-center margin-top">
+        <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.personCount != null}" class="btn btn-outline-danger text-white btn-icon" 
             (click)="requestedRecipe.personCount = flipValue(requestedRecipe.personCount, 1)">
             <i class="bi bi-person-fill-add"></i>
@@ -124,8 +123,8 @@
         </div>
       </div>
 
-      <div class="row d-flex align-items-center">
-        <div class="col col-sm-1">
+      <div class="row d-flex align-items-center margin-top">
+        <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.difficulty != null}" class="btn btn-outline-danger text-white btn-icon" 
             (click)="requestedRecipe.difficulty = flipValue(requestedRecipe.difficulty, 1)">
             <i class="bi bi-fire"></i>
