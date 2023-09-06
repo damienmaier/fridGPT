@@ -1,4 +1,4 @@
-<div id="header" class="d-flex justify-content-around align-items-center">
+<div id="header">
     <button type="button" class="btn text-white" id="back-btn" routerLink="/app/result">
         <i class="bi bi-arrow-return-left"></i> Retour à la liste
     </button>
@@ -10,12 +10,12 @@
             <app-recipe-card [recipe]="recipe"></app-recipe-card>
         </div>
         <div class="col" id="col-step">
-            <div id="small-screen-info" class="invisible">
+            <div id="small-screen-info">
                 <div>
-                    <p class="fs-5 text-center text-white">AAA {{ recipe.dishName }}</p>
-                    <small class="text-white align-self-end"> Proposé par {{ recipe.coach.name }}</small>
+                    <p class="fs-4 text-center text-white">{{ recipe.dishName }}</p>
+                    <small class="text-white"> Proposé par {{ recipe.coach.name }}</small>
                 </div>
-                <img class="align-self-end" [src]="recipe.coach.imageUrl" width="80" alt="face of one of our virtual assistants"/>
+                <img (click)="openCoachModal()" [src]="recipe.coach.imageUrl" width="80" alt="face of one of our virtual assistants"/>
             </div>
             <div id="navigation" class="d-flex justify-content-around">
                 <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>

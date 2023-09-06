@@ -11,10 +11,6 @@ html, .main-bg {
     cursor: pointer;
 }
 
-.invisible {
-    display:none;
-}
-
 .light-blue-bg {
     background-color: #468B97;
 }
