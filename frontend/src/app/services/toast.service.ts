@@ -3,11 +3,11 @@ import { Subject } from "rxjs";
 
 @Injectable()
 export class ToastService {
-  private toasts: string[]        = [];
-  toastSubject: Subject<string[]> = new Subject<string[]>();
+  private toasts: any[]        = [];
+  toastSubject: Subject<any[]> = new Subject<any[]>();
 
-  show(body: string): void {
-    this.toasts.push(body);
+  show(body: string, options: any = {}): void {
+    this.toasts.push({ body, ...options });
     this.toastSubject.next(this.toasts.slice());
   }
 

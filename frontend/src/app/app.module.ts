@@ -16,6 +16,8 @@ import { ModalService } from './services/modal.service';
 import { ToastService } from './services/toast.service';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastComponent } from './components/toast/toast.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ToastComponent } from './components/toast/toast.component';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    NgbToastModule
+    NgbToastModule,
+    BrowserAnimationsModule
   ],
   providers: [RecipesService, ModalService, ToastService],
   bootstrap: [AppComponent]

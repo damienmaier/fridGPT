@@ -6,7 +6,7 @@ import { ToastService } from "src/app/services/toast.service";
 function createRecipesServiceSpy() {
     const spyObj = jasmine.createSpyObj<RecipesService>('RecipesService', 
     ['loadIngredients', 'loadRecipes', 'loadRecipeImages', 'loadHelpForStep',
-    'startLoadingRecipe', 'onRecipeSelected', 'goToHome', 'getRecipe', 'fetchLastError', 'buildErrorMessage']);
+    'startLoadingRecipe', 'onRecipeSelected', 'goToHome', 'getRecipe', 'fetchLastError', 'buildAndDisposeOfErrorMessage']);
     spyObj.loadIngredients.and.returnValue(of([]));
     spyObj.loadRecipes.and.returnValue(of([]));
     spyObj.getRecipe.and.returnValue({dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''});

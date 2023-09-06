@@ -6,17 +6,16 @@ import { Router } from "@angular/router";
 import { SuggestedIngredientAdapter } from "../models/suggested-ingredient-adapter";
 import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapter";
 import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested-ingredient";
-import { RequestedIngredient } from "../models/requested-ingredient";
 import { APIError } from "../models/api-error";
 import { DishImage } from "../models/image";
+import { RequestedRecipe } from "../models/requested-recipe";
 
 @Injectable()
 export class RecipesService {
     // no direct access to data here
     private lastError: APIError|null = null;
     private recipes: Recipe[] = [];
-    private ingredients: RequestedIngredient[] = [];
-    loadImages: boolean = false;
+    private requestedRecipe!: RequestedRecipe;
 
     constructor(private http: HttpClient, private router: Router,
         private suggestedIngredientAdapter: SuggestedIngredientAdapter,
@@ -33,24 +32,27 @@ export class RecipesService {
 
     loadRecipes(): Observable<Recipe[]> {
         if(this.recipes.length > 0) { return of(this.recipes)}
-        this.recipes = [];
-        const params = { ingredients: this.ingredients.map(this.requestedIngredientAdapter.adapt) };
+        if(this.requestedRecipe == undefined) {
+            this.lastError = {info: {error:''}};
+            return of([])
+        }
+        const params = this.requestedRecipe.APIFormat(this.requestedIngredientAdapter);
         return this.http.post<{recipes: Recipe[]}>('/api/recipe', params).pipe(map((
             (response: {recipes: Recipe[]}) => {
-                this.ingredients    = [];
-                this.recipes        = response.recipes;
+                this.requestedRecipe.ingredients = [];
+                this.recipes = response.recipes;
                 return response.recipes;
             }
         )),
         catchError((error: HttpErrorResponse) => {
-            this.lastError = {info: error.error, lastIngredients: this.ingredients.slice()};
+            this.lastError = {info: error.error, lastRequest: this.requestedRecipe};
             this.goToHome();
             return [];
         }));
     }
 
     loadRecipeImages(dishDescriptions: string[]): Observable<string[]> {
-        if(!this.loadImages) {
+        if(!this.requestedRecipe.withImage) {
             return of(dishDescriptions.map(() => '/assets_app/empty.jpg'));
         }
         return forkJoin(dishDescriptions.map((description) => this.http.post<DishImage>('/api/image', {dishDescription: description})
@@ -62,9 +64,9 @@ export class RecipesService {
     }
 
     /* --------- navigation related actions ------------------------------ */
-    startLoadingRecipe(ingredients: RequestedIngredient[]): void {
-        this.ingredients = ingredients;
-        this.recipes     = [];
+    startLoadingRecipe(recipe: RequestedRecipe): void {
+        this.requestedRecipe    = recipe;
+        this.recipes            = [];
         this.router.navigate(['/app/result']);
     }
 
@@ -88,7 +90,7 @@ export class RecipesService {
         return this.lastError;
     }
 
-    buildErrorMessage(): string {
+    buildAndDisposeOfErrorMessage(): string {
         if(this.lastError == null) { return ''; }
         let message = '';
         if(this.lastError.info.ingredient) {
