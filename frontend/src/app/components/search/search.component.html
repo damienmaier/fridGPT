@@ -103,7 +103,7 @@
         <div class="col">
           <div class="d-flex align-items-center" [@fadeInOut] *ngIf="requestedRecipe.durationInput != null">
             <p class="fs-6 text-white margin-both-sides">Temps à disposition </p>
-            <ngb-timepicker name="duration-input" [(ngModel)]="requestedRecipe.durationInput" [spinners]="false"></ngb-timepicker>
+            <ngb-timepicker name="duration-input" [(ngModel)]="requestedRecipe.durationInput"></ngb-timepicker>
           </div>
         </div>
       </div>
@@ -144,7 +144,7 @@
 
       <div>
         <input type="checkbox" class="form-check-input" id="image-toggle" [(ngModel)]="requestedRecipe.withImage">
-        <label class="form-check-label margin-both-sides text-white" for="image-toggle">Chaque recette sera accompagnée d'une suggestion de présentation appétissante !</label>   
+        <label class="form-check-label margin-both-sides text-white" for="image-toggle">Chaque recette sera accompagnée d'une photo d'illustration appétissante !</label>   
       </div>
       <div>
           <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">

@@ -25,7 +25,7 @@ class HelpEndpointTest(ApiEndpointTest):
             "steps": [
                 "Préchauffez votre four à 180°C.",
                 "Coupez le boeuf en fines tranches et assaisonnez-le avec du sel et du poivre.",
-                "A" * 1000,
+                "Méditer sur la vie",
                 "Pendant ce temps, épluchez et coupez les courgettes et les carottes en rondelles.",
                 "Dans un plat allant au four, disposez les légumes coupés.",
                 "Ajoutez les tranches de boeuf dorées sur les légumes.",
@@ -66,7 +66,7 @@ class HelpEndpointTest(ApiEndpointTest):
             "steps": [
                 "Préchauffez votre four à 180°C.",
                 "Coupez le boeuf en fines tranches et assaisonnez-le avec du sel et du poivre.",
-                "A" * 1000,
+                "A" * 10001,
                 "Pendant ce temps, épluchez et coupez les courgettes et les carottes en rondelles.",
                 "Dans un plat allant au four, disposez les légumes coupés.",
                 "Ajoutez les tranches de boeuf dorées sur les légumes.",
