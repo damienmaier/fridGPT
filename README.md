@@ -11,6 +11,8 @@ To run this project, you need to have the following installed on your system:
 - python 3.10 and pip
 - Google Chrome (for Angular tests)
 
+**Added on 06.09.2023 : There is an issue with node js 20.06 released today (see [here](https://github.com/angular/angular-cli/issues/25782). To run our project, use a previous node version like 20.5.1**
+
 ### OpenAI API key
 
 You will also need an OpenAI API key.
