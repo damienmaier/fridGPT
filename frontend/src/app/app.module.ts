@@ -17,6 +17,7 @@ import { ToastService } from './services/toast.service';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastComponent } from './components/toast/toast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ResultComponent,
     CoachModalComponent,
     HelpModalComponent,
-    ToastComponent
+    ToastComponent,
+    RecipeCardComponent
   ],
   imports: [
     BrowserModule,

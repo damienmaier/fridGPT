@@ -5,6 +5,7 @@ import { RecipeComponent } from './recipe.component';
 import { LoadingComponent } from '../loading/loading.component';
 import { RouterTestingModule } from "@angular/router/testing";
 import { ModalService } from 'src/app/services/modal.service';
+import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
 
 describe('RecipeComponent', () => {
   let component: RecipeComponent;
@@ -16,7 +17,7 @@ describe('RecipeComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     fakeModalService  = createModalServiceSpy();
     TestBed.configureTestingModule({
-      declarations: [RecipeComponent],
+      declarations: [RecipeComponent, RecipeCardComponent],
       imports: [RouterTestingModule],
       providers: [
         {provide: RecipesService, useValue: fakeRecipeService},
