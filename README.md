@@ -1,6 +1,6 @@
 # fridGPT
 
-## How to setup
+## How to setupa
 
 Follow the instructions below to build and run the project locally.
 
