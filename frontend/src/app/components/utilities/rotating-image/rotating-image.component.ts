@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './rotating-image.component.html',
   styleUrls: ['./rotating-image.component.css']
 })
-export class GearComponent {
+export class RotatingImageComponent {
   @Input() goingFoward!: boolean;
   @Input() imgSource!: string;
   @Input() imgWidth!: number;

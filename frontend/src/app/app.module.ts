@@ -18,7 +18,7 @@ import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastComponent } from './components/utilities/toast/toast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecipeCardComponent } from './components/utilities/recipe-card/recipe-card.component';
-import { GearComponent } from './components/utilities/rotating-image/rotating-image.component';
+import { RotatingImageComponent } from './components/utilities/rotating-image/rotating-image.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { GearComponent } from './components/utilities/rotating-image/rotating-im
     HelpModalComponent,
     ToastComponent,
     RecipeCardComponent,
-    GearComponent
+    RotatingImageComponent
   ],
   imports: [
     BrowserModule,
