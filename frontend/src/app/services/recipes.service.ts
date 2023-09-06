@@ -114,10 +114,12 @@ export class RecipesService {
         if(this.lastError.info.ingredient) {
             message = `Impossible de générer des recettes, L'ingrédient ${this.lastError.info.ingredient.name} est incorrect`;
         } else {
-            if(this.lastError.info.error ===  'insufficient ingredients') {
-                message = 'Impossible de générer des recettes à partir des ingrédients sélectionnés, veuillez compléter la liste.'
-            } else {
-                message = 'Une erreur innatendue est survenue lors de la génération des recettes, veuillez réessayer'
+            switch(this.lastError.info.error) {
+                case 'insufficient ingredients':
+                    message = 'Les coachs jugent les ingrédients sélectionnés insuffisants pour générer des recettes convenables, ajoutez des ingrédients supplémentaires.'
+                    break;
+                default:
+                    message = 'Une erreur innatendue est survenue lors de la génération des recettes, veuillez réessayer'
             }
         }
         this.lastError = null;
