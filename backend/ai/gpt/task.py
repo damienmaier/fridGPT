@@ -37,7 +37,7 @@ class Task(abc.ABC):
                 logger.warning(f'retrying gpt task {retry_count} ...')
 
             try:
-                with multiprocessing.pool.Pool() as pool:
+                with multiprocessing.pool.ThreadPool() as pool:
                     gpt_response_message = pool.apply_async(self._send_gpt_request, (prompt,)).get(timeout=self._timeout)
             except multiprocessing.TimeoutError:
                 logger.warning(f'GPT request timed out after {self._timeout} seconds')
