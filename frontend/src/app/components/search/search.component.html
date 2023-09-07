@@ -25,7 +25,7 @@
       <div class="col-md-3 quantity-col"></div>
       <div class="col-sm-1"></div>
     </div>
-    <div class="ingredients-content">
+    <div class="ingredients-content fancy-scroll">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
         <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
           <div class="col col-md-4 col-name">
@@ -78,7 +78,7 @@
       </div>
     </div>
     <!-- ingredients list -->
-    <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
+    <div class="fancy-scroll" id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
         <div class="search-item light-blue-bg hand-cursor text-white round-corners" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
@@ -159,8 +159,8 @@
               En plus des ingrédients indiqués, les coachs supposent que vous possédez...
             </button>
           </h2>
-          <div ngbAccordionCollapse class="darker-blue-bg">
-            <div ngbAccordionBody class="darker-blue-bg ingredients-content">
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="dark-blue-bg ingredients-content fancy-scroll">
               <ng-template>
                 <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
                   <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault">

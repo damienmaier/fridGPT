@@ -1,6 +1,6 @@
-<div class="modal-body darkest-bg">
+<div class="modal-body text-overflow darkest-bg">
     <img [src]="coach.imageUrl" width="60" alt="face of one of our virtual assistants" />
     <p class="text-white">{{ coach.name }}</p>
-    <p class="text-white">{{ coach.description }}</p>
+    <p class="text-white fancy-scroll description">{{ coach.description }}</p>
     <button type="button" class="btn btn-danger text-white light-red-bg" (click)="close()">Ok !</button>
 </div>

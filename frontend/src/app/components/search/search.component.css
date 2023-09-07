@@ -245,11 +245,11 @@ p {
 }
 
 #default-ingredients .ingredients-content {
-    max-height: 25vh;
+    max-height: 20vh;
 }
 
 #default-ingredients .default-element {
-    border-bottom:3px solid #1D5B79;
+    border-bottom:3px solid #24486D;
     padding: 5px 0px 5px 0px;
 }
 

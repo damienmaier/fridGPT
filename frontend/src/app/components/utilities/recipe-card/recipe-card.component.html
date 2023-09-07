@@ -1,11 +1,13 @@
-<div id="card-container">
-    <div id="dish-title" class="d-flex darker-blue-bg d-flex justify-content-center align-items-center">
-        <p class="fs-6 text-center text-white">{{ recipe.dishName }}</p>
+<div id="card-container" [ngClass]="{'selectable':selectable}">
+    <div id="dish">
+        <div id="dish-title" class="d-flex darker-blue-bg d-flex justify-content-center align-items-center">
+            <p class="fs-6 text-center text-white">{{ recipe.dishName }}</p>
+        </div>
+        <img (click)="selectRecipe()" id="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page"/>
     </div>
-    <img (click)="selectRecipe()" class="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page"/>
     <div id="description" class="d-flex darker-blue-bg" (click)="openCoachModal()">
         <div class="d-flex flex-column justify-content-around">
-            <p class="fs-6 text-center text-white">Proposé par {{ recipe.coach.name }}</p>
+            <p class="fs-6 text-center text-white"> Proposé par <span id="coach-name">{{ recipe.coach.name }}</span></p>
         </div>
         <img id="coach-face" class="align-self-end" [src]="recipe.coach.imageUrl" width="70" alt="face of one of our virtual assistants"/>
     </div>
