@@ -80,10 +80,10 @@ class RecipeCreator(ai.gpt.Task):
 
     def _validate_recipe(self, recipe: data.Recipe) -> None:
 
-        if not 3 <= len(recipe.dishName) <= 50:
+        if not 3 <= len(recipe.dishName) <= 200:
             raise self.PostProcessingError(f'Recipe dish name has invalid length: {len(recipe.dishName)}')
 
-        if not 3 <= len(recipe.dishDescription) <= 200:
+        if not 3 <= len(recipe.dishDescription) <= 500:
             raise self.PostProcessingError(f'Recipe dish description has invalid length: {len(recipe.dishDescription)}')
 
         if not 3 <= len(recipe.ingredients) <= 500:
