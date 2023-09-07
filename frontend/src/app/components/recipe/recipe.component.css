@@ -58,7 +58,7 @@ p {
 #step-counter {
   position: absolute;
   bottom: -40px;
-  left:-40px;
+  left:-30px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -66,9 +66,9 @@ p {
 }
 
 #step-counter p {
-  position:relative;
-  top:20px;
-  left: 50px;
+  position: relative;
+  top:20%;
+  left: 40%;
   display: inline;
 }
 
