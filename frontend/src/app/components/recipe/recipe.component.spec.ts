@@ -75,6 +75,6 @@ describe('RecipeComponent', () => {
     fixture.detectChanges();
     click(fixture, 'help-btn');
     fixture.detectChanges();
-    expect(fakeModalService.openCoachModal).toHaveBeenCalledWith(fakeRecipe.coach);
+    expect(fakeModalService.openHelpModal).toHaveBeenCalledWith(fakeRecipe.steps, 0);
   });
 });

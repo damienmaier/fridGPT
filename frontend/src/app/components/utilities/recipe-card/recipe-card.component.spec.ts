@@ -30,6 +30,8 @@ describe('RecipeCardComponent', () => {
     fixture    = TestBed.createComponent(RecipeCardComponent);
     component  = fixture.componentInstance;
     component.recipe = fakeRecipe;
+    component.selectable = false;
+    component.recipeId = 0;
     fixture.detectChanges();
   });
 
@@ -49,8 +51,8 @@ describe('RecipeCardComponent', () => {
   });
 
   it('clicking on the coach should trigger the coach modal with the right parameters', () => {
-    click(fixture, 'dish-img');
+    click(fixture, 'coach-description');
     fixture.detectChanges();
-    expect(fakeRecipeService.onRecipeSelected).not.toHaveBeenCalled();
+    expect(fakeModalService.openCoachModal).toHaveBeenCalledWith(fakeRecipe.coach);
   });
 });
