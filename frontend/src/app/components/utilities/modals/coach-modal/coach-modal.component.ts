@@ -7,6 +7,9 @@ import { Coach } from 'src/app/models/recipe';
   templateUrl: './coach-modal.component.html',
   styleUrls: ['./coach-modal.component.css']
 })
+/**
+ * Modal that displays informations about a coach (name, image, description) and can be opened from the recipe and result components
+**/
 export class CoachModalComponent {
   @Input() coach!: Coach;
   

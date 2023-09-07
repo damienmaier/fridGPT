@@ -20,6 +20,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ]),
   ],
 })
+/**
+ * Component that contains the ingredients selection, the recipe customization and a button to trigger the recipes generation 
+**/
 export class SearchComponent implements OnDestroy {
   private baseIngredients: SuggestedIngredient[]  = [];
   filteredIngredients: SuggestedIngredient[]      = [];
@@ -55,6 +58,9 @@ export class SearchComponent implements OnDestroy {
     );
   }
 
+  /**
+   * when the start button is pressed, a navigation will occur so we arrive to the result component where the recipes will be loaded
+   */
   startloadingRecipes(): void {
     if(this.requestedRecipe.ingredients.length === 0) {
       this.toastService.show('Veuillez ajouter au moins un ingrédient');
@@ -63,6 +69,9 @@ export class SearchComponent implements OnDestroy {
     }
   }
 
+  /**
+   * is triggered when the user types something in the search bar
+   */
   filter(): void {
     if (this.noData()) { return; }
     if (this.currentSearch === '') {
@@ -87,6 +96,10 @@ export class SearchComponent implements OnDestroy {
     this.filteredIngredients.sort((e1:SuggestedIngredient,e2:SuggestedIngredient) => e1.name > e2.name ? 1 : -1);
   }
 
+  /**
+   * is triggered when the user selects an item in the list under the search bar
+   * @param ingredient new ingredient selected
+   */
   addIngredientToList(ingredient: SuggestedIngredient): void {
     if(ingredient.selected) { return; } // no duplicates
     this.requestedRecipe.ingredients.unshift(ingredient.toRequestedIngredient());
@@ -94,14 +107,26 @@ export class SearchComponent implements OnDestroy {
     this.filteredIngredients  = [];
   }
 
+  /**
+   * is triggered when the user clicks on the trash icon on one of the ingredient row in the ingredients selection table
+   * @param nameToRemove ingredient name to remove
+   */
   removeIngredientFromList(nameToRemove: string): void {
     this.requestedRecipe.ingredients = this.requestedRecipe.ingredients.filter((ingredient: RequestedIngredient) => ingredient.name != nameToRemove);
   }
 
+  /**
+   * true if no ingredients are loaded from the API (something must be wrong)
+   * @returns the length of the loaded ingredients list
+   */
   noData(): boolean {
     return this.baseIngredients.length <= 0;
   }
 
+  /**
+   * calculates the maximum height for the search list according to how many ingredients are already in the selected ingredients list displayed on top of the search bar
+   * @returns a height in pixels
+   */
   searchListHeight(): string {
     if(this.requestedRecipe.ingredients.length <= 7) {
       return (window.screen.height * 0.65 - this.requestedRecipe.ingredients.length * 34) + 'px';
@@ -110,11 +135,17 @@ export class SearchComponent implements OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {
-    this.ingredientsSub.unsubscribe();
-  }
-
+  /**
+   * returns null if the current value is not null or the contrary
+   * @param currentValue current parameter value
+   * @param defaultValue value to use for the parameter
+   * @returns 
+   */
   flipValue<T>(currentValue: T|null, defaultValue: T): T | null {
     return currentValue == null ? defaultValue : null;
+  }
+
+  ngOnDestroy(): void {
+    this.ingredientsSub.unsubscribe();
   }
 }

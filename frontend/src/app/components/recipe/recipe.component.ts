@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { Coach, Recipe } from 'src/app/models/recipe';
+import { Recipe } from 'src/app/models/recipe';
 import { ModalService } from 'src/app/services/modal.service';
 import { RecipesService } from 'src/app/services/recipes.service';
 
@@ -9,6 +9,9 @@ import { RecipesService } from 'src/app/services/recipes.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
 })
+/**
+ * Component that will display one of the generated recipes that the user selected
+**/
 export class RecipeComponent {
   recipe!: Recipe;
   currentStep: string = '';
@@ -28,6 +31,10 @@ export class RecipeComponent {
     this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>'); 
   }
 
+  /**
+   * updates the displayed step
+   * @param forward navigation direction between recipe steps
+   */
   nextStep(forward: boolean) {
     this.currentStepIndex = (this.currentStepIndex + (forward ? 1 : -1)) % (this.recipe.steps.length + 1);
     if (this.currentStepIndex < 0) {
@@ -37,10 +44,16 @@ export class RecipeComponent {
       this.recipe.ingredients : this.recipe.steps[this.currentStepIndex];
   }
 
+  /**
+   * triggers a modal that will display information about the coach that suggested the recipe
+   */
   openCoachModal(): void {
     this.modalService.openCoachModal(this.recipe.coach);
   }
 
+  /**
+   * triggers a modal that will display more information about the current step (will call the API to get this info)
+   */
   openHelpModal(): void {
     this.loadingHelp = true;
     this.modalService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(

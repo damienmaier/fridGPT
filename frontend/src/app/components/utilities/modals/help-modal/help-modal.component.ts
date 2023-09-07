@@ -6,6 +6,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './help-modal.component.html',
   styleUrls: ['./help-modal.component.css']
 })
+/**
+ * Modal that displays informations about a recipe step and can be opened from the recipe component
+**/
 export class HelpModalComponent {
   @Input() explanation!: string[];
 

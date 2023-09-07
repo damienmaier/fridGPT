@@ -6,6 +6,9 @@ interface DurationInput {
     minute: number
 }
 
+/**
+ * used by the frontend to store all the parameters to send to the API for it to generate recipes
+ */
 export class RequestedRecipe {
     ingredients: RequestedIngredient[];
     withImage: boolean;
@@ -22,7 +25,11 @@ export class RequestedRecipe {
         this.ingredients                = [];
     }
     
-
+    /**
+     * returns the correct recipe request format understood by the API
+     * @param requestedIngredientAdapter method to format the ingredients to send to the API
+     * @returns a structure describing a recipe request
+     */
     APIFormat(requestedIngredientAdapter: RequestedIngredientAdapter): object {
         return {
             ingredients: this.ingredients.map(requestedIngredientAdapter.adapt),
@@ -35,6 +42,10 @@ export class RequestedRecipe {
         }
     }
 
+    /**
+     * translates the duration into hours (for the API)
+     * @returns a number of hours
+     */
     private durationInputToHours(): number | null {
         return this.durationInput !== null ? (this.durationInput.hour + (this.durationInput.minute / 60)) : null;
     }

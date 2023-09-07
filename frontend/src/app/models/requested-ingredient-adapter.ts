@@ -5,6 +5,9 @@ import { RequestedIngredient, RequestedIngredientAPI } from "./requested-ingredi
 @Injectable({
   providedIn: "root",
 })
+/**
+ * used to format the ingredients we want to send to the API for it to generate recipes
+ */
 export class RequestedIngredientAdapter implements Adapter<RequestedIngredientAPI> {
   adapt(ingredient: RequestedIngredient): RequestedIngredientAPI {
     let ingredientToSend = {
@@ -18,5 +21,3 @@ export class RequestedIngredientAdapter implements Adapter<RequestedIngredientAP
     return ingredientToSend;
   }
 }
-
-

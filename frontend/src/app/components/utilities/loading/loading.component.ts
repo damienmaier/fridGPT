@@ -6,6 +6,9 @@ import * as Howler from 'howler';
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.css']
 })
+/**
+ * Component that will be displayed during the recipes generation, is used as a loading screen
+**/
 export class LoadingComponent {
   private audio!: Howler.Howl;
   constructor() {}
@@ -23,10 +26,16 @@ export class LoadingComponent {
     return this.audio && this.audio.playing();
   }
 
+  /**
+   * is triggered when we click on the sleeping fridge icon, starts the music
+   */
   wakeUp() {
     this.audio.play();
   }
 
+  /**
+   * is triggered when we click on the singing fridge icon, stops the music
+   */
   goToSleep() {
     this.audio.pause();
   }

@@ -23,6 +23,9 @@ export class RecipesService {
         private requestedIngredientAdapter: RequestedIngredientAdapter) {}
 
     /* --------- HTTP requests ------------------------------ */
+    /**
+     * @returns a list of ingredients to choose directly from
+     */
     loadIngredients(): Observable<SuggestedIngredient[]> {
         return this.http.get<{ingredients: SuggestedIngredientAPI[]}>('/api/ingredients').pipe(
             map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
@@ -31,6 +34,9 @@ export class RecipesService {
             catchError(err => []));
     }
 
+    /**
+     * @returns generates recipes based on the user requirements (ingredients, customization...)
+     */
     loadRecipes(): void {
         if(this.recipes.length > 0) { 
             this.recipesSubject.next(this.recipes.slice());
@@ -61,6 +67,9 @@ export class RecipesService {
         });
     }
 
+    /**
+     * generates images for the already loaded recipes (need their descriptions)
+     */
     loadRecipeImages(): void {
         const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
         forkJoin(requests).subscribe({
@@ -82,26 +91,48 @@ export class RecipesService {
         this.recipesSubject.next([]);
     }
 
+    /**
+     * triggers an API call that will reformulate a step
+     * @param steps recipes's steps
+     * @param stepIndex index of the step we are interested in
+     * @returns a structure containing a more detailed explanation
+     */
     loadHelpForStep(steps: string[], stepIndex: number): Observable<{helpText: string}> {
         return this.http.post<{helpText: string}>('/api/help', {steps, stepIndex});
     }
 
     /* --------- navigation related actions ------------------------------ */
+    /**
+     * triggers the navigation to the result component
+     * @param recipe user requirements to give to the API for it to generate recipes
+     */
     startLoadingRecipe(recipe: RequestedRecipe): void {
         this.requestedRecipe    = recipe;
         this.recipes            = [];
         this.router.navigate(['/app/result']);
     }
 
+    /**
+     * triggers the navigation to the recipe component
+     * @param index recipe index
+     */
     onRecipeSelected(index: number): void {
         this.router.navigate(['/app/recipe', index]);
     }
 
+    /**
+     * triggers the navigation to the search component
+     */
     goToHome(): void {
         this.router.navigate(['/app']);
     }
 
     /* --------- other data requests from components ------------------------------ */
+    /**
+     * search a recipe based on its index
+     * @param index recipe index
+     * @returns a recipe
+     */
     getRecipe(index: number): Recipe {
         if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
             return {dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''};
@@ -113,6 +144,9 @@ export class RecipesService {
         return this.lastError;
     }
 
+    /**
+     * @returns a user friendly error message
+     */
     buildAndDisposeOfErrorMessage(): string {
         if(this.lastError == null) { return ''; }
         let message = '';

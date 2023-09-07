@@ -1,10 +1,16 @@
+/**
+ * used by the API when it sends the available ingredients to choose from when adding ingredients before loading recipes
+ */
 export interface SuggestedIngredientAPI {
     name: string;
     unit: string;
     autoAdd: boolean;
     defaultQuantity: number;
 }
-  
+
+/**
+ * used by the frontend to manipulate the available ingredients from the search list
+ */
 export class SuggestedIngredient implements SuggestedIngredientAPI {
     name!: string;
     unit!: string;

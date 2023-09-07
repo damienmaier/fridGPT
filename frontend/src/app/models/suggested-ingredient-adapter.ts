@@ -5,6 +5,9 @@ import { SuggestedIngredient, SuggestedIngredientAPI } from "./suggested-ingredi
 @Injectable({
   providedIn: "root",
 })
+/**
+ * Used when the API sends the available ingredients list and we translate them into our own extended type to manipulate them
+ */
 export class SuggestedIngredientAdapter implements Adapter<SuggestedIngredient> {
   adapt(item: SuggestedIngredientAPI): SuggestedIngredient {
     return new SuggestedIngredient(item.name, item.unit, item.autoAdd, item.defaultQuantity);
