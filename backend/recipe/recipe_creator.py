@@ -36,15 +36,15 @@ class RecipeCreator(ai.gpt.Task):
             'Tu ne peux pas utiliser des ingrédients qui ne sont pas dans la liste.',
 
             difficulty_instruction=
-            f'La recette doit être réalisable par quelqu\'un ayant un niveau de cuisine {difficulty_word()}.\n'
+            f'La recette doit être réalisable par quelqu\'un ayant un niveau de cuisine {difficulty_word()}.\n\n'
             if recipe_params.difficulty else "",
 
             number_of_persons_instruction=
-            f'La recette est pour {recipe_params.personCount} personnes.\n'
+            f'La recette est pour {recipe_params.personCount} personnes.\n\n'
             if recipe_params.personCount else "",
 
             time_instruction=
-            f'La recette doit être réalisable en {recipe_params.duration} heures.\n'
+            f'La recette doit être réalisable en {recipe_params.duration} heures.\n\n'
             if recipe_params.duration else "",
         )
 
@@ -80,10 +80,10 @@ class RecipeCreator(ai.gpt.Task):
 
     def _validate_recipe(self, recipe: data.Recipe) -> None:
 
-        if not 3 <= len(recipe.dishName) <= 50:
+        if not 3 <= len(recipe.dishName) <= 200:
             raise self.PostProcessingError(f'Recipe dish name has invalid length: {len(recipe.dishName)}')
 
-        if not 3 <= len(recipe.dishDescription) <= 200:
+        if not 3 <= len(recipe.dishDescription) <= 500:
             raise self.PostProcessingError(f'Recipe dish description has invalid length: {len(recipe.dishDescription)}')
 
         if not 3 <= len(recipe.ingredients) <= 500:
