@@ -44,18 +44,21 @@ p {
     filter:drop-shadow(.2rem .2rem .2rem black)
 }
 
-#card-container:hover {
+.selectable #dish:hover, #description:hover {
     cursor: pointer;
 }
 
-#dish:hover img {
+.selectable #dish:hover img {
     opacity: 0.8;
 }
 
 #description, #dish-title {
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    background: linear-gradient(to right, #468B97 50%, #24486D 50%);
+    transition: all .5s ease-out;
+    background-position: right bottom;
+    background-size: 200% 100%;
 }
 
-#description:hover, #dish:hover #dish-title {
-    box-shadow: inset 400px 0 0 0 rgba(70, 139, 151, 0.5);
+#description:hover, .selectable #dish:hover #dish-title {
+    background-position: left bottom;
 }
