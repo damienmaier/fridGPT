@@ -11,7 +11,7 @@ class SufficientIngredientsValidator(ai.gpt.Classifier):
             "Ton travail est d'indiquer si les ingrédients sont suffisants pour cuisiner un plat. "
             "Tu dois tenir compte du fait qu'il n'y a aucun autre ingrédient disponible. "
             "Pour que les ingrédients soient suffisants, il faut au moins qu'ils incluent un aliment nourrissant "
-            "(par exemple un féculent, une céréale, une légumineuse, des légumes, des fruits, etc.) "
+            "(par exemple une viande ou un poisson ou un féculent ou une céréale ou une légumineuse ou des légumes ou des fruits, etc.) "
             "dans une quanitité suffisante."
         )
 
