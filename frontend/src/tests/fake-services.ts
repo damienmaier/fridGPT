@@ -11,7 +11,9 @@ function createRecipesServiceSpy() {
     'startLoadingRecipe', 'onRecipeSelected', 'goToHome', 'getRecipe', 'fetchLastError', 'buildAndDisposeOfErrorMessage']);
     spyObj.recipesSubject = new Subject<Recipe[]>();
     spyObj.loadIngredients.and.returnValue(of([]));
-    spyObj.loadRecipes.and.returnValue();
+    spyObj.loadRecipes.and.callFake(() => {
+        spyObj.recipesSubject.next([createFakeRecipe()]);
+    });
     spyObj.getRecipe.and.returnValue(createFakeRecipe());
     spyObj.loadHelpForStep.and.returnValue(of({helpText: 'help'}));
     return spyObj;
@@ -25,9 +27,11 @@ function createModalServiceSpy() {
 }
 
 function createToastServiceSpy() {
-    const spyObj  = jasmine.createSpyObj<ToastService>('ToastService', 
-    ['show', 'remove']);
+    const spyObj  = jasmine.createSpyObj<ToastService>('ToastService', ['show', 'remove']);
     spyObj.toastSubject = new Subject<string[]>();
+    spyObj.show.and.callFake(() => {
+        spyObj.toastSubject.next([{ body: 'error', classname: 'bg-danger text-light'}]);
+    });
      return spyObj;
 }
 
