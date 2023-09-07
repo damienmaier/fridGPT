@@ -10,6 +10,8 @@ p {
     top: 0;
     z-index: 10;
     height: 10%;
+    display: flex;
+    justify-content: center;
 }
 
 #description, #dish-title {
@@ -61,4 +63,13 @@ p {
 
 #description:hover, .selectable #dish:hover #dish-title {
     background-position: left bottom;
+}
+
+@media screen and (max-width: 770px) {
+    #dish-title p {
+        width: 80%;
+    }
+    #dish-title {
+        justify-content: end;
+    }
 }

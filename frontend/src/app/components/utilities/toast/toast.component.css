@@ -10,3 +10,9 @@
 ngb-toast {
   padding:10px;
 }
+
+@media screen and (max-width: 770px) {
+  :host {
+    left: 0%;
+  }
+}

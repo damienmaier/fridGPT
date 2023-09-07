@@ -1,6 +1,6 @@
 <div id="card-container" [ngClass]="{'selectable':selectable}">
     <div id="dish">
-        <div id="dish-title" class="d-flex darker-blue-bg d-flex justify-content-center align-items-center">
+        <div id="dish-title" class="darker-blue-bg d-flex align-items-center">
             <p class="fs-6 text-center text-white">{{ recipe.dishName }}</p>
         </div>
         <img (click)="selectRecipe()" id="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page"/>

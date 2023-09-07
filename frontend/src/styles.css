@@ -40,12 +40,16 @@ html, .main-bg {
     background-color: #1D5B79;
 }
 
-.tiny-fancy-scroll::-webkit-scrollbar-thumb, .fancy-scroll::-webkit-scrollbar-thumb {
+.fancy-scroll::-webkit-scrollbar-thumb {
     background-color: #24486D;
 }
 
 .tiny-fancy-scroll::-webkit-scrollbar {
     height: 8px;
+}
+
+.tiny-fancy-scroll::-webkit-scrollbar-thumb {
+    background-color:#EF6262;
 }
 
 .text-overflow {

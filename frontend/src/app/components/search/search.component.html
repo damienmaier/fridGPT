@@ -8,7 +8,7 @@
 </div>
 <div class="row margin-both-sides" id="main-row">
   <!-- ingredients picking menu -->
-  <div class="col ingredient-col">
+  <div class="col" id="ingredient-col">
     <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="basket full of vegetables and gruits"/> Ingrédients à disposition </h4>
     </div>
@@ -27,7 +27,7 @@
     </div>
     <div class="ingredients-content fancy-scroll">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
+        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}">
           <div class="col col-md-4 col-name">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
@@ -39,7 +39,7 @@
               <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="ingredient.displayQuantity">
             </div>
           </div>
-          <div class="col-md-3 col-no-padding d-flex quantity-col">
+          <div class="col-md-3 col-no-padding d-flex quantity-col" [ngClass]="{'col-hide-qty': !ingredient.displayQuantity}">
             <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
                 <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
@@ -94,11 +94,11 @@
     </div>
     <div class="col d-flex flex-column margin-top" id="parameters">
       
-      <div>
+      <div class="checkbox-param">
         <input type="checkbox" class="form-check-input" id="image-toggle" [(ngModel)]="requestedRecipe.withImage">
         <label class="form-check-label margin-both-sides text-white" for="image-toggle">Chaque recette sera accompagnée d'une photo d'illustration appétissante !</label>   
       </div>
-      <div>
+      <div class="checkbox-param">
           <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">
           <label class="form-check-label margin-both-sides text-white" for="shopping-toggle">Les coachs peuvent utiliser des ingrédients qui ne sont pas dans la liste</label>   
       </div>
