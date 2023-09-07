@@ -3,12 +3,16 @@ import { RecipeCardComponent } from './recipe-card.component';
 import { ModalService } from 'src/app/services/modal.service';
 import { createModalServiceSpy, createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
+import { createFakeRecipe } from 'src/tests/model.test-helper';
+import { click, findElement } from 'src/tests/main.test-helper';
+import { Recipe } from 'src/app/models/recipe';
 
 describe('RecipeCardComponent', () => {
   let component: RecipeCardComponent;
   let fixture: ComponentFixture<RecipeCardComponent>;
   let fakeModalService: ModalService;
   let fakeRecipeService: RecipesService;
+  const fakeRecipe: Recipe = createFakeRecipe();
 
   beforeEach(async () => {
     fakeModalService  = createModalServiceSpy();
@@ -25,12 +29,28 @@ describe('RecipeCardComponent', () => {
   beforeEach(() => {
     fixture    = TestBed.createComponent(RecipeCardComponent);
     component  = fixture.componentInstance;
-    component.recipe = {dishName:'', dishDescription: '', ingredients: '',steps: [], imageUrl: '',
-      coach: {name: '', description: '', imageUrl:''}};
+    component.recipe = fakeRecipe;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display the dish name and the coach name', () => {
+    expect(findElement(fixture, 'dish-name').nativeElement.textContent).toContain(fakeRecipe.dishName);
+    expect(findElement(fixture, 'coach-name').nativeElement.textContent).toContain(` Proposé par ${fakeRecipe.coach.name}`);
+  });
+
+  it('should not redirect to recipe when clicking on it and should not have the selected class', () => {
+    click(fixture, 'dish-img');
+    fixture.detectChanges();
+    expect(fakeRecipeService.onRecipeSelected).not.toHaveBeenCalled();
+  });
+
+  it('clicking on the coach should trigger the coach modal with the right parameters', () => {
+    click(fixture, 'dish-img');
+    fixture.detectChanges();
+    expect(fakeRecipeService.onRecipeSelected).not.toHaveBeenCalled();
   });
 });
