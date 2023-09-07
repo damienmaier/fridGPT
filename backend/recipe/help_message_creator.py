@@ -27,6 +27,8 @@ class HelpMessageCreator(ai.gpt.Task):
             Ecris une explication plus détaillée de cette étape. Si l'étape inclut des termes techniques de cuisine,
             explique les.
             
+            Ton explication doit avoir une longueur de 4 ou 5 phrases au maximum.
+            
             Les autres étapes de la recette t'ont été fournies pour que tu comprennes le contexte, mais ton explication
             doit concerner uniquement l'étape mentionnée ci-dessus.        
         """)
