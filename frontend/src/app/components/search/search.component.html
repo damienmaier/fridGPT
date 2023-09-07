@@ -27,7 +27,7 @@
     </div>
     <div class="ingredients-content fancy-scroll">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}">
+        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
           <div class="col col-md-4 col-name">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
