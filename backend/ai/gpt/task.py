@@ -18,7 +18,7 @@ class Task(abc.ABC):
             frequency_penalty: float = 0,
             presence_penalty: float = 0,
             timeout: int = 10,
-            max_retry_count: int = 3,
+            max_retry_count: int = 5,
     ):
 
         self._temperature = temperature
