@@ -39,6 +39,8 @@ Utilise des épices dans ta recette. Toutes les épices possibles sont disponibl
 
 Ne numérote pas les étapes.
 
+{difficulty_instruction}{number_of_persons_instruction}{time_instruction}
+
 2.
 
 Liste les ingrédients utilisés dans la recette. Tu ne dois pas inclure les ingrédients qui n'ont pas été utilisés.
@@ -57,4 +59,3 @@ Génère une brève description visuelle du plat.
 
 
 
-{difficulty_instruction}{number_of_persons_instruction}{time_instruction}

@@ -36,15 +36,15 @@ class RecipeCreator(ai.gpt.Task):
             'Tu ne peux pas utiliser des ingrédients qui ne sont pas dans la liste.',
 
             difficulty_instruction=
-            f'La recette doit être réalisable par quelqu\'un ayant un niveau de cuisine {difficulty_word()}.\n'
+            f'La recette doit être réalisable par quelqu\'un ayant un niveau de cuisine {difficulty_word()}.\n\n'
             if recipe_params.difficulty else "",
 
             number_of_persons_instruction=
-            f'La recette est pour {recipe_params.personCount} personnes.\n'
+            f'La recette est pour {recipe_params.personCount} personnes.\n\n'
             if recipe_params.personCount else "",
 
             time_instruction=
-            f'La recette doit être réalisable en {recipe_params.duration} heures.\n'
+            f'La recette doit être réalisable en {recipe_params.duration} heures.\n\n'
             if recipe_params.duration else "",
         )
 

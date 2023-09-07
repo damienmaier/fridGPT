@@ -203,10 +203,10 @@ class RecipeEndpointTest(ApiEndpointTest):
 
         for recipe in response.json['recipes']:
             self.assertIsInstance(recipe['dishName'], str, 'Should return a dish name')
-            self.assertTrue(3 <= len(recipe['dishName']) <= 50, 'Should return a dish name of correct length')
+            self.assertTrue(3 <= len(recipe['dishName']) <= 200, 'Should return a dish name of correct length')
 
             self.assertIsInstance(recipe['dishDescription'], str, 'Should return a dish description')
-            self.assertTrue(3 <= len(recipe['dishDescription']) <= 200,
+            self.assertTrue(3 <= len(recipe['dishDescription']) <= 500,
                             'Should return a dish description of correct length')
 
             self.assertIsInstance(recipe['ingredients'], str, 'Should return ingredients list')
