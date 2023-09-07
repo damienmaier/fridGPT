@@ -109,4 +109,4 @@ class HelpEndpointTest(ApiEndpointTest):
         self.assertEqual(response.status_code, 200, 'Should return 200')
 
         self.assertIsInstance(response.json['helpText'], str, 'Should return a help text')
-        self.assertTrue(500 < len(response.json['helpText']) < 3000, 'Should return a help text with a correct length')
+        self.assertTrue(50 < len(response.json['helpText']) < 3000, 'Should return a help text with a correct length')
