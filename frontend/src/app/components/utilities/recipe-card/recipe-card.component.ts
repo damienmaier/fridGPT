@@ -11,6 +11,7 @@ import { RecipesService } from 'src/app/services/recipes.service';
 export class RecipeCardComponent {
   @Input() recipe!: Recipe;
   @Input() recipeId!: number;
+  @Input() selectable!: boolean;
 
   constructor(private modalService: ModalService, private recipeService: RecipesService) {}
 
@@ -19,7 +20,7 @@ export class RecipeCardComponent {
   }
 
   selectRecipe(): void {
-    if(this.recipeId !== undefined) {
+    if(this.selectable && this.recipeId !== undefined) {
       this.recipeService.onRecipeSelected(this.recipeId);
     }
   }

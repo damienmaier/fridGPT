@@ -240,16 +240,12 @@ p {
     width: 50%;
 }
 
-#default-ingredients div {
-    width: 100%;
-}
-
 #default-ingredients .ingredients-content {
-    max-height: 25vh;
+    max-height: 20vh;
 }
 
 #default-ingredients .default-element {
-    border-bottom:3px solid #1D5B79;
+    border-bottom:3px solid #24486D;
     padding: 5px 0px 5px 0px;
 }
 
@@ -332,20 +328,20 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
         overflow-y: scroll;
     }
 
-    .ingredient-col {
-        max-height: 40vh;
+    #ingredient-col {
+        height: 100%;
         z-index: 10;
     }
 
     .ingredients-content {
-        max-height: 30vh;
+        max-height: 15vh;
     }
 
     .search-button {
         position: fixed;
         bottom: 5px;
         right:20px;
-        z-index: 1;
+        z-index: 100;
     }
 
     .search-button .icon {
@@ -354,5 +350,24 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
 
     .col-param-title {
         max-width: 20vw!important;
+    }
+
+    .checkbox-param {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .checkbox-param label {
+        max-width: 90%;
+    }
+
+    #default-ingredients {
+        width: 95%;
+        margin-bottom: 70px;
+    }
+
+    .col-hide-qty {
+        width: 0;
     }
 }

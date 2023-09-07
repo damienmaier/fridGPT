@@ -104,7 +104,7 @@ export class SearchComponent implements OnDestroy {
 
   searchListHeight(): string {
     if(this.requestedRecipe.ingredients.length <= 7) {
-      return (window.screen.height * 0.6 - this.requestedRecipe.ingredients.length * 34) + 'px';
+      return (window.screen.height * 0.65 - this.requestedRecipe.ingredients.length * 34) + 'px';
     } else {
       return window.screen.height * 0.2 + 'px';
     }

@@ -8,7 +8,7 @@
 </div>
 <div class="row margin-both-sides" id="main-row">
   <!-- ingredients picking menu -->
-  <div class="col ingredient-col">
+  <div class="col" id="ingredient-col">
     <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="basket full of vegetables and gruits"/> Ingrédients à disposition </h4>
     </div>
@@ -25,7 +25,7 @@
       <div class="col-md-3 quantity-col"></div>
       <div class="col-sm-1"></div>
     </div>
-    <div class="ingredients-content">
+    <div class="ingredients-content fancy-scroll">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
         <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
           <div class="col col-md-4 col-name">
@@ -39,7 +39,7 @@
               <input name="quantity-toggle" class="form-check-input" type="checkbox" role="switch" [(ngModel)]="ingredient.displayQuantity">
             </div>
           </div>
-          <div class="col-md-3 col-no-padding d-flex quantity-col">
+          <div class="col-md-3 col-no-padding d-flex quantity-col" [ngClass]="{'col-hide-qty': !ingredient.displayQuantity}">
             <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
                 <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
@@ -78,7 +78,7 @@
       </div>
     </div>
     <!-- ingredients list -->
-    <div id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
+    <div class="fancy-scroll" id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
         <div class="search-item light-blue-bg hand-cursor text-white round-corners" (click)="addIngredientToList(item)" [ngClass]="{'selected-item': item.selected}">
           <button class="btn button-item" ><i class="bi bi-plus-lg"></i></button> 
@@ -93,6 +93,16 @@
       <h4><img class="margin-both-sides header-icon" src="/assets_app/customization.png" width="30" alt="icon with boxes and forms" /> Personnalisation </h4>
     </div>
     <div class="col d-flex flex-column margin-top" id="parameters">
+      
+      <div class="checkbox-param">
+        <input type="checkbox" class="form-check-input" id="image-toggle" [(ngModel)]="requestedRecipe.withImage">
+        <label class="form-check-label margin-both-sides text-white" for="image-toggle">Chaque recette sera accompagnée d'une photo d'illustration appétissante !</label>   
+      </div>
+      <div class="checkbox-param">
+          <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">
+          <label class="form-check-label margin-both-sides text-white" for="shopping-toggle">Les coachs peuvent utiliser des ingrédients qui ne sont pas dans la liste</label>   
+      </div>
+
       <div class="row d-flex align-items-center margin-top">
         <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.durationInput != null}" class="btn btn-outline-danger text-white btn-icon" 
@@ -142,32 +152,23 @@
         </div>
       </div>
 
-      <div>
-        <input type="checkbox" class="form-check-input" id="image-toggle" [(ngModel)]="requestedRecipe.withImage">
-        <label class="form-check-label margin-both-sides text-white" for="image-toggle">Chaque recette sera accompagnée d'une photo d'illustration appétissante !</label>   
-      </div>
-      <div>
-          <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">
-          <label class="form-check-label margin-both-sides text-white" for="shopping-toggle">La liste des ingrédients peut être complétée pour élargir les possibilités de recettes</label>   
-      </div>
-
-      <div id="default-ingredients" class="d-flex flex-column align-items-center">
-        <div ngbAccordion>
-          <div ngbAccordionItem="first" #first="ngbAccordionItem" [collapsed]="false">
-            <h2 ngbAccordionHeader>
-              <button ngbAccordionButton class="darker-blue-bg">Ingrédients de base</button>
-            </h2>
-            <div ngbAccordionCollapse class="darker-blue-bg">
-              <div ngbAccordionBody class="darker-blue-bg ingredients-content">
-                <ng-template>
-                  <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-                    <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault">
-                        <p>{{ingredient.name}}</p>
-                        <i class="bi bi-trash-fill hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
-                    </div>
-                  </ng-container>
-                </ng-template>
-              </div>
+      <div ngbAccordion id="default-ingredients" class="d-flex flex-column align-items-center">
+        <div ngbAccordionItem="first" #first="ngbAccordionItem" [collapsed]="false">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="darker-blue-bg">
+              En plus des ingrédients indiqués, les coachs supposent que vous possédez...
+            </button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="dark-blue-bg ingredients-content fancy-scroll">
+              <ng-template>
+                <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
+                  <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault">
+                      <p>{{ingredient.name}}</p>
+                      <i class="bi bi-trash-fill hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
+                  </div>
+                </ng-container>
+              </ng-template>
             </div>
           </div>
         </div>

@@ -34,3 +34,26 @@ html, .main-bg {
 .debug {
     border: 1px solid red;
 }
+
+.tiny-fancy-scroll::-webkit-scrollbar, .fancy-scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color: #1D5B79;
+}
+
+.fancy-scroll::-webkit-scrollbar-thumb {
+    background-color: #24486D;
+}
+
+.tiny-fancy-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tiny-fancy-scroll::-webkit-scrollbar-thumb {
+    background-color:#EF6262;
+}
+
+.text-overflow {
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+}

@@ -1,8 +1,3 @@
-#card-container {
-    overflow-x: hidden;
-    overflow-y: visible;
-}
-
 p {
     margin-bottom: 0;
 }
@@ -15,6 +10,8 @@ p {
     top: 0;
     z-index: 10;
     height: 10%;
+    display: flex;
+    justify-content: center;
 }
 
 #description, #dish-title {
@@ -24,7 +21,7 @@ p {
     overflow: visible;
 }
 
-.dish-img {
+#dish-img {
     height: 100%;
     position: absolute;
     left: 50%;
@@ -47,4 +44,32 @@ p {
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
     filter:drop-shadow(.2rem .2rem .2rem black)
+}
+
+.selectable #dish:hover, #description:hover {
+    cursor: pointer;
+}
+
+.selectable #dish:hover img {
+    opacity: 0.8;
+}
+
+#description, #dish-title {
+    background: linear-gradient(to right, #468B97 50%, #24486D 50%);
+    transition: all .5s ease-out;
+    background-position: right bottom;
+    background-size: 200% 100%;
+}
+
+#description:hover, .selectable #dish:hover #dish-title {
+    background-position: left bottom;
+}
+
+@media screen and (max-width: 770px) {
+    #dish-title p {
+        width: 80%;
+    }
+    #dish-title {
+        justify-content: end;
+    }
 }

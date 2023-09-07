@@ -7,5 +7,10 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: justify;
+    text-align: justify;   
+}
+
+.description {
+    max-height: 50vh;
+    overflow-y: auto;
 }
