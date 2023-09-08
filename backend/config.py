@@ -5,6 +5,7 @@ import openai
 
 import logging
 
+# Load environment variables from .env file
 dotenv.load_dotenv()
 
 if 'LOG_LEVEL' in os.environ:

@@ -5,12 +5,13 @@ import pathlib
 
 @dataclasses.dataclass
 class Coach:
+    """A virtual cooking coach"""
     name: str
     descriptionForGpt: str
     description: str
     imageUrl: str
 
-    def as_dict(self):
+    def as_dict(self) -> dict:
         return dataclasses.asdict(self)
 
     @staticmethod

@@ -5,12 +5,15 @@ import pathlib
 
 @dataclasses.dataclass
 class SuggestedIngredient:
+    """An ingredient that may be suggested to the user while they are typing."""
     name: str
     unit: str
     defaultQuantity: float
+    # If true, this is a "default" ingredient (farine, sucre, ...) that will be added automatically in the
+    # dedicated separate list.
     autoAdd: bool
 
-    def as_dict(self):
+    def as_dict(self) -> dict:
         return dataclasses.asdict(self)
 
     @staticmethod

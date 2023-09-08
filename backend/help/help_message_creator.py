@@ -7,11 +7,28 @@ logger = config.logging.getLogger(__name__)
 
 
 class HelpMessageCreator(ai.gpt.Task):
+    """A gpt assisted task that creates a help message for a recipe step.
+
+    This is a subclass of `ai.gpt.Task`. See the documentation of `ai.gpt.Task` for more information about how
+    this class works.
+    """
 
     def __init__(self):
+
+        # as generating the help message can take a while, we set a larger timeout
         super().__init__(timeout=60)
 
-    def build_gpt_prompt(self, recipe_steps: [str], step_index: int) -> 'ai.gpt.Prompt':
+    def build_gpt_prompt(self, recipe_steps: list[str], step_index: int) -> 'ai.gpt.Prompt':
+        """Builds a GPT prompt for requesting a help message for a recipe step.
+
+        See the documentation of `ai.gpt.Task` for more information about how this method works.
+
+        args
+            recipe_steps: the whole recipe text
+            step_index: the index of the step for which a help message should be generated
+
+        """
+
         prompt = ai.gpt.Prompt(f"""
             Voici les instructions d'une recette de cuisine : 
                                    
@@ -35,11 +52,17 @@ class HelpMessageCreator(ai.gpt.Task):
 
         return prompt
 
-    def post_process_gpt_response(self, gpt_response_content: str) -> str:
-        return gpt_response_content
 
+def create_help_message_for_step(recipe_steps: list[str], step_index: int) -> str:
+    """Creates a help message for a recipe step.
 
-def create_help_message_for_step(recipe_steps: [str], step_index: int) -> str:
+    args
+        recipe_steps: the whole recipe text
+        step_index: the index of the step for which a help message should be generated
+
+    returns
+        A useful help message that gives more information about the recipe step to the user.
+    """
     logger.info("Creating help message for recipe step")
     help_message = HelpMessageCreator()(recipe_steps, step_index)
     logger.info("Help message created")

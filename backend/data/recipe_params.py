@@ -11,7 +11,14 @@ class RecipeDifficulty(enum.Enum):
 
 @dataclasses.dataclass
 class RecipeParams:
+    """The optional parameters that the user can specify on the recipe generation page."""
+
     difficulty: Optional[RecipeDifficulty] = None
+
+    # in hours
     duration: Optional[float] = None
+
     personCount: Optional[int] = None
+
+    # whether the user allows the recipe to contain additional ingredients that were not listed
     otherIngredientsAllowed: bool = False

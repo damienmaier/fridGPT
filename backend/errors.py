@@ -5,7 +5,7 @@ import flask
 import data
 
 
-class FridGptError(Exception, abc.ABC):
+class ValidationError(Exception, abc.ABC):
 
     @abc.abstractmethod
     def error_name(self) -> str:
@@ -17,13 +17,13 @@ class FridGptError(Exception, abc.ABC):
         }
 
 
-class MalformedRequestError(FridGptError):
+class MalformedRequestError(ValidationError):
 
     def error_name(self) -> str:
         return 'malformed request'
 
 
-class IngredientError(FridGptError, abc.ABC):
+class IngredientError(ValidationError, abc.ABC):
 
     def __init__(self, ingredient: 'data.RequestedIngredient'):
         self.ingredient = ingredient
@@ -50,19 +50,14 @@ class InvalidCustomIngredientUnitError(IngredientError):
         return 'invalid custom ingredient unit'
 
 
-class InsufficientIngredientsError(FridGptError):
+class InsufficientIngredientsError(ValidationError):
 
     def error_name(self) -> str:
         return 'insufficient ingredients'
 
 
-class TooLargeRequestError(FridGptError):
-
-    def error_name(self) -> str:
-        return 'too large request'
-
 
 def create_exception_handlers(app: flask.Flask) -> None:
-    @app.errorhandler(FridGptError)
-    def handle_fridgpt_error(error: FridGptError):
+    @app.errorhandler(ValidationError)
+    def handle_fridgpt_error(error: ValidationError):
         return error.as_dict(), 400

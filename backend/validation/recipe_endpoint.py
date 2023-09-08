@@ -12,11 +12,24 @@ logger = config.logging.getLogger(__name__)
 
 @dataclasses.dataclass
 class RecipeEndpointRequest:
+    """The input expected by the recipe endpoint"""
     ingredients: list[data.RequestedIngredient]
     params: data.RecipeParams = dataclasses.field(default_factory=data.RecipeParams)
 
 
 def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEndpointRequest:
+    """Parses and validates a request data received by the recipe API endpoint.
+
+        args
+            `unstructured_request`: The data received by the API endpoint.
+
+        raises
+            `ValidationError` (or a subclass) if the request is invalid.
+    """
+
+    # when en error indicates an invalid user input, we log a warning.
+    # when an error indicates a bug in the frontend, we log an error.
+
     request: RecipeEndpointRequest = parse_and_validate_types(unstructured_request, RecipeEndpointRequest)
 
     if not 0 < len(request.ingredients) <= 100:
@@ -29,7 +42,8 @@ def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEn
     logger.info('checking if enough non default ingredients were received')
 
     def is_not_default(ingredient: data.RequestedIngredient) -> bool:
-        return not (ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[ingredient.name].autoAdd)
+        return not (ingredient.name in data.SUGGESTED_INGREDIENTS and data.SUGGESTED_INGREDIENTS[
+            ingredient.name].autoAdd)
 
     if sum(map(is_not_default, request.ingredients)) < 5:
         logger.warning('less than 5 non default ingredients were received')
@@ -45,14 +59,28 @@ def parse_and_validate_recipe_endpoint_request(unstructured_request) -> RecipeEn
 
 
 def _validate_ingredient(ingredient) -> None:
+    """Validates an ingredient received in a request.
+
+    args
+            `ingredient`: The ingredient to validate.
+
+    raises
+        `ValidationError` (or a subclass) if the ingredient is invalid.
+    """
+
     logger.info(f'validating ingredient {ingredient.name}')
 
     if ingredient.name in data.SUGGESTED_INGREDIENTS:
+        # if the ingredient is one of the suggested ingredients, we don't have to validate its name.
+        # we just check if the unit is correct.
+
         if ingredient.quantity and ingredient.quantity.unit != data.SUGGESTED_INGREDIENTS[ingredient.name].unit:
             logger.error(f'received wrong unit for ingredient {ingredient.name} which is in suggested ingredients')
             raise errors.WrongIngredientUnitError(ingredient)
 
     else:
+        # if the ingredient is not one of the suggested ingredients, it is a custom ingredient written by the user.
+        # we need to validate its name and unit using GPT.
 
         logger.info(f'validating custom ingredient {ingredient.name} length')
         if not 0 < len(ingredient.name) <= 50:
