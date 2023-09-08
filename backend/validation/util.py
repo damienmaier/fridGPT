@@ -3,7 +3,7 @@ import cattrs
 import config
 from validation import errors
 
-logger = config.logging.getLogger(__name__)
+logger = config.get_logger(__name__)
 
 
 def parse_and_validate_types(destructured_data, target_type):

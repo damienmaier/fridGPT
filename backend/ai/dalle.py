@@ -1,7 +1,7 @@
 import config
 from config import openai
 
-logger = config.logging.getLogger(__name__)
+logger = config.get_logger(__name__)
 
 FORBIDDEN_STRINGS = ['rape', 'râpe', 'rapé', 'râpé']
 

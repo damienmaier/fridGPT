@@ -5,7 +5,7 @@ import data
 from . import classifiers, errors
 from .util import parse_and_validate_types
 
-logger = config.logging.getLogger(__name__)
+logger = config.get_logger(__name__)
 
 
 @dataclasses.dataclass

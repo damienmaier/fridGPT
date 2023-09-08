@@ -5,7 +5,7 @@ import ai.gpt
 import config
 from config import openai
 
-logger = config.logging.getLogger(__name__)
+logger = config.get_logger(__name__)
 
 
 class Task(abc.ABC):

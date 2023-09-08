@@ -3,7 +3,7 @@ import json
 import ai.gpt
 import config
 
-logger = config.logging.getLogger(__name__)
+logger = config.get_logger(__name__)
 
 
 class HelpMessageCreator(ai.gpt.Task):

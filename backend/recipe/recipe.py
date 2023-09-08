@@ -4,7 +4,7 @@ import config
 import data
 from . import recipe_creator
 
-logger = config.logging.getLogger(__name__)
+logger = config.get_logger(__name__)
 
 
 def create_recipes(ingredients: list[data.RequestedIngredient], recipe_params: data.RecipeParams) -> list[data.Recipe]:

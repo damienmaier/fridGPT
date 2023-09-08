@@ -8,8 +8,12 @@ import logging
 # Load environment variables from .env file
 dotenv.load_dotenv()
 
+APP_ROOT_LOGGER_NAME = 'fridgpt'
+
+logging.basicConfig()
+
 if 'LOG_LEVEL' in os.environ:
-    logging.basicConfig(level=os.environ['LOG_LEVEL'])
+    logging.getLogger(APP_ROOT_LOGGER_NAME).setLevel(os.environ['LOG_LEVEL'])
 
 if 'OPENAI_API_KEY' not in os.environ:
     raise Exception('''
@@ -19,3 +23,8 @@ if 'OPENAI_API_KEY' not in os.environ:
     create a file named .env and put OPENAI_API_KEY=<your_key_here> in it.
     ''')
 openai.api_key = os.environ["OPENAI_API_KEY"]
+
+
+def get_logger(logger_name: str):
+
+    return logging.getLogger(f"{APP_ROOT_LOGGER_NAME}.{logger_name}")
