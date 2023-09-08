@@ -42,8 +42,7 @@
           <div class="col-md-3 col-no-padding d-flex quantity-col" [ngClass]="{'col-hide-qty': !ingredient.displayQuantity}">
             <ng-container *ngIf="ingredient.quantity && ingredient.displayQuantity">
               <div class="form form-quantity">
-                <input name="quantity" id="qty-input" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
-                <label for="qty-input"></label>
+                <input name="quantity" class="text-center" [(ngModel)]="ingredient.quantity.value" type="number" required/>
               </div>
               <ng-container *ngIf="ingredient.isCustom; else fixedUnit">
                 <select class="form-select unit-select text-white" [(ngModel)]="ingredient.quantity.unit">
