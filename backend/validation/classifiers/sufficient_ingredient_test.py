@@ -61,16 +61,15 @@ class GptAssistedSufficientIngredientsValidationTest(unittest.TestCase):
 
         self.assertFalse(is_sufficient_ingredients(ingredients))
 
-    def test_too_small_quantities(self):
+    def test_spices(self):
         ingredients = [
-            data.RequestedIngredient(name='pâtes', quantity=data.RequestedIngredientQuantity('g', 1), mandatory=True),
-            data.RequestedIngredient(name='crème', quantity=data.RequestedIngredientQuantity('ml', 2)),
             data.RequestedIngredient(name='sel'),
             data.RequestedIngredient(name='poivre'),
-            data.RequestedIngredient(name='farine'),
-            data.RequestedIngredient(name='huile de cuisson'),
-            data.RequestedIngredient(name='vinaigre'),
-            data.RequestedIngredient(name="huile d'olive"),
+            data.RequestedIngredient(name='cannelle'),
+            data.RequestedIngredient(name='clou de girofle'),
+            data.RequestedIngredient(name='paprika'),
+            data.RequestedIngredient(name='curry'),
+            data.RequestedIngredient(name='cumin'),
         ]
 
         self.assertFalse(is_sufficient_ingredients(ingredients))
