@@ -85,7 +85,11 @@ export class RecipesService {
         });
     }
 
-    private handleError(receivedError: APIError) {
+    /**
+     * stores the error and returns to the search component to start again
+     * @param receivedError error from API
+     */
+    private handleError(receivedError: APIError): void {
         this.lastError = receivedError;
         this.goToHome();
         this.recipesSubject.next([]);

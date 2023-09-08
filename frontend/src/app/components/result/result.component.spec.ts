@@ -22,15 +22,15 @@ describe('ResultComponent', () => {
     fakeModalService = createModalServiceSpy();
     TestBed.configureTestingModule({
       declarations: [ResultComponent, LoadingComponent , RecipeCardComponent, RotatingImageComponent],
-      providers: [ {provide: RecipesService, useValue: fakeRecipeService},
+      providers:    [ {provide: RecipesService, useValue: fakeRecipeService},
         {provide: ModalService, useValue: fakeModalService}
       ]
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture    = TestBed.createComponent(ResultComponent);
-    component  = fixture.componentInstance;
+    fixture           = TestBed.createComponent(ResultComponent);
+    component         = fixture.componentInstance;
     component.recipes = [recipe];
     fixture.detectChanges();
   });

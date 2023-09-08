@@ -6,7 +6,7 @@ import { SuggestedIngredient, SuggestedIngredientAPI } from './suggested-ingredi
   providedIn: 'root',
 })
 /**
- * Used when the API sends the available ingredients list and we translate them into our own extended type to manipulate them
+ * used when the API sends the available ingredients list and we translate them into our own custom object structure to manipulate them
  */
 export class SuggestedIngredientAdapter implements Adapter<SuggestedIngredient> {
   adapt(item: SuggestedIngredientAPI): SuggestedIngredient {

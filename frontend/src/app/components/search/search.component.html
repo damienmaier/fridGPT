@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="row margin-both-sides" id="main-row">
-  <!-- ingredients picking menu -->
+  <!-- requested ingredients list -->
   <div class="col" id="ingredient-col">
     <div class="light-blue-bg content-header round-corners">
       <h4> <img class="margin-both-sides header-icon" src="/assets_app/harvest.png" width="30" alt="basket full of vegetables and gruits"/> Ingrédients à disposition </h4>
@@ -67,6 +67,7 @@
         </div>
       </ng-container>
     </div>
+    <!-- search bar to add an ingredient -->
     <div class="form form-search margin-top">
       <input [disabled]="noData()" (input)="filter()" [(ngModel)]="currentSearch" type="text" id="search"
         autocomplete="off" required />
@@ -79,7 +80,7 @@
         aria-valuemin="0" aria-valuemax="100">
       </div>
     </div>
-    <!-- ingredients list -->
+    <!-- suggested ingredients list -->
     <div class="fancy-scroll" id="search-list" [ngStyle]="{'max-height':searchListHeight()}">
       <ng-container *ngFor="let item of filteredIngredients">
         <div class="search-item light-blue-bg hand-cursor text-white round-corners" [ngClass]="{'selected-item': item.selected}">
@@ -153,7 +154,7 @@
           </div>
         </div>
       </div>
-
+      <!-- default ingredients list -->
       <div ngbAccordion id="default-ingredients" class="d-flex flex-column align-items-center">
         <div ngbAccordionItem="first" #first="ngbAccordionItem" [collapsed]="false">
           <h2 ngbAccordionHeader test-id="accordion-header">

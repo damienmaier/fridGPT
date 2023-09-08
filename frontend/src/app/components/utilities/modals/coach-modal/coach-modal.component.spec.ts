@@ -19,9 +19,9 @@ describe('CoachModalComponent', () => {
   });
 
   beforeEach(() => {
-    fixture    = TestBed.createComponent(CoachModalComponent);
-    component  = fixture.componentInstance;
-    nbgModal = TestBed.inject(NgbActiveModal);
+    fixture         = TestBed.createComponent(CoachModalComponent);
+    component       = fixture.componentInstance;
+    nbgModal        = TestBed.inject(NgbActiveModal);
     component.coach = fakeCoach;
     fixture.detectChanges();
   });

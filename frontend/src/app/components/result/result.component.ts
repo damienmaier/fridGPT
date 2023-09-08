@@ -12,14 +12,17 @@ import { RecipesService } from 'src/app/services/recipes.service';
  * Component that will display the generated recipes to be selected
 **/
 export class ResultComponent implements OnInit, OnDestroy {
-  recipes: Recipe[] = [];
-  loading = false;
+  recipes: Recipe[];
+  loading: boolean;
   recipesSub!: Subscription;
 
-  constructor(private recipeService: RecipesService) {}
+  constructor(private recipeService: RecipesService) {
+    this.recipes = [];
+    this.loading = false;
+  }
 
-  ngOnInit() {
-    this.loading = true;
+  ngOnInit(): void {
+    this.loading    = true;
     this.recipesSub = this.recipeService.recipesSubject.subscribe({
       next: (sentRecipes: Recipe[]) => {
         if(sentRecipes.length == 0) {

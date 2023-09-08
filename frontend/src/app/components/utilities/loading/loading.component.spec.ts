@@ -11,7 +11,7 @@ describe('LoadingComponent', () => {
     TestBed.configureTestingModule({
       declarations: [LoadingComponent, RotatingImageComponent]
     });
-    fixture = TestBed.createComponent(LoadingComponent);
+    fixture   = TestBed.createComponent(LoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -34,7 +34,7 @@ describe('LoadingComponent', () => {
     fixture.whenStable().then(() => {
       expect(component.playing()).toBeTruthy();
       expect(findElement(fixture, 'singing')).toBeTruthy();
-    })
+    });
   });
 
   it('clicking on the singing fridge should change the image and stop the music', () => {
@@ -44,7 +44,7 @@ describe('LoadingComponent', () => {
       fixture.whenStable().then(() => {
         expect(component.playing()).not.toBeTruthy();
       expect(findElement(fixture, 'sleeping')).toBeTruthy();
-      })
-    })
+      });
+    });
   });
 });

@@ -17,12 +17,12 @@ export class RequestedRecipe {
     personCount: number | null;
     difficulty: number | null;
     constructor() {
-        this.withImage                  = false;
-        this.otherIngredientsAllowed    = false;
-        this.durationInput              = null;
-        this.personCount                = null;
-        this.difficulty                 = null;
-        this.ingredients                = [];
+        this.withImage               = false;
+        this.otherIngredientsAllowed = false;
+        this.durationInput           = null;
+        this.personCount             = null;
+        this.difficulty              = null;
+        this.ingredients             = [];
     }
     
     /**
@@ -43,7 +43,7 @@ export class RequestedRecipe {
     }
 
     /**
-     * translates the duration into hours (for the API)
+     * translates the duration from input into a number of hours (for the API)
      * @returns a number of hours
      */
     private durationInputToHours(): number | null {

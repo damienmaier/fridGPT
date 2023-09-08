@@ -15,7 +15,7 @@ export class CoachModalComponent {
   
   constructor(private modal: NgbActiveModal) {}
 
-  close() {
+  close(): void {
     this.modal.close();
   }
 }

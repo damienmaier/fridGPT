@@ -12,7 +12,7 @@ describe('ToastComponent', () => {
     fakeToastService = createToastServiceSpy();
     TestBed.configureTestingModule({
       declarations: [ToastComponent],
-      providers: [
+      providers:    [
         {provide: ToastService, useValue: fakeToastService}
       ]
     }).compileComponents();

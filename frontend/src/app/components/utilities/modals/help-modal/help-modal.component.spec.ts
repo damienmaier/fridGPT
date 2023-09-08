@@ -17,10 +17,10 @@ describe('HelpModalComponent', () => {
   });
 
   beforeEach(() => {
-    fixture     = TestBed.createComponent(HelpModalComponent);
-    component   = fixture.componentInstance;
+    fixture               = TestBed.createComponent(HelpModalComponent);
+    component             = fixture.componentInstance;
     component.explanation = fakeExplanation;
-    nbgModal    = TestBed.inject(NgbActiveModal);
+    nbgModal              = TestBed.inject(NgbActiveModal);
     fixture.detectChanges();
   });
 

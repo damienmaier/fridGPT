@@ -13,13 +13,11 @@ export class ToastComponent implements OnInit, OnDestroy {
 
   constructor(public toastService: ToastService) {}
 
-  ngOnInit() {
-    this.toastsSub = this.toastService.toastSubject.subscribe((newToasts: ToastContent[]) => this.toasts = newToasts)
+  ngOnInit(): void {
+    this.toastsSub = this.toastService.toastSubject.subscribe((newToasts: ToastContent[]) => this.toasts = newToasts);
   }
 
-  ngOnDestroy() {
-    if(this.toastsSub) {
-      this.toastsSub.unsubscribe();
-    }
+  ngOnDestroy(): void {
+    this.toastsSub.unsubscribe();
   }
 }

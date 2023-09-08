@@ -27,6 +27,10 @@ export class SuggestedIngredient implements SuggestedIngredientAPI {
         this.isCustom = isCustom;
     }
 
+    /**
+     * used when we add a suggested ingredient in our requested ingredients list
+     * @returns a requested ingredient to send to the API when generating a request
+     */
     toRequestedIngredient() {
         return {
             name: this.name, 

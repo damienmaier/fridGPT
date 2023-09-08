@@ -12,34 +12,29 @@ import * as Howler from 'howler';
 export class LoadingComponent implements OnInit, OnDestroy {
   private audio!: Howler.Howl;
 
-  ngOnInit() {
-    this.audio = new Howler.Howl({
-      src: ['/assets_app/loading_song.mp3'],
-      autoplay: false,
-      loop: true,
-      volume: 1
-    });
+  ngOnInit(): void {
+    this.audio = new Howler.Howl({ src: ['/assets_app/loading_song.mp3'], autoplay: false, loop: true, volume: 1 });
   }
 
-  playing() {
+  playing(): boolean {
     return this.audio && this.audio.playing();
   }
 
   /**
    * is triggered when we click on the sleeping fridge icon, starts the music
    */
-  wakeUp() {
+  wakeUp(): void {
     this.audio.play();
   }
 
   /**
    * is triggered when we click on the singing fridge icon, stops the music
    */
-  goToSleep() {
+  goToSleep(): void {
     this.audio.pause();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.audio.stop();
   }
 }

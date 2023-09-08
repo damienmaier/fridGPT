@@ -35,7 +35,6 @@ p {
 }
 
 /* steps content */
-
 #step {
   width:85%;
   height: 60vh;
@@ -81,7 +80,6 @@ p {
 @media screen and (max-width: 770px) {  
   #col-description, #header {
     display: none;
-    border:1px solid yellow;
   }
 
   .container-fluid,.row, .col {

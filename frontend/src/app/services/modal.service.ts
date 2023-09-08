@@ -10,9 +10,9 @@ import { Injectable } from '@angular/core';
 export class ModalService {
     constructor(private _modalService: NgbModal, private recipeService: RecipesService) {}
 
-    openCoachModal(coach: Coach): void{
+    openCoachModal(coach: Coach): void {
         const modalRef = this._modalService.open(CoachModalComponent);
-        if(modalRef != undefined) {
+        if(modalRef !== undefined) {
             modalRef.componentInstance.coach = coach;
         }
     }
@@ -21,7 +21,7 @@ export class ModalService {
         return this.recipeService.loadHelpForStep(steps, stepIndex).pipe(map(
             (explanation: {helpText: string}) => {
                 const modalRef = this._modalService.open(HelpModalComponent);
-                if(modalRef != undefined) {
+                if(modalRef !== undefined) {
                     modalRef.componentInstance.explanation = explanation.helpText.replaceAll('\n', '<br>');
                 }
             }

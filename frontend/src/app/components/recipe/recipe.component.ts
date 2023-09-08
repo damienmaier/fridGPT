@@ -14,13 +14,16 @@ import { RecipesService } from 'src/app/services/recipes.service';
 **/
 export class RecipeComponent implements OnInit {
   recipe!: Recipe;
-  currentStep = '';
+  currentStep: string;
   currentStepIndex!: number;
-  loadingHelp = false;
+  loadingHelp: boolean;
 
-  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {}
+  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {
+    this.currentStep = '';
+    this.loadingHelp = false;
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const index             = this.route.snapshot.paramMap.get('recipeId');
     this.recipe             = this.recipeService.getRecipe(index == null ? -1 : +index);
     this.currentStep        = this.recipe.ingredients;
@@ -33,9 +36,9 @@ export class RecipeComponent implements OnInit {
 
   /**
    * updates the displayed step
-   * @param forward navigation direction between recipe steps
+   * @param forward navigation direction between recipe's steps
    */
-  nextStep(forward: boolean) {
+  nextStep(forward: boolean): void {
     this.currentStepIndex = (this.currentStepIndex + (forward ? 1 : -1)) % (this.recipe.steps.length + 1);
     if (this.currentStepIndex < 0) {
       this.currentStepIndex += this.recipe.steps.length + 1;
@@ -45,19 +48,19 @@ export class RecipeComponent implements OnInit {
   }
 
   /**
-   * triggers a modal that will display information about the coach that suggested the recipe
+   * opens a modal that will display information about the recipe's coach
    */
   openCoachModal(): void {
     this.modalService.openCoachModal(this.recipe.coach);
   }
 
   /**
-   * triggers a modal that will display more information about the current step (will call the API to get this info)
+   * opens a modal that will display more information about the current step
    */
   openHelpModal(): void {
     this.loadingHelp = true;
     this.modalService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(
-      () => { this.loadingHelp = false; }
-    )
+      () => this.loadingHelp = false
+    );
   }
 }

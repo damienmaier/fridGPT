@@ -19,7 +19,7 @@ describe('RecipeCardComponent', () => {
     fakeRecipeService = createRecipesServiceSpy();
     TestBed.configureTestingModule({
       declarations: [RecipeCardComponent , RecipeCardComponent],
-      providers: [
+      providers:    [
         {provide: RecipesService, useValue: fakeRecipeService},
         {provide: ModalService, useValue: fakeModalService}
       ]
@@ -27,11 +27,11 @@ describe('RecipeCardComponent', () => {
   });
 
   beforeEach(() => {
-    fixture    = TestBed.createComponent(RecipeCardComponent);
-    component  = fixture.componentInstance;
-    component.recipe = fakeRecipe;
-    component.selectable = false;
-    component.recipeId = 0;
+    fixture               = TestBed.createComponent(RecipeCardComponent);
+    component             = fixture.componentInstance;
+    component.recipe      = fakeRecipe;
+    component.selectable  = false;
+    component.recipeId    = 0;
     fixture.detectChanges();
   });
 
