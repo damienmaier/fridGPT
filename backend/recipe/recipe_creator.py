@@ -6,6 +6,10 @@ import cattrs
 import ai.gpt
 import data
 
+import ai.dalle
+
+from config import openai
+
 
 class RecipeCreator(ai.gpt.Task):
 
@@ -85,6 +89,12 @@ class RecipeCreator(ai.gpt.Task):
 
         if not 3 <= len(recipe.dishDescription) <= 500:
             raise self.PostProcessingError(f'Recipe dish description has invalid length: {len(recipe.dishDescription)}')
+
+        try:
+            ai.dalle.create_image(recipe.dishDescription)
+
+        except openai.error.InvalidRequestError:
+            raise self.PostProcessingError(f'Image prompt was flagged')
 
         if not 3 <= len(recipe.ingredients) <= 500:
             raise self.PostProcessingError(f'Recipe ingredients has invalid length: {len(recipe.ingredients)}')
