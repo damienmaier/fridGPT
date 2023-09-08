@@ -7,6 +7,9 @@ import { ToastContent, ToastService } from 'src/app/services/toast.service';
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.css']
 })
+/**
+ * Component that contains a toast
+ */
 export class ToastComponent implements OnInit, OnDestroy {
   toasts: ToastContent[] = [];
   toastsSub!: Subscription;

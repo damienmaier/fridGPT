@@ -1,5 +1,5 @@
 /**
- * represents a virtual coach of the app
+ * represents a virtual coach of the app sent by the API
  */
 export interface Coach {
     name: string;

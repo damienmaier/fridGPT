@@ -1,5 +1,5 @@
 /**
- * sent by the API when asked for a dish image
+ * represents a dish image sent by the API
  */
 export interface DishImage {
     url: string;

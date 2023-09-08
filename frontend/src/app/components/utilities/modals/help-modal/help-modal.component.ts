@@ -14,6 +14,9 @@ export class HelpModalComponent {
 
   constructor(private modal: NgbActiveModal) {}
 
+  /**
+   * closes the current modal
+  */
   close(): void {
     this.modal.close();
   }

@@ -1,18 +1,22 @@
 import { RequestedIngredient } from './requested-ingredient';
 import { RequestedIngredientAdapter } from './requested-ingredient-adapter';
 
+/**
+ * represents a duration, used by the input
+ */
 interface DurationInput {
     hour: number,
     minute: number
 }
 
 /**
- * used by the frontend to store all the parameters to send to the API for it to generate recipes
+ * used by the frontend to store all the parameters to send to the API when we want to generate a recipe
  */
 export class RequestedRecipe {
     ingredients: RequestedIngredient[];
     withImage: boolean;
     otherIngredientsAllowed: boolean;
+    // null parameters means that GPT will be given no constraints regarding these information
     durationInput: DurationInput | null;
     personCount: number | null;
     difficulty: number | null;
@@ -26,7 +30,7 @@ export class RequestedRecipe {
     }
     
     /**
-     * returns the correct recipe request format understood by the API
+     * returns a recipe request to send to the API when we want to generate a recipe
      * @param requestedIngredientAdapter method to format the ingredients to send to the API
      * @returns a structure describing a recipe request
      */

@@ -6,7 +6,7 @@ import { RequestedIngredient, RequestedIngredientAPI } from './requested-ingredi
   providedIn: 'root',
 })
 /**
- * represents the ingredients we want to send to generate recipes with
+ * used when we start generating recipes to transform the requested ingredients in a format understood by the API
  */
 export class RequestedIngredientAdapter implements Adapter<RequestedIngredientAPI> {
   adapt(ingredient: RequestedIngredient): RequestedIngredientAPI {

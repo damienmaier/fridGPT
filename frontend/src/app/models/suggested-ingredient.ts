@@ -1,5 +1,7 @@
+import { RequestedIngredient } from "./requested-ingredient";
+
 /**
- * used by the API when it sends the available ingredients to choose from when adding ingredients before loading recipes
+ * represents a ingredient sent by the API to choose in order to create our ingredients list
  */
 export interface SuggestedIngredientAPI {
     name: string;
@@ -9,7 +11,7 @@ export interface SuggestedIngredientAPI {
 }
 
 /**
- * used by the frontend to manipulate the available ingredients from the search list
+ * used by the frontend to manipulate an ingredient sent by the API (we add frontend related information)
  */
 export class SuggestedIngredient implements SuggestedIngredientAPI {
     name!: string;
@@ -28,10 +30,10 @@ export class SuggestedIngredient implements SuggestedIngredientAPI {
     }
 
     /**
-     * used when we add a suggested ingredient in our requested ingredients list
-     * @returns a requested ingredient to send to the API when generating a request
+     * used when we add an ingredient sent by the API in our requested ingredients list
+     * @returns a requested ingredient
      */
-    toRequestedIngredient() {
+    toRequestedIngredient(): RequestedIngredient {
         return {
             name: this.name, 
             mandatory: false,

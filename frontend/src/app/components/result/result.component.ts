@@ -9,7 +9,7 @@ import { RecipesService } from 'src/app/services/recipes.service';
   styleUrls: ['./result.component.css']
 })
 /**
- * Component that will display the generated recipes to be selected
+ * Component that displays the generated recipes to be selected
 **/
 export class ResultComponent implements OnInit, OnDestroy {
   recipes: Recipe[];

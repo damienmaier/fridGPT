@@ -1,5 +1,5 @@
 /**
- * used to give the selected ingredients to the API in order to generate recipes
+ * represents a ingredient that can be sent to the API to generate a recipe with
  */
 export interface RequestedIngredientAPI {
     name: string;
@@ -8,7 +8,7 @@ export interface RequestedIngredientAPI {
 }
   
 /**
- * used by the frontend to manipulate selected ingredients for the future recipes
+ * used by the frontend to manipulate a requested ingredient for the future recipes to generate
  */
 export interface RequestedIngredient extends RequestedIngredientAPI {
     isCustom: boolean;

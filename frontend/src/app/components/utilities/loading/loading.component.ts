@@ -7,7 +7,7 @@ import * as Howler from 'howler';
   styleUrls: ['./loading.component.css']
 })
 /**
- * Component that will be displayed during the recipes generation, is used as a loading screen
+ * Component that will be displayed during the recipes generation, it is used as a loading screen
 **/
 export class LoadingComponent implements OnInit, OnDestroy {
   private audio!: Howler.Howl;

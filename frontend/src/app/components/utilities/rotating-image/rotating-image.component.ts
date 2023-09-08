@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./rotating-image.component.css']
 })
 /**
- * Child Component that's used to animate an image rotating (here, only gear images will rotate)
+ * Component that's used to animate a rotating image (here, only gear images will rotate)
 **/
 export class RotatingImageComponent {
   @Input() goingFoward!: boolean; // which way the image is rotating

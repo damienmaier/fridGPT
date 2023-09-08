@@ -31,11 +31,12 @@ export class RecipesService {
             map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
                 return data.ingredients.map(this.suggestedIngredientAdapter.adapt);
             }),
-            catchError(() => []));
+            catchError(() => [])
+        );
     }
 
     /**
-     * @returns generates recipes based on the user requirements (ingredients, customization...)
+     * @returns generated recipes based on the user requirements (ingredients, customization...)
      */
     loadRecipes(): void {
         if(this.recipes.length > 0) { 
@@ -68,7 +69,7 @@ export class RecipesService {
     }
 
     /**
-     * generates images for the already loaded recipes (need their descriptions)
+     * generates images for the already loaded recipes (we need their descriptions to send)
      */
     loadRecipeImages(): void {
         const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
@@ -86,7 +87,7 @@ export class RecipesService {
     }
 
     /**
-     * stores the error and returns to the search component to start again
+     * stores the error and navigates to the search component to start again
      * @param receivedError error from API
      */
     private handleError(receivedError: APIError): void {
