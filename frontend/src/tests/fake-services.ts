@@ -2,7 +2,7 @@ import { Subject, of } from "rxjs";
 import { Recipe } from "src/app/models/recipe";
 import { ModalService } from "src/app/services/modal.service";
 import { RecipesService } from "src/app/services/recipes.service";
-import { ToastService } from "src/app/services/toast.service";
+import { ToastContent, ToastService } from "src/app/services/toast.service";
 import { createFakeRecipe, createFakeSuggestedIngredientsList } from "./model.test-helper";
 
 function createRecipesServiceSpy() {
@@ -28,9 +28,9 @@ function createModalServiceSpy() {
 
 function createToastServiceSpy() {
     const spyObj  = jasmine.createSpyObj<ToastService>('ToastService', ['show', 'remove']);
-    spyObj.toastSubject = new Subject<string[]>();
+    spyObj.toastSubject = new Subject<ToastContent[]>();
     spyObj.show.and.callFake(() => {
-        spyObj.toastSubject.next([{ body: 'error', classname: 'bg-danger text-light'}]);
+        spyObj.toastSubject.next([{ body: 'error', classNames: 'bg-danger text-light'}]);
     });
      return spyObj;
 }

@@ -31,7 +31,7 @@ export class RecipesService {
             map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
                 return data.ingredients.map(this.suggestedIngredientAdapter.adapt);
             }),
-            catchError(err => []));
+            catchError(() => []));
     }
 
     /**

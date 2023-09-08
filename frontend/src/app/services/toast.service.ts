@@ -1,18 +1,23 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
+export interface ToastContent {
+  body: string;
+  classNames: string;
+}
+
 @Injectable()
 export class ToastService {
-  private toasts: any[]        = [];
-  toastSubject: Subject<any[]> = new Subject<any[]>();
+  private toasts: ToastContent[]        = [];
+  toastSubject: Subject<ToastContent[]> = new Subject<ToastContent[]>();
 
-  show(body: string, options: any = {}): void {
-    this.toasts.push({ body: body.replaceAll('\n', '<br>'), ...options });
+  show(body: string, classNames: string): void {
+    this.toasts.push({ body: body.replaceAll('\n', '<br>'),classNames });
     this.toastSubject.next(this.toasts.slice());
   }
 
-  remove(toast: string): void {
-    this.toasts = this.toasts.filter(t => t != toast);
+  remove(toast: ToastContent): void {
+    this.toasts = this.toasts.filter(t => t.body != toast.body);
     this.toastSubject.next(this.toasts.slice());
   }
 }

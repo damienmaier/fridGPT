@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { Recipe } from 'src/app/models/recipe';
 import { ModalService } from 'src/app/services/modal.service';
@@ -12,11 +12,11 @@ import { RecipesService } from 'src/app/services/recipes.service';
 /**
  * Component that will display one of the generated recipes that the user selected
 **/
-export class RecipeComponent {
+export class RecipeComponent implements OnInit {
   recipe!: Recipe;
-  currentStep: string = '';
+  currentStep = '';
   currentStepIndex!: number;
-  loadingHelp: boolean = false;
+  loadingHelp = false;
 
   constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {}
 

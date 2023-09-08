@@ -1,6 +1,4 @@
 import { Coach, Recipe } from "src/app/models/recipe";
-import { RequestedIngredient } from "src/app/models/requested-ingredient";
-import { RequestedRecipe } from "src/app/models/requested-recipe";
 import { SuggestedIngredient } from "src/app/models/suggested-ingredient";
 
 export function createFakeRecipe():Recipe {

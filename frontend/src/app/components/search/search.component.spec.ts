@@ -42,7 +42,7 @@ describe('SearchComponent', () => {
     component.requestedRecipe.ingredients = [];
     click(fixture, 'start-btn');
     expect(fakeRecipeService.startLoadingRecipe).not.toHaveBeenCalled();
-    expect(fakeToastService.show).toHaveBeenCalledWith('Veuillez ajouter au moins un ingrédient');
+    expect(fakeToastService.show).toHaveBeenCalledWith('Veuillez ajouter au moins un ingrédient','bg-danger text-light');
   });
 
   it('time parameter should not be visible at first but should be visible after clicking on the icon', () => {

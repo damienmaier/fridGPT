@@ -15,14 +15,15 @@
                     <p class="fs-4 text-center text-white">{{ recipe.dishName }}</p>
                     <small class="text-white"> Proposé par {{ recipe.coach.name }}</small>
                 </div>
-                <img (click)="openCoachModal()" [src]="recipe.coach.imageUrl" width="80" alt="face of one of our virtual assistants"/>
+                <img (click)="openCoachModal()" [src]="recipe.coach.imageUrl" width="80" alt="face of one of our virtual assistants"
+                (keypress)="openCoachModal()" tabindex="0"/>
             </div>
             <div id="navigation" class="d-flex justify-content-around">
                 <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>
                 <button class="btn" (click)="nextStep(true)" test-id="right-arrow"><i class="bi bi-chevron-right"></i></button>
             </div>
             <div id="step" class="darker-blue-bg d-flex flex-column">
-                <ng-container *ngIf="currentStepIndex == recipe.steps.length;else step">
+                <ng-container *ngIf="currentStepIndex === recipe.steps.length;else step">
                     <p class="fs-4 text-white">Ingrédients </p>
                     <p class="text-white" test-id="ingredients" [innerHTML]="recipe.ingredients"></p>
                 </ng-container>

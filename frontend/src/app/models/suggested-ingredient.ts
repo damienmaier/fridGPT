@@ -18,7 +18,7 @@ export class SuggestedIngredient implements SuggestedIngredientAPI {
     defaultQuantity!: number;
     selected!: boolean;
     isCustom!: boolean;
-    constructor(name: string,unit: string, autoAdd: boolean, defaultQuantity: number, isCustom: boolean = false) {
+    constructor(name: string,unit: string, autoAdd: boolean, defaultQuantity: number, isCustom = false) {
         this.name     = name;
         this.unit     = unit;
         this.autoAdd  = autoAdd;

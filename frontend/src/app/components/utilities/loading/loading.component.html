@@ -21,9 +21,9 @@
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-1 robot d-flex justify-content-center">
-            <img id="singing" *ngIf="playing()" src="/assets_app/song.png" width="50" 
+            <img id="singing" *ngIf="playing()" src="/assets_app/song.png" width="50" tabindex="0" (keypress)="goToSleep()"
             alt="fridge with robot sticking out and music notes above it" (click)="goToSleep()" test-id="singing"/>
-            <img id="sleeping" *ngIf="!playing()" src="/assets_app/sleep.png" width="50" 
+            <img id="sleeping" *ngIf="!playing()" src="/assets_app/sleep.png" width="50" tabindex="0" (keypress)="wakeUp()"
             alt="fridge with Z letters coming out of it like something is sleeping inside it" (click)="wakeUp()" test-id="sleeping"/>
         </div>
     </div>

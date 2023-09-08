@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
@@ -11,9 +11,9 @@ import { RecipesService } from 'src/app/services/recipes.service';
 /**
  * Component that will display the generated recipes to be selected
 **/
-export class ResultComponent implements OnDestroy {
+export class ResultComponent implements OnInit, OnDestroy {
   recipes: Recipe[] = [];
-  loading: boolean = false;
+  loading = false;
   recipesSub!: Subscription;
 
   constructor(private recipeService: RecipesService) {}

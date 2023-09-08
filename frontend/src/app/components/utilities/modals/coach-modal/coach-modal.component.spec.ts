@@ -4,12 +4,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { click, findElement } from 'src/tests/main.test-helper';
 import { createFakeCoach } from 'src/tests/model.test-helper';
 import { Coach } from 'src/app/models/recipe';
-import { ModalService } from 'src/app/services/modal.service';
 
 describe('CoachModalComponent', () => {
   let component: CoachModalComponent;
   let fixture: ComponentFixture<CoachModalComponent>;
-  let fakeCoach: Coach = createFakeCoach();
+  const fakeCoach: Coach = createFakeCoach();
   let nbgModal: NgbActiveModal;
 
   beforeEach(async () => {

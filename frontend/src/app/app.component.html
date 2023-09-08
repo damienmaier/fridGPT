@@ -4,7 +4,7 @@
         <img src="/assets_app/logo.png" width="80" alt="robot coming out of a fridge holding a plate">
       </a>
       <p class="fs-4 text-white" id="app-name">FridGPT</p>
-      <i class="bi bi-pin-angle align-self-center" (click)="openCredits()"></i>
+      <i class="bi bi-pin-angle align-self-center" tabindex="0" (click)="openCredits()" (keypress)="openCredits()"></i>
     </div>
     <div id="app-content">
       <router-outlet></router-outlet>

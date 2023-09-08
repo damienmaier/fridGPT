@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
 import { RequestedIngredient } from 'src/app/models/requested-ingredient';
@@ -23,13 +23,13 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 /**
  * Component that contains the ingredients selection, the recipe customization and a button to trigger the recipes generation 
 **/
-export class SearchComponent implements OnDestroy {
+export class SearchComponent implements OnInit, OnDestroy {
   private baseIngredients: SuggestedIngredient[]  = [];
   filteredIngredients: SuggestedIngredient[]      = [];
-  currentSearch: string                           = '';
+  currentSearch = '';
   ingredientsSub!: Subscription;
   requestedRecipe!: RequestedRecipe;
-  isCollapsed: boolean = true;
+  isCollapsed   = true;
 
   constructor(private recipesService: RecipesService, public toastService: ToastService) {}
 
@@ -37,7 +37,7 @@ export class SearchComponent implements OnDestroy {
     const error = this.recipesService.fetchLastError();
     this.requestedRecipe = (error != null && error.lastRequest) ? error.lastRequest : new RequestedRecipe();
     if(error != null && error.info.error != '') {
-      this.toastService.show(this.recipesService.buildAndDisposeOfErrorMessage(),{ classname: 'bg-danger text-light'});
+      this.toastService.show(this.recipesService.buildAndDisposeOfErrorMessage(),'bg-danger text-light');
       if(error.info.ingredient) {
         this.requestedRecipe.ingredients.map((ingredient: RequestedIngredient) => {
           if(ingredient.name === error.info.ingredient?.name) {
@@ -63,7 +63,7 @@ export class SearchComponent implements OnDestroy {
    */
   startloadingRecipes(): void {
     if(this.requestedRecipe.ingredients.length === 0) {
-      this.toastService.show('Veuillez ajouter au moins un ingrédient');
+      this.toastService.show('Veuillez ajouter au moins un ingrédient','bg-danger text-light');
     } else {
       this.recipesService.startLoadingRecipe(this.requestedRecipe);
     }

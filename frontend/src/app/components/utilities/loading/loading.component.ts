@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as Howler from 'howler';
 
 @Component({
@@ -9,9 +9,8 @@ import * as Howler from 'howler';
 /**
  * Component that will be displayed during the recipes generation, is used as a loading screen
 **/
-export class LoadingComponent {
+export class LoadingComponent implements OnInit, OnDestroy {
   private audio!: Howler.Howl;
-  constructor() {}
 
   ngOnInit() {
     this.audio = new Howler.Howl({

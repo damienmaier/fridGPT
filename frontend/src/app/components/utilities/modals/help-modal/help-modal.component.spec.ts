@@ -7,7 +7,7 @@ describe('HelpModalComponent', () => {
   let component: HelpModalComponent;
   let fixture: ComponentFixture<HelpModalComponent>;
   let nbgModal: NgbActiveModal;
-  let fakeExplanation = ['this is a fake explanation'];
+  const fakeExplanation = ['this is a fake explanation'];
 
   beforeEach(async () => {
     TestBed.configureTestingModule({

@@ -6,7 +6,6 @@ import { createToastServiceSpy } from 'src/tests/fake-services';
 import { ToastService } from './services/toast.service';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   let fakeToastService: ToastService;
   
@@ -23,7 +22,6 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     fixture     = TestBed.createComponent(AppComponent);
-    component   = fixture.componentInstance;
     fixture.detectChanges();
   });
 

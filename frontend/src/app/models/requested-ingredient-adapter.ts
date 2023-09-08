@@ -10,7 +10,7 @@ import { RequestedIngredient, RequestedIngredientAPI } from "./requested-ingredi
  */
 export class RequestedIngredientAdapter implements Adapter<RequestedIngredientAPI> {
   adapt(ingredient: RequestedIngredient): RequestedIngredientAPI {
-    let ingredientToSend = {
+    const ingredientToSend = {
         name: ingredient.name,
         mandatory: ingredient.mandatory,
         quantity: ingredient.quantity

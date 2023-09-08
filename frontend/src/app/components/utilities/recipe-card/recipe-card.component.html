@@ -3,9 +3,10 @@
         <div id="dish-title" class="darker-blue-bg d-flex align-items-center">
             <p class="fs-6 text-center text-white" test-id="dish-name">{{ recipe.dishName }}</p>
         </div>
-        <img (click)="selectRecipe()" id="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page" test-id="dish-img"/>
+        <img (click)="selectRecipe()" id="dish-img" [src]="recipe.imageUrl" alt="illustration of the recipe presented on the page" 
+        test-id="dish-img" tabindex="0" (keypress)="selectRecipe()"/>
     </div>
-    <div id="description" class="d-flex darker-blue-bg" (click)="openCoachModal()" test-id="coach-description">
+    <div id="description" class="d-flex darker-blue-bg" (click)="openCoachModal()" tabindex="0" (keypress)="openCoachModal()" test-id="coach-description">
         <div class="d-flex flex-column justify-content-around">
             <p class="fs-6 text-center text-white" test-id="coach-name"> Proposé par <span id="coach-name">{{ recipe.coach.name }}</span></p>
         </div>
