@@ -7,7 +7,7 @@ import { createFakeRecipe, createFakeSuggestedIngredientsList } from './model.te
 
 function createRecipesServiceSpy() {
     const spyObj = jasmine.createSpyObj<RecipesService>('RecipesService', 
-    ['loadIngredients', 'loadRecipes', 'loadRecipeImages', 'loadHelpForStep',
+    ['loadIngredients', 'loadRecipes', 'loadHelpForStep',
     'startLoadingRecipe', 'onRecipeSelected', 'goToHome', 'getRecipe', 'fetchLastError', 'buildAndDisposeOfErrorMessage']);
     spyObj.recipesSubject = new Subject<Recipe[]>();
     spyObj.loadIngredients.and.returnValue(of(createFakeSuggestedIngredientsList()));
