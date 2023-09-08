@@ -29,7 +29,12 @@ def create_image(prompt: str, size='512x512') -> str:
 
     logger.info(f'Creating image for prompt: {prompt}')
 
-    image_url = openai.Image.create(prompt=prompt, n=1, size=size)['data'][0]['url']
+    try:
+        image_url = openai.Image.create(prompt=prompt, n=1, size=size)['data'][0]['url']
+    except openai.error.InvalidRequestError:
+        logger.warning('The image prompt was flagged by the Dall-E content filters. A default image will be used instead.')
+        image_url = '/assets_app/empty.jpg'
+
     logger.info(f'Image created: {image_url}')
 
     return image_url
