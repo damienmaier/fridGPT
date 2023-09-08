@@ -352,13 +352,13 @@ ngb-timepicker::ng-deep input, ngb-timepicker::ng-deep input:focus, #person-inpu
         max-width: 20vw!important;
     }
 
-    .checkbox-param {
+    #checkbox-param {
         display:flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .checkbox-param label {
+    #checkbox-param label {
         max-width: 90%;
     }
 

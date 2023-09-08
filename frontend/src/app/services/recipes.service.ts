@@ -52,15 +52,7 @@ export class RecipesService {
             next: (response: {recipes: Recipe[]}) => {
                 this.requestedRecipe.ingredients = [];
                 this.recipes = response.recipes;
-                if(this.requestedRecipe.withImage) {
-                    this.loadRecipeImages();
-                } else {
-                    this.recipes.map((recipe: Recipe) => {
-                        recipe.imageUrl = '/assets_app/empty.jpg';
-                        return recipe;
-                    });
-                    this.recipesSubject.next(this.recipes.slice()); 
-                }
+                this.loadRecipeImages();
             },
             error:(error: HttpErrorResponse) => {
                 this.handleError({info: error.error, lastRequest: this.requestedRecipe});
@@ -71,7 +63,7 @@ export class RecipesService {
     /**
      * generates images for the already loaded recipes (we need their descriptions to send)
      */
-    loadRecipeImages(): void {
+    private loadRecipeImages(): void {
         const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
         forkJoin(requests).subscribe({
             next: (results: DishImage[]) => {

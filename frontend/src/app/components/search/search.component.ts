@@ -19,7 +19,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ],
 })
 /**
- * Component that contains the ingredients selection, the recipe customization and a button to trigger the recipes generation 
+ * Main Component that contains the ingredients selection, the recipe customization and a button to trigger the recipes generation 
 **/
 export class SearchComponent implements OnInit, OnDestroy {
   private baseIngredients: SuggestedIngredient[];

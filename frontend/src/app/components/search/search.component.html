@@ -97,11 +97,7 @@
     </div>
     <div class="col d-flex flex-column margin-top" id="parameters">
       
-      <div class="checkbox-param">
-        <input type="checkbox" class="form-check-input" id="image-toggle" [(ngModel)]="requestedRecipe.withImage">
-        <label class="form-check-label margin-both-sides text-white" for="image-toggle">Chaque recette sera accompagnée d'une photo d'illustration appétissante !</label>   
-      </div>
-      <div class="checkbox-param">
+      <div id="checkbox-param">
           <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">
           <label class="form-check-label margin-both-sides text-white" for="shopping-toggle">Les coachs peuvent utiliser des ingrédients qui ne sont pas dans la liste</label>   
       </div>

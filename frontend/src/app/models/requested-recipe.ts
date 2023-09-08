@@ -14,14 +14,12 @@ interface DurationInput {
  */
 export class RequestedRecipe {
     ingredients: RequestedIngredient[];
-    withImage: boolean;
     otherIngredientsAllowed: boolean;
     // null parameters means that GPT will be given no constraints regarding these information
     durationInput: DurationInput | null;
     personCount: number | null;
     difficulty: number | null;
     constructor() {
-        this.withImage               = false;
         this.otherIngredientsAllowed = false;
         this.durationInput           = null;
         this.personCount             = null;
