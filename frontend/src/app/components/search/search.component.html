@@ -27,7 +27,7 @@
     </div>
     <div class="ingredients-content fancy-scroll">
       <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault">
+        <div class="row margin-top row-ingredient align-items-center" [ngClass]="{'invalid-row': ingredient.isInvalid}" *ngIf="!ingredient.isByDefault" test-id="requested-ingredient">
           <div class="col col-md-4 col-name">
             <p class="fs-6 text-white">{{ ingredient.name }}</p>
           </div>
@@ -106,12 +106,12 @@
       <div class="row d-flex align-items-center margin-top">
         <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.durationInput != null}" class="btn btn-outline-danger text-white btn-icon" 
-            (click)="requestedRecipe.durationInput = flipValue(requestedRecipe.durationInput, {hour:1,minute:0})">
+            (click)="requestedRecipe.durationInput = flipValue(requestedRecipe.durationInput, {hour:1,minute:0})" test-id="time-btn">
             <i class="bi bi-hourglass-split"></i>
           </button>
         </div>
         <div class="col d-flex" id="time-input">
-          <div class="d-flex align-items-center" [@fadeInOut] *ngIf="requestedRecipe.durationInput != null">
+          <div class="d-flex align-items-center" [@fadeInOut] *ngIf="requestedRecipe.durationInput != null" test-id="time-param">
             <p class="fs-6 text-white margin-both-sides">Temps à disposition </p>
             <ngb-timepicker name="duration-input" [(ngModel)]="requestedRecipe.durationInput"></ngb-timepicker>
           </div>
@@ -121,12 +121,12 @@
       <div class="row d-flex align-items-center margin-top">
         <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.personCount != null}" class="btn btn-outline-danger text-white btn-icon" 
-            (click)="requestedRecipe.personCount = flipValue(requestedRecipe.personCount, 1)">
+            (click)="requestedRecipe.personCount = flipValue(requestedRecipe.personCount, 1)" test-id="portion-btn">
             <i class="bi bi-person-fill-add"></i>
           </button>
         </div>
         <div class="col">
-          <div class="d-flex align-items-center form form-quantity" [@fadeInOut] *ngIf="requestedRecipe.personCount != null">
+          <div class="d-flex align-items-center form form-quantity" [@fadeInOut] *ngIf="requestedRecipe.personCount != null" test-id="portion-param">
             <p class="text-white margin-both-sides">Portions </p>
             <input name="quantity" class="text-center" id="person-input" min="0" max="100" [(ngModel)]="requestedRecipe.personCount" type="number"/>
           </div>
@@ -136,12 +136,12 @@
       <div class="row d-flex align-items-center margin-top">
         <div class="col col-sm-1 col-param-title">
           <button [ngClass]="{'light-red-bg': requestedRecipe.difficulty != null}" class="btn btn-outline-danger text-white btn-icon" 
-            (click)="requestedRecipe.difficulty = flipValue(requestedRecipe.difficulty, 1)">
+            (click)="requestedRecipe.difficulty = flipValue(requestedRecipe.difficulty, 1)" test-id="level-btn">
             <i class="bi bi-fire"></i>
           </button>
         </div>
         <div class="col">
-          <div class="d-flex align-items-center" [@fadeInOut] *ngIf="requestedRecipe.difficulty != null">
+          <div class="d-flex align-items-center" [@fadeInOut] *ngIf="requestedRecipe.difficulty != null" test-id="level-param">
             <p class="text-white margin-both-sides">Votre niveau de cuisine </p>
             <ngb-rating [(rate)]="requestedRecipe.difficulty" [max]="3" id="difficulty-input">
               <ng-template let-fill="fill" let-index="index">
@@ -154,7 +154,7 @@
 
       <div ngbAccordion id="default-ingredients" class="d-flex flex-column align-items-center">
         <div ngbAccordionItem="first" #first="ngbAccordionItem" [collapsed]="false">
-          <h2 ngbAccordionHeader>
+          <h2 ngbAccordionHeader test-id="accordion-header">
             <button ngbAccordionButton class="darker-blue-bg">
               En plus des ingrédients indiqués, les coachs supposent que vous possédez...
             </button>
@@ -163,7 +163,7 @@
             <div ngbAccordionBody class="dark-blue-bg ingredients-content fancy-scroll">
               <ng-template>
                 <ng-container *ngFor="let ingredient of requestedRecipe.ingredients">
-                  <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault">
+                  <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault" test-id="default-ingredient">
                       <p>{{ingredient.name}}</p>
                       <i class="bi bi-trash-fill hand-cursor" (click)="removeIngredientFromList(ingredient.name)"></i>
                   </div>
@@ -177,7 +177,7 @@
   </div>
 </div>
 <!-- start button -->
-<div class="search-button hand-cursor" (click)="startloadingRecipes()">
+<div class="search-button hand-cursor" (click)="startloadingRecipes()" test-id="start-btn">
   <div class="search-button-content">
     <p class="text-white search-button-text bold text-center round-corners"> C'est parti !</p>
     <div class="icon">

@@ -3,14 +3,14 @@ import { Recipe } from "src/app/models/recipe";
 import { ModalService } from "src/app/services/modal.service";
 import { RecipesService } from "src/app/services/recipes.service";
 import { ToastService } from "src/app/services/toast.service";
-import { createFakeRecipe } from "./model.test-helper";
+import { createFakeRecipe, createFakeSuggestedIngredientsList } from "./model.test-helper";
 
 function createRecipesServiceSpy() {
     const spyObj = jasmine.createSpyObj<RecipesService>('RecipesService', 
     ['loadIngredients', 'loadRecipes', 'loadRecipeImages', 'loadHelpForStep',
     'startLoadingRecipe', 'onRecipeSelected', 'goToHome', 'getRecipe', 'fetchLastError', 'buildAndDisposeOfErrorMessage']);
     spyObj.recipesSubject = new Subject<Recipe[]>();
-    spyObj.loadIngredients.and.returnValue(of([]));
+    spyObj.loadIngredients.and.returnValue(of(createFakeSuggestedIngredientsList()));
     spyObj.loadRecipes.and.callFake(() => {
         spyObj.recipesSubject.next([createFakeRecipe()]);
     });

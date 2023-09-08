@@ -20,10 +20,10 @@ This command will find every test file following this naming convention: `<file_
 
 We configured the project so that the command `ng test` runs the tests only once (set --watch=true in the angular.json to run build when files changes)
 
-To run specific files, you can specify the folder where the tests you want to run are located, just run : 
+To run specific files, you can specify a component folder to run the test associated with a single component, just run : 
 
 ```bash
-ng test --include='**/someFolder/*.spec.ts'
+ng test --include='**/componentFolder/*.spec.ts'
 ```
 
 for example, to run the "recipe" component test simply run:

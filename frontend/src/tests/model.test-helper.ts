@@ -1,4 +1,7 @@
 import { Coach, Recipe } from "src/app/models/recipe";
+import { RequestedIngredient } from "src/app/models/requested-ingredient";
+import { RequestedRecipe } from "src/app/models/requested-recipe";
+import { SuggestedIngredient } from "src/app/models/suggested-ingredient";
 
 export function createFakeRecipe():Recipe {
     return {
@@ -13,4 +16,12 @@ export function createFakeRecipe():Recipe {
 
 export function createFakeCoach(): Coach {
     return {name: 'Germaine', description: 'Germaine, retraitée et cuisinière légendaire', imageUrl:''}
+}
+
+export function createFakeSuggestedIngredientsList(): SuggestedIngredient[] {
+    return [
+        new SuggestedIngredient('poulet', 'kg', true, 1, false),
+        new SuggestedIngredient('thon', 'kg', false, 3, false),
+        new SuggestedIngredient('oeufs', 'pièce', false, 10, false)
+    ]
 }

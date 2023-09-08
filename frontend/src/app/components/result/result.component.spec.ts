@@ -40,6 +40,6 @@ describe('ResultComponent', () => {
   });
 
   it('should display one recipe card component', () => {
-    expect(findAllElements(fixture, '.box').length).toBe(1);
+    expect(findAllElements(fixture, 'recipe').length).toBe(1);
   });
 });

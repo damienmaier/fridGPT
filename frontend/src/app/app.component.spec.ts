@@ -22,8 +22,8 @@ describe('AppComponent', () => {
   });
 
   beforeEach(() => {
-    fixture    = TestBed.createComponent(AppComponent);
-    component  = fixture.componentInstance;
+    fixture     = TestBed.createComponent(AppComponent);
+    component   = fixture.componentInstance;
     fixture.detectChanges();
   });
 

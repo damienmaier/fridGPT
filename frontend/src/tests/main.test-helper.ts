@@ -31,8 +31,8 @@ export function findNthElement<T>(fixture: ComponentFixture<T>, querySelector: s
     return items[index];
 }
 
-export function findAllElements<T>(fixture: ComponentFixture<T>, querySelector: string): DebugElement[] {
-    const items = fixture.debugElement.queryAll(By.css(querySelector));
+export function findAllElements<T>(fixture: ComponentFixture<T>, testId: string): DebugElement[] {
+    const items = fixture.debugElement.queryAll(By.css(`[test-id=\"${testId}\"]`));
     if(items === null) {
         throw new Error("the given query selector does not match any element");
     }
