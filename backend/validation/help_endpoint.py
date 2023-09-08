@@ -1,7 +1,7 @@
 import dataclasses
 
 import config
-import errors
+from validation import errors
 from validation.util import parse_and_validate_types
 
 logger = config.logging.getLogger(__name__)

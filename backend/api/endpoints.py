@@ -60,7 +60,11 @@ def create_api(app: flask.Flask) -> None:
 
         See also the integration tests in recipe_endpoint_test.py.
         """
-        request = validation.parse_and_validate_recipe_endpoint_request(flask.request.json)
+        try:
+            request = validation.parse_and_validate_recipe_endpoint_request(flask.request.json)
+        except validation.ValidationError as error:
+            return error.as_dict(), 400
+
         return {
             'recipes': [recipe_.as_dict() for recipe_ in recipe.create_recipes(request.ingredients, request.params)]
         }
@@ -95,7 +99,10 @@ def create_api(app: flask.Flask) -> None:
         See `image_endpoint_test.py` for the exact request and response structure.
 
         """
-        request = validation.parse_and_validate_image_endpoint_request(flask.request.json)
+        try:
+            request = validation.parse_and_validate_image_endpoint_request(flask.request.json)
+        except validation.ValidationError as error:
+            return error.as_dict(), 400
 
         image_url = dalle.create_image(f'photo professionnelle, gros plan, délicieux, {request.dishDescription}')
 
@@ -116,5 +123,9 @@ def create_api(app: flask.Flask) -> None:
 
         See `help_endpoint_test.py` for the exact request and response structure.
         """
-        request = validation.parse_and_validate_help_endpoint_request(flask.request.json)
+        try:
+            request = validation.parse_and_validate_help_endpoint_request(flask.request.json)
+        except validation.ValidationError as error:
+            return error.as_dict(), 400
+
         return {'helpText': help.create_help_message_for_step(request.steps, request.stepIndex)}

@@ -1,7 +1,7 @@
 import cattrs
 
 import config
-import errors
+from validation import errors
 
 logger = config.logging.getLogger(__name__)
 

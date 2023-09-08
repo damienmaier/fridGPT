@@ -1,10 +1,8 @@
 import dataclasses
-from typing import Optional
 
 import config
 import data
-import errors
-from . import classifiers
+from . import classifiers, errors
 from .util import parse_and_validate_types
 
 logger = config.logging.getLogger(__name__)

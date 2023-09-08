@@ -1,7 +1,5 @@
 import abc
 
-import flask
-
 import data
 
 
@@ -54,10 +52,3 @@ class InsufficientIngredientsError(ValidationError):
 
     def error_name(self) -> str:
         return 'insufficient ingredients'
-
-
-
-def create_exception_handlers(app: flask.Flask) -> None:
-    @app.errorhandler(ValidationError)
-    def handle_fridgpt_error(error: ValidationError):
-        return error.as_dict(), 400
