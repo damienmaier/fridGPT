@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { Coach, Recipe } from 'src/app/models/recipe';
+import { Recipe } from 'src/app/models/recipe';
 import { ModalService } from 'src/app/services/modal.service';
 import { RecipesService } from 'src/app/services/recipes.service';
 
@@ -9,15 +9,21 @@ import { RecipesService } from 'src/app/services/recipes.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css'],
 })
-export class RecipeComponent {
+/**
+ * Component that displays one of the generated recipes that the user selected
+**/
+export class RecipeComponent implements OnInit {
   recipe!: Recipe;
-  currentStep: string = '';
+  currentStep: string;
   currentStepIndex!: number;
-  loadingHelp: boolean = false;
+  loadingHelp: boolean;
 
-  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {}
+  constructor(private recipeService: RecipesService, private route: ActivatedRoute, private modalService: ModalService) {
+    this.currentStep = '';
+    this.loadingHelp = false;
+  }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const index             = this.route.snapshot.paramMap.get('recipeId');
     this.recipe             = this.recipeService.getRecipe(index == null ? -1 : +index);
     this.currentStep        = this.recipe.ingredients;
@@ -28,7 +34,11 @@ export class RecipeComponent {
     this.recipe.ingredients = this.recipe.ingredients.replaceAll('\n', '<br>'); 
   }
 
-  nextStep(forward: boolean) {
+  /**
+   * updates the displayed step
+   * @param forward navigation direction between recipe's steps
+   */
+  nextStep(forward: boolean): void {
     this.currentStepIndex = (this.currentStepIndex + (forward ? 1 : -1)) % (this.recipe.steps.length + 1);
     if (this.currentStepIndex < 0) {
       this.currentStepIndex += this.recipe.steps.length + 1;
@@ -37,14 +47,20 @@ export class RecipeComponent {
       this.recipe.ingredients : this.recipe.steps[this.currentStepIndex];
   }
 
+  /**
+   * opens a modal that will display information about the recipe's coach
+   */
   openCoachModal(): void {
     this.modalService.openCoachModal(this.recipe.coach);
   }
 
+  /**
+   * opens a modal that will display more information about the current step
+   */
   openHelpModal(): void {
     this.loadingHelp = true;
     this.modalService.openHelpModal(this.recipe.steps, this.currentStepIndex).subscribe(
-      () => { this.loadingHelp = false; }
-    )
+      () => this.loadingHelp = false
+    );
   }
 }

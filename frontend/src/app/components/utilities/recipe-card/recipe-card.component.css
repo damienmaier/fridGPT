@@ -38,6 +38,7 @@ p {
 	transform: scale(1);
 }
 
+/* on hover, the coach image will be a bit bigger and have a black shadow */
 #description:hover > #coach-face {
     -webkit-transform: scale(1.3);
 	transform : translate(20%, -20%) scale(1.3);
@@ -46,10 +47,12 @@ p {
     filter:drop-shadow(.2rem .2rem .2rem black)
 }
 
+/* on hover, the mouse cursor will change to the hand cursor */
 .selectable #dish:hover, #description:hover {
     cursor: pointer;
 }
 
+/* on hover, the image will be less opaque */
 .selectable #dish:hover img {
     opacity: 0.8;
 }
@@ -61,6 +64,7 @@ p {
     background-size: 200% 100%;
 }
 
+/* on hover, the parts over and under the image will change color from left to right */
 #description:hover, .selectable #dish:hover #dish-title {
     background-position: left bottom;
 }

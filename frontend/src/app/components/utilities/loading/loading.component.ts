@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as Howler from 'howler';
 
 @Component({
@@ -6,32 +6,35 @@ import * as Howler from 'howler';
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.css']
 })
-export class LoadingComponent {
+/**
+ * Component that will be displayed during the recipes generation, it is used as a loading screen
+**/
+export class LoadingComponent implements OnInit, OnDestroy {
   private audio!: Howler.Howl;
-  constructor() {}
 
-  ngOnInit() {
-    this.audio = new Howler.Howl({
-      src: ['/assets_app/loading_song.mp3'],
-      autoplay: false,
-      loop: true,
-      volume: 1
-    });
+  ngOnInit(): void {
+    this.audio = new Howler.Howl({ src: ['/assets_app/loading_song.mp3'], autoplay: false, loop: true, volume: 1 });
   }
 
-  playing() {
+  playing(): boolean {
     return this.audio && this.audio.playing();
   }
 
-  wakeUp() {
+  /**
+   * is triggered when we click on the sleeping fridge icon, starts the music
+   */
+  wakeUp(): void {
     this.audio.play();
   }
 
-  goToSleep() {
+  /**
+   * is triggered when we click on the singing fridge icon, stops the music
+   */
+  goToSleep(): void {
     this.audio.pause();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.audio.stop();
   }
 }

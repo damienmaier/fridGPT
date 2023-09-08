@@ -1,23 +1,26 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ToastService } from 'src/app/services/toast.service';
+import { ToastContent, ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-toasts',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.css']
 })
-export class ToastComponent implements OnDestroy {
-  toasts: any[] = [];
+/**
+ * Component that contains a toast
+ */
+export class ToastComponent implements OnInit, OnDestroy {
+  toasts: ToastContent[] = [];
   toastsSub!: Subscription;
 
   constructor(public toastService: ToastService) {}
 
-  ngOnInit() {
-    this.toastsSub = this.toastService.toastSubject.subscribe((newToasts: string[]) => this.toasts = newToasts)
+  ngOnInit(): void {
+    this.toastsSub = this.toastService.toastSubject.subscribe((newToasts: ToastContent[]) => this.toasts = newToasts);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if(this.toastsSub) {
       this.toastsSub.unsubscribe();
     }

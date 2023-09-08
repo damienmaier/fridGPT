@@ -1,14 +1,14 @@
-import { Observable, Subject, catchError, forkJoin, map} from "rxjs";
-import { HttpClient, HttpErrorResponse} from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Recipe } from "../models/recipe";
-import { Router } from "@angular/router";
-import { SuggestedIngredientAdapter } from "../models/suggested-ingredient-adapter";
-import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapter";
-import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested-ingredient";
-import { APIError } from "../models/api-error";
-import { DishImage } from "../models/image";
-import { RequestedRecipe } from "../models/requested-recipe";
+import { Observable, Subject, catchError, forkJoin, map} from 'rxjs';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Recipe } from '../models/recipe';
+import { Router } from '@angular/router';
+import { SuggestedIngredientAdapter } from '../models/suggested-ingredient-adapter';
+import { RequestedIngredientAdapter } from '../models/requested-ingredient-adapter';
+import { SuggestedIngredient, SuggestedIngredientAPI } from '../models/suggested-ingredient';
+import { APIError } from '../models/api-error';
+import { DishImage } from '../models/image';
+import { RequestedRecipe } from '../models/requested-recipe';
 
 @Injectable()
 export class RecipesService {
@@ -23,14 +23,21 @@ export class RecipesService {
         private requestedIngredientAdapter: RequestedIngredientAdapter) {}
 
     /* --------- HTTP requests ------------------------------ */
+    /**
+     * @returns a list of ingredients to choose directly from
+     */
     loadIngredients(): Observable<SuggestedIngredient[]> {
         return this.http.get<{ingredients: SuggestedIngredientAPI[]}>('/api/ingredients').pipe(
             map((data: {ingredients: SuggestedIngredientAPI[]}) => { 
                 return data.ingredients.map(this.suggestedIngredientAdapter.adapt);
             }),
-            catchError(err => []));
+            catchError(() => [])
+        );
     }
 
+    /**
+     * @returns generated recipes based on the user requirements (ingredients, customization...)
+     */
     loadRecipes(): void {
         if(this.recipes.length > 0) { 
             this.recipesSubject.next(this.recipes.slice());
@@ -45,15 +52,7 @@ export class RecipesService {
             next: (response: {recipes: Recipe[]}) => {
                 this.requestedRecipe.ingredients = [];
                 this.recipes = response.recipes;
-                if(this.requestedRecipe.withImage) {
-                    this.loadRecipeImages();
-                } else {
-                    this.recipes.map((recipe: Recipe) => {
-                        recipe.imageUrl = '/assets_app/empty.jpg';
-                        return recipe;
-                    });
-                    this.recipesSubject.next(this.recipes.slice()); 
-                }
+                this.loadRecipeImages();
             },
             error:(error: HttpErrorResponse) => {
                 this.handleError({info: error.error, lastRequest: this.requestedRecipe});
@@ -61,7 +60,10 @@ export class RecipesService {
         });
     }
 
-    loadRecipeImages(): void {
+    /**
+     * generates images for the already loaded recipes (we need their descriptions to send)
+     */
+    private loadRecipeImages(): void {
         const requests = this.recipes.map((recipe: Recipe) => this.http.post<DishImage>('/api/image', {dishDescription: recipe.dishDescription}));
         forkJoin(requests).subscribe({
             next: (results: DishImage[]) => {
@@ -76,32 +78,58 @@ export class RecipesService {
         });
     }
 
-    private handleError(receivedError: APIError) {
+    /**
+     * stores the error and navigates to the search component to start again
+     * @param receivedError error from API
+     */
+    private handleError(receivedError: APIError): void {
         this.lastError = receivedError;
         this.goToHome();
         this.recipesSubject.next([]);
     }
 
+    /**
+     * triggers an API call that will reformulate a step
+     * @param steps recipes's steps
+     * @param stepIndex index of the step we are interested in
+     * @returns a structure containing a more detailed explanation
+     */
     loadHelpForStep(steps: string[], stepIndex: number): Observable<{helpText: string}> {
         return this.http.post<{helpText: string}>('/api/help', {steps, stepIndex});
     }
 
     /* --------- navigation related actions ------------------------------ */
+    /**
+     * triggers the navigation to the result component
+     * @param recipe user requirements to give to the API for it to generate recipes
+     */
     startLoadingRecipe(recipe: RequestedRecipe): void {
         this.requestedRecipe    = recipe;
         this.recipes            = [];
         this.router.navigate(['/app/result']);
     }
 
+    /**
+     * triggers the navigation to the recipe component
+     * @param index recipe index
+     */
     onRecipeSelected(index: number): void {
         this.router.navigate(['/app/recipe', index]);
     }
 
+    /**
+     * triggers the navigation to the search component
+     */
     goToHome(): void {
         this.router.navigate(['/app']);
     }
 
     /* --------- other data requests from components ------------------------------ */
+    /**
+     * search a recipe based on its index
+     * @param index recipe index
+     * @returns a recipe
+     */
     getRecipe(index: number): Recipe {
         if(!this.recipes || index == null || index < 0 || index >= this.recipes.length) {
             return {dishName:'',dishDescription:'',ingredients:'',steps:[],coach:{name:'',description:'',imageUrl:''},imageUrl:''};
@@ -113,6 +141,9 @@ export class RecipesService {
         return this.lastError;
     }
 
+    /**
+     * @returns a user friendly error message
+     */
     buildAndDisposeOfErrorMessage(): string {
         if(this.lastError == null) { return ''; }
         let message = '';

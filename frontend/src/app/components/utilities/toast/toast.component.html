@@ -1,6 +1,6 @@
 <ngb-toast [innerHTML]="toast.body"
   *ngFor="let toast of toasts"
-  [class]="toast.classname"
+  [class]="toast.classNames"
   [autohide]="true" [delay]="7000"
-  (hiddden)="toastService.remove(toast)">
+  (hidden)="toastService.remove(toast)">
 </ngb-toast>

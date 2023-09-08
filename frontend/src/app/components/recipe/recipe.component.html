@@ -1,40 +1,43 @@
 <div id="header">
-    <button type="button" class="btn text-white" id="back-btn" routerLink="/app/result">
+    <button type="button" class="btn text-white" id="back-btn" routerLink="/app/result" test-id="back-btn">
         <i class="bi bi-arrow-return-left"></i> Retour à la liste
     </button>
     <p class="fs-4 text-white">A vous de jouer !</p>
 </div>
 <div class="container-fluid">
     <div class="row">
+        <!-- recipe description and image (only for big screens) -->
         <div class="col col-lg-4 dark-blue-bg" id="col-description">
-            <app-recipe-card [recipe]="recipe"></app-recipe-card>
+            <app-recipe-card [recipe]="recipe" test-id="recipe-card"></app-recipe-card>
         </div>
+        <!-- steps -->
         <div class="col" id="col-step">
-            <div id="small-screen-info">
+            <div id="small-screen-info" test-id="small-screen-info">
                 <div>
                     <p class="fs-4 text-center text-white">{{ recipe.dishName }}</p>
                     <small class="text-white"> Proposé par {{ recipe.coach.name }}</small>
                 </div>
-                <img (click)="openCoachModal()" [src]="recipe.coach.imageUrl" width="80" alt="face of one of our virtual assistants"/>
+                <img (click)="openCoachModal()" [src]="recipe.coach.imageUrl" width="80" alt="face of one of our virtual assistants"
+                (keypress)="openCoachModal()" tabindex="0"/>
             </div>
             <div id="navigation" class="d-flex justify-content-around">
-                <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>
-                <button class="btn" (click)="nextStep(true)"><i class="bi bi-chevron-right"></i></button>
+                <button class="btn" (click)="nextStep(false)" test-id="left-arrow"><i class="bi bi-chevron-left"></i></button>
+                <button class="btn" (click)="nextStep(true)" test-id="right-arrow"><i class="bi bi-chevron-right"></i></button>
             </div>
             <div id="step" class="darker-blue-bg d-flex flex-column">
-                <ng-container *ngIf="currentStepIndex == recipe.steps.length;else step">
+                <ng-container *ngIf="currentStepIndex === recipe.steps.length;else step">
                     <p class="fs-4 text-white">Ingrédients </p>
-                    <p class="text-white" [innerHTML]="recipe.ingredients"></p>
+                    <p class="text-white" test-id="ingredients" [innerHTML]="recipe.ingredients"></p>
                 </ng-container>
                 <ng-template #step>
-                    <p class="fs-5 text-white text-center" id="step-detail" [innerHTML]="currentStep"></p>
+                    <p class="fs-5 text-white text-center" id="step-detail" test-id="step-content" [innerHTML]="currentStep"></p>
                     <div id="step-counter">
                         <p class="text-white">{{ currentStepIndex + 1}} / {{ recipe.steps.length }}</p>
                     </div>
                     <div class="align-self-end d-flex">
                         <app-rotating-image *ngIf="loadingHelp" [goingFoward]="false" imgSource="/assets_app/gear1.png" [imgWidth]="30"></app-rotating-image>
                         <app-rotating-image *ngIf="loadingHelp" [goingFoward]="true" imgSource="/assets_app/gear1.png" [imgWidth]="20"></app-rotating-image>
-                        <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp">
+                        <button class="btn btn-danger text-white light-red-bg" id="help-btn" (click)="openHelpModal()" [disabled]="loadingHelp" test-id="help-btn">
                             <i class="bi bi-emoji-dizzy-fill"></i> J'ai besoin d'aide !
                         </button>
                     </div>

@@ -1,7 +1,6 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Coach, Recipe } from 'src/app/models/recipe';
-import { ModalService } from 'src/app/services/modal.service';
+import { Recipe } from 'src/app/models/recipe';
 import { RecipesService } from 'src/app/services/recipes.service';
 
 @Component({
@@ -9,15 +8,21 @@ import { RecipesService } from 'src/app/services/recipes.service';
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css']
 })
-export class ResultComponent implements OnDestroy {
-  recipes: Recipe[] = [];
-  loading: boolean = false;
+/**
+ * Component that displays the generated recipes to be selected
+**/
+export class ResultComponent implements OnInit, OnDestroy {
+  recipes: Recipe[];
+  loading: boolean;
   recipesSub!: Subscription;
 
-  constructor(private recipeService: RecipesService, private modalService: ModalService) {}
+  constructor(private recipeService: RecipesService) {
+    this.recipes = [];
+    this.loading = false;
+  }
 
-  ngOnInit() {
-    this.loading = true;
+  ngOnInit(): void {
+    this.loading    = true;
     this.recipesSub = this.recipeService.recipesSubject.subscribe({
       next: (sentRecipes: Recipe[]) => {
         if(sentRecipes.length == 0) {
@@ -30,10 +35,6 @@ export class ResultComponent implements OnDestroy {
       } // errors catched in service
     });
     this.recipeService.loadRecipes();
-  }
-
-  openCoachModal(coach: Coach): void {
-    this.modalService.openCoachModal(coach);
   }
 
   ngOnDestroy(): void {

@@ -10,7 +10,7 @@ describe('GearComponent', () => {
     TestBed.configureTestingModule({
       declarations: [RotatingImageComponent]
     });
-    fixture = TestBed.createComponent(RotatingImageComponent);
+    fixture   = TestBed.createComponent(RotatingImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,6 @@
 <div class="modal-body text-overflow darkest-bg">
     <img [src]="coach.imageUrl" width="60" alt="face of one of our virtual assistants" />
-    <p class="text-white">{{ coach.name }}</p>
-    <p class="text-white fancy-scroll description">{{ coach.description }}</p>
-    <button type="button" class="btn btn-danger text-white light-red-bg" (click)="close()">Ok !</button>
+    <p class="text-white" test-id="coach-name">{{ coach.name }}</p>
+    <p class="text-white fancy-scroll description" test-id="coach-descr">{{ coach.description }}</p>
+    <button type="button" class="btn btn-danger text-white light-red-bg" (click)="close()" test-id="close-btn">Ok !</button>
 </div>

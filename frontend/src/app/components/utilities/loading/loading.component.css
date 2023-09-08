@@ -20,6 +20,7 @@
 	transform: rotate(0) scale(1);
 }
 
+/* on hover, the robot will rotate a little and glow */
 .robot:hover img {
     -webkit-transform: rotate(15deg) scale(1.2);
 	transform: rotate(15deg) scale(1.2);
@@ -29,7 +30,6 @@
 }
 
 @media screen and (max-width: 1250px) {
-
     #coach-row div, #loading-row div:not(.col) {
         width: fit-content;
         justify-content: center;

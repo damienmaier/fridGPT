@@ -1,4 +1,4 @@
-<ng-container *ngIf="loading;else loadingFinished">
+<ng-container *ngIf="loading; else loadingFinished">
     <app-loading></app-loading>
 </ng-container>
 <ng-template #loadingFinished>
@@ -7,7 +7,7 @@
     </div>
     <div class="container d-flex tiny-fancy-scroll">
         <ng-container *ngFor="let recipe of recipes; let i = index">
-            <div class="box">
+            <div class="box" test-id="recipe">
                 <app-recipe-card [recipe]="recipe" [recipeId]="i" [selectable]="true"></app-recipe-card>
             </div>
         </ng-container>
