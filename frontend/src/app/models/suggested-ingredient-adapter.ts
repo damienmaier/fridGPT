@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Adapter } from "./adapter";
-import { SuggestedIngredient, SuggestedIngredientAPI } from "./suggested-ingredient";
+import { Injectable } from '@angular/core';
+import { Adapter } from './adapter';
+import { SuggestedIngredient, SuggestedIngredientAPI } from './suggested-ingredient';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 /**
  * Used when the API sends the available ingredients list and we translate them into our own extended type to manipulate them

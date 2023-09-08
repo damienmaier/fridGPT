@@ -1,5 +1,5 @@
-import { RequestedIngredient } from "./requested-ingredient";
-import { RequestedIngredientAdapter } from "./requested-ingredient-adapter";
+import { RequestedIngredient } from './requested-ingredient';
+import { RequestedIngredientAdapter } from './requested-ingredient-adapter';
 
 interface DurationInput {
     hour: number,

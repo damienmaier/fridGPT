@@ -1,10 +1,10 @@
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { CoachModalComponent } from "../components/utilities/modals/coach-modal/coach-modal.component";
-import { Coach } from "../models/recipe";
-import { Observable, map } from "rxjs";
-import { HelpModalComponent } from "../components/utilities/modals/help-modal/help-modal.component";
-import { RecipesService } from "./recipes.service";
-import { Injectable } from "@angular/core";
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CoachModalComponent } from '../components/utilities/modals/coach-modal/coach-modal.component';
+import { Coach } from '../models/recipe';
+import { Observable, map } from 'rxjs';
+import { HelpModalComponent } from '../components/utilities/modals/help-modal/help-modal.component';
+import { RecipesService } from './recipes.service';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ModalService {

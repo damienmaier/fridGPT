@@ -1,9 +1,9 @@
-import { Subject, of } from "rxjs";
-import { Recipe } from "src/app/models/recipe";
-import { ModalService } from "src/app/services/modal.service";
-import { RecipesService } from "src/app/services/recipes.service";
-import { ToastContent, ToastService } from "src/app/services/toast.service";
-import { createFakeRecipe, createFakeSuggestedIngredientsList } from "./model.test-helper";
+import { Subject, of } from 'rxjs';
+import { Recipe } from 'src/app/models/recipe';
+import { ModalService } from 'src/app/services/modal.service';
+import { RecipesService } from 'src/app/services/recipes.service';
+import { ToastContent, ToastService } from 'src/app/services/toast.service';
+import { createFakeRecipe, createFakeSuggestedIngredientsList } from './model.test-helper';
 
 function createRecipesServiceSpy() {
     const spyObj = jasmine.createSpyObj<RecipesService>('RecipesService', 

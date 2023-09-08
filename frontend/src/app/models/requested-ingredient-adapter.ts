@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Adapter } from "./adapter";
-import { RequestedIngredient, RequestedIngredientAPI } from "./requested-ingredient";
+import { Injectable } from '@angular/core';
+import { Adapter } from './adapter';
+import { RequestedIngredient, RequestedIngredientAPI } from './requested-ingredient';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 /**
  * used to format the ingredients we want to send to the API for it to generate recipes

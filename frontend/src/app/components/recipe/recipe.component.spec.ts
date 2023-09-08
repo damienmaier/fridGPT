@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { createModalServiceSpy, createRecipesServiceSpy } from 'src/tests/fake-services';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { RecipeComponent } from './recipe.component';
-import { RouterTestingModule } from "@angular/router/testing";
+import { RouterTestingModule } from '@angular/router/testing';
 import { ModalService } from 'src/app/services/modal.service';
 import { RecipeCardComponent } from '../utilities/recipe-card/recipe-card.component';
 import { Recipe } from 'src/app/models/recipe';

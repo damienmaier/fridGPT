@@ -133,7 +133,7 @@ p {
 }
 
 .form label:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0px;
     bottom:-1px;

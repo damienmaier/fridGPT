@@ -1,13 +1,13 @@
-import { Coach, Recipe } from "src/app/models/recipe";
-import { SuggestedIngredient } from "src/app/models/suggested-ingredient";
+import { Coach, Recipe } from 'src/app/models/recipe';
+import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
 
 export function createFakeRecipe():Recipe {
     return {
-        "coach": createFakeCoach(), 
-        "dishDescription": "Du rien en boîte, c'est tout", 
-        "dishName": "Du rien en boîte", 
-        "ingredients": "- 500g de rien", 
-        "steps": ["Sortir le rien de la boîte."],
+        coach: createFakeCoach(), 
+        dishDescription: 'Du rien en boîte, c\'est tout', 
+        dishName: 'Du rien en boîte', 
+        ingredients: '- 500g de rien', 
+        steps: ['Sortir le rien de la boîte.'],
         imageUrl: '/assets_app/empty.jpg'
       };
 }

@@ -1,14 +1,14 @@
-import { Observable, Subject, catchError, forkJoin, map} from "rxjs";
-import { HttpClient, HttpErrorResponse} from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Recipe } from "../models/recipe";
-import { Router } from "@angular/router";
-import { SuggestedIngredientAdapter } from "../models/suggested-ingredient-adapter";
-import { RequestedIngredientAdapter } from "../models/requested-ingredient-adapter";
-import { SuggestedIngredient, SuggestedIngredientAPI } from "../models/suggested-ingredient";
-import { APIError } from "../models/api-error";
-import { DishImage } from "../models/image";
-import { RequestedRecipe } from "../models/requested-recipe";
+import { Observable, Subject, catchError, forkJoin, map} from 'rxjs';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Recipe } from '../models/recipe';
+import { Router } from '@angular/router';
+import { SuggestedIngredientAdapter } from '../models/suggested-ingredient-adapter';
+import { RequestedIngredientAdapter } from '../models/requested-ingredient-adapter';
+import { SuggestedIngredient, SuggestedIngredientAPI } from '../models/suggested-ingredient';
+import { APIError } from '../models/api-error';
+import { DishImage } from '../models/image';
+import { RequestedRecipe } from '../models/requested-recipe';
 
 @Injectable()
 export class RecipesService {
