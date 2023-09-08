@@ -41,9 +41,16 @@ describe('RecipeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('renders an independent recipe card', () => {
-    const recipeCard = findElement(fixture, 'recipe-card');
-    expect(recipeCard).toBeTruthy();
+  it('should render an independent recipe card', () => {
+    expect(findElement(fixture, 'recipe-card')).toBeTruthy();
+  });
+
+  it('should not display small screen parts', () => {
+    try {
+      findElement(fixture, 'small-screen-info');
+    } catch(e: any) {
+      expect(e.message).toBeTruthy();
+    }
   });
 
   it('should display ingredients first only', () => {
@@ -58,13 +65,12 @@ describe('RecipeComponent', () => {
   it('should display the first step when we click on the right arrow', () => {
     click(fixture, 'right-arrow');
     fixture.detectChanges();
-    const step = findElement(fixture, 'step-content');
-    expect(step.nativeElement.textContent).toContain(fakeRecipe.steps[0]);
+    expect(findElement(fixture, 'step-content').nativeElement.textContent).toContain(fakeRecipe.steps[0]);
   });
 
   it('should display the ingredients when we reach the end of the steps', () => {
     click(fixture, 'right-arrow');
-    fixture.detectChanges();
+    click(fixture, 'right-arrow');
     click(fixture, 'right-arrow');
     fixture.detectChanges();
     expect(findElement(fixture, 'ingredients').nativeElement.textContent).toContain(fakeRecipe.ingredients);
@@ -76,5 +82,11 @@ describe('RecipeComponent', () => {
     click(fixture, 'help-btn');
     fixture.detectChanges();
     expect(fakeModalService.openHelpModal).toHaveBeenCalledWith(fakeRecipe.steps, 0);
+  });
+
+  it('should display the last step when we click on the left arrow', () => {
+    click(fixture, 'left-arrow');
+    fixture.detectChanges();
+    expect(findElement(fixture, 'step-content').nativeElement.textContent).toContain(fakeRecipe.steps[1]);
   });
 });

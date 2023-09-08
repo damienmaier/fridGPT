@@ -60,7 +60,7 @@
             </ng-container>
           </div>
           <div class="col-sm-1 trash d-flex justify-content-center">
-            <i class="bi bi-trash-fill text-white hand-cursor" tabindex="{{1+i}}"
+            <i class="bi bi-trash-fill text-white hand-cursor" tabindex="{{1+i}}" test-id="requested-ingredient-bin"
               (keypress)="removeIngredientFromList(ingredient.name)" (click)="removeIngredientFromList(ingredient.name)">
             </i>
           </div>
@@ -98,7 +98,7 @@
     <div class="col d-flex flex-column margin-top" id="parameters">
       
       <div id="checkbox-param">
-          <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed">
+          <input type="checkbox" class="form-check-input" id="shopping-toggle" [(ngModel)]="requestedRecipe.otherIngredientsAllowed" test-id="other-allowed-check">
           <label class="form-check-label margin-both-sides text-white" for="shopping-toggle">Les coachs peuvent utiliser des ingrédients qui ne sont pas dans la liste</label>   
       </div>
 
@@ -164,7 +164,7 @@
                 <ng-container *ngFor="let ingredient of requestedRecipe.ingredients; let i = index">
                   <div class="text-white default-element d-flex justify-content-between" *ngIf="ingredient.isByDefault" test-id="default-ingredient">
                       <p>{{ingredient.name}}</p>
-                      <i class="bi bi-trash-fill hand-cursor"
+                      <i class="bi bi-trash-fill hand-cursor" test-id="default-ingredient-bin"
                         (keypress)="removeIngredientFromList(ingredient.name)" tabindex="{{1+i}}" (click)="removeIngredientFromList(ingredient.name)">
                       </i>
                   </div>

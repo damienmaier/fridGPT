@@ -6,8 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastService } from 'src/app/services/toast.service';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { click, findAllElements, findElement } from 'src/tests/main.test-helper';
+import { click, findAllElements, findElement, findNthElement } from 'src/tests/main.test-helper';
 import { SuggestedIngredient } from 'src/app/models/suggested-ingredient';
+import { DebugElement } from '@angular/core';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -90,16 +91,16 @@ describe('SearchComponent', () => {
   });
 
   it('should display the new requested ingredient', () => {
-    component.addIngredientToList(new SuggestedIngredient('poulet', 'kg', false, 1, false));
+    component.addIngredientToList(new SuggestedIngredient('bacon', 'kg', false, 1, false));
     fixture.whenStable().then(() => {
       expect(findAllElements(fixture, 'requested-ingredient').length).toBe(1);
     });
   });
 
   it('should not allow duplicates', () => {
-    component.addIngredientToList(new SuggestedIngredient('poulet', 'kg', false, 1, false));
+    component.addIngredientToList(new SuggestedIngredient('bacon', 'kg', false, 1, false));
     fixture.whenStable().then(() => {
-      component.addIngredientToList(new SuggestedIngredient('poulet', 'kg', false, 1, false));
+      component.addIngredientToList(new SuggestedIngredient('bacon', 'kg', false, 1, false));
       fixture.whenStable().then(() => {
         expect(findAllElements(fixture, 'requested-ingredient').length).toBe(1);
       });
@@ -107,12 +108,55 @@ describe('SearchComponent', () => {
   });
 
   it('should remove item from list', () => {
-    component.addIngredientToList(new SuggestedIngredient('poulet', 'kg', false, 1, false));
+    component.addIngredientToList(new SuggestedIngredient('bacon', 'kg', false, 1, false));
     fixture.whenStable().then(() => {
-      component.removeIngredientFromList('poulet');
+      component.removeIngredientFromList('bacon');
       fixture.whenStable().then(() => {
         expect(findAllElements(fixture, 'requested-ingredient').length).toBe(0);
       });
+    });
+  });
+
+  it('requested ingredients should not contain default ingredients', () => {
+    const elements = findAllElements(fixture, 'requested-ingredient');
+    elements.forEach((el: DebugElement) => {
+      expect(el.nativeElement.textContent).not.toContain('poulet');
+    });
+  });
+
+  it('clicking on the trash in the default ingredients list removes it from the requested ingredients', () => {
+    const container = findNthElement(fixture, 'default-ingredient-bin', 0);
+    expect(container).toBeTruthy();
+    const firstBiTrashIcon = container;
+    firstBiTrashIcon.nativeElement.click();
+    fixture.detectChanges();
+    expect(component.requestedRecipe.ingredients.every(el => el.name !== 'poulet')).toBeTruthy();
+  });
+
+  it('clicking on the trash in the requested ingredients list removes it from the requested ingredients', () => {
+    component.addIngredientToList(new SuggestedIngredient('bacon', 'kg', false, 1, false));
+    fixture.whenStable().then(() => {
+      const container = findNthElement(fixture, 'requested-ingredient-bin', 0);
+      expect(container).toBeTruthy();
+      const firstBiTrashIcon = container;
+      firstBiTrashIcon.nativeElement.click();
+      fixture.detectChanges();
+      expect(component.requestedRecipe.ingredients.every(el => el.name !== 'bacon')).toBeTruthy();
+    });
+  });
+
+  it('clicking on the checkbox flip the boolean value in the request', () => {
+    click(fixture, 'other-allowed-check');
+    fixture.whenStable().then(() => {
+      expect(component.requestedRecipe.otherIngredientsAllowed).toBeTruthy();
+    });
+  });
+
+  it('should call the method to start generating recipes in the service after adding at least one ingredient', () => {
+    component.addIngredientToList(new SuggestedIngredient('bacon', 'kg', false, 1, false));
+    fixture.whenStable().then(() => {
+      click(fixture, 'start-btn');
+      expect(fakeRecipeService.startLoadingRecipe).toHaveBeenCalledWith(component.requestedRecipe);
     });
   });
 });

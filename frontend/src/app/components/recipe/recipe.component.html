@@ -12,7 +12,7 @@
         </div>
         <!-- steps -->
         <div class="col" id="col-step">
-            <div id="small-screen-info">
+            <div id="small-screen-info" test-id="small-screen-info">
                 <div>
                     <p class="fs-4 text-center text-white">{{ recipe.dishName }}</p>
                     <small class="text-white"> Proposé par {{ recipe.coach.name }}</small>
@@ -21,7 +21,7 @@
                 (keypress)="openCoachModal()" tabindex="0"/>
             </div>
             <div id="navigation" class="d-flex justify-content-around">
-                <button class="btn" (click)="nextStep(false)"><i class="bi bi-chevron-left"></i></button>
+                <button class="btn" (click)="nextStep(false)" test-id="left-arrow"><i class="bi bi-chevron-left"></i></button>
                 <button class="btn" (click)="nextStep(true)" test-id="right-arrow"><i class="bi bi-chevron-right"></i></button>
             </div>
             <div id="step" class="darker-blue-bg d-flex flex-column">

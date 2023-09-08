@@ -55,4 +55,11 @@ describe('RecipeCardComponent', () => {
     fixture.detectChanges();
     expect(fakeModalService.openCoachModal).toHaveBeenCalledWith(fakeRecipe.coach);
   });
+
+  it('clicking on the dish image should call the recipe selection method from the service only if the component `selectable` attribute is true', () => {
+    component.selectable  = true;
+    click(fixture, 'dish-img');
+    fixture.detectChanges();
+    expect(fakeRecipeService.onRecipeSelected).toHaveBeenCalledWith(0);
+  });
 });

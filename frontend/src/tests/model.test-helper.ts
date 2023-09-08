@@ -7,7 +7,7 @@ export function createFakeRecipe():Recipe {
         dishDescription: 'Du rien en boîte, c\'est tout', 
         dishName: 'Du rien en boîte', 
         ingredients: '- 500g de rien', 
-        steps: ['Sortir le rien de la boîte.'],
+        steps: ['Sortir le rien de la boîte.','Déguster'],
         imageUrl: '/assets_app/empty.jpg'
       };
 }
